@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Westronix Tech — Togo | Boutique, Enchères & Services</title>
+<style>
+:root{--navy:#071526;--blue:#1677ff;--green:#10b981;--bg:#f5f7fb;--text:#0d1726;--muted:#657184;--card:#fff;--line:#e4e8ef;--red:#dc3545}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:30}.nav{max-width:1200px;margin:auto;padding:13px 18px;display:flex;align-items:center;gap:18px}.logo{font-size:21px;font-weight:800}.logo span{color:#54a1ff}.navlinks{display:flex;gap:16px;flex:1;font-size:13px}.navlinks a:hover{color:#72b0ff}.search{background:#ffffff12;border:1px solid #ffffff30;border-radius:8px;padding:10px;color:#fff;width:210px}.search::placeholder{color:#bdc9d7}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:700;cursor:pointer}.primary{background:var(--blue);color:#fff}.dark{background:var(--navy);color:#fff}.green{background:var(--green);color:#fff}.light{background:#fff;border:1px solid var(--line)}.container{max-width:1200px;margin:auto;padding:0 18px}
+.hero{background:linear-gradient(120deg,#071526,#0e2949);color:#fff}.hero-inner{min-height:470px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.eyebrow{color:#6db2ff;font-weight:800;text-transform:uppercase;letter-spacing:1.3px;font-size:11px}.hero h1{font-size:52px;line-height:1.03;margin:14px 0}.hero p{font-size:17px;color:#cbd7e6;line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-card{background:#ffffff10;border:1px solid #ffffff20;border-radius:18px;padding:20px}.product-image{height:190px;border-radius:12px;background:linear-gradient(135deg,#dfe5ee,#aab4c2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#344052}.white-card{background:#fff;color:var(--text);border-radius:14px;padding:18px}.section{padding:55px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}.section h2{font-size:29px;margin:0 0 5px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 5px 18px #0d172608}.card-body{padding:16px}.tag{display:inline-block;padding:5px 8px;border-radius:6px;background:#eaf2ff;color:#1266db;font-size:10px;font-weight:800}.tag.green{background:#e8faf3;color:#087f58}.title{font-weight:800;margin:11px 0 6px}.specs{font-size:13px;color:var(--muted);line-height:1.7}.price{font-size:23px;font-weight:800;margin:10px 0}.features,.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature,.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}.feature b,.step b{display:block;margin:7px 0}.num{width:32px;height:32px;border-radius:50%;background:#eaf2ff;color:#1266db;display:grid;place-items:center;font-weight:800}.panel{background:#eaf3ff;border-radius:18px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}.table th,.table td{padding:11px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}.table th{background:#f7f9fc}.footer{background:var(--navy);color:#cbd7e6;padding:40px 0}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footer h3{color:#fff}.modal-bg{display:none;position:fixed;inset:0;background:#0009;z-index:100;overflow:auto}.modal{background:#fff;width:min(650px,94%);margin:6vh auto;border-radius:15px;padding:23px}.close{float:right;font-size:25px;cursor:pointer}.input,.select,.textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;margin:6px 0 13px}.toast{display:none;position:fixed;right:18px;bottom:18px;background:var(--navy);color:#fff;padding:13px 16px;border-radius:9px;z-index:150}.cart-badge{background:#fff;color:var(--navy);border-radius:20px;padding:2px 6px;font-size:10px}.admin{display:none}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#fff;border:1px solid var(--line);padding:17px;border-radius:12px}.stat strong{display:block;font-size:23px;margin-top:5px}.empty{text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:850px){.navlinks{display:none}.search{display:none}.hero-inner,.panel{grid-template-columns:1fr}.hero h1{font-size:40px}.grid{grid-template-columns:1fr 1fr}.features,.steps,.stat-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.grid,.features,.steps,.stat-grid{grid-template-columns:1fr}.hero h1{font-size:35px}.actions{flex-direction:column}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#home">WESTRONIX <span>TECH</span></a>
+<div class="navlinks">
+<a href="#shop">Boutique</a><a href="#auctions">🔥 Enchères</a><a href="#wholesale">Gros</a><a href="#wefixit">WeFixIt</a><a href="#donation">Don</a><a href="#how">Comment ça marche</a><a href="#contact">Contact</a>
+</div>
+<input class="search" id="search" placeholder="Rechercher Dell, HP, Lenovo..." oninput="renderProducts()">
+<button class="btn light" onclick="openAccount()">Compte</button>
+<button class="btn primary" onclick="openCart()">🛒 <span id="cartCount" class="cart-badge">0</span></button>
+</div></header>
+
+<main id="home">
+<section class="hero"><div class="container hero-inner">
+<div><div class="eyebrow">🇺🇸 Importés des États-Unis • 🇹🇬 Disponibles au Togo</div>
+<h1>Votre prochain ordinateur est ici.</h1>
+<p>Ordinateurs professionnels d'occasion et reconditionnés, testés avant la vente. Achat immédiat, enchères, vente en gros et services techniques.</p>
+<div class="actions"><a class="btn primary" href="#shop">Acheter maintenant</a><a class="btn light" href="#auctions">🔥 Voir les enchères</a><a class="btn green" href="#contact">WhatsApp</a></div></div>
+<div class="hero-card"><div class="white-card">
+<span class="tag">🔥 ENCHÈRE EN DIRECT</span><div class="product-image" style="margin-top:11px">DELL LATITUDE 5420</div>
+<h3>Dell Latitude 5420</h3><div class="specs">i5 11e génération • 8GB RAM • 256GB SSD • Grade A</div>
+<div class="price">85,000 FCFA</div><div class="specs">Prochaine enchère: <b>87,000 FCFA</b></div>
+<p style="font-weight:800;color:#c33" id="heroTimer">⏰ 00:30:00</p>
+<button class="btn primary" style="width:100%" onclick="openBid(1)">Enchérir</button>
+</div></div>
+</div></section>
+
+<section class="section" id="auctions"><div class="container">
+<div class="section-head"><div><h2>🔥 Enchères en cours</h2><div class="muted">Enchérissez sur des machines testées.</div></div></div>
+<div class="grid" id="auctionGrid"></div>
+</div></section>
+
+<section class="section" id="shop"><div class="container">
+<div class="section-head"><div><h2>💻 Ordinateurs disponibles</h2><div class="muted">Achat immédiat — stock réel dans cette démonstration.</div></div></div>
+<div class="grid" id="productGrid"></div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-head"><div><h2>Pourquoi Westronix ?</h2><div class="muted">Une expérience pensée pour le marché togolais.</div></div></div>
+<div class="features"><div class="feature">🇺🇸<b>Importés des USA</b><span class="muted">Ordinateurs professionnels provenant du marché américain.</span></div>
+<div class="feature">🧪<b>Testés</b><span class="muted">Contrôles matériel et fonctionnalité avant mise en vente.</span></div>
+<div class="feature">💰<b>Prix transparents</b><span class="muted">Prix fixes ou enchères clairement affichés.</span></div>
+<div class="feature">📱<b>Simple & mobile</b><span class="muted">Commande, paiement et support adaptés au téléphone.</span></div></div>
+</div></section>
+
+<section class="section" id="wefixit"><div class="container"><div class="panel">
+<div><div class="eyebrow" style="color:#087f58">🛠️ WEFIXIT</div><h2>Votre technologie. Notre expertise.</h2>
+<p class="muted">Diagnostic, réparation, installation, réseau et maintenance.</p>
+<button class="btn green" onclick="openSupport()">Demander un support</button></div>
+<table class="table"><tr><th>Service</th><th>Exemples</th></tr><tr><td>🔧 Diagnostic</td><td>Ordinateur lent, panne, erreur système</td></tr><tr><td>💻 Réparation</td><td>SSD, RAM, écran, clavier, ports</td></tr><tr><td>⚙️ Installation</td><td>Windows, logiciels, configuration</td></tr><tr><td>🌐 Réseau</td><td>Wi-Fi, routeur, imprimante</td></tr><tr><td>🛡️ Maintenance</td><td>Nettoyage, prévention, optimisation</td></tr></table>
+</div></div></section>
+
+<section class="section" id="wholesale"><div class="container"><div class="panel">
+<div><div class="eyebrow">📦 REVENDEURS • ÉCOLES • ENTREPRISES</div><h2>Achetez en gros.</h2><p class="muted">Lots de Dell, HP et Lenovo testés, avec tarifs adaptés au volume.</p><button class="btn primary" onclick="openQuote()">Demander un devis</button></div>
+<table class="table"><tr><th>Quantité</th><th>Dell 5420</th></tr><tr><td>1–4</td><td>110,000 CFA</td></tr><tr><td>5–9</td><td>100,000 CFA</td></tr><tr><td>10–24</td><td>95,000 CFA</td></tr><tr><td>25+</td><td><b>90,000 CFA</b></td></tr></table>
+</div></div></section>
+
+<section class="section" id="donation"><div class="container"><div class="panel">
+<div><div class="eyebrow">♻️ DON & RECYCLAGE</div><h2>Donnez une seconde vie à votre technologie.</h2><p class="muted">Récupération d'ordinateurs, équipements et accessoires pour réemploi, don ou recyclage responsable.</p><button class="btn primary" onclick="openDonation()">Faire un don</button></div>
+<div class="features" style="grid-template-columns:1fr 1fr"><div class="feature">🤝<b>Don</b><span class="muted">Équipements fonctionnels réutilisables.</span></div><div class="feature">♻️<b>Recyclage</b><span class="muted">Équipements non réutilisables.</span></div><div class="feature">🔒<b>Données</b><span class="muted">Effacement sécurisé lorsque applicable.</span></div><div class="feature">🌍<b>Impact</b><span class="muted">Réduire les déchets électroniques.</span></div></div>
+</div></div></section>
+
+<section class="section" id="how"><div class="container"><div class="section-head"><div><h2>Comment ça marche ?</h2></div></div><div class="steps">
+<div class="step"><div class="num">1</div><b>Choisissez</b><p class="muted">Parcourez la boutique ou les enchères.</p></div>
+<div class="step"><div class="num">2</div><b>Achetez ou enchérissez</b><p class="muted">Prix fixe ou enchère avec offre maximale.</p></div>
+<div class="step"><div class="num">3</div><b>Payez</b><p class="muted">Mobile Money ou moyen disponible.</p></div>
+<div class="step"><div class="num">4</div><b>Recevez</b><p class="muted">Retrait ou livraison selon votre ville.</p></div>
+</div></div></section>
+
+<section class="section admin" id="admin"><div class="container"><h2>Administration</h2>
+<div class="stat-grid"><div class="stat">Ventes<strong id="adminSales">0 CFA</strong></div><div class="stat">Commandes<strong id="adminOrders">0</strong></div><div class="stat">Inventaire<strong id="adminStock">0</strong></div><div class="stat">Clients<strong id="adminCustomers">0</strong></div></div>
+<div style="margin-top:20px"><table class="table"><thead><tr><th>SKU</th><th>Produit</th><th>Stock</th><th>Prix</th></tr></thead><tbody id="adminProducts"></tbody></table></div>
+</div></section>
+
+<section class="section" id="contact"><div class="container"><div class="panel"><div><h2>Besoin d'aide ?</h2><p class="muted">Contactez Westronix Tech pour un achat, une enchère, une réparation ou une commande en gros.</p><a class="btn green" href="https://wa.me/message/HFDGJCOEFS46I1" target="_blank">📱 WhatsApp</a></div><div><b>Support</b><p class="muted">Lun–Sam<br>Réponse rapide par WhatsApp</p><b>Zone</b><p class="muted">Lomé et autres villes du Togo</p></div></div></div></section>
+</main>
+
+<footer class="footer"><div class="container footer-grid"><div><h3>WESTRONIX TECH</h3><p>Des ordinateurs fiables. Des prix transparents.</p><p>© 2026 Westronix Tech</p></div><div><h3>Navigation</h3><p><a href="#shop">Boutique</a></p><p><a href="#auctions">Enchères</a></p><p><a href="#wholesale">Gros</a></p><p><a href="#wefixit">WeFixIt</a></p></div><div><h3>Informations</h3><p>Conditions générales</p><p>Politique de retour</p><p>Confidentialité</p><p><button class="btn light" onclick="adminLogin()">Admin</button></p></div></div></footer>
+
+<div class="modal-bg" id="modal"><div class="modal"><span class="close" onclick="closeModal()">×</span><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const PRODUCTS=[
+{id:1,sku:"WT-D5420-0001",name:"Dell Latitude 5420",spec:"i5 11e • 8GB • 256GB SSD",price:110000,stock:24,grade:"A",img:"DELL 5420"},
+{id:2,sku:"WT-D5410-0001",name:"Dell Latitude 5410",spec:"i5 10e • 8GB • 256GB SSD",price:100000,stock:17,grade:"B+",img:"DELL 5410"},
+{id:3,sku:"WT-HP840G7-0001",name:"HP EliteBook 840 G7",spec:"i5 10e • 16GB • 512GB SSD",price:135000,stock:12,grade:"A-",img:"HP 840 G7"},
+{id:4,sku:"WT-LEN-S340-0001",name:"Lenovo IdeaPad S340",spec:"i5 • 8GB • 256GB SSD",price:90000,stock:9,grade:"B",img:"LENOVO S340"},
+{id:5,sku:"WT-D3551-0001",name:"Dell Precision 3551",spec:"i7 • 16GB • 512GB SSD",price:165000,stock:6,grade:"A-",img:"PRECISION 3551"},
+{id:6,sku:"WT-HPZ15-0001",name:"HP ZBook Power 15 G9",spec:"i7-12850H • 16GB • 1TB • 12GB GPU",price:290000,stock:4,grade:"A",img:"HP ZBOOK G9"}
+];
+const AUCTIONS=[
+{id:1,name:"Dell Latitude 5420",spec:"i5 11e • 8GB • 256GB SSD • Grade A",current:85000,next:87000,ends:1800},
+{id:2,name:"Dell Latitude 5410",spec:"i5 10e • 8GB • 256GB SSD • Grade B+",current:78000,next:80000,ends:3900},
+{id:3,name:"HP EliteBook 840 G7",spec:"i5 10e • 16GB • 512GB SSD • Grade A-",current:105000,next:107000,ends:8100}
+];
+let cart=JSON.parse(localStorage.getItem("wt_cart")||"[]");
+let orders=JSON.parse(localStorage.getItem("wt_orders")||"[]");
+let customer=JSON.parse(localStorage.getItem("wt_customer")||"null");
+
+function money(n){return new Intl.NumberFormat("fr-FR").format(n)+" FCFA"}
+function save(){localStorage.setItem("wt_cart",JSON.stringify(cart));localStorage.setItem("wt_orders",JSON.stringify(orders));localStorage.setItem("wt_customer",JSON.stringify(customer))}
+function toast(s){const t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2800)}
+function openModal(html){document.getElementById("modalContent").innerHTML=html;document.getElementById("modal").style.display="block"}
+function closeModal(){document.getElementById("modal").style.display="none"}
+function renderProducts(){
+ let q=(document.getElementById("search").value||"").toLowerCase();
+ document.getElementById("productGrid").innerHTML=PRODUCTS.filter(p=>(p.name+" "+p.spec).toLowerCase().includes(q)).map(p=>`
+ <div class="card"><div class="product-image">${p.img}</div><div class="card-body"><span class="tag green">TESTÉ ✓ • GRADE ${p.grade}</span><div class="title">${p.name}</div><div class="specs">${p.spec}</div><div class="price">${money(p.price)}</div><div class="specs">Stock: ${p.stock}</div><button class="btn dark" style="width:100%;margin-top:8px" onclick="addCart(${p.id})">Ajouter au panier</button></div></div>`).join("")||'<div class="empty">Aucun produit trouvé.</div>';
+}
+function renderAuctions(){document.getElementById("auctionGrid").innerHTML=AUCTIONS.map(a=>`<div class="card"><div class="product-image">${a.name}</div><div class="card-body"><span class="tag">LIVE</span><div class="title">${a.name}</div><div class="specs">${a.spec}</div><div class="price">${money(a.current)}</div><div class="specs timer" data-auction="${a.id}">⏰ --:--:--</div><button class="btn primary" style="width:100%;margin-top:10px" onclick="openBid(${a.id})">Enchérir à ${money(a.next)}</button></div></div>`).join("")}
+function addCart(id){let p=PRODUCTS.find(x=>x.id===id);let x=cart.find(x=>x.id===id);if(x)x.qty++;else cart.push({id,qty:1});save();updateCart();toast(p.name+" ajouté au panier.");}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+function openCart(){
+ let rows=cart.map(x=>{let p=PRODUCTS.find(p=>p.id===x.id);return `<tr><td>${p.name}</td><td>${x.qty}</td><td>${money(p.price*x.qty)}</td><td><button class="btn light" onclick="removeCart(${p.id})">×</button></td></tr>`}).join("");
+ let total=cart.reduce((s,x)=>s+PRODUCTS.find(p=>p.id===x.id).price*x.qty,0);
+ openModal(`<h2>🛒 Votre panier</h2>${rows?`<table class="table"><tr><th>Produit</th><th>Qté</th><th>Total</th><th></th></tr>${rows}</table><h3>Total: ${money(total)}</h3><button class="btn primary" style="width:100%" onclick="checkout()">Passer au paiement</button>`:'<div class="empty">Votre panier est vide.</div>'}`);
+}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);save();updateCart();openCart()}
+function checkout(){
+ if(!cart.length)return;
+ openModal(`<h2>Finaliser la commande</h2><label>Nom complet</label><input class="input" id="cname" value="${customer?.name||""}"><label>Téléphone / WhatsApp</label><input class="input" id="cphone" placeholder="+228 ..."><label>Ville</label><input class="input" id="ccity" value="Lomé"><label>Mode</label><select class="select" id="cmode"><option>Retrait à Lomé</option><option>Livraison à Lomé</option><option>Livraison autre ville</option></select><h3>Total: ${money(cart.reduce((s,x)=>s+PRODUCTS.find(p=>p.id===x.id).price*x.qty,0))}</h3><p class="muted">Paiement Mobile Money: cette version prépare la commande. La connexion API réelle doit être ajoutée avec votre compte de paiement.</p><button class="btn green" style="width:100%" onclick="placeOrder()">Confirmer la commande</button>`);
+}
+function placeOrder(){
+ let name=document.getElementById("cname").value.trim(),phone=document.getElementById("cphone").value.trim();
+ if(!name||!phone){toast("Veuillez remplir le nom et le téléphone.");return}
+ let total=cart.reduce((s,x)=>s+PRODUCTS.find(p=>p.id===x.id).price*x.qty,0);
+ let order={id:"WT-"+Date.now(),name,phone,total,items:cart,date:new Date().toLocaleString("fr-FR"),status:"En attente de paiement"};
+ orders.push(order);customer={name,phone};cart=[];save();updateCart();closeModal();toast("Commande "+order.id+" créée. Contact WhatsApp pour le paiement."); 
+ window.open("https://wa.me/message/HFDGJCOEFS46I1","_blank");
+}
+function openBid(id){
+ let a=AUCTIONS.find(x=>x.id===id);
+ openModal(`<h2>🔥 Enchérir</h2><p><b>${a.name}</b></p><p class="muted">Prix actuel: ${money(a.current)}<br>Minimum: ${money(a.next)}</p><label>Votre enchère</label><input class="input" id="bid" type="number" value="${a.next}"><label>Mon enchère maximale (optionnel)</label><input class="input" type="number" placeholder="100000"><button class="btn primary" style="width:100%" onclick="placeBid(${id})">Confirmer mon enchère</button>`);
+}
+function placeBid(id){let a=AUCTIONS.find(x=>x.id===id),v=Number(document.getElementById("bid").value);if(v<a.next){toast("Votre enchère doit être au moins "+money(a.next));return}a.current=v;a.next=v+2000;closeModal();renderAuctions();toast("Enchère enregistrée. Vous êtes actuellement leader.");}
+function openAccount(){
+ openModal(`<h2>👤 Mon compte</h2>${customer?`<p><b>${customer.name}</b><br>${customer.phone}</p><h3>Mes commandes</h3>${orders.filter(o=>o.phone===customer.phone).map(o=>`<p>${o.id} — ${money(o.total)} — ${o.status}</p>`).join("")||'<p class="muted">Aucune commande.</p>'}`:`<label>Nom</label><input class="input" id="aname"><label>WhatsApp</label><input class="input" id="aphone" placeholder="+228 ..."><button class="btn primary" style="width:100%" onclick="createAccount()">Créer / enregistrer mon compte</button>`}`);
+}
+function createAccount(){let name=document.getElementById("aname").value.trim(),phone=document.getElementById("aphone").value.trim();if(!name||!phone){toast("Nom et téléphone requis.");return}customer={name,phone};save();closeModal();toast("Compte enregistré.");}
+function openQuote(){openModal(`<h2>📦 Demander un devis gros</h2><label>Nom / entreprise</label><input class="input" id="qname"><label>WhatsApp</label><input class="input" id="qphone" placeholder="+228 ..."><label>Quantité</label><input class="input" id="qqty" type="number" min="1"><label>Modèles souhaités</label><textarea class="textarea" id="qmsg" rows="4" placeholder="Dell, HP, Lenovo..."></textarea><button class="btn primary" style="width:100%" onclick="sendRequest('Devis gros')">Envoyer</button>`)}
+function openSupport(){openModal(`<h2>🛠️ Demande WeFixIt</h2><label>Nom</label><input class="input" id="qname"><label>WhatsApp</label><input class="input" id="qphone" placeholder="+228 ..."><label>Service</label><select class="select"><option>Diagnostic</option><option>Réparation</option><option>Installation</option><option>Réseau</option><option>Maintenance</option></select><label>Décrivez le problème</label><textarea class="textarea" rows="4"></textarea><button class="btn green" style="width:100%" onclick="sendRequest('WeFixIt')">Envoyer</button>`)}
+function openDonation(){openModal(`<h2>♻️ Faire un don / recycler</h2><label>Nom</label><input class="input" id="qname"><label>WhatsApp</label><input class="input" id="qphone" placeholder="+228 ..."><label>Équipement</label><input class="input" placeholder="Laptop, téléphone, écran..."><label>Quantité</label><input class="input" type="number" value="1"><button class="btn primary" style="width:100%" onclick="sendRequest('Don/Recyclage')">Envoyer la demande</button>`)}
+function sendRequest(type){let n=document.getElementById("qname")?.value||"",p=document.getElementById("qphone")?.value||"";if(!n||!p){toast("Nom et WhatsApp requis.");return}closeModal();toast(type+" enregistré. Nous vous contacterons.");window.open("https://wa.me/message/HFDGJCOEFS46I1","_blank")}
+function adminLogin(){openModal(`<h2>🔐 Administration</h2><p class="muted">Prototype local — mot de passe démo: <b>westronix2026</b></p><input class="input" id="adminpass" type="password" placeholder="Mot de passe"><button class="btn dark" style="width:100%" onclick="showAdmin()">Connexion</button>`)}
+function showAdmin(){if(document.getElementById("adminpass").value!=="westronix2026"){toast("Mot de passe incorrect.");return}closeModal();document.getElementById("admin").style.display="block";document.getElementById("admin").scrollIntoView({behavior:"smooth"});document.getElementById("adminSales").textContent=money(orders.reduce((s,o)=>s+o.total,0));document.getElementById("adminOrders").textContent=orders.length;document.getElementById("adminStock").textContent=PRODUCTS.reduce((s,p)=>s+p.stock,0);document.getElementById("adminCustomers").textContent=customer?1:0;document.getElementById("adminProducts").innerHTML=PRODUCTS.map(p=>`<tr><td>${p.sku}</td><td>${p.name}</td><td>${p.stock}</td><td>${money(p.price)}</td></tr>`).join("")}
+function tick(){
+ const now=Date.now();
+ document.querySelectorAll("[data-auction]").forEach(el=>{let a=AUCTIONS.find(x=>x.id==el.dataset.auction);a.ends=Math.max(0,a.ends-1);let s=a.ends,h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;el.textContent=`⏰ ${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`});
+ let a=AUCTIONS[0],s=a.ends,h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;document.getElementById("heroTimer").textContent=`⏰ ${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
+}
+renderProducts();renderAuctions();updateCart();setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
