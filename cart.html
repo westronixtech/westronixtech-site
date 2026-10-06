@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WESTRONIX TECH | Shopping Cart</title>
+
+<meta name="description" content="WESTRONIX TECH shopping cart for refurbished laptops, workstations, electronics and auction lots.">
+
+<style>
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#1f2937;
+}
+
+/* LANGUAGE */
+.lang-en,.lang-fr{display:none!important}
+
+body.lang-en .lang-en{display:inline!important}
+body.lang-fr .lang-fr{display:inline!important}
+
+body.lang-en div.lang-en,
+body.lang-fr div.lang-fr{
+  display:block!important;
+}
+
+body.lang-en h1.lang-en,
+body.lang-en h2.lang-en,
+body.lang-en h3.lang-en,
+body.lang-en p.lang-en,
+body.lang-fr h1.lang-fr,
+body.lang-fr h2.lang-fr,
+body.lang-fr h3.lang-fr,
+body.lang-fr p.lang-fr{
+  display:block!important;
+}
+
+/* HEADER */
+header{
+  background:#071526;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  flex-shrink:0;
+}
+
+.brand img{
+  width:170px;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:auto;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  padding:9px 10px;
+  border-radius:7px;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.nav a:hover{
+  background:#12304d;
+  color:white;
+}
+
+.nav a.active{
+  background:#1677ff;
+  color:white;
+}
+
+.language-box{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-left:8px;
+}
+
+.language-box select{
+  background:#0f2740;
+  color:white;
+  border:1px solid #36516e;
+  border-radius:7px;
+  padding:8px 9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* USA → AFRICA */
+.route-bar{
+  background:#0b1d31;
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.route-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:7px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.usa-africa-route{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 12px;
+  border:1px solid #ffffff22;
+  border-radius:12px;
+  background:#ffffff0b;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.3px;
+  overflow:hidden;
+}
+
+.usa-flag{
+  display:inline-block;
+  font-size:28px;
+  transform-origin:left center;
+  animation:usaFlagWave 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+}
+
+.route-arrow{
+  display:inline-block;
+  color:#69adff;
+  font-size:23px;
+  font-weight:900;
+  animation:routeArrowPulse 2s ease-in-out infinite;
+}
+
+.africa-globe{
+  display:inline-block;
+  font-size:29px;
+  transform-origin:center;
+  animation:africaGlobeRotate 8s linear infinite;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
+}
+
+@keyframes usaFlagWave{
+  0%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
+  20%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
+  40%{transform:perspective(120px) rotateY(-8deg) rotateZ(2deg) skewY(-2deg)}
+  60%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
+  80%{transform:perspective(120px) rotateY(-5deg) rotateZ(1deg) skewY(-1deg)}
+  100%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
+}
+
+@keyframes routeArrowPulse{
+  0%,100%{transform:translateX(0);opacity:.65}
+  50%{transform:translateX(5px);opacity:1}
+}
+
+@keyframes africaGlobeRotate{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+/* MAIN */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 20px;
+}
+
+.page-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.page-title h1{
+  margin:0;
+  font-size:30px;
+  color:#111827;
+}
+
+.cart-count-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:34px;
+  height:34px;
+  padding:0 10px;
+  border-radius:999px;
+  background:#1677ff;
+  color:white;
+  font-size:14px;
+  font-weight:bold;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:10px 15px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+  margin:5px 5px 5px 0;
+  transition:.2s;
+}
+
+.blue{background:#1677ff;color:white}
+.blue:hover{background:#075dcc}
+
+.green{background:#10b981;color:white}
+.green:hover{background:#059669}
+
+.red{background:#dc3545;color:white}
+.red:hover{background:#b91c1c}
+
+.gray{background:#e5e7eb;color:#111827}
+.gray:hover{background:#d1d5db}
+
+/* CART */
+.cart-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 340px;
+  gap:22px;
+  align-items:start;
+}
+
+.cart-card{
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  border:1px solid #e5e7eb;
+}
+
+.cart-item-top{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+
+.product-image{
+  width:115px;
+  height:100px;
+  border-radius:9px;
+  background:#f1f5f9;
+  object-fit:contain;
+  flex-shrink:0;
+  border:1px solid #e5e7eb;
+}
+
+.product-info{
+  flex:1;
+  min-width:0;
+}
+
+.cart-card h3{
+  margin:0 0 8px;
+  color:#111827;
+  font-size:19px;
+}
+
+.product-meta{
+  color:#64748b;
+  font-size:14px;
+  margin:5px 0;
+}
+
+.auction-badge,
+.inventory-badge{
+  display:inline-block;
+  font-size:12px;
+  font-weight:bold;
+  padding:5px 8px;
+  border-radius:6px;
+  margin-bottom:8px;
+}
+
+.auction-badge{
+  background:#fff3cd;
+  color:#92400e;
+}
+
+.inventory-badge{
+  background:#e8f3ff;
+  color:#075985;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+  color:#111827;
+  margin:10px 0;
+}
+
+.subtotal{
+  font-size:17px;
+  font-weight:bold;
+  margin-top:12px;
+  color:#111827;
+}
+
+.item-actions{
+  margin-top:10px;
+}
+
+/* QUANTITY */
+.quantity-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:12px 0;
+}
+
+.quantity-box strong{
+  min-width:35px;
+  text-align:center;
+  font-size:17px;
+}
+
+.quantity-box .btn{
+  margin:0;
+  min-width:38px;
+  padding:8px 10px;
+}
+
+.fixed-quantity{
+  display:inline-block;
+  background:#f1f5f9;
+  border-radius:7px;
+  padding:8px 10px;
+  font-weight:bold;
+  color:#475569;
+}
+
+/* REMOVE */
+.remove-btn{
+  background:none;
+  border:none;
+  color:#dc3545;
+  font-weight:bold;
+  cursor:pointer;
+  padding:5px 0;
+}
+
+.remove-btn:hover{
+  text-decoration:underline;
+}
+
+/* SUMMARY */
+.total-box{
+  background:white;
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  border:1px solid #e5e7eb;
+  position:sticky;
+  top:125px;
+}
+
+.total-box h2{
+  margin-top:0;
+  margin-bottom:18px;
+  color:#111827;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:9px 0;
+  color:#4b5563;
+}
+
+.summary-row strong{
+  color:#111827;
+}
+
+.summary-total{
+  border-top:1px solid #e5e7eb;
+  margin-top:10px;
+  padding-top:15px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:21px;
+  font-weight:bold;
+  color:#111827;
+}
+
+.checkout-primary,
+.whatsapp-secondary,
+.clear-cart{
+  display:block;
+  width:100%;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.checkout-primary{
+  background:#1677ff;
+  color:white;
+  padding:14px;
+  border:0;
+  font-size:16px;
+  margin-top:18px;
+}
+
+.checkout-primary:hover{background:#075dcc}
+
+.whatsapp-secondary{
+  background:#10b981;
+  color:white;
+  padding:12px;
+  border:0;
+  margin-top:10px;
+}
+
+.whatsapp-secondary:hover{background:#059669}
+
+.clear-cart{
+  background:#fff;
+  color:#dc3545;
+  border:1px solid #dc3545;
+  padding:11px;
+  margin-top:10px;
+}
+
+.clear-cart:hover{background:#fff5f5}
+
+.checkout-note{
+  margin-top:15px;
+  padding:13px;
+  background:#f1f5f9;
+  border-left:4px solid #1677ff;
+  border-radius:6px;
+  font-size:13px;
+  color:#475569;
+  line-height:1.5;
+}
+
+/* EMPTY CART */
+.empty{
+  text-align:center;
+  padding:55px 20px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.empty-icon{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.empty h2{
+  margin:10px 0;
+  color:#111827;
+}
+
+.empty p{
+  color:#64748b;
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#071526;
+  color:white;
+  text-align:center;
+  padding:32px 20px;
+  margin-top:40px;
+}
+
+footer h3{margin-top:0}
+
+footer p{
+  color:#cbd5e1;
+  margin:8px 0;
+}
+
+.footer-whatsapp{
+  display:inline-block;
+  margin-top:10px;
+  padding:9px 14px;
+  border-radius:8px;
+  background:#10b981;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+  .header-inner{
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .nav{
+    width:100%;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    margin-left:0;
+    padding-bottom:3px;
+  }
+
+  .nav a{white-space:nowrap}
+
+  .language-box{margin-left:auto}
+
+  .cart-layout{grid-template-columns:1fr}
+
+  .total-box{position:static}
+}
+
+@media(max-width:600px){
+
+  .container{padding:18px 14px}
+
+  .brand img{width:145px}
+
+  .header-inner{padding:10px 14px}
+
+  .page-title{align-items:flex-start}
+
+  .page-title h1{font-size:25px}
+
+  .cart-item-top{display:block}
+
+  .product-image{
+    width:100%;
+    height:170px;
+    margin-bottom:12px;
+  }
+
+  .usa-africa-route{
+    gap:7px;
+    padding:6px 10px;
+    font-size:12px;
+  }
+
+  .usa-flag{font-size:24px}
+  .route-arrow{font-size:19px}
+  .africa-globe{font-size:25px}
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .usa-flag,
+  .route-arrow,
+  .africa-globe{
+    animation:none;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+```
+<a href="index.html" class="brand">
+  <img src="images/westronix-logo.png" alt="WESTRONIX TECH">
+</a>
+
+<nav class="nav">
+
+  <a href="index.html">
+    <span class="lang-en">Home</span>
+    <span class="lang-fr">Accueil</span>
+  </a>
+
+  <a href="inventory.html">
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+  </a>
+
+  <a href="auctions.html">
+    <span class="lang-en">Live Auctions</span>
+    <span class="lang-fr">Enchères</span>
+  </a>
+
+  <a href="sell-equipment.html">
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre</span>
+  </a>
+
+  <a href="africa-education.html">
+    <span class="lang-en">Africa Education</span>
+    <span class="lang-fr">Éducation</span>
+  </a>
+
+  <a href="cart.html" class="active">
+    🛒
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+  </a>
+
+</nav>
+
+<div class="language-box">
+  <span>🌐</span>
+
+  <select id="languageSelect" aria-label="Language">
+    <option value="fr">FR</option>
+    <option value="en">EN</option>
+  </select>
+</div>
+```
+
+  </div>
+
+  <div class="route-bar">
+
+```
+<div class="route-inner">
+
+  <div class="usa-africa-route">
+
+    <span class="usa-flag">🇺🇸</span>
+
+    <span class="lang-en">USA Technology</span>
+    <span class="lang-fr">Technologie des États-Unis</span>
+
+    <span class="route-arrow">→</span>
+
+    <span class="africa-globe">🌍</span>
+
+    <span class="lang-en">Togo & Africa</span>
+    <span class="lang-fr">Togo & Afrique</span>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</header>
+
+<main class="container">
+
+  <div class="page-title">
+
+```
+<h1>
+  🛒
+  <span class="lang-en">Shopping Cart</span>
+  <span class="lang-fr">Panier</span>
+</h1>
+
+<span id="cartCountBadge" class="cart-count-badge">0</span>
+```
+
+  </div>
+
+  <a href="inventory.html" class="btn blue">
+    ←
+    <span class="lang-en">Continue Shopping</span>
+    <span class="lang-fr">Continuer les achats</span>
+  </a>
+
+  <div class="cart-layout">
+
+```
+<section id="cartContainer"></section>
+
+<aside id="totalContainer" class="total-box" style="display:none;">
+
+  <h2>
+    <span class="lang-en">Order Summary</span>
+    <span class="lang-fr">Résumé de la commande</span>
+  </h2>
+
+  <div class="summary-row">
+
+    <span>
+      <span class="lang-en">Items</span>
+      <span class="lang-fr">Articles</span>
+    </span>
+
+    <strong id="cartItemCount">0</strong>
+
+  </div>
+
+  <div class="summary-row">
+
+    <span>
+      <span class="lang-en">Subtotal</span>
+      <span class="lang-fr">Sous-total</span>
+    </span>
+
+    <strong id="cartSubtotal">0 FCFA</strong>
+
+  </div>
+
+  <div class="summary-row">
+
+    <span>
+      <span class="lang-en">Delivery</span>
+      <span class="lang-fr">Livraison</span>
+    </span>
+
+    <strong>
+      <span class="lang-en">To be confirmed</span>
+      <span class="lang-fr">À confirmer</span>
+    </strong>
+
+  </div>
+
+  <div class="summary-total">
+
+    <span>
+      <span class="lang-en">Estimated Total</span>
+      <span class="lang-fr">Total estimé</span>
+    </span>
+
+    <span id="cartTotal">0 FCFA</span>
+
+  </div>
+
+  <button class="checkout-primary" onclick="proceedToCheckout()">
+    🛒
+    <span class="lang-en">Proceed to Checkout</span>
+    <span class="lang-fr">Passer à la commande</span>
+  </button>
+
+  <button class="whatsapp-secondary" onclick="checkoutWhatsapp()">
+    💬
+    <span class="lang-en">Order Directly on WhatsApp</span>
+    <span class="lang-fr">Commander directement sur WhatsApp</span>
+  </button>
+
+  <button class="clear-cart" onclick="clearCart()">
+    🗑
+    <span class="lang-en">Clear Cart</span>
+    <span class="lang-fr">Vider le panier</span>
+  </button>
+
+  <div class="checkout-note">
+
+    <strong>
+      <span class="lang-en">Before payment:</span>
+      <span class="lang-fr">Avant le paiement :</span>
+    </strong>
+
+    <br>
+
+    <span class="lang-en">
+      WESTRONIX will confirm product availability,
+      delivery or pickup options, delivery charges,
+      payment method and the final order amount.
+    </span>
+
+    <span class="lang-fr">
+      WESTRONIX confirmera la disponibilité des produits,
+      les options de livraison ou de retrait, les frais de
+      livraison, le mode de paiement et le montant final
+      de la commande.
+    </span>
+
+  </div>
+
+</aside>
+```
+
+  </div>
+
+</main>
+
+<footer>
+
+  <h3>WESTRONIX TECH</h3>
+
+  <p>Recover • Refurbish • Resell • Reuse • Impact</p>
+
+  <p>🇺🇸 USA → 🇹🇬 TOGO</p>
+
+<a
+class="footer-whatsapp"
+href="https://wa.me/22892953333"
+target="_blank"
+rel="noopener"
+
+>
+
+```
+💬 WhatsApp: +228 92 95 33 33
+```
+
+  </a>
+
+</footer>
+
+<script>
+
+const CART_KEY = "wt_cart";
+const WHATSAPP_NUMBER = "22892953333";
+
+let cart = [];
+
+/* LANGUAGE */
+
+function setLanguage(lang){
+
+  if(lang !== "en" && lang !== "fr"){
+    lang = "fr";
+  }
+
+  document.body.classList.remove("lang-en","lang-fr");
+  document.body.classList.add("lang-" + lang);
+
+  localStorage.setItem("wt_language",lang);
+
+  const selector = document.getElementById("languageSelect");
+
+  if(selector){
+    selector.value = lang;
+  }
+}
+
+function initializeLanguage(){
+
+  const savedLanguage =
+    localStorage.getItem("wt_language") || "fr";
+
+  setLanguage(savedLanguage);
+}
+
+document.getElementById("languageSelect").addEventListener(
+  "change",
+  function(){
+    setLanguage(this.value);
+  }
+);
+
+/* LOAD CART */
+
+function loadCartFromStorage(){
+
+  try{
+
+    cart = JSON.parse(
+      localStorage.getItem(CART_KEY) || "[]"
+    );
+
+    if(!Array.isArray(cart)){
+      cart = [];
+    }
+
+  }catch(error){
+
+    console.error("Unable to load cart:",error);
+    cart = [];
+
+  }
+}
+
+/* SAVE CART */
+
+function saveCart(){
+
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cart)
+  );
+}
+
+/* FORMAT PRICE */
+
+function formatPrice(value){
+
+  return Number(value || 0)
+    .toLocaleString("fr-FR") + " FCFA";
+}
+
+/* ITEM PRICE */
+
+function getItemPrice(item){
+
+  return Number(
+    item.price ??
+    item.buyNow ??
+    item.buyNowPrice ??
+    0
+  );
+}
+
+/* ITEM NAME */
+
+function getItemName(item){
+
+  return (
+    item.name ||
+    item.productName ||
+    item.product ||
+    "WESTRONIX Product"
+  );
+}
+
+/* ITEM SKU */
+
+function getItemSKU(item){
+
+  return (
+    item.sku ||
+    item.productSku ||
+    "N/A"
+  );
+}
+
+/* AUCTION CHECK */
+
+function isAuctionItem(item){
+
+  return Boolean(
+    item.isAuction ||
+    item.auctionId ||
+    item.type === "auction"
+  );
+}
+
+/* ESCAPE HTML */
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+/* IMAGE */
+
+function getItemImage(item){
+
+  if(item.image){
+    return item.image;
+  }
+
+  if(
+    Array.isArray(item.photos) &&
+    item.photos.length > 0
+  ){
+    return item.photos[0];
+  }
+
+  return "images/westronix-logo.png";
+}
+
+/* TOTAL */
+
+function calculateCartTotal(){
+
+  return cart.reduce(
+    (total,item)=>{
+
+      const price = getItemPrice(item);
+
+      const quantity = Math.max(
+        1,
+        Number(item.quantity) || 1
+      );
+
+      return total + price * quantity;
+
+    },
+    0
+  );
+}
+
+/* ITEM COUNT */
+
+function calculateItemCount(){
+
+  return cart.reduce(
+    (total,item)=>{
+
+      return total + Math.max(
+        1,
+        Number(item.quantity) || 1
+      );
+
+    },
+    0
+  );
+}
+
+/* RENDER CART */
+
+function loadCart(){
+
+  const container =
+    document.getElementById("cartContainer");
+
+  const totalBox =
+    document.getElementById("totalContainer");
+
+  const cartCount =
+    calculateItemCount();
+
+  document.getElementById("cartCountBadge")
+    .textContent = cartCount;
+
+  if(cart.length === 0){
+
+    container.innerHTML = `
+
+      <div class="empty">
+
+        <div class="empty-icon">🛒</div>
+
+        <h2>
+          <span class="lang-en">Your cart is empty</span>
+          <span class="lang-fr">Votre panier est vide</span>
+        </h2>
+
+        <p>
+          <span class="lang-en">
+            Browse our inventory or live auctions
+            and add products to your shopping cart.
+          </span>
+
+          <span class="lang-fr">
+            Parcourez notre inventaire ou nos enchères
+            et ajoutez des produits à votre panier.
+          </span>
+        </p>
+
+        <a href="inventory.html" class="btn blue">
+          <span class="lang-en">Browse Inventory</span>
+          <span class="lang-fr">Voir l'inventaire</span>
+        </a>
+
+        <a href="auctions.html" class="btn gray">
+          <span class="lang-en">View Live Auctions</span>
+          <span class="lang-fr">Voir les enchères</span>
+        </a>
+
+      </div>
+
+    `;
+
+    totalBox.style.display = "none";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  cart.forEach((item,index)=>{
+
+    const quantity = Math.max(
+      1,
+      Number(item.quantity) || 1
+    );
+
+    const price = getItemPrice(item);
+    const subtotal = price * quantity;
+
+    const name = getItemName(item);
+    const sku = getItemSKU(item);
+
+    const auction = isAuctionItem(item);
+    const image = getItemImage(item);
+
+    container.innerHTML += `
+
+      <article class="cart-card">
+
+        <div class="cart-item-top">
+
+          <img
+            class="product-image"
+            src="${escapeHTML(image)}"
+            alt="${escapeHTML(name)}"
+            onerror="this.src='images/westronix-logo.png'"
+          >
+
+          <div class="product-info">
+
+            ${
+              auction
+              ?
+              `
+              <span class="auction-badge">
+                🔨
+                <span class="lang-en">AUCTION LOT</span>
+                <span class="lang-fr">LOT D'ENCHÈRE</span>
+              </span>
+              `
+              :
+              `
+              <span class="inventory-badge">
+                ✓
+                <span class="lang-en">INVENTORY</span>
+                <span class="lang-fr">INVENTAIRE</span>
+              </span>
+              `
+            }
+
+            <h3>${escapeHTML(name)}</h3>
+
+            <p class="product-meta">
+              <b>SKU:</b> ${escapeHTML(sku)}
+            </p>
+
+            ${
+              auction && item.auctionId
+              ?
+              `
+              <p class="product-meta">
+
+                <b>
+                  <span class="lang-en">Auction:</span>
+                  <span class="lang-fr">Enchère :</span>
+                </b>
+
+                ${escapeHTML(item.auctionId)}
+
+              </p>
+              `
+              :
+              ""
+            }
+
+            ${
+              item.brand
+              ?
+              `
+              <p class="product-meta">
+
+                <b>
+                  <span class="lang-en">Brand:</span>
+                  <span class="lang-fr">Marque :</span>
+                </b>
+
+                ${escapeHTML(item.brand)}
+
+              </p>
+              `
+              :
+              ""
+            }
+
+            <div class="price">
+
+              ${formatPrice(price)}
+
+              ${
+                auction
+                ?
+                `
+                <span class="lang-en">/ lot</span>
+                <span class="lang-fr">/ lot</span>
+                `
+                :
+                `
+                <span class="lang-en">/ unit</span>
+                <span class="lang-fr">/ unité</span>
+                `
+              }
+
+            </div>
+
+            <div class="quantity-box">
+
+              ${
+                auction
+                ?
+                `
+                <span class="fixed-quantity">
+
+                  <span class="lang-en">
+                    Lot Quantity:
+                  </span>
+
+                  <span class="lang-fr">
+                    Quantité du lot :
+                  </span>
+
+                  ${quantity}
+
+                </span>
+                `
+                :
+                `
+
+                <button
+                  class="btn gray"
+                  onclick="decreaseQuantity(${index})"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+
+                <strong>${quantity}</strong>
+
+                <button
+                  class="btn blue"
+                  onclick="increaseQuantity(${index})"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+
+                `
+              }
+
+            </div>
+
+            <p class="subtotal">
+
+              <span class="lang-en">Subtotal:</span>
+              <span class="lang-fr">Sous-total :</span>
+
+              ${formatPrice(subtotal)}
+
+            </p>
+
+            <div class="item-actions">
+
+              <button
+                class="remove-btn"
+                onclick="removeItem(${index})"
+              >
+
+                🗑
+
+                <span class="lang-en">
+                  Remove from cart
+                </span>
+
+                <span class="lang-fr">
+                  Retirer du panier
+                </span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+  const total = calculateCartTotal();
+  const itemCount = calculateItemCount();
+
+  document.getElementById("cartTotal")
+    .textContent = formatPrice(total);
+
+  document.getElementById("cartSubtotal")
+    .textContent = formatPrice(total);
+
+  document.getElementById("cartItemCount")
+    .textContent = itemCount;
+
+  totalBox.style.display = "block";
+}
+
+/* INCREASE */
+
+function increaseQuantity(index){
+
+  if(!cart[index]){
+    return;
+  }
+
+  if(isAuctionItem(cart[index])){
+
+    alert(
+      "An auction lot has a fixed quantity."
+    );
+
+    return;
+  }
+
+  const currentQuantity =
+    Number(cart[index].quantity) || 1;
+
+  if(
+    cart[index].availableQuantity &&
+    currentQuantity >= Number(
+      cart[index].availableQuantity
+    )
+  ){
+
+    alert(
+      "Maximum available quantity reached."
+    );
+
+    return;
+  }
+
+  cart[index].quantity =
+    currentQuantity + 1;
+
+  saveCart();
+  loadCart();
+}
+
+/* DECREASE */
+
+function decreaseQuantity(index){
+
+  if(!cart[index]){
+    return;
+  }
+
+  if(isAuctionItem(cart[index])){
+
+    alert(
+      "An auction lot has a fixed quantity."
+    );
+
+    return;
+  }
+
+  const currentQuantity =
+    Number(cart[index].quantity) || 1;
+
+  if(currentQuantity <= 1){
+
+    removeItem(index);
+    return;
+  }
+
+  cart[index].quantity =
+    currentQuantity - 1;
+
+  saveCart();
+  loadCart();
+}
+
+/* REMOVE */
+
+function removeItem(index){
+
+  if(!cart[index]){
+    return;
+  }
+
+  cart.splice(index,1);
+
+  saveCart();
+  loadCart();
+}
+
+/* CLEAR */
+
+function clearCart(){
+
+  if(cart.length === 0){
+    return;
+  }
+
+  const confirmed = confirm(
+    "Are you sure you want to clear your entire cart?"
+  );
+
+  if(!confirmed){
+    return;
+  }
+
+  cart = [];
+
+  localStorage.removeItem(CART_KEY);
+
+  loadCart();
+}
+
+/* CHECKOUT */
+
+function proceedToCheckout(){
+
+  if(cart.length === 0){
+
+    alert("Your cart is empty.");
+    return;
+  }
+
+  window.location.href = "checkout.html";
+}
+
+/* WHATSAPP */
+
+function checkoutWhatsapp(){
+
+  if(cart.length === 0){
+
+    alert("Your cart is empty.");
+    return;
+  }
+
+  const total = calculateCartTotal();
+
+  let message =
+    "Bonjour WESTRONIX TECH,\n\n";
+
+  message +=
+    "Je souhaite commander les articles suivants :\n\n";
+
+  cart.forEach((item,index)=>{
+
+    const quantity = Math.max(
+      1,
+      Number(item.quantity) || 1
+    );
+
+    const price = getItemPrice(item);
+    const subtotal = price * quantity;
+
+    const name = getItemName(item);
+    const sku = getItemSKU(item);
+    const auction = isAuctionItem(item);
+
+    message +=
+      (index + 1) +
+      ". " +
+      name +
+      "\n";
+
+    message +=
+      "SKU: " +
+      sku +
+      "\n";
+
+    message +=
+      "Type: " +
+      (auction ? "Auction Lot" : "Inventory") +
+      "\n";
+
+    if(auction && item.auctionId){
+
+      message +=
+        "Auction ID: " +
+        item.auctionId +
+        "\n";
+    }
+
+    message +=
+      "Quantité: " +
+      quantity +
+      "\n";
+
+    message +=
+      "Prix: " +
+      formatPrice(price) +
+      "\n";
+
+    message +=
+      "Sous-total: " +
+      formatPrice(subtotal) +
+      "\n\n";
+
+  });
+
+  message +=
+    "Sous-total général: " +
+    formatPrice(total) +
+    "\n";
+
+  message +=
+    "Livraison: À confirmer\n\n";
+
+  message +=
+    "Merci de me confirmer la disponibilité, " +
+    "les frais de livraison et les modalités " +
+    "de paiement.";
+
+  const whatsappLink =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(
+    whatsappLink,
+    "_blank",
+    "noopener"
+  );
+}
+
+/* INITIALIZE */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    initializeLanguage();
+    loadCartFromStorage();
+    loadCart();
+
+  }
+);
+
+/* SYNC BETWEEN TABS */
+
+window.addEventListener(
+  "storage",
+  function(event){
+
+    if(event.key === CART_KEY){
+
+      loadCartFromStorage();
+      loadCart();
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>

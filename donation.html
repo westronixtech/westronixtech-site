@@ -1,0 +1,3152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Support & Donate | WESTRONIX TECH</title>
+
+<meta
+name="description"
+content="Support the WESTRONIX TECH mission through technology donations, educational partnerships and responsible technology reuse across Africa."
+
+>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #182230;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1400px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ====================================
+       HEADER
+    ==================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #07111f;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    }
+
+    .header-inner {
+      width: min(1400px, 94%);
+      min-height: 88px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 12px;
+      padding: 4px;
+    }
+
+    .brand-name {
+      color: #fff;
+      font-size: 24px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
+
+    .brand-tagline {
+      margin-top: 5px;
+      color: #aeb9c8;
+      font-size: 11px;
+      letter-spacing: .35px;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav a {
+      color: #e8edf4;
+      padding: 11px 13px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+
+    .nav a:last-child {
+      background: #1677ff;
+      color: #fff;
+      margin-left: 5px;
+    }
+
+    .nav a:last-child:hover {
+      background: #0d63d7;
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      margin-left: 4px;
+      border-radius: 20px;
+      background: #fff;
+      color: #1677ff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ====================================
+       LANGUAGE BAR
+    ==================================== */
+
+    .language-bar {
+      background: #fff;
+      border-bottom: 1px solid #e4e8ee;
+    }
+
+    .language-inner {
+      width: min(1400px, 92%);
+      min-height: 48px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .language-label {
+      color: #667085;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    .language-btn {
+      border: 1px solid #d8dee8;
+      background: #fff;
+      color: #475467;
+      border-radius: 7px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .language-btn:hover,
+    .language-btn.active {
+      background: #07111f;
+      color: #fff;
+      border-color: #07111f;
+    }
+
+    /* ====================================
+       HERO
+    ==================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(22,119,255,.28),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #07111f 0%,
+          #0b1d33 55%,
+          #102d4d 100%
+        );
+      color: #fff;
+      padding: 95px 0 105px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.13);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d8e3ef;
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ====================================
+       BUTTONS
+    ==================================== */
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: #1677ff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0d63d7;
+      transform: translateY(-1px);
+    }
+
+    .btn-green {
+      background: #16a05d;
+      color: #fff;
+    }
+
+    .btn-green:hover {
+      background: #12834c;
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #07111f;
+      border-color: #d9e0e8;
+    }
+
+    .btn-light:hover {
+      background: #f1f4f8;
+    }
+
+    /* ====================================
+       GENERAL
+    ==================================== */
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-alt {
+      background: #fff;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #07111f;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -.8px;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+      color: #667085;
+      font-size: 16px;
+    }
+
+    /* ====================================
+       SUPPORT CARDS
+    ==================================== */
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .support-card {
+      background: #fff;
+      border: 1px solid #e1e7ef;
+      border-radius: 16px;
+      padding: 30px 25px;
+      transition: .25s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(7,17,31,.08);
+    }
+
+    .support-icon {
+      font-size: 38px;
+      margin-bottom: 17px;
+    }
+
+    .support-card h3 {
+      color: #07111f;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .support-card p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ====================================
+       DONATION FORM SECTION
+    ==================================== */
+
+    .donation-section {
+      background:
+        linear-gradient(
+          135deg,
+          #eef5ff 0%,
+          #f7fafc 100%
+        );
+    }
+
+    .donation-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .donation-info {
+      padding: 15px 0;
+    }
+
+    .donation-info h2 {
+      color: #07111f;
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .donation-info > p {
+      color: #5c6878;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .donation-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .donation-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .donation-list-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #dceaff;
+      border-radius: 8px;
+    }
+
+    .donation-list-item strong {
+      display: block;
+      color: #07111f;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .donation-list-item span {
+      color: #667085;
+      font-size: 13px;
+    }
+
+    /* ====================================
+       FORM
+    ==================================== */
+
+    .donation-form {
+      background: #fff;
+      border: 1px solid #e0e6ee;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 15px 45px rgba(7,17,31,.08);
+    }
+
+    .form-title {
+      color: #07111f;
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+
+    .form-description {
+      color: #667085;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: #344054;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #d5dce5;
+      background: #fff;
+      color: #182230;
+      border-radius: 8px;
+      padding: 12px 13px;
+      outline: none;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #1677ff;
+      box-shadow: 0 0 0 3px rgba(22,119,255,.1);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-group small {
+      color: #7a8696;
+      font-size: 11px;
+    }
+
+    .form-submit {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .form-submit .btn {
+      flex: 1;
+    }
+
+    .form-note {
+      background: #f5f8fb;
+      border-radius: 8px;
+      padding: 12px;
+      color: #667085;
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    /* ====================================
+       STATUS
+    ==================================== */
+
+    .form-status {
+      display: none;
+      margin-top: 15px;
+      padding: 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #e8f8ef;
+      border: 1px solid #b8e7ca;
+      color: #126b3c;
+    }
+
+    .form-status.error {
+      display: block;
+      background: #fff0f0;
+      border: 1px solid #f1c4c4;
+      color: #a52828;
+    }
+
+    /* ====================================
+       CTA
+    ==================================== */
+
+    .cta-section {
+      background: #07111f;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #c7d2df;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ====================================
+       FOOTER
+    ==================================== */
+
+    footer {
+      background: #040b14;
+      color: #fff;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      background: #fff;
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand h3 {
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .footer-brand p {
+      color: #9eabba;
+      font-size: 13px;
+      max-width: 330px;
+      line-height: 1.7;
+    }
+
+    .footer-column h4 {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #9eabba;
+      font-size: 13px;
+      margin-bottom: 9px;
+      transition: .2s;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      color: #7e8a98;
+      font-size: 11px;
+    }
+
+    /* ====================================
+       RESPONSIVE
+    ==================================== */
+
+    @media (max-width: 1100px) {
+      .nav a {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+
+      .donation-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .header-inner {
+        min-height: 76px;
+      }
+
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-tagline {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        background: #07111f;
+        border-top: 1px solid rgba(255,255,255,.08);
+        box-shadow: 0 15px 25px rgba(0,0,0,.2);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        width: 100%;
+        padding: 13px 14px;
+        font-size: 14px;
+      }
+
+      .nav a:last-child {
+        margin: 3px 0 0;
+      }
+
+      .hero {
+        padding: 70px 0 75px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-buttons,
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn,
+      .cta-buttons .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .donation-form {
+        padding: 25px 20px;
+      }
+
+      .form-submit {
+        flex-direction: column;
+      }
+
+      .language-inner {
+        min-height: 44px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ====================================
+       UNIVERSAL HEADER
+  ==================================== -->
+
+  <header class="site-header">
+
+```
+<div class="header-inner">
+
+  <a href="index.html" class="brand-link">
+
+    <img
+      src="images/westronix-logo.png"
+      alt="WESTRONIX TECH"
+      class="brand-logo"
+      width="72"
+      height="72"
+    >
+
+    <div class="brand-info">
+
+      <div class="brand-name">
+        WESTRONIX TECH
+      </div>
+
+      <div class="brand-tagline">
+        Recover • Refurbish • Resell • Reuse • Impact
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+
+  <nav class="nav" id="mainNav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="inventory.html">
+      Inventory
+    </a>
+
+    <a href="auctions.html">
+      Live Auctions
+    </a>
+
+    <a href="sell-equipment.html">
+      Sell Equipment
+    </a>
+
+    <a href="africa-education.html">
+      Africa Education
+    </a>
+
+    <a href="cart.html">
+      🛒 Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+
+  </nav>
+
+</div>
+```
+
+  </header>
+
+  <!-- ====================================
+       LANGUAGE SELECTOR
+  ==================================== -->
+
+  <div class="language-bar">
+
+```
+<div class="language-inner">
+
+  <span class="language-label">
+    Language / Langue:
+  </span>
+
+  <button
+    type="button"
+    class="language-btn active"
+    id="langEn"
+  >
+    EN
+  </button>
+
+  <button
+    type="button"
+    class="language-btn"
+    id="langFr"
+  >
+    FR
+  </button>
+
+</div>
+```
+
+  </div>
+
+  <!-- ====================================
+       HERO
+  ==================================== -->
+
+  <section class="hero">
+
+```
+<div class="container">
+
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      ❤️ WESTRONIX TECH • AFRICA IMPACT
+    </div>
+
+    <h1>
+
+      <span class="lang-en">
+        Support the WESTRONIX Mission
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        Soutenez la Mission WESTRONIX
+      </span>
+
+    </h1>
+
+    <p>
+
+      <span class="lang-en">
+        Help expand access to technology, digital education and responsible technology reuse across Africa.
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        Contribuez à élargir l'accès à la technologie, à l'éducation numérique et au réemploi responsable des équipements en Afrique.
+      </span>
+
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#donationFormSection"
+        class="btn btn-primary"
+      >
+        <span class="lang-en">
+          ♻️ Offer Equipment
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          ♻️ Offrir du matériel
+        </span>
+      </a>
+
+      <a
+        href="https://wa.me/message/HFDGJCOEFS46I1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-green"
+      >
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- ====================================
+       HOW TO HELP
+  ==================================== -->
+
+  <section class="section section-alt">
+
+```
+<div class="container">
+
+  <h2 class="section-title">
+
+    <span class="lang-en">
+      How You Can Help
+    </span>
+
+    <span class="lang-fr" style="display:none;">
+      Comment Vous Pouvez Aider
+    </span>
+
+  </h2>
+
+  <p class="section-subtitle">
+
+    <span class="lang-en">
+      There are several ways to support responsible technology reuse and educational access.
+    </span>
+
+    <span class="lang-fr" style="display:none;">
+      Il existe plusieurs façons de soutenir le réemploi responsable des équipements et l'accès à l'éducation numérique.
+    </span>
+
+  </p>
+
+
+  <div class="support-grid">
+
+    <div class="support-card">
+
+      <div class="support-icon">
+        💻
+      </div>
+
+      <h3>
+
+        <span class="lang-en">
+          Donate Equipment
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Donner du matériel
+        </span>
+
+      </h3>
+
+      <p>
+
+        <span class="lang-en">
+          Businesses, schools and organizations can offer used technology for responsible reuse, refurbishment or educational support.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Les entreprises, écoles et organisations peuvent proposer leurs équipements usagés pour le réemploi, le reconditionnement ou le soutien éducatif.
+        </span>
+
+      </p>
+
+    </div>
+
+
+    <div class="support-card">
+
+      <div class="support-icon">
+        🏫
+      </div>
+
+      <h3>
+
+        <span class="lang-en">
+          Support Education
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Soutenir l'éducation
+        </span>
+
+      </h3>
+
+      <p>
+
+        <span class="lang-en">
+          Help students and educational organizations gain access to computers, digital tools and learning opportunities.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Aidez les étudiants et les organisations éducatives à accéder aux ordinateurs, aux outils numériques et aux opportunités d'apprentissage.
+        </span>
+
+      </p>
+
+    </div>
+
+
+    <div class="support-card">
+
+      <div class="support-icon">
+        🤝
+      </div>
+
+      <h3>
+
+        <span class="lang-en">
+          Become a Partner
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Devenir partenaire
+        </span>
+
+      </h3>
+
+      <p>
+
+        <span class="lang-en">
+          Partner with WESTRONIX TECH on technology recovery, education programs, ITAD and digital inclusion initiatives.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Devenez partenaire de WESTRONIX TECH pour la récupération technologique, les programmes éducatifs, l'ITAD et l'inclusion numérique.
+        </span>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- ====================================
+       DONATION FORM
+  ==================================== -->
+
+  <section
+    class="section donation-section"
+    id="donationFormSection"
+  >
+
+```
+<div class="container">
+
+  <div class="donation-layout">
+
+    <!-- INFORMATION -->
+
+    <div class="donation-info">
+
+      <h2>
+
+        <span class="lang-en">
+          Offer Technology
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Proposer du matériel
+        </span>
+
+      </h2>
+
+      <p>
+
+        <span class="lang-en">
+          Tell us about the equipment you would like to donate or make available. Our team will review the information and contact you regarding the next steps.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Présentez-nous le matériel que vous souhaitez donner ou mettre à disposition. Notre équipe examinera les informations et vous contactera pour les prochaines étapes.
+        </span>
+
+      </p>
+
+
+      <div class="donation-list">
+
+        <div class="donation-list-item">
+
+          <div class="donation-list-icon">
+            💻
+          </div>
+
+          <div>
+
+            <strong>
+
+              <span class="lang-en">
+                Computers
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Ordinateurs
+              </span>
+
+            </strong>
+
+            <span>
+
+              <span class="lang-en">
+                Laptops, desktops and workstations.
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Ordinateurs portables, fixes et stations de travail.
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="donation-list-item">
+
+          <div class="donation-list-icon">
+            🌐
+          </div>
+
+          <div>
+
+            <strong>
+
+              <span class="lang-en">
+                Networking
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Réseau
+              </span>
+
+            </strong>
+
+            <span>
+
+              <span class="lang-en">
+                Switches, routers and networking equipment.
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Switches, routeurs et équipements réseau.
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="donation-list-item">
+
+          <div class="donation-list-icon">
+            📱
+          </div>
+
+          <div>
+
+            <strong>
+
+              <span class="lang-en">
+                Mobile Technology
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Technologie mobile
+              </span>
+
+            </strong>
+
+            <span>
+
+              <span class="lang-en">
+                Tablets, smartphones and accessories.
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Tablettes, smartphones et accessoires.
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="donation-list-item">
+
+          <div class="donation-list-icon">
+            ♻️
+          </div>
+
+          <div>
+
+            <strong>
+
+              <span class="lang-en">
+                Responsible Reuse
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Réemploi responsable
+              </span>
+
+            </strong>
+
+            <span>
+
+              <span class="lang-en">
+                Reuse first whenever equipment can be responsibly refurbished.
+              </span>
+
+              <span class="lang-fr" style="display:none;">
+                Priorité au réemploi lorsque les équipements peuvent être reconditionnés de manière responsable.
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <form
+      class="donation-form"
+      id="donationForm"
+      novalidate
+    >
+
+      <h3 class="form-title">
+
+        <span class="lang-en">
+          Donation / Equipment Offer
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Offre de don / matériel
+        </span>
+
+      </h3>
+
+      <p class="form-description">
+
+        <span class="lang-en">
+          Please provide the information below. Required fields are marked with *.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Veuillez fournir les informations ci-dessous. Les champs obligatoires sont marqués d'un *.
+        </span>
+
+      </p>
+
+
+      <div class="form-grid">
+
+        <!-- DONOR NAME -->
+
+        <div class="form-group">
+
+          <label for="donorName">
+
+            <span class="lang-en">
+              Organization or Donor Name *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Nom de l'organisation ou du donateur *
+            </span>
+
+          </label>
+
+          <input
+            type="text"
+            id="donorName"
+            name="donorName"
+            required
+            autocomplete="organization"
+            placeholder="Organization or Donor Name"
+          >
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="form-group">
+
+          <label for="contactPerson">
+
+            <span class="lang-en">
+              Contact Person *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Personne responsable *
+            </span>
+
+          </label>
+
+          <input
+            type="text"
+            id="contactPerson"
+            name="contactPerson"
+            required
+            autocomplete="name"
+            placeholder="Contact Person"
+          >
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label for="email">
+
+            <span class="lang-en">
+              Email Address *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Adresse email *
+            </span>
+
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="Email Address"
+          >
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+          <label for="phone">
+
+            <span class="lang-en">
+              Phone Number *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Numéro de téléphone *
+            </span>
+
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            autocomplete="tel"
+            placeholder="Phone Number"
+          >
+
+        </div>
+
+
+        <!-- COUNTRY -->
+
+        <div class="form-group">
+
+          <label for="country">
+
+            <span class="lang-en">
+              Country *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Pays *
+            </span>
+
+          </label>
+
+          <input
+            type="text"
+            id="country"
+            name="country"
+            required
+            autocomplete="country-name"
+            placeholder="Country"
+          >
+
+        </div>
+
+
+        <!-- DONATION TYPE -->
+
+        <div class="form-group">
+
+          <label for="donationType">
+
+            <span class="lang-en">
+              Equipment Type *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Type de matériel *
+            </span>
+
+          </label>
+
+          <select
+            id="donationType"
+            name="donationType"
+            required
+          >
+
+            <option
+              value=""
+              data-en="Select equipment type"
+              data-fr="Sélectionnez le type de matériel"
+            >
+              Select equipment type
+            </option>
+
+            <option
+              value="Laptops"
+              data-en="Laptops"
+              data-fr="Ordinateurs Portables"
+            >
+              Laptops
+            </option>
+
+            <option
+              value="Desktops"
+              data-en="Desktops"
+              data-fr="Ordinateurs de Bureau"
+            >
+              Desktops
+            </option>
+
+            <option
+              value="Tablets"
+              data-en="Tablets"
+              data-fr="Tablettes"
+            >
+              Tablets
+            </option>
+
+            <option
+              value="Networking Equipment"
+              data-en="Networking Equipment"
+              data-fr="Équipements Réseau"
+            >
+              Networking Equipment
+            </option>
+
+            <option
+              value="Mixed Equipment"
+              data-en="Mixed Equipment"
+              data-fr="Équipements Mixtes"
+            >
+              Mixed Equipment
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- QUANTITY -->
+
+        <div class="form-group">
+
+          <label for="quantity">
+
+            <span class="lang-en">
+              Estimated Quantity *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Quantité estimée *
+            </span>
+
+          </label>
+
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            required
+            min="1"
+            step="1"
+            placeholder="Estimated Quantity"
+          >
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group full">
+
+          <label for="description">
+
+            <span class="lang-en">
+              Equipment Description *
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Description du matériel *
+            </span>
+
+          </label>
+
+          <textarea
+            id="description"
+            name="description"
+            required
+            placeholder="Describe the equipment you would like to donate..."
+          ></textarea>
+
+          <small>
+
+            <span class="lang-en">
+              Include brands, models, approximate age, condition and any other useful information.
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Indiquez les marques, modèles, ancienneté approximative, état et toute autre information utile.
+            </span>
+
+          </small>
+
+        </div>
+
+
+        <!-- ADDITIONAL -->
+
+        <div class="form-group full">
+
+          <label for="additionalInfo">
+
+            <span class="lang-en">
+              Additional Information
+            </span>
+
+            <span class="lang-fr" style="display:none;">
+              Informations supplémentaires
+            </span>
+
+          </label>
+
+          <textarea
+            id="additionalInfo"
+            name="additionalInfo"
+            placeholder="Additional information..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-submit">
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+
+          <span class="lang-en">
+            ♻️ Submit Donation Offer
+          </span>
+
+          <span class="lang-fr" style="display:none;">
+            ♻️ Envoyer l'offre de don
+          </span>
+
+        </button>
+
+        <a
+          href="https://wa.me/message/HFDGJCOEFS46I1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-green"
+        >
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+
+      <div class="form-note">
+
+        <span class="lang-en">
+          WESTRONIX TECH will review your offer and contact you regarding equipment condition, logistics, pickup/shipping and next steps. Submitting this form does not automatically guarantee acceptance.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          WESTRONIX TECH examinera votre offre et vous contactera concernant l'état du matériel, la logistique, le retrait/l'expédition et les prochaines étapes. L'envoi de ce formulaire ne garantit pas automatiquement l'acceptation du matériel.
+        </span>
+
+      </div>
+
+
+      <div
+        id="formStatus"
+        class="form-status"
+        role="alert"
+        aria-live="polite"
+      ></div>
+
+    </form>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- ====================================
+       FINANCIAL DONATION NOTICE
+  ==================================== -->
+
+  <section class="section section-alt">
+
+```
+<div class="container">
+
+  <div class="mission-box" style="
+    max-width:1050px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #e1e7ef;
+    border-radius:18px;
+    padding:45px;
+    text-align:center;
+  ">
+
+    <h2 style="
+      color:#07111f;
+      font-size:30px;
+      margin-bottom:15px;
+    ">
+
+      <span class="lang-en">
+        Financial Support
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        Soutien financier
+      </span>
+
+    </h2>
+
+    <p style="
+      color:#667085;
+      font-size:15px;
+      line-height:1.8;
+      max-width:800px;
+      margin:0 auto 22px;
+    ">
+
+      <span class="lang-en">
+        WESTRONIX TECH is currently developing its education and donation support program. If you are interested in providing financial support, please contact us directly before sending any funds so that we can confirm the appropriate process.
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        WESTRONIX TECH développe actuellement son programme de soutien à l'éducation et aux dons. Si vous souhaitez apporter un soutien financier, veuillez nous contacter directement avant tout envoi de fonds afin que nous puissions confirmer la procédure appropriée.
+      </span>
+
+    </p>
+
+    <a
+      href="https://wa.me/message/HFDGJCOEFS46I1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-green"
+    >
+      💬
+
+      <span class="lang-en">
+        Contact WESTRONIX
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        Contacter WESTRONIX
+      </span>
+
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- ====================================
+       FINAL CTA
+  ==================================== -->
+
+  <section class="section cta-section">
+
+```
+<div class="container">
+
+  <h2>
+
+    <span class="lang-en">
+      Together, We Can Create More Opportunity
+    </span>
+
+    <span class="lang-fr" style="display:none;">
+      Ensemble, créons davantage d'opportunités
+    </span>
+
+  </h2>
+
+  <p>
+
+    <span class="lang-en">
+      Technology that might otherwise become obsolete can become a learning tool, a computer lab resource or an opportunity for a student.
+    </span>
+
+    <span class="lang-fr" style="display:none;">
+      Une technologie qui pourrait autrement devenir obsolète peut devenir un outil d'apprentissage, une ressource pour un laboratoire informatique ou une opportunité pour un étudiant.
+    </span>
+
+  </p>
+
+  <div class="cta-buttons">
+
+    <a
+      href="africa-education.html"
+      class="btn btn-primary"
+    >
+
+      <span class="lang-en">
+        📚 Africa Education Program
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        📚 Programme Éducation Afrique
+      </span>
+
+    </a>
+
+    <a
+      href="sell-equipment.html"
+      class="btn btn-light"
+    >
+
+      <span class="lang-en">
+        ♻️ Sell / Offer Equipment
+      </span>
+
+      <span class="lang-fr" style="display:none;">
+        ♻️ Vendre / Proposer du matériel
+      </span>
+
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- ====================================
+       FOOTER
+  ==================================== -->
+
+  <footer>
+
+```
+<div class="container">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+
+      <img
+        src="images/westronix-logo.png"
+        alt="WESTRONIX TECH"
+        width="62"
+        height="62"
+      >
+
+      <h3>
+        WESTRONIX TECH
+      </h3>
+
+      <p>
+
+        <span class="lang-en">
+          Recover • Refurbish • Resell • Reuse • Impact. Connecting technology from the USA with opportunities across Africa.
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Récupérer • Reconditionner • Revendre • Réutiliser • Créer un impact. Connecter la technologie des États-Unis aux opportunités en Afrique.
+        </span>
+
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
+        <span class="lang-en">Marketplace</span>
+        <span class="lang-fr" style="display:none;">Marketplace</span>
+      </h4>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="inventory.html">
+        Inventory
+      </a>
+
+      <a href="auctions.html">
+        Live Auctions
+      </a>
+
+      <a href="cart.html">
+        Cart
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
+
+        <span class="lang-en">
+          Programs
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Programmes
+        </span>
+
+      </h4>
+
+      <a href="africa-education.html">
+
+        <span class="lang-en">
+          Africa Education
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Éducation Afrique
+        </span>
+
+      </a>
+
+      <a href="donation.html">
+
+        <span class="lang-en">
+          Support / Donate
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Soutenir / Donner
+        </span>
+
+      </a>
+
+      <a href="sell-equipment.html">
+
+        <span class="lang-en">
+          Sell Equipment
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Vendre du matériel
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
+
+        <span class="lang-en">
+          Contact
+        </span>
+
+        <span class="lang-fr" style="display:none;">
+          Contact
+        </span>
+
+      </h4>
+
+      <a href="mailto:westronix.tech@gmail.com">
+        westronix.tech@gmail.com
+      </a>
+
+      <a href="tel:+22892953333">
+        +228 92 95 33 33
+      </a>
+
+      <a
+        href="https://wa.me/message/HFDGJCOEFS46I1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © <span id="currentYear"></span> WESTRONIX TECH.
+      All rights reserved.
+    </span>
+
+    <span>
+      USA → TOGO → AFRICA
+    </span>
+
+  </div>
+
+</div>
+```
+
+  </footer>
+
+  <!-- ====================================
+       JAVASCRIPT
+  ==================================== -->
+
+  <script>
+
+    /* ====================================
+       GLOBAL LANGUAGE
+    ==================================== */
+
+    let currentLanguage = "en";
+
+
+    /* ====================================
+       DOM ELEMENTS
+    ==================================== */
+
+    const langEnButton =
+      document.getElementById("langEn");
+
+    const langFrButton =
+      document.getElementById("langFr");
+
+    const donationType =
+      document.getElementById("donationType");
+
+    const donorName =
+      document.getElementById("donorName");
+
+    const contactPerson =
+      document.getElementById("contactPerson");
+
+    const email =
+      document.getElementById("email");
+
+    const phone =
+      document.getElementById("phone");
+
+    const country =
+      document.getElementById("country");
+
+    const quantity =
+      document.getElementById("quantity");
+
+    const description =
+      document.getElementById("description");
+
+    const additionalInfo =
+      document.getElementById("additionalInfo");
+
+    const donationForm =
+      document.getElementById("donationForm");
+
+    const formStatus =
+      document.getElementById("formStatus");
+
+
+    /* ====================================
+       SAFE TEXT
+    ==================================== */
+
+    function cleanText(value) {
+
+      return String(value || "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    }
+
+
+    /* ====================================
+       LANGUAGE SWITCHER
+    ==================================== */
+
+    function switchLanguage(lang) {
+
+      currentLanguage =
+        lang === "fr" ? "fr" : "en";
+
+
+      /* --------------------------------
+         Translate normal page elements
+      -------------------------------- */
+
+      document
+        .querySelectorAll(".lang-en")
+        .forEach(function(element) {
+
+          element.style.display =
+            currentLanguage === "en"
+              ? ""
+              : "none";
+
+        });
+
+
+      document
+        .querySelectorAll(".lang-fr")
+        .forEach(function(element) {
+
+          element.style.display =
+            currentLanguage === "fr"
+              ? ""
+              : "none";
+
+        });
+
+
+      /* --------------------------------
+         Translate donation options
+      -------------------------------- */
+
+      if (donationType) {
+
+        donationType
+          .querySelectorAll("option")
+          .forEach(function(option) {
+
+            const translatedText =
+              option.dataset[currentLanguage];
+
+            if (translatedText) {
+
+              option.textContent =
+                translatedText;
+
+            }
+
+          });
+
+      }
+
+
+      /* --------------------------------
+         Translate placeholders
+      -------------------------------- */
+
+      if (donorName) {
+
+        donorName.placeholder =
+          currentLanguage === "fr"
+            ? "Nom de l'organisation ou du donateur"
+            : "Organization or Donor Name";
+
+      }
+
+
+      if (contactPerson) {
+
+        contactPerson.placeholder =
+          currentLanguage === "fr"
+            ? "Nom de la personne responsable"
+            : "Contact Person";
+
+      }
+
+
+      if (email) {
+
+        email.placeholder =
+          currentLanguage === "fr"
+            ? "Adresse email"
+            : "Email Address";
+
+      }
+
+
+      if (phone) {
+
+        phone.placeholder =
+          currentLanguage === "fr"
+            ? "Numéro de téléphone"
+            : "Phone Number";
+
+      }
+
+
+      if (country) {
+
+        country.placeholder =
+          currentLanguage === "fr"
+            ? "Pays"
+            : "Country";
+
+      }
+
+
+      if (quantity) {
+
+        quantity.placeholder =
+          currentLanguage === "fr"
+            ? "Quantité estimée"
+            : "Estimated Quantity";
+
+      }
+
+
+      if (description) {
+
+        description.placeholder =
+          currentLanguage === "fr"
+            ? "Décrivez le matériel que vous souhaitez offrir..."
+            : "Describe the equipment you would like to donate...";
+
+      }
+
+
+      if (additionalInfo) {
+
+        additionalInfo.placeholder =
+          currentLanguage === "fr"
+            ? "Informations supplémentaires..."
+            : "Additional information...";
+
+      }
+
+
+      /* --------------------------------
+         Update language buttons
+      -------------------------------- */
+
+      if (langEnButton) {
+
+        langEnButton.classList.toggle(
+          "active",
+          currentLanguage === "en"
+        );
+
+      }
+
+
+      if (langFrButton) {
+
+        langFrButton.classList.toggle(
+          "active",
+          currentLanguage === "fr"
+        );
+
+      }
+
+
+      /* --------------------------------
+         Update HTML language
+      -------------------------------- */
+
+      document.documentElement.lang =
+        currentLanguage;
+
+
+      /* --------------------------------
+         Update page title
+      -------------------------------- */
+
+      document.title =
+        currentLanguage === "fr"
+          ? "Soutenir & Donner | WESTRONIX TECH"
+          : "Support & Donate | WESTRONIX TECH";
+
+
+      /* --------------------------------
+         Save preference
+      -------------------------------- */
+
+      try {
+
+        localStorage.setItem(
+          "westronix_language",
+          currentLanguage
+        );
+
+      } catch (error) {
+
+        console.warn(
+          "Language preference could not be saved.",
+          error
+        );
+
+      }
+
+    }
+
+
+    if (langEnButton) {
+
+      langEnButton.addEventListener(
+        "click",
+        function() {
+          switchLanguage("en");
+        }
+      );
+
+    }
+
+
+    if (langFrButton) {
+
+      langFrButton.addEventListener(
+        "click",
+        function() {
+          switchLanguage("fr");
+        }
+      );
+
+    }
+
+
+    /* ====================================
+       RESTORE LANGUAGE
+    ==================================== */
+
+    let savedLanguage = "en";
+
+    try {
+
+      savedLanguage =
+        localStorage.getItem(
+          "westronix_language"
+        ) || "en";
+
+    } catch (error) {
+
+      savedLanguage = "en";
+
+    }
+
+    switchLanguage(
+      savedLanguage === "fr" ? "fr" : "en"
+    );
+
+
+    /* ====================================
+       MOBILE MENU
+    ==================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    if (menuToggle && mainNav) {
+
+      menuToggle.addEventListener(
+        "click",
+        function() {
+
+          const isOpen =
+            mainNav.classList.toggle("open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          );
+
+          menuToggle.textContent =
+            isOpen ? "✕" : "☰";
+
+        }
+      );
+
+
+      mainNav
+        .querySelectorAll("a")
+        .forEach(function(link) {
+
+          link.addEventListener(
+            "click",
+            function() {
+
+              mainNav.classList.remove("open");
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+              menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+              );
+
+              menuToggle.textContent = "☰";
+
+            }
+          );
+
+        });
+
+    }
+
+
+    /* ====================================
+       CART COUNT
+    ==================================== */
+
+    function updateCartCount() {
+
+      const cartCount =
+        document.getElementById("cartCount");
+
+      if (!cartCount) {
+        return;
+      }
+
+      try {
+
+        const cart =
+          JSON.parse(
+            localStorage.getItem("wt_cart") || "[]"
+          );
+
+        if (!Array.isArray(cart)) {
+
+          cartCount.textContent = "0";
+          return;
+
+        }
+
+        let count = 0;
+
+        cart.forEach(function(item) {
+
+          const itemQuantity =
+            Number(item.quantity || 1);
+
+          if (
+            Number.isFinite(itemQuantity) &&
+            itemQuantity > 0
+          ) {
+
+            count += itemQuantity;
+
+          }
+
+        });
+
+        cartCount.textContent =
+          String(count);
+
+      } catch (error) {
+
+        cartCount.textContent = "0";
+
+      }
+
+    }
+
+    updateCartCount();
+
+
+    /* ====================================
+       CURRENT YEAR
+    ==================================== */
+
+    const currentYear =
+      document.getElementById("currentYear");
+
+    if (currentYear) {
+
+      currentYear.textContent =
+        new Date().getFullYear();
+
+    }
+
+
+    /* ====================================
+       REQUEST NUMBER
+    ==================================== */
+
+    function createDonationNumber() {
+
+      const now =
+        new Date();
+
+      const year =
+        now.getFullYear();
+
+      const month =
+        String(now.getMonth() + 1)
+          .padStart(2, "0");
+
+      const day =
+        String(now.getDate())
+          .padStart(2, "0");
+
+      const random =
+        Math.floor(
+          1000 + Math.random() * 9000
+        );
+
+      return (
+        "WT-DON-" +
+        year +
+        month +
+        day +
+        "-" +
+        random
+      );
+
+    }
+
+
+    /* ====================================
+       STATUS MESSAGE
+    ==================================== */
+
+    function showStatus(type, message) {
+
+      if (!formStatus) {
+        return;
+      }
+
+      formStatus.className =
+        "form-status " + type;
+
+      formStatus.textContent =
+        message;
+
+      formStatus.style.display =
+        "block";
+
+      formStatus.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+    }
+
+
+    /* ====================================
+       EMAIL VALIDATION
+    ==================================== */
+
+    function isValidEmail(value) {
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(value);
+
+    }
+
+
+    /* ====================================
+       QUANTITY VALIDATION
+    ==================================== */
+
+    function isValidQuantity(value) {
+
+      const number =
+        Number(value);
+
+      return (
+        Number.isInteger(number) &&
+        number > 0
+      );
+
+    }
+
+
+    /* ====================================
+       DONATION FORM SUBMISSION
+    ==================================== */
+
+    if (donationForm) {
+
+      donationForm.addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          /* --------------------------------
+             Get values
+          -------------------------------- */
+
+          const donor =
+            cleanText(
+              donorName
+                ? donorName.value
+                : ""
+            );
+
+          const contact =
+            cleanText(
+              contactPerson
+                ? contactPerson.value
+                : ""
+            );
+
+          const donorEmail =
+            cleanText(
+              email
+                ? email.value
+                : ""
+            );
+
+          const donorPhone =
+            cleanText(
+              phone
+                ? phone.value
+                : ""
+            );
+
+          const donorCountry =
+            cleanText(
+              country
+                ? country.value
+                : ""
+            );
+
+          const equipmentType =
+            donationType
+              ? cleanText(
+                  donationType.value
+                )
+              : "";
+
+          const estimatedQuantity =
+            quantity
+              ? cleanText(
+                  quantity.value
+                )
+              : "";
+
+          const equipmentDescription =
+            description
+              ? cleanText(
+                  description.value
+                )
+              : "";
+
+          const extraInformation =
+            additionalInfo
+              ? cleanText(
+                  additionalInfo.value
+                )
+              : "";
+
+
+          /* --------------------------------
+             Validation
+          -------------------------------- */
+
+          if (!donor) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir le nom de l'organisation ou du donateur."
+                : "Please enter the organization or donor name."
+            );
+
+            if (donorName) {
+              donorName.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!contact) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir le nom de la personne responsable."
+                : "Please enter the contact person's name."
+            );
+
+            if (contactPerson) {
+              contactPerson.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!donorEmail) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir une adresse email."
+                : "Please enter an email address."
+            );
+
+            if (email) {
+              email.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!isValidEmail(donorEmail)) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir une adresse email valide."
+                : "Please enter a valid email address."
+            );
+
+            if (email) {
+              email.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!donorPhone) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir un numéro de téléphone."
+                : "Please enter a phone number."
+            );
+
+            if (phone) {
+              phone.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!donorCountry) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir le pays."
+                : "Please enter the country."
+            );
+
+            if (country) {
+              country.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!equipmentType) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez sélectionner le type de matériel."
+                : "Please select the equipment type."
+            );
+
+            if (donationType) {
+              donationType.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (
+            !isValidQuantity(
+              estimatedQuantity
+            )
+          ) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez saisir une quantité entière supérieure à zéro."
+                : "Please enter a whole-number quantity greater than zero."
+            );
+
+            if (quantity) {
+              quantity.focus();
+            }
+
+            return;
+
+          }
+
+
+          if (!equipmentDescription) {
+
+            showStatus(
+              "error",
+              currentLanguage === "fr"
+                ? "Veuillez décrire le matériel que vous souhaitez offrir."
+                : "Please describe the equipment you would like to donate."
+            );
+
+            if (description) {
+              description.focus();
+            }
+
+            return;
+
+          }
+
+
+          /* --------------------------------
+             Create request number
+          -------------------------------- */
+
+          const donationNumber =
+            createDonationNumber();
+
+
+          /* --------------------------------
+             Get translated equipment type
+          -------------------------------- */
+
+          let translatedEquipmentType =
+            equipmentType;
+
+          if (donationType) {
+
+            const selectedOption =
+              donationType.options[
+                donationType.selectedIndex
+              ];
+
+            if (
+              selectedOption &&
+              selectedOption.dataset
+            ) {
+
+              translatedEquipmentType =
+                selectedOption.dataset[
+                  currentLanguage
+                ] || equipmentType;
+
+            }
+
+          }
+
+
+          /* --------------------------------
+             Save locally
+          -------------------------------- */
+
+          const donationData = {
+
+            donationNumber:
+              donationNumber,
+
+            submittedAt:
+              new Date().toISOString(),
+
+            language:
+              currentLanguage,
+
+            donorName:
+              donor,
+
+            contactPerson:
+              contact,
+
+            email:
+              donorEmail,
+
+            phone:
+              donorPhone,
+
+            country:
+              donorCountry,
+
+            donationType:
+              equipmentType,
+
+            translatedDonationType:
+              translatedEquipmentType,
+
+            quantity:
+              Number(estimatedQuantity),
+
+            description:
+              equipmentDescription,
+
+            additionalInfo:
+              extraInformation
+
+          };
+
+
+          try {
+
+            localStorage.setItem(
+              "wt_donation_offer",
+              JSON.stringify(donationData)
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Donation offer could not be saved locally.",
+              error
+            );
+
+          }
+
+
+          /* --------------------------------
+             WhatsApp message
+          -------------------------------- */
+
+          let whatsappMessage;
+
+
+          if (currentLanguage === "fr") {
+
+            whatsappMessage =
+`🌍 *WESTRONIX TECH*
+
+🎁 *OFFRE DE DON*
+
+🔖 Numéro de demande : ${donationNumber}
+
+🏢 *Organisation / Donateur :*
+${donor}
+
+👤 *Responsable :*
+${contact}
+
+📧 *Email :*
+${donorEmail}
+
+📱 *Téléphone :*
+${donorPhone}
+
+🌍 *Pays :*
+${donorCountry}
+
+💻 *Type de matériel :*
+${translatedEquipmentType}
+
+📦 *Quantité :*
+${estimatedQuantity}
+
+📝 *Description :*
+${equipmentDescription}
+
+ℹ️ *Informations supplémentaires :*
+${extraInformation || "Aucune"}
+
+Merci à WESTRONIX TECH de considérer cette offre de don.
+
+*RECOVER • REFURBISH • RESELL • REUSE • IMPACT*`;
+
+          } else {
+
+            whatsappMessage =
+`🌍 *WESTRONIX TECH*
+
+🎁 *DONATION OFFER*
+
+🔖 Request Number: ${donationNumber}
+
+🏢 *Organization / Donor:*
+${donor}
+
+👤 *Contact:*
+${contact}
+
+📧 *Email:*
+${donorEmail}
+
+📱 *Phone:*
+${donorPhone}
+
+🌍 *Country:*
+${donorCountry}
+
+💻 *Equipment Type:*
+${translatedEquipmentType}
+
+📦 *Quantity:*
+${estimatedQuantity}
+
+📝 *Description:*
+${equipmentDescription}
+
+ℹ️ *Additional Information:*
+${extraInformation || "None"}
+
+Thank you to WESTRONIX TECH for considering this donation offer.
+
+*RECOVER • REFURBISH • RESELL • REUSE • IMPACT*`;
+
+          }
+
+
+          /* --------------------------------
+             WhatsApp URL
+          -------------------------------- */
+
+          const whatsappUrl =
+            "https://wa.me/message/HFDGJCOEFS46I1" +
+            "?text=" +
+            encodeURIComponent(
+              whatsappMessage
+            );
+
+
+          /* --------------------------------
+             Success message
+          -------------------------------- */
+
+          showStatus(
+            "success",
+            currentLanguage === "fr"
+              ? "Votre offre de don a été préparée. WhatsApp va s'ouvrir avec votre demande."
+              : "Your donation offer has been prepared. WhatsApp will open with your request."
+          );
+
+
+          /* --------------------------------
+             Open WhatsApp
+          -------------------------------- */
+
+          setTimeout(function() {
+
+            window.open(
+              whatsappUrl,
+              "_blank",
+              "noopener,noreferrer"
+            );
+
+          }, 400);
+
+        }
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>

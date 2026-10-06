@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WESTRONIX TECH | Order Confirmation</title>
+
+<meta
+name="description"
+content="WESTRONIX TECH order confirmation and order details."
+
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+:root{
+    --navy:#071526;
+    --blue:#1677ff;
+    --blue-dark:#0b63ce;
+    --green:#10b981;
+    --green-dark:#059669;
+    --bg:#f5f7fb;
+    --text:#0d1726;
+    --muted:#667085;
+    --border:#e5e7eb;
+    --white:#ffffff;
+    --warning-bg:#fff7ed;
+    --warning-border:#fed7aa;
+    --warning-text:#9a3412;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Inter',Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* =========================
+   LANGUAGE SYSTEM
+========================= */
+
+.lang-fr{
+    display:inline;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.language-en .lang-fr{
+    display:none;
+}
+
+body.language-en .lang-en{
+    display:inline;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:var(--navy);
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.brand-text strong{
+    display:block;
+    font-size:18px;
+    font-weight:800;
+}
+
+.brand-text span{
+    display:block;
+    font-size:11px;
+    color:#b8c5d6;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.nav a,
+.language-selector{
+    color:#dbe5f0;
+    font-size:13px;
+    font-weight:600;
+    padding:9px 11px;
+    border-radius:7px;
+}
+
+.nav a:hover{
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+.nav .cart{
+    background:var(--blue);
+    color:white;
+}
+
+.language-selector{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.2);
+    cursor:pointer;
+    outline:none;
+}
+
+.language-selector option{
+    color:#111827;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    padding:45px 0 20px;
+}
+
+.success-card{
+    background:var(--white);
+    padding:clamp(25px,5vw,45px);
+    border-radius:18px;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
+    border:1px solid var(--border);
+}
+
+.success-icon{
+    width:82px;
+    height:82px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:#ecfdf5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:43px;
+}
+
+.success-title{
+    text-align:center;
+    margin:0;
+    font-size:clamp(27px,4vw,38px);
+    letter-spacing:-1px;
+}
+
+.success-message{
+    max-width:680px;
+    margin:12px auto 0;
+    text-align:center;
+    color:var(--muted);
+}
+
+.order-number{
+    background:#eaf3ff;
+    color:#0b4ea2;
+    padding:15px;
+    border-radius:10px;
+    font-weight:800;
+    margin:25px auto;
+    text-align:center;
+    max-width:600px;
+    border:1px solid #cfe3ff;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-box{
+    background:#ecfdf5;
+    border:1px solid #bbf7d0;
+    color:#166534;
+    padding:15px 18px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.status-box strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+/* =========================
+   CUSTOMER INFO
+========================= */
+
+.section-title{
+    font-size:21px;
+    margin:30px 0 15px;
+}
+
+.customer-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.info-item{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    padding:13px 15px;
+    border-radius:9px;
+}
+
+.info-label{
+    color:var(--muted);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    font-weight:700;
+}
+
+.info-value{
+    margin-top:2px;
+    font-weight:600;
+    word-break:break-word;
+}
+
+/* =========================
+   ORDER ITEMS
+========================= */
+
+.order-items{
+    margin-top:10px;
+}
+
+.order-line{
+    display:flex;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.product-photo{
+    width:125px;
+    height:125px;
+    border-radius:10px;
+    overflow:hidden;
+    background:#f0f2f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid var(--border);
+}
+
+.product-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.no-photo{
+    text-align:center;
+    color:#667085;
+    font-size:12px;
+    padding:10px;
+}
+
+.product-details{
+    flex:1;
+}
+
+.product-details h3{
+    margin:0 0 7px;
+    font-size:18px;
+}
+
+.product-details p{
+    margin:4px 0;
+    color:#475467;
+    font-size:13px;
+}
+
+.product-details strong{
+    color:var(--text);
+}
+
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    background:#eef4ff;
+    color:#175cd3;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+/* =========================
+   TOTALS
+========================= */
+
+.totals-box{
+    background:#f8fafc;
+    padding:23px;
+    border-radius:12px;
+    margin-top:25px;
+    border:1px solid var(--border);
+}
+
+.total-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:7px 0;
+    color:#475467;
+}
+
+.total-row strong{
+    color:var(--text);
+}
+
+.grand-total{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    border-top:1px solid var(--border);
+    margin-top:10px;
+    padding-top:15px;
+    font-size:22px;
+    font-weight:800;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+    background:var(--warning-bg);
+    border:1px solid var(--warning-border);
+    color:var(--warning-text);
+    padding:15px;
+    border-radius:10px;
+    margin-top:22px;
+    font-size:13px;
+}
+
+.notice strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 19px;
+    border-radius:8px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+}
+
+.blue{
+    background:var(--blue);
+    color:white;
+}
+
+.blue:hover{
+    background:var(--blue-dark);
+}
+
+.green{
+    background:var(--green);
+    color:white;
+}
+
+.green:hover{
+    background:var(--green-dark);
+}
+
+.dark{
+    background:var(--navy);
+    color:white;
+}
+
+/* =========================
+   NO ORDER
+========================= */
+
+.no-order{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.no-order-icon{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.no-order h2{
+    margin:0 0 8px;
+}
+
+.no-order p{
+    color:var(--muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--navy);
+    color:white;
+    padding:32px 0;
+    margin-top:40px;
+    text-align:center;
+}
+
+footer h2{
+    margin:0 0 5px;
+    font-size:20px;
+}
+
+footer p{
+    margin:4px 0;
+    color:#cbd7e6;
+    font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:15px 0;
+    }
+
+    .nav{
+        width:100%;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .customer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    main{
+        padding:25px 0 10px;
+    }
+
+    .order-line{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .product-photo{
+        width:180px;
+        height:180px;
+    }
+
+    .product-details{
+        width:100%;
+    }
+
+    .grand-total{
+        font-size:19px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .actions .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="container header-inner">
+
+<a href="index.html" class="brand">
+
+<img
+src="images/westronix-logo.png"
+alt="WESTRONIX TECH"
+class="logo"
+
+>
+
+<div class="brand-text">
+
+<strong>WESTRONIX TECH</strong>
+
+<span>USA → TOGO • Technology Distribution</span>
+
+</div>
+
+</a>
+
+<nav class="nav">
+
+<a href="index.html">
+    <span class="lang-en">Home</span>
+    <span class="lang-fr">Accueil</span>
+</a>
+
+<a href="inventory.html">
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+</a>
+
+<a href="auctions.html">
+    <span class="lang-en">Live Auctions</span>
+    <span class="lang-fr">Enchères</span>
+</a>
+
+<a href="sell-equipment.html">
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre du matériel</span>
+</a>
+
+<a href="africa-education.html">
+    <span class="lang-en">Africa Education</span>
+    <span class="lang-fr">Éducation en Afrique</span>
+</a>
+
+<a href="cart.html" class="cart">
+    🛒
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+    <span id="cartCount">0</span>
+</a>
+
+<select
+id="languageSelector"
+class="language-selector"
+aria-label="Language"
+
+>
+
+<option value="fr">FR</option>
+<option value="en">EN</option>
+
+</select>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+<div class="container">
+
+<div class="success-card">
+
+<div class="success-icon">
+    ✅
+</div>
+
+<h1 class="success-title">
+
+<span class="lang-en">
+Order Submitted Successfully
+</span>
+
+<span class="lang-fr">
+Commande envoyée avec succès
+</span>
+
+</h1>
+
+<p class="success-message">
+
+<span class="lang-en">
+Thank you for choosing WESTRONIX TECH.
+Your order request has been received and is now being reviewed.
+We will confirm availability, delivery charges, final pricing
+and payment instructions before payment is requested.
+</span>
+
+<span class="lang-fr">
+Merci d'avoir choisi WESTRONIX TECH.
+Votre demande de commande a bien été reçue et est en cours d'examen.
+Nous confirmerons la disponibilité, les frais de livraison,
+le prix final et les instructions de paiement avant toute demande de paiement.
+</span>
+
+</p>
+
+<div
+    id="orderNumber"
+    class="order-number"
+>
+    <span class="lang-en">Loading order...</span>
+    <span class="lang-fr">Chargement de la commande...</span>
+</div>
+
+<div id="orderSummary">
+
+<div class="no-order">
+
+```
+<span class="lang-en">
+    Loading order details...
+</span>
+
+<span class="lang-fr">
+    Chargement des détails de la commande...
+</span>
+```
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<a
+href="inventory.html"
+class="btn blue"
+
+>
+
+🛍 <span class="lang-en">Continue Shopping</span> <span class="lang-fr">Continuer les achats</span> </a>
+
+<a
+href="auctions.html"
+class="btn dark"
+
+>
+
+🔨 <span class="lang-en">View Auctions</span> <span class="lang-fr">Voir les enchères</span> </a>
+
+<a
+href="https://wa.me/22892953333"
+target="_blank"
+rel="noopener"
+class="btn green"
+
+>
+
+💬 <span class="lang-en">Contact WESTRONIX</span> <span class="lang-fr">Contacter WESTRONIX</span> </a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<h2>
+WESTRONIX TECH
+</h2>
+
+<p>
+Recover • Refurbish • Resell • Reuse • Impact
+</p>
+
+<p>
+Technology Recovery & Distribution Marketplace
+</p>
+
+<p>
+United States → Africa
+</p>
+
+<p>
+WhatsApp: +228 92 95 33 33
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+/* ==========================================
+   LANGUAGE
+========================================== */
+
+function applyLanguage(language){
+
+    const selected =
+        language === "en"
+            ? "en"
+            : "fr";
+
+    document.body.classList.toggle(
+        "language-en",
+        selected === "en"
+    );
+
+    document.documentElement.lang =
+        selected;
+
+    localStorage.setItem(
+        "wt_language",
+        selected
+    );
+
+    const selector =
+        document.getElementById("languageSelector");
+
+    if(selector){
+        selector.value = selected;
+    }
+
+}
+
+
+/* Load saved language */
+
+const savedLanguage =
+    localStorage.getItem("wt_language") || "fr";
+
+applyLanguage(savedLanguage);
+
+
+/* Language selector */
+
+const languageSelector =
+    document.getElementById("languageSelector");
+
+if(languageSelector){
+
+    languageSelector.addEventListener(
+        "change",
+        function(){
+
+            applyLanguage(this.value);
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   CART COUNT
+========================================== */
+
+function updateCartCount(){
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    if(!cartCount){
+        return;
+    }
+
+    try{
+
+        const cart =
+            JSON.parse(
+                localStorage.getItem("wt_cart") || "[]"
+            );
+
+        const count =
+            cart.reduce(
+                (total,item)=>{
+                    return total +
+                        (Number(item.quantity) || 0);
+                },
+                0
+            );
+
+        cartCount.textContent = count;
+
+    }catch(error){
+
+        cartCount.textContent = "0";
+
+    }
+
+}
+
+updateCartCount();
+
+window.addEventListener(
+    "storage",
+    updateCartCount
+);
+
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+function formatCurrency(amount){
+
+    return Number(amount || 0)
+        .toLocaleString("fr-FR") + " FCFA";
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================================
+   LOAD ORDER
+========================================== */
+
+function loadOrder(){
+
+    let order = null;
+
+    try{
+
+        order =
+            JSON.parse(
+                localStorage.getItem(
+                    "wt_last_order"
+                ) || "null"
+            );
+
+    }catch(error){
+
+        order = null;
+
+    }
+
+
+    const orderNumber =
+        document.getElementById("orderNumber");
+
+    const orderSummary =
+        document.getElementById("orderSummary");
+
+
+    /* ==========================================
+       NO ORDER
+    ========================================== */
+
+    if(!order){
+
+        orderNumber.innerHTML = `
+
+            <span class="lang-en">
+                No recent order found
+            </span>
+
+            <span class="lang-fr">
+                Aucune commande récente trouvée
+            </span>
+
+        `;
+
+
+        orderSummary.innerHTML = `
+
+            <div class="no-order">
+
+                <div class="no-order-icon">
+                    📦
+                </div>
+
+                <h2>
+
+                    <span class="lang-en">
+                        No Order Found
+                    </span>
+
+                    <span class="lang-fr">
+                        Aucune commande trouvée
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    <span class="lang-en">
+                        There is no recent order information
+                        available on this device.
+                    </span>
+
+                    <span class="lang-fr">
+                        Aucune information de commande récente
+                        n'est disponible sur cet appareil.
+                    </span>
+
+                </p>
+
+                <a
+                    href="inventory.html"
+                    class="btn blue"
+                >
+                    🛍
+                    <span class="lang-en">
+                        Browse Inventory
+                    </span>
+                    <span class="lang-fr">
+                        Voir l'inventaire
+                    </span>
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* ==========================================
+       ORDER NUMBER
+    ========================================== */
+
+    orderNumber.innerHTML = `
+
+        <span class="lang-en">
+            Order #:
+        </span>
+
+        <span class="lang-fr">
+            Commande # :
+        </span>
+
+        ${escapeHTML(
+            order.orderNumber ||
+            "WT-UNKNOWN"
+        )}
+
+    `;
+
+
+    /* ==========================================
+       TOTALS
+    ========================================== */
+
+    const subtotal =
+        Number(order.subtotal || 0);
+
+    const shipping =
+        Number(
+            order.shipping ??
+            order.deliveryFee ??
+            0
+        );
+
+    const taxes =
+        Number(order.taxes || 0);
+
+    const grandTotal =
+        Number(
+            order.grandTotal ??
+            order.total ??
+            subtotal + shipping + taxes
+        );
+
+
+    /* ==========================================
+       CUSTOMER
+    ========================================== */
+
+    const customer =
+        order.customer || {};
+
+
+    let html = `
+
+        <div class="status-box">
+
+            <strong>
+
+                ✓
+
+                <span class="lang-en">
+                    Order Received
+                </span>
+
+                <span class="lang-fr">
+                    Commande reçue
+                </span>
+
+            </strong>
+
+            <span class="lang-en">
+                WESTRONIX TECH will review your order
+                and confirm availability, delivery,
+                final amount and payment instructions.
+            </span>
+
+            <span class="lang-fr">
+                WESTRONIX TECH examinera votre commande
+                et confirmera la disponibilité, la livraison,
+                le montant final et les instructions de paiement.
+            </span>
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            <span class="lang-en">
+                Customer Information
+            </span>
+
+            <span class="lang-fr">
+                Informations client
+            </span>
+
+        </h2>
+
+
+        <div class="customer-grid">
+
+            <div class="info-item">
+
+                <div class="info-label">
+
+                    <span class="lang-en">Name</span>
+                    <span class="lang-fr">Nom</span>
+
+                </div>
+
+                <div class="info-value">
+                    ${escapeHTML(customer.name || "")}
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-label">
+
+                    <span class="lang-en">Email</span>
+                    <span class="lang-fr">E-mail</span>
+
+                </div>
+
+                <div class="info-value">
+                    ${escapeHTML(customer.email || "")}
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-label">
+
+                    <span class="lang-en">Phone</span>
+                    <span class="lang-fr">Téléphone</span>
+
+                </div>
+
+                <div class="info-value">
+                    ${escapeHTML(customer.phone || "")}
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-label">
+
+                    <span class="lang-en">Country</span>
+                    <span class="lang-fr">Pays</span>
+
+                </div>
+
+                <div class="info-value">
+                    ${escapeHTML(customer.country || "")}
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-label">
+
+                    <span class="lang-en">City</span>
+                    <span class="lang-fr">Ville</span>
+
+                </div>
+
+                <div class="info-value">
+                    ${escapeHTML(customer.city || "")}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            <span class="lang-en">
+                Order Items
+            </span>
+
+            <span class="lang-fr">
+                Articles commandés
+            </span>
+
+        </h2>
+
+
+        <div class="order-items">
+
+    `;
+
+
+    /* ==========================================
+       ORDER ITEMS
+    ========================================== */
+
+    const items =
+        Array.isArray(order.items)
+            ? order.items
+            : [];
+
+
+    if(items.length === 0){
+
+        html += `
+
+            <div class="no-order">
+
+                <p>
+
+                    <span class="lang-en">
+                        No order items were found.
+                    </span>
+
+                    <span class="lang-fr">
+                        Aucun article n'a été trouvé.
+                    </span>
+
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    items.forEach(item => {
+
+        const quantity =
+            Number(item.quantity || 0);
+
+        const price =
+            Number(
+                item.price ??
+                item.buyNow ??
+                item.buyNowPrice ??
+                0
+            );
+
+        const itemSubtotal =
+            price * quantity;
+
+
+        const isAuction =
+            item.type === "auction" ||
+            item.auctionId ||
+            item.isAuction;
+
+
+        const photo =
+            item.photo ||
+            item.image ||
+            item.imageUrl ||
+            "";
+
+
+        html += `
+
+            <div class="order-line">
+
+                <div class="product-photo">
+
+                    ${
+                        photo
+
+                        ?
+
+                        `
+                        <img
+                            src="${escapeHTML(photo)}"
+                            alt="${escapeHTML(item.name || "Product")}"
+                            onerror="this.style.display='none';"
+                        >
+                        `
+
+                        :
+
+                        `
+                        <div class="no-photo">
+
+                            📷
+
+                            <br>
+
+                            <span class="lang-en">
+                                No Photo Available
+                            </span>
+
+                            <span class="lang-fr">
+                                Aucune photo disponible
+                            </span>
+
+                        </div>
+                        `
+                    }
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <span class="badge">
+
+                        ${
+                            isAuction
+
+                            ?
+
+                            `
+                            🔨
+
+                            <span class="lang-en">
+                                AUCTION LOT
+                            </span>
+
+                            <span class="lang-fr">
+                                LOT AUX ENCHÈRES
+                            </span>
+                            `
+
+                            :
+
+                            `
+                            ✓
+
+                            <span class="lang-en">
+                                INVENTORY
+                            </span>
+
+                            <span class="lang-fr">
+                                INVENTAIRE
+                            </span>
+                            `
+                        }
+
+                    </span>
+
+
+                    <h3>
+                        ${escapeHTML(
+                            item.name ||
+                            "Unnamed Product"
+                        )}
+                    </h3>
+
+
+                    <p>
+
+                        <strong>SKU:</strong>
+
+                        ${escapeHTML(
+                            item.sku ||
+                            "N/A"
+                        )}
+
+                    </p>
+
+
+                    ${
+                        item.auctionId
+
+                        ?
+
+                        `
+                        <p>
+
+                            <strong>
+                                <span class="lang-en">
+                                    Auction:
+                                </span>
+
+                                <span class="lang-fr">
+                                    Enchère :
+                                </span>
+                            </strong>
+
+                            ${escapeHTML(
+                                item.auctionId
+                            )}
+
+                        </p>
+                        `
+
+                        :
+
+                        ""
+                    }
+
+
+                    <p>
+
+                        <strong>
+
+                            <span class="lang-en">
+                                Unit Price:
+                            </span>
+
+                            <span class="lang-fr">
+                                Prix unitaire :
+                            </span>
+
+                        </strong>
+
+                        ${formatCurrency(price)}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+
+                            <span class="lang-en">
+                                Quantity:
+                            </span>
+
+                            <span class="lang-fr">
+                                Quantité :
+                            </span>
+
+                        </strong>
+
+                        ${quantity}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+
+                            <span class="lang-en">
+                                Subtotal:
+                            </span>
+
+                            <span class="lang-fr">
+                                Sous-total :
+                            </span>
+
+                        </strong>
+
+                        ${formatCurrency(itemSubtotal)}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    html += `
+
+        </div>
+
+
+        <div class="totals-box">
+
+            <h2 style="margin-top:0;">
+
+                <span class="lang-en">
+                    Order Totals
+                </span>
+
+                <span class="lang-fr">
+                    Total de la commande
+                </span>
+
+            </h2>
+
+
+            <div class="total-row">
+
+                <span>
+
+                    <span class="lang-en">
+                        Subtotal
+                    </span>
+
+                    <span class="lang-fr">
+                        Sous-total
+                    </span>
+
+                </span>
+
+                <strong>
+                    ${formatCurrency(subtotal)}
+                </strong>
+
+            </div>
+
+
+            <div class="total-row">
+
+                <span>
+
+                    <span class="lang-en">
+                        Delivery / Shipping
+                    </span>
+
+                    <span class="lang-fr">
+                        Livraison / Expédition
+                    </span>
+
+                </span>
+
+                <strong>
+
+                    ${
+                        shipping > 0
+
+                        ?
+
+                        formatCurrency(shipping)
+
+                        :
+
+                        `
+                        <span class="lang-en">
+                            To be confirmed
+                        </span>
+
+                        <span class="lang-fr">
+                            À confirmer
+                        </span>
+                        `
+                    }
+
+                </strong>
+
+            </div>
+
+
+            <div class="total-row">
+
+                <span>
+
+                    <span class="lang-en">
+                        Taxes
+                    </span>
+
+                    <span class="lang-fr">
+                        Taxes
+                    </span>
+
+                </span>
+
+                <strong>
+
+                    ${
+                        taxes > 0
+
+                        ?
+
+                        formatCurrency(taxes)
+
+                        :
+
+                        `
+                        <span class="lang-en">
+                            To be confirmed
+                        </span>
+
+                        <span class="lang-fr">
+                            À confirmer
+                        </span>
+                        `
+                    }
+
+                </strong>
+
+            </div>
+
+
+            <div class="grand-total">
+
+                <span>
+
+                    <span class="lang-en">
+                        Estimated Total
+                    </span>
+
+                    <span class="lang-fr">
+                        Total estimé
+                    </span>
+
+                </span>
+
+                <span>
+                    ${formatCurrency(grandTotal)}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notice">
+
+            <strong>
+
+                ⚠️
+
+                <span class="lang-en">
+                    Important — Do Not Send Payment Yet
+                </span>
+
+                <span class="lang-fr">
+                    Important — N'envoyez pas encore de paiement
+                </span>
+
+            </strong>
+
+            <span class="lang-en">
+                Your order is currently a purchase request.
+                WESTRONIX TECH will first confirm product availability,
+                delivery charges, the final amount and the accepted
+                payment method.
+            </span>
+
+            <span class="lang-fr">
+                Votre commande constitue actuellement une demande d'achat.
+                WESTRONIX TECH confirmera d'abord la disponibilité,
+                les frais de livraison, le montant final et le mode
+                de paiement accepté.
+            </span>
+
+        </div>
+
+
+        <p style="
+            margin-top:20px;
+            color:#667085;
+            font-size:13px;
+        ">
+
+            <strong style="color:#0d1726;">
+
+                <span class="lang-en">
+                    Order Date:
+                </span>
+
+                <span class="lang-fr">
+                    Date de commande :
+                </span>
+
+            </strong>
+
+            ${escapeHTML(
+                order.date ||
+                order.createdAt ||
+                new Date().toLocaleString()
+            )}
+
+        </p>
+
+    `;
+
+
+    orderSummary.innerHTML = html;
+
+
+    /* Re-apply selected language
+       to newly generated content */
+
+    applyLanguage(
+        localStorage.getItem("wt_language") || "fr"
+    );
+
+}
+
+
+/* ==========================================
+   RUN
+========================================== */
+
+loadOrder();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>WESTRONIX TECH | Product</title>
+
+<style>
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+/* =========================================================
+   LANGUAGE SYSTEM
+   Only ONE language is visible.
+========================================================= */
+
+.lang-en,
+.lang-fr{
+  display:none !important;
+}
+
+body.language-en .lang-en{
+  display:inline !important;
+}
+
+body.language-fr .lang-fr{
+  display:inline !important;
+}
+
+body.language-en div.lang-en,
+body.language-fr div.lang-fr{
+  display:block !important;
+}
+
+body.language-en p.lang-en,
+body.language-fr p.lang-fr{
+  display:block !important;
+}
+
+body.language-en h1.lang-en,
+body.language-fr h1.lang-fr,
+body.language-en h2.lang-en,
+body.language-fr h2.lang-fr,
+body.language-en h3.lang-en,
+body.language-fr h3.lang-fr{
+  display:block !important;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+  background:#071526;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 14px rgba(0,0,0,.15);
+}
+
+.header-inner{
+  max-width:1280px;
+  margin:auto;
+  min-height:76px;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+
+.logo img{
+  width:175px;
+  height:auto;
+  max-height:55px;
+  object-fit:contain;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex:1;
+}
+
+.nav a{
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  opacity:.92;
+  transition:.2s;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:#69adff;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.language-select{
+  border:1px solid #ffffff33;
+  background:#ffffff0d;
+  color:#fff;
+  border-radius:8px;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+.language-select option{
+  color:#111;
+}
+
+.cart-button{
+  background:#1677ff;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:9px 13px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.cart-count{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:22px;
+  height:22px;
+  padding:0 5px;
+  margin-left:5px;
+  background:#fff;
+  color:#1677ff;
+  border-radius:50%;
+  font-size:12px;
+}
+
+/* =========================================================
+   HERO / ROUTE
+========================================================= */
+
+.hero{
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(22,119,255,.24),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #071526,
+      #0d2443 65%,
+      #123d70
+    );
+
+  color:#fff;
+  padding:42px 20px;
+}
+
+.hero-inner{
+  max-width:1180px;
+  margin:auto;
+  text-align:center;
+}
+
+.usa-africa-route{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 12px;
+  border:1px solid #ffffff22;
+  border-radius:12px;
+  background:#ffffff0b;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.3px;
+  overflow:hidden;
+}
+
+.usa-flag{
+  display:inline-block;
+  font-size:27px;
+  transform-origin:left center;
+  animation:usaFlagWave 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+}
+
+.route-arrow{
+  display:inline-block;
+  color:#69adff;
+  font-size:23px;
+  font-weight:900;
+  animation:routeArrowPulse 2s ease-in-out infinite;
+}
+
+.africa-globe{
+  display:inline-block;
+  font-size:29px;
+  transform-origin:center;
+  animation:africaGlobeRotate 8s linear infinite;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
+}
+
+@keyframes usaFlagWave{
+  0%{
+    transform:
+      perspective(120px)
+      rotateY(0deg)
+      rotateZ(0deg)
+      skewY(0deg);
+  }
+
+  20%{
+    transform:
+      perspective(120px)
+      rotateY(10deg)
+      rotateZ(-2deg)
+      skewY(2deg);
+  }
+
+  40%{
+    transform:
+      perspective(120px)
+      rotateY(-8deg)
+      rotateZ(2deg)
+      skewY(-2deg);
+  }
+
+  60%{
+    transform:
+      perspective(120px)
+      rotateY(10deg)
+      rotateZ(-2deg)
+      skewY(2deg);
+  }
+
+  80%{
+    transform:
+      perspective(120px)
+      rotateY(-5deg)
+      rotateZ(1deg)
+      skewY(-1deg);
+  }
+
+  100%{
+    transform:
+      perspective(120px)
+      rotateY(0deg)
+      rotateZ(0deg)
+      skewY(0deg);
+  }
+}
+
+@keyframes routeArrowPulse{
+
+  0%,100%{
+    transform:translateX(0);
+    opacity:.65;
+  }
+
+  50%{
+    transform:translateX(5px);
+    opacity:1;
+  }
+
+}
+
+@keyframes africaGlobeRotate{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+.hero h1{
+  margin:18px 0 0;
+  font-size:clamp(28px,4vw,42px);
+}
+
+/* =========================================================
+   PRODUCT AREA
+========================================================= */
+
+.product-page{
+  max-width:1280px;
+  margin:auto;
+  padding:35px 22px 70px;
+}
+
+.breadcrumb{
+  margin-bottom:18px;
+  color:#64748b;
+  font-size:14px;
+}
+
+.breadcrumb a{
+  color:#1677ff;
+  font-weight:700;
+}
+
+.product-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:42px;
+  background:#fff;
+  padding:30px;
+  border:1px solid #e4e8ef;
+  border-radius:16px;
+  box-shadow:0 5px 22px rgba(15,23,42,.07);
+}
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.product-image-area{
+  width:100%;
+}
+
+.main-image{
+  width:100%;
+  height:500px;
+  background:#eef2f7;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid #e4e8ef;
+}
+
+.main-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.image-placeholder{
+  font-size:22px;
+  font-weight:800;
+  color:#64748b;
+  text-align:center;
+  padding:30px;
+}
+
+.thumbnails{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+
+.thumbnail{
+  width:82px;
+  height:82px;
+  object-fit:cover;
+  border-radius:9px;
+  border:2px solid #d9dee7;
+  cursor:pointer;
+  transition:.2s;
+  background:#f1f4f8;
+}
+
+.thumbnail:hover,
+.thumbnail.active{
+  border-color:#1677ff;
+}
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.brand{
+  color:#1677ff;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  margin-bottom:8px;
+}
+
+.grade{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:7px;
+  background:#e8faf3;
+  color:#087f58;
+  border:1px solid #bcebd9;
+  font-weight:900;
+  font-size:12px;
+  margin-bottom:14px;
+}
+
+.product-title{
+  font-size:clamp(30px,4vw,42px);
+  line-height:1.15;
+  margin:5px 0 8px;
+  color:#172033;
+}
+
+.sku{
+  color:#64748b;
+  font-size:13px;
+}
+
+.price{
+  font-size:34px;
+  font-weight:900;
+  margin:20px 0 12px;
+  color:#111827;
+}
+
+.price small{
+  font-size:13px;
+  color:#64748b;
+  font-weight:600;
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 12px;
+  border-radius:7px;
+  background:#e8faf3;
+  color:#087f58;
+  border:1px solid #bcebd9;
+  font-size:13px;
+  font-weight:900;
+}
+
+.condition{
+  margin-top:14px;
+  padding:12px 14px;
+  background:#f7f9fc;
+  border-radius:9px;
+  color:#536174;
+  font-size:14px;
+}
+
+/* =========================================================
+   SPECS
+========================================================= */
+
+.specs{
+  margin-top:22px;
+  border-top:1px solid #e6eaf0;
+}
+
+.spec-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  padding:13px 0;
+  border-bottom:1px solid #edf0f4;
+}
+
+.spec-label{
+  font-weight:700;
+  color:#64748b;
+}
+
+.spec-value{
+  text-align:right;
+  font-weight:700;
+  color:#172033;
+  max-width:60%;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.actions{
+  margin-top:25px;
+}
+
+.btn{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  text-align:center;
+  display:block;
+  padding:14px;
+  border-radius:9px;
+  margin-bottom:10px;
+  font-size:15px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  opacity:.95;
+}
+
+.back{
+  background:#e8edf3;
+  color:#172033;
+}
+
+.view-cart{
+  background:#fff3cd;
+  color:#856404;
+  border:1px solid #ffe69c;
+}
+
+.cart{
+  background:#071526;
+  color:#fff;
+}
+
+.buy{
+  background:#1677ff;
+  color:#fff;
+}
+
+.quote{
+  background:#6b7280;
+  color:#fff;
+}
+
+.whatsapp{
+  background:#10b981;
+  color:#fff;
+}
+
+.quantity-note{
+  text-align:center;
+  margin-top:8px;
+  color:#64748b;
+  font-size:12px;
+}
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.message{
+  text-align:center;
+  padding:70px 20px;
+  color:#64748b;
+}
+
+.loading-spinner{
+  width:38px;
+  height:38px;
+  border:4px solid #dbe5f2;
+  border-top-color:#1677ff;
+  border-radius:50%;
+  margin:0 auto 18px;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#071526;
+  color:#fff;
+}
+
+.footer-inner{
+  max-width:1280px;
+  margin:auto;
+  padding:45px 22px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-logo{
+  font-size:24px;
+  font-weight:900;
+}
+
+.footer-logo span{
+  color:#69adff;
+}
+
+.footer-text{
+  color:#aebed1;
+  line-height:1.7;
+  max-width:500px;
+}
+
+.footer-column h3{
+  margin-top:0;
+}
+
+.footer-column a{
+  display:block;
+  color:#b9c8d9;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.footer-column a:hover{
+  color:#69adff;
+}
+
+.footer-bottom{
+  border-top:1px solid #ffffff18;
+  padding:18px 22px;
+  text-align:center;
+  color:#91a4ba;
+  font-size:13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+
+  .header-inner{
+    flex-wrap:wrap;
+  }
+
+  .nav{
+    order:3;
+    flex-basis:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding-bottom:8px;
+  }
+
+  .product-layout{
+    grid-template-columns:1fr;
+  }
+
+  .main-image{
+    height:430px;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:12px 16px;
+  }
+
+  .logo img{
+    width:145px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .header-actions{
+    margin-left:auto;
+  }
+
+  .product-page{
+    padding:25px 16px 55px;
+  }
+
+  .product-layout{
+    padding:18px;
+    gap:25px;
+  }
+
+  .main-image{
+    height:350px;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .header-actions{
+    gap:5px;
+  }
+
+  .language-select{
+    padding:7px 5px;
+    font-size:12px;
+  }
+
+  .cart-button{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .usa-africa-route{
+    gap:7px;
+    padding:6px 10px;
+    font-size:12px;
+  }
+
+  .usa-flag{
+    font-size:24px;
+  }
+
+  .route-arrow{
+    font-size:19px;
+  }
+
+  .africa-globe{
+    font-size:25px;
+  }
+
+  .main-image{
+    height:290px;
+  }
+
+  .product-title{
+    font-size:28px;
+  }
+
+  .price{
+    font-size:29px;
+  }
+
+  .spec-row{
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .spec-value{
+    text-align:left;
+    max-width:100%;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .usa-flag,
+  .route-arrow,
+  .africa-globe,
+  .loading-spinner{
+    animation:none;
+  }
+
+  .btn:hover{
+    transform:none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+```
+<a href="index.html" class="logo">
+
+  <img
+    src="images/westronix-logo.png"
+    alt="WESTRONIX TECH">
+
+</a>
+
+
+<nav class="nav">
+
+  <a href="index.html">
+
+    <span class="lang-en">Home</span>
+    <span class="lang-fr">Accueil</span>
+
+  </a>
+
+
+  <a href="inventory.html" class="active">
+
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+
+  </a>
+
+
+  <a href="auctions.html">
+
+    <span class="lang-en">Live Auctions</span>
+    <span class="lang-fr">Enchères</span>
+
+  </a>
+
+
+  <a href="sell-equipment.html">
+
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre du matériel</span>
+
+  </a>
+
+
+  <a href="africa-education.html">
+
+    <span class="lang-en">Africa Education</span>
+    <span class="lang-fr">Éducation en Afrique</span>
+
+  </a>
+
+</nav>
+
+
+<div class="header-actions">
+
+  <select
+    id="languageSelect"
+    class="language-select"
+    aria-label="Language">
+
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+
+  </select>
+
+
+  <button
+    class="cart-button"
+    onclick="window.location.href='cart.html'">
+
+    🛒
+
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+
+    <span
+      id="cartCount"
+      class="cart-count">0</span>
+
+  </button>
+
+</div>
+```
+
+  </div>
+
+</header>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+```
+<div class="usa-africa-route">
+
+  <span class="usa-flag">🇺🇸</span>
+
+  <span class="route-arrow">→</span>
+
+  <span class="africa-globe">🌍</span>
+
+  <span class="lang-en">
+    USA → AFRICA
+  </span>
+
+  <span class="lang-fr">
+    USA → AFRIQUE
+  </span>
+
+</div>
+
+
+<h1>
+
+  <span class="lang-en">
+    Product Details
+  </span>
+
+  <span class="lang-fr">
+    Détails du produit
+  </span>
+
+</h1>
+```
+
+  </div>
+
+</section>
+
+<!-- =======================================================
+     PRODUCT
+======================================================= -->
+
+<main>
+
+  <div class="product-page">
+
+```
+<div
+  id="breadcrumb"
+  class="breadcrumb">
+</div>
+
+
+<div id="productContainer">
+
+  <div class="message">
+
+    <div class="loading-spinner"></div>
+
+    <span class="lang-en">
+      Loading product...
+    </span>
+
+    <span class="lang-fr">
+      Chargement du produit...
+    </span>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</main>
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+```
+<div>
+
+  <div class="footer-logo">
+    WESTRONIX <span>TECH</span>
+  </div>
+
+
+  <p class="footer-text">
+
+    <span class="lang-en">
+      Recover → Refurbish → Resell → Reuse → Impact.
+      Technology distribution from the USA to Togo and across Africa.
+    </span>
+
+    <span class="lang-fr">
+      Récupérer → Reconditionner → Revendre → Réutiliser → Impact.
+      Distribution technologique des États-Unis vers le Togo et l'Afrique.
+    </span>
+
+  </p>
+
+</div>
+
+
+<div class="footer-column">
+
+  <h3>
+    Marketplace
+  </h3>
+
+
+  <a href="inventory.html">
+
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+
+  </a>
+
+
+  <a href="auctions.html">
+
+    <span class="lang-en">Auctions</span>
+    <span class="lang-fr">Enchères</span>
+
+  </a>
+
+
+  <a href="cart.html">
+
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+
+  </a>
+
+</div>
+
+
+<div class="footer-column">
+
+  <h3>
+
+    <span class="lang-en">Connect</span>
+    <span class="lang-fr">Contact</span>
+
+  </h3>
+
+
+  <a
+    href="https://wa.me/22892953333"
+    target="_blank"
+    rel="noopener">
+
+    WhatsApp
+
+  </a>
+
+
+  <a href="mailto:westronix.tech@gmail.com">
+
+    westronix.tech@gmail.com
+
+  </a>
+
+
+  <a href="sell-equipment.html">
+
+    <span class="lang-en">
+      Sell Equipment
+    </span>
+
+    <span class="lang-fr">
+      Vendre du matériel
+    </span>
+
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <div class="footer-bottom">
+
+```
+© 2026 WESTRONIX TECH —
+Technology Distribution Across Africa
+```
+
+  </div>
+
+</footer>
+
+<script>
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+let currentLanguage =
+  localStorage.getItem('wt_language') || 'fr';
+
+
+function applyLanguage(language){
+
+  currentLanguage = language;
+
+  localStorage.setItem(
+    'wt_language',
+    language
+  );
+
+
+  document.body.classList.remove(
+    'language-en',
+    'language-fr'
+  );
+
+
+  document.body.classList.add(
+    language === 'en'
+      ? 'language-en'
+      : 'language-fr'
+  );
+
+
+  document.documentElement.lang =
+    language;
+
+
+  const selector =
+    document.getElementById(
+      'languageSelect'
+    );
+
+
+  if(selector){
+
+    selector.value =
+      language;
+
+  }
+
+
+  updateBreadcrumb();
+
+}
+
+
+document
+  .getElementById('languageSelect')
+  .addEventListener(
+    'change',
+    function(){
+
+      applyLanguage(
+        this.value
+      );
+
+      if(currentProduct){
+
+        renderProduct(
+          currentProduct
+        );
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   URL / PRODUCT
+========================================================= */
+
+const urlParams =
+  new URLSearchParams(
+    window.location.search
+  );
+
+
+const sku =
+  urlParams.get('sku');
+
+
+let inventoryData = [];
+
+let currentProduct = null;
+
+
+/* =========================================================
+   LOAD PRODUCT
+========================================================= */
+
+async function loadProduct(){
+
+  try{
+
+    if(!sku){
+
+      showError(
+        currentLanguage === 'en'
+          ? 'No product SKU was provided.'
+          : 'Aucun SKU de produit n’a été fourni.'
+      );
+
+      return;
+
+    }
+
+
+    const response =
+      await fetch(
+        'inventory.json'
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        'Unable to load inventory.json'
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    inventoryData =
+      Array.isArray(data.products)
+        ? data.products
+        : [];
+
+
+    currentProduct =
+      inventoryData.find(
+        product =>
+          String(product.sku)
+          === String(sku)
+      );
+
+
+    if(!currentProduct){
+
+      showError(
+        currentLanguage === 'en'
+          ? 'Product not found.'
+          : 'Produit introuvable.'
+      );
+
+      return;
+
+    }
+
+
+    renderProduct(
+      currentProduct
+    );
+
+
+    updateBreadcrumb();
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    showError(
+      currentLanguage === 'en'
+        ? 'Unable to load product information.'
+        : 'Impossible de charger les informations du produit.'
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+function updateBreadcrumb(){
+
+  const breadcrumb =
+    document.getElementById(
+      'breadcrumb'
+    );
+
+
+  if(!breadcrumb){
+
+    return;
+
+  }
+
+
+  breadcrumb.innerHTML = `
+
+    <a href="inventory.html">
+
+      ${
+        currentLanguage === 'en'
+          ? 'Inventory'
+          : 'Inventaire'
+      }
+
+    </a>
+
+    <span> / </span>
+
+    <span>
+      ${
+        currentProduct
+          ? escapeHTML(currentProduct.name)
+          : (
+              currentLanguage === 'en'
+                ? 'Product'
+                : 'Produit'
+            )
+      }
+    </span>
+
+  `;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+function showError(message){
+
+  document.getElementById(
+    'productContainer'
+  ).innerHTML = `
+
+    <div class="message">
+
+      <h2>
+        ${escapeHTML(message)}
+      </h2>
+
+
+      <a
+        href="inventory.html"
+        class="btn back"
+        style="max-width:320px;margin:25px auto;">
+
+        ${
+          currentLanguage === 'en'
+            ? '← Back To Inventory'
+            : '← Retour à l’inventaire'
+        }
+
+      </a>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   RENDER PRODUCT
+========================================================= */
+
+function renderProduct(product){
+
+  const container =
+    document.getElementById(
+      'productContainer'
+    );
+
+
+  const photos =
+    Array.isArray(product.photos)
+      ? product.photos
+      : [];
+
+
+  const mainPhoto =
+    photos.length
+      ? photos[0]
+      : '';
+
+
+  const price =
+    Number(
+      product.price || 0
+    ).toLocaleString();
+
+
+  const status =
+    String(
+      product.status || 'available'
+    ).toLowerCase();
+
+
+  const statusText =
+    status === 'available'
+      ? (
+          currentLanguage === 'en'
+            ? 'Available'
+            : 'Disponible'
+        )
+      : escapeHTML(
+          product.status
+        );
+
+
+  const condition =
+    product.condition ||
+    (
+      currentLanguage === 'en'
+        ? 'Tested Working'
+        : 'Testé et fonctionnel'
+    );
+
+
+  const quantity =
+    Number(
+      product.quantity || 0
+    );
+
+
+  let thumbnails = '';
+
+
+  photos.forEach(
+    (photo,index) => {
+
+      thumbnails += `
+
+        <img
+          src="${escapeHTML(photo)}"
+          class="thumbnail ${index === 0 ? 'active' : ''}"
+          alt="${escapeHTML(product.name)}"
+          loading="lazy"
+          onclick="changeMainImage(
+            '${escapeJS(photo)}',
+            this
+          )">
+
+      `;
+
+    }
+  );
+
+
+  container.innerHTML = `
+
+    <div class="product-layout">
+
+
+      <!-- ======================================
+           IMAGES
+      ======================================= -->
+
+      <div class="product-image-area">
+
+
+        <div class="main-image">
+
+          ${
+            mainPhoto
+
+              ?
+
+            `
+              <img
+                id="mainProductImage"
+                src="${escapeHTML(mainPhoto)}"
+                alt="${escapeHTML(product.name)}"
+                onerror="showImagePlaceholder()">
+            `
+
+              :
+
+            `
+              <div
+                id="imagePlaceholder"
+                class="image-placeholder">
+
+                ${escapeHTML(product.name)}
+
+              </div>
+            `
+
+          }
+
+        </div>
+
+
+        ${
+          thumbnails
+
+            ?
+
+          `
+            <div class="thumbnails">
+              ${thumbnails}
+            </div>
+          `
+
+            :
+
+          ''
+        }
+
+
+      </div>
+
+
+      <!-- ======================================
+           PRODUCT INFORMATION
+      ======================================= -->
+
+      <div>
+
+
+        <div class="brand">
+
+          ${escapeHTML(
+            product.brand || ''
+          )}
+
+        </div>
+
+
+        <div class="grade">
+
+          GRADE
+          ${escapeHTML(
+            product.grade || 'N/A'
+          )}
+
+        </div>
+
+
+        <h1 class="product-title">
+
+          ${escapeHTML(
+            product.name
+          )}
+
+        </h1>
+
+
+        <div class="sku">
+
+          SKU:
+          ${escapeHTML(
+            product.sku || 'N/A'
+          )}
+
+        </div>
+
+
+        <div class="price">
+
+          ${price}
+          FCFA
+
+          <small>
+
+            /
+            ${
+              currentLanguage === 'en'
+                ? 'unit'
+                : 'unité'
+            }
+
+          </small>
+
+        </div>
+
+
+        <div class="status">
+
+          ●
+          ${statusText}
+
+        </div>
+
+
+        <div class="condition">
+
+          <strong>
+
+            ${
+              currentLanguage === 'en'
+                ? 'Condition:'
+                : 'État :'
+            }
+
+          </strong>
+
+          ${escapeHTML(condition)}
+
+        </div>
+
+
+        <!-- ==================================
+             SPECIFICATIONS
+        ================================== -->
+
+        <div class="specs">
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Brand'
+              : 'Marque',
+            product.brand
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Category'
+              : 'Catégorie',
+            product.category
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Processor'
+              : 'Processeur',
+            product.processor
+          )}
+
+
+          ${createSpecRow(
+            'RAM',
+            product.ram
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Storage'
+              : 'Stockage',
+            product.storage
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Screen'
+              : 'Écran',
+            product.screen
+          )}
+
+
+          ${createSpecRow(
+            'GPU',
+            product.gpu
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Quantity Available'
+              : 'Quantité disponible',
+            quantity
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en'
+              ? 'Location'
+              : 'Emplacement',
+            product.location
+          )}
+
+
+        </div>
+
+
+        <!-- ==================================
+             ACTIONS
+        ================================== -->
+
+        <div class="actions">
+
+
+          <a
+            href="inventory.html"
+            class="btn back">
+
+            ${
+              currentLanguage === 'en'
+                ? '← Back To Inventory'
+                : '← Retour à l’inventaire'
+            }
+
+          </a>
+
+
+          <a
+            href="cart.html"
+            class="btn view-cart">
+
+            🛒
+
+            ${
+              currentLanguage === 'en'
+                ? 'View Cart'
+                : 'Voir le panier'
+            }
+
+          </a>
+
+
+          <button
+            onclick="addToCart()"
+            class="btn cart">
+
+            🛒
+
+            ${
+              currentLanguage === 'en'
+                ? 'Add To Cart'
+                : 'Ajouter au panier'
+            }
+
+          </button>
+
+
+          <button
+            onclick="buyNow()"
+            class="btn buy">
+
+            ⚡
+
+            ${
+              currentLanguage === 'en'
+                ? 'Buy Now'
+                : 'Acheter maintenant'
+            }
+
+          </button>
+
+
+          <button
+            onclick="requestQuote()"
+            class="btn quote">
+
+            📄
+
+            ${
+              currentLanguage === 'en'
+                ? 'Request Quote'
+                : 'Demander un devis'
+            }
+
+          </button>
+
+
+          <a
+            id="whatsappLink"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="btn whatsapp">
+
+            💬 WhatsApp
+
+          </a>
+
+
+          <div class="quantity-note">
+
+            ${
+              currentLanguage === 'en'
+                ? quantity > 0
+                  ? `${quantity} unit${quantity === 1 ? '' : 's'} currently listed`
+                  : 'Currently out of stock'
+                : quantity > 0
+                  ? `${quantity} unité${quantity === 1 ? '' : 's'} actuellement disponible${quantity === 1 ? '' : 's'}`
+                  : 'Actuellement en rupture de stock'
+            }
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  setupWhatsApp(
+    product
+  );
+
+}
+
+
+/* =========================================================
+   CREATE SPEC ROW
+========================================================= */
+
+function createSpecRow(label,value){
+
+  if(
+    value === undefined ||
+    value === null ||
+    value === ''
+  ){
+
+    return '';
+
+  }
+
+
+  return `
+
+    <div class="spec-row">
+
+      <span class="spec-label">
+
+        ${escapeHTML(label)}
+
+      </span>
+
+      <span class="spec-value">
+
+        ${escapeHTML(value)}
+
+      </span>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   IMAGE SWITCH
+========================================================= */
+
+function changeMainImage(
+  photo,
+  thumbnail
+){
+
+  const image =
+    document.getElementById(
+      'mainProductImage'
+    );
+
+
+  if(image){
+
+    image.src =
+      photo;
+
+  }
+
+
+  document
+    .querySelectorAll(
+      '.thumbnail'
+    )
+    .forEach(
+      item =>
+        item.classList.remove(
+          'active'
+        )
+    );
+
+
+  if(thumbnail){
+
+    thumbnail.classList.add(
+      'active'
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   IMAGE ERROR
+========================================================= */
+
+function showImagePlaceholder(){
+
+  const image =
+    document.getElementById(
+      'mainProductImage'
+    );
+
+
+  if(image){
+
+    image.style.display =
+      'none';
+
+  }
+
+
+  const area =
+    document.querySelector(
+      '.main-image'
+    );
+
+
+  if(area){
+
+    const placeholder =
+      document.createElement(
+        'div'
+      );
+
+    placeholder.className =
+      'image-placeholder';
+
+    placeholder.textContent =
+      currentProduct
+        ? currentProduct.name
+        : 'WESTRONIX TECH';
+
+    area.appendChild(
+      placeholder
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart = JSON.parse(
+  localStorage.getItem(
+    'wt_cart'
+  ) || '[]'
+);
+
+
+/* =========================================================
+   UPDATE CART COUNT
+========================================================= */
+
+function updateCartCount(){
+
+  const total =
+    cart.reduce(
+      (sum,item) =>
+        sum +
+        Number(
+          item.quantity || 0
+        ),
+      0
+    );
+
+
+  const badge =
+    document.getElementById(
+      'cartCount'
+    );
+
+
+  if(badge){
+
+    badge.textContent =
+      total;
+
+  }
+
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(){
+
+  if(!currentProduct){
+
+    alert(
+      currentLanguage === 'en'
+        ? 'Product information is not available.'
+        : 'Les informations du produit ne sont pas disponibles.'
+    );
+
+    return;
+
+  }
+
+
+  const existing =
+    cart.find(
+      item =>
+        item.sku ===
+        currentProduct.sku
+    );
+
+
+  if(existing){
+
+    existing.quantity =
+      Number(
+        existing.quantity || 0
+      ) + 1;
+
+  }else{
+
+    cart.push({
+
+      sku:
+        currentProduct.sku,
+
+      name:
+        currentProduct.name,
+
+      price:
+        Number(
+          currentProduct.price || 0
+        ),
+
+      quantity:
+        1,
+
+      type:
+        'inventory',
+
+      image:
+        currentProduct.photos &&
+        currentProduct.photos.length
+          ? currentProduct.photos[0]
+          : ''
+
+    });
+
+  }
+
+
+  localStorage.setItem(
+    'wt_cart',
+    JSON.stringify(cart)
+  );
+
+
+  updateCartCount();
+
+
+  alert(
+
+    currentLanguage === 'en'
+
+      ? `${currentProduct.name} was added to your cart.`
+
+      : `${currentProduct.name} a été ajouté à votre panier.`
+
+  );
+
+}
+
+
+/* =========================================================
+   BUY NOW
+========================================================= */
+
+function buyNow(){
+
+  addToCart();
+
+  window.location.href =
+    'cart.html';
+
+}
+
+
+/* =========================================================
+   REQUEST QUOTE
+========================================================= */
+
+function requestQuote(){
+
+  if(!currentProduct){
+
+    return;
+
+  }
+
+
+  const text =
+    currentLanguage === 'en'
+
+      ?
+
+      `Hello WESTRONIX TECH,
+
+I would like to request a quote for:
+
+Product: ${currentProduct.name}
+SKU: ${currentProduct.sku}
+Price: ${Number(currentProduct.price || 0).toLocaleString()} FCFA
+
+Please provide more information.`
+
+      :
+
+      `Bonjour WESTRONIX TECH,
+
+Je souhaite demander un devis pour :
+
+Produit : ${currentProduct.name}
+SKU : ${currentProduct.sku}
+Prix : ${Number(currentProduct.price || 0).toLocaleString()} FCFA
+
+Merci de me fournir plus d'informations.`;
+
+
+  window.open(
+
+    'https://wa.me/22892953333?text=' +
+    encodeURIComponent(text),
+
+    '_blank'
+
+  );
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+function setupWhatsApp(product){
+
+  const text =
+    currentLanguage === 'en'
+
+      ?
+
+      `Hello WESTRONIX TECH,
+
+I am interested in:
+
+Product: ${product.name}
+SKU: ${product.sku}
+Price: ${Number(product.price || 0).toLocaleString()} FCFA
+
+Is this product still available?`
+
+      :
+
+      `Bonjour WESTRONIX TECH,
+
+Je suis intéressé(e) par :
+
+Produit : ${product.name}
+SKU : ${product.sku}
+Prix : ${Number(product.price || 0).toLocaleString()} FCFA
+
+Ce produit est-il toujours disponible ?`;
+
+
+  const whatsappLink =
+    document.getElementById(
+      'whatsappLink'
+    );
+
+
+  if(whatsappLink){
+
+    whatsappLink.href =
+      'https://wa.me/22892953333?text=' +
+      encodeURIComponent(text);
+
+  }
+
+}
+
+
+/* =========================================================
+   SECURITY HELPERS
+========================================================= */
+
+function escapeHTML(value){
+
+  return String(
+    value ?? ''
+  )
+  .replace(/&/g,'&amp;')
+  .replace(/</g,'&lt;')
+  .replace(/>/g,'&gt;')
+  .replace(/"/g,'&quot;')
+  .replace(/'/g,'&#039;');
+
+}
+
+
+function escapeJS(value){
+
+  return String(
+    value ?? ''
+  )
+  .replace(/\\/g,'\\\\')
+  .replace(/'/g,"\\'");
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+applyLanguage(
+  currentLanguage
+);
+
+updateCartCount();
+
+loadProduct();
+
+</script>
+
+</body>
+
+</html>

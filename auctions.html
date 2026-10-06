@@ -1,0 +1,2856 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Live Auctions | WESTRONIX TECH</title>
+
+  <meta
+    name="description"
+    content="WESTRONIX TECH live auctions. Bid on refurbished laptops, workstations and electronics available in Lomé, Togo."
+  >
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f5f6f8;
+      color:#111827;
+      line-height:1.5;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    button,
+    input,
+    select{
+      font:inherit;
+    }
+
+    /* =========================================
+       LANGUAGE SYSTEM
+    ========================================= */
+
+    .lang-en,
+    .lang-fr{
+      display:none;
+    }
+
+    body.lang-en .lang-en{
+      display:inline;
+    }
+
+    body.lang-fr .lang-fr{
+      display:inline;
+    }
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    header{
+      background:#111827;
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+    }
+
+    .header-inner{
+      max-width:1400px;
+      margin:auto;
+      padding:12px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      flex-shrink:0;
+    }
+
+    .brand img{
+      width:180px;
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    nav a{
+      color:#e5e7eb;
+      font-size:14px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:#facc15;
+    }
+
+    .cart-link{
+      background:#facc15;
+      color:#111827 !important;
+      padding:9px 14px;
+      border-radius:7px;
+      font-weight:800 !important;
+    }
+
+    #cartCount{
+      background:#111827;
+      color:white;
+      border-radius:999px;
+      padding:1px 6px;
+      font-size:11px;
+      margin-left:3px;
+    }
+
+    .language-select{
+      height:36px;
+      border:1px solid #4b5563;
+      border-radius:6px;
+      background:#1f2937;
+      color:white;
+      padding:0 8px;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* =========================================
+       USA → AFRICA ANIMATION
+    ========================================= */
+
+    .route-strip{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:7px 10px;
+      background:#0b1220;
+      border-top:1px solid #ffffff10;
+      border-bottom:1px solid #ffffff10;
+      color:#dbeafe;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .usa-flag{
+      display:inline-block;
+      font-size:25px;
+      transform-origin:left center;
+      animation:usaFlagWave 2.4s ease-in-out infinite;
+      filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+    }
+
+    .route-arrow{
+      display:inline-block;
+      color:#69adff;
+      font-size:21px;
+      font-weight:900;
+      animation:routeArrowPulse 2s ease-in-out infinite;
+    }
+
+    .africa-globe{
+      display:inline-block;
+      font-size:26px;
+      transform-origin:center;
+      animation:africaGlobeRotate 8s linear infinite;
+      filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
+    }
+
+    @keyframes usaFlagWave{
+      0%{
+        transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg);
+      }
+      20%{
+        transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg);
+      }
+      40%{
+        transform:perspective(120px) rotateY(-8deg) rotateZ(2deg) skewY(-2deg);
+      }
+      60%{
+        transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg);
+      }
+      80%{
+        transform:perspective(120px) rotateY(-5deg) rotateZ(1deg) skewY(-1deg);
+      }
+      100%{
+        transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg);
+      }
+    }
+
+    @keyframes routeArrowPulse{
+      0%,100%{
+        transform:translateX(0);
+        opacity:.65;
+      }
+      50%{
+        transform:translateX(5px);
+        opacity:1;
+      }
+    }
+
+    @keyframes africaGlobeRotate{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero{
+      background:
+        linear-gradient(
+          135deg,
+          rgba(17,24,39,.98),
+          rgba(31,41,55,.95)
+        );
+      color:white;
+      padding:48px 24px;
+    }
+
+    .hero-inner{
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .hero h1{
+      font-size:42px;
+      line-height:1.1;
+      margin-bottom:14px;
+    }
+
+    .hero h1 span{
+      color:#facc15;
+    }
+
+    .hero p{
+      max-width:780px;
+      color:#d1d5db;
+      font-size:17px;
+    }
+
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .hero-badge{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      padding:8px 13px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    main{
+      max-width:1400px;
+      margin:auto;
+      padding:30px 24px 70px;
+    }
+
+    .toolbar{
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1fr 190px 190px;
+      gap:12px;
+      margin-bottom:28px;
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
+    }
+
+    .search-box,
+    .filter-box{
+      width:100%;
+      height:46px;
+      border:1px solid #d1d5db;
+      border-radius:7px;
+      padding:0 13px;
+      background:white;
+      color:#111827;
+      outline:none;
+    }
+
+    .search-box:focus,
+    .filter-box:focus{
+      border-color:#111827;
+      box-shadow:0 0 0 2px rgba(17,24,39,.08);
+    }
+
+    .auction-summary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+      gap:15px;
+    }
+
+    .auction-summary h2{
+      font-size:25px;
+    }
+
+    #resultsInfo{
+      color:#6b7280;
+      font-size:14px;
+    }
+
+    /* =========================================
+       AUCTION GRID
+    ========================================= */
+
+    .auction-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
+
+    .auction-card{
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 3px 10px rgba(0,0,0,.05);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .auction-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(0,0,0,.09);
+    }
+
+    /* =========================================
+       IMAGE
+    ========================================= */
+
+    .auction-image-wrap{
+      position:relative;
+      background:#f3f4f6;
+      height:245px;
+      overflow:hidden;
+    }
+
+    .auction-image{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:12px;
+      display:block;
+    }
+
+    .image-placeholder{
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      color:#9ca3af;
+      font-size:42px;
+    }
+
+    .image-placeholder span{
+      font-size:13px;
+      margin-top:8px;
+    }
+
+    .status-badge{
+      position:absolute;
+      top:12px;
+      left:12px;
+      padding:6px 10px;
+      border-radius:5px;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.3px;
+    }
+
+    .status-live{
+      background:#dcfce7;
+      color:#166534;
+    }
+
+    .status-ended{
+      background:#e5e7eb;
+      color:#4b5563;
+    }
+
+    .status-upcoming{
+      background:#dbeafe;
+      color:#1e40af;
+    }
+
+    .grade-badge{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#111827;
+      color:white;
+      padding:6px 10px;
+      border-radius:5px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    /* =========================================
+       CONTENT
+    ========================================= */
+
+    .auction-content{
+      padding:19px;
+    }
+
+    .auction-id{
+      color:#6b7280;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+
+    .auction-title{
+      font-size:20px;
+      font-weight:800;
+      line-height:1.25;
+      margin-bottom:8px;
+    }
+
+    .sku{
+      font-size:12px;
+      color:#6b7280;
+      margin-bottom:14px;
+    }
+
+    .description{
+      color:#4b5563;
+      font-size:13px;
+      min-height:40px;
+      margin-bottom:14px;
+    }
+
+    /* =========================================
+       SPECS
+    ========================================= */
+
+    .specs{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-bottom:16px;
+    }
+
+    .spec{
+      background:#f9fafb;
+      border-radius:6px;
+      padding:8px;
+      font-size:12px;
+    }
+
+    .spec strong{
+      display:block;
+      color:#111827;
+      margin-bottom:2px;
+    }
+
+    .spec span{
+      color:#6b7280;
+    }
+
+    /* =========================================
+       AUCTION INFO
+    ========================================= */
+
+    .auction-info{
+      border-top:1px solid #e5e7eb;
+      border-bottom:1px solid #e5e7eb;
+      padding:14px 0;
+      margin-bottom:15px;
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      margin-bottom:8px;
+    }
+
+    .price-row:last-child{
+      margin-bottom:0;
+    }
+
+    .price-label{
+      color:#6b7280;
+      font-size:12px;
+    }
+
+    .price-value{
+      font-weight:800;
+      font-size:14px;
+      text-align:right;
+    }
+
+    .current-bid{
+      color:#111827;
+      font-size:22px;
+    }
+
+    .buy-now{
+      color:#166534;
+    }
+
+    .reserve-met{
+      color:#166534;
+      font-weight:800;
+    }
+
+    .reserve-not-met{
+      color:#b45309;
+      font-weight:800;
+    }
+
+    /* =========================================
+       AUCTION STATUS BOX
+    ========================================= */
+
+    .auction-status-box{
+      background:#111827;
+      color:white;
+      border-radius:7px;
+      padding:12px;
+      margin-bottom:15px;
+      text-align:center;
+    }
+
+    .auction-status-label{
+      font-size:10px;
+      text-transform:uppercase;
+      color:#d1d5db;
+      letter-spacing:.7px;
+      margin-bottom:3px;
+    }
+
+    .auction-status-value{
+      font-size:16px;
+      font-weight:800;
+    }
+
+    /* =========================================
+       BUTTONS
+    ========================================= */
+
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    .btn{
+      min-height:42px;
+      border:none;
+      border-radius:6px;
+      padding:9px 10px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:13px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      transition:.15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:#111827;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#1f2937;
+    }
+
+    .btn-yellow{
+      background:#facc15;
+      color:#111827;
+    }
+
+    .btn-yellow:hover{
+      background:#eab308;
+    }
+
+    .btn-outline{
+      background:white;
+      color:#111827;
+      border:1px solid #d1d5db;
+    }
+
+    .btn-outline:hover{
+      background:#f9fafb;
+    }
+
+    .btn-whatsapp{
+      background:#16a34a;
+      color:white;
+    }
+
+    .btn-whatsapp:hover{
+      background:#15803d;
+    }
+
+    .btn-disabled{
+      background:#e5e7eb;
+      color:#6b7280;
+      cursor:not-allowed;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
+
+    /* =========================================
+       MESSAGE BOX
+    ========================================= */
+
+    .message-box{
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:45px 25px;
+      text-align:center;
+      color:#6b7280;
+      grid-column:1 / -1;
+    }
+
+    .message-box h3{
+      color:#111827;
+      margin-bottom:8px;
+      font-size:21px;
+    }
+
+    .message-box p{
+      margin-bottom:18px;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer{
+      background:#111827;
+      color:#d1d5db;
+      margin-top:20px;
+    }
+
+    .footer-inner{
+      max-width:1400px;
+      margin:auto;
+      padding:35px 24px;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:35px;
+    }
+
+    .footer-logo{
+      width:180px;
+      max-width:100%;
+      height:auto;
+      margin-bottom:12px;
+    }
+
+    .footer-title{
+      color:white;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    footer p,
+    footer a{
+      font-size:13px;
+      color:#9ca3af;
+    }
+
+    footer a:hover{
+      color:white;
+    }
+
+    .footer-bottom{
+      border-top:1px solid #374151;
+      padding:15px 24px;
+      text-align:center;
+      font-size:12px;
+      color:#9ca3af;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media(max-width:1100px){
+
+      .auction-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .toolbar{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .search-box{
+        grid-column:1 / -1;
+      }
+
+      nav{
+        gap:13px;
+      }
+    }
+
+    @media(max-width:760px){
+
+      .header-inner{
+        padding:12px 16px;
+        flex-wrap:wrap;
+      }
+
+      .brand img{
+        width:155px;
+      }
+
+      nav{
+        width:100%;
+        overflow-x:auto;
+        gap:15px;
+        padding-bottom:3px;
+      }
+
+      nav a{
+        white-space:nowrap;
+      }
+
+      .hero{
+        padding:40px 18px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      main{
+        padding:22px 15px 50px;
+      }
+
+      .toolbar{
+        grid-template-columns:1fr;
+      }
+
+      .search-box{
+        grid-column:auto;
+      }
+
+      .auction-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+    }
+
+    @media(max-width:560px){
+
+      .route-strip{
+        font-size:10px;
+      }
+
+      .usa-flag{
+        font-size:22px;
+      }
+
+      .route-arrow{
+        font-size:18px;
+      }
+
+      .africa-globe{
+        font-size:23px;
+      }
+
+      .actions{
+        grid-template-columns:1fr;
+      }
+
+      .full{
+        grid-column:auto;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      .usa-flag,
+      .route-arrow,
+      .africa-globe{
+        animation:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+
+  <header>
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand" aria-label="WESTRONIX TECH Home">
+        <img
+          src="images/westronix-logo.png"
+          alt="WESTRONIX TECH"
+        >
+      </a>
+
+      <nav>
+
+        <a href="index.html">
+          <span class="lang-en">Home</span>
+          <span class="lang-fr">Accueil</span>
+        </a>
+
+        <a href="inventory.html">
+          <span class="lang-en">Inventory</span>
+          <span class="lang-fr">Inventaire</span>
+        </a>
+
+        <a href="auctions.html" class="active">
+          <span class="lang-en">Live Auctions</span>
+          <span class="lang-fr">Enchères</span>
+        </a>
+
+        <a href="sell-equipment.html">
+          <span class="lang-en">Sell Equipment</span>
+          <span class="lang-fr">Vendre du matériel</span>
+        </a>
+
+        <a href="africa-education.html">
+          <span class="lang-en">Africa Education</span>
+          <span class="lang-fr">Éducation en Afrique</span>
+        </a>
+
+        <a href="cart.html" class="cart-link">
+          🛒
+          <span class="lang-en">Cart</span>
+          <span class="lang-fr">Panier</span>
+          <span id="cartCount">0</span>
+        </a>
+
+        <select
+          id="languageSelect"
+          class="language-select"
+          aria-label="Language"
+        >
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+
+      </nav>
+
+    </div>
+
+    <div class="route-strip">
+
+      <span class="usa-flag">🇺🇸</span>
+
+      <span class="lang-en">USA Technology</span>
+      <span class="lang-fr">Technologie des États-Unis</span>
+
+      <span class="route-arrow">→</span>
+
+      <span class="africa-globe">🌍</span>
+
+      <span class="lang-en">Africa • Togo</span>
+      <span class="lang-fr">Afrique • Togo</span>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <h1>
+        <span class="lang-en">WESTRONIX Live Auctions</span>
+        <span class="lang-fr">Enchères WESTRONIX</span>
+      </h1>
+
+      <p class="lang-en">
+        Bid on tested and refurbished laptops, workstations and electronics
+        available in Lomé, Togo. Find quality technology at competitive prices.
+      </p>
+
+      <p class="lang-fr">
+        Enchérissez sur des ordinateurs portables, stations de travail et
+        équipements électroniques testés et reconditionnés disponibles à Lomé,
+        au Togo. Profitez de technologies de qualité à des prix compétitifs.
+      </p>
+
+      <div class="hero-badges">
+
+        <div class="hero-badge">
+          🔨
+          <span class="lang-en">Live Bidding</span>
+          <span class="lang-fr">Enchères en direct</span>
+        </div>
+
+        <div class="hero-badge">
+          💻
+          <span class="lang-en">Tested Equipment</span>
+          <span class="lang-fr">Équipements testés</span>
+        </div>
+
+        <div class="hero-badge">
+          📍
+          <span class="lang-en">Lomé, Togo</span>
+          <span class="lang-fr">Lomé, Togo</span>
+        </div>
+
+        <div class="hero-badge">
+          ⚡
+          <span class="lang-en">Buy It Now Available</span>
+          <span class="lang-fr">Achat immédiat disponible</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================= -->
+
+  <main>
+
+    <div class="toolbar">
+
+      <input
+        type="search"
+        id="searchInput"
+        class="search-box"
+        placeholder="Search auctions, products, brands or SKU..."
+        autocomplete="off"
+      >
+
+      <select id="statusFilter" class="filter-box">
+
+        <option value="all">
+          All Auctions
+        </option>
+
+        <option value="active">
+          Active Now
+        </option>
+
+        <option value="ended">
+          Ended
+        </option>
+
+      </select>
+
+      <select id="sortFilter" class="filter-box">
+
+        <option value="currentBidLow">
+          Current Bid: Low → High
+        </option>
+
+        <option value="currentBidHigh">
+          Current Bid: High → Low
+        </option>
+
+        <option value="priceLow">
+          Buy Now: Low → High
+        </option>
+
+        <option value="priceHigh">
+          Buy Now: High → Low
+        </option>
+
+        <option value="startingLow">
+          Starting Bid: Low → High
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="auction-summary">
+
+      <h2>
+        <span class="lang-en">Featured Auctions</span>
+        <span class="lang-fr">Enchères disponibles</span>
+      </h2>
+
+      <div id="resultsInfo">
+        Loading...
+      </div>
+
+    </div>
+
+
+    <div id="auctionGrid" class="auction-grid"></div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <img
+          src="images/westronix-logo.png"
+          alt="WESTRONIX TECH"
+          class="footer-logo"
+        >
+
+        <p class="lang-en">
+          USA → TOGO technology distribution, refurbishment and responsible reuse.
+        </p>
+
+        <p class="lang-fr">
+          Distribution technologique USA → TOGO, reconditionnement et réutilisation responsable.
+        </p>
+
+        <p style="margin-top:10px;">
+          Recover → Refurbish → Resell → Reuse → Impact
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-title">
+
+          <span class="lang-en">Marketplace</span>
+          <span class="lang-fr">Marketplace</span>
+
+        </div>
+
+        <p>
+          <a href="inventory.html">
+            <span class="lang-en">Inventory</span>
+            <span class="lang-fr">Inventaire</span>
+          </a>
+        </p>
+
+        <p>
+          <a href="auctions.html">
+            <span class="lang-en">Live Auctions</span>
+            <span class="lang-fr">Enchères</span>
+          </a>
+        </p>
+
+        <p>
+          <a href="cart.html">
+            <span class="lang-en">Shopping Cart</span>
+            <span class="lang-fr">Panier</span>
+          </a>
+        </p>
+
+        <p>
+          <a href="sell-equipment.html">
+            <span class="lang-en">Sell Equipment</span>
+            <span class="lang-fr">Vendre du matériel</span>
+          </a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-title">
+          <span class="lang-en">Contact</span>
+          <span class="lang-fr">Contact</span>
+        </div>
+
+        <p>📍 Lomé, Togo</p>
+
+        <p>
+          📱
+          <a
+            href="https://wa.me/22892953333"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +228 92 95 33 33
+          </a>
+        </p>
+
+        <p>
+          ✉️
+          <a href="mailto:westronix.tech@gmail.com">
+            westronix.tech@gmail.com
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span class="lang-en">
+        © 2026 WESTRONIX TECH. All Rights Reserved.
+      </span>
+
+      <span class="lang-fr">
+        © 2026 WESTRONIX TECH. Tous droits réservés.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script>
+
+    /* =========================================
+       GLOBAL DATA
+    ========================================= */
+
+    let inventoryData = [];
+    let auctionData = [];
+
+    const WHATSAPP_NUMBER = "22892953333";
+
+
+    /* =========================================
+       LANGUAGE
+    ========================================= */
+
+    function setLanguage(language){
+
+      if(language !== "en" && language !== "fr"){
+        language = "fr";
+      }
+
+      document.body.classList.remove("lang-en","lang-fr");
+      document.body.classList.add(`lang-${language}`);
+
+      localStorage.setItem(
+        "wt_language",
+        language
+      );
+
+      const select =
+        document.getElementById("languageSelect");
+
+      if(select){
+        select.value = language;
+      }
+
+      updatePlaceholders();
+    }
+
+
+    function updatePlaceholders(){
+
+      const language =
+        localStorage.getItem("wt_language") || "fr";
+
+      const searchInput =
+        document.getElementById("searchInput");
+
+      if(searchInput){
+
+        searchInput.placeholder =
+          language === "fr"
+            ? "Rechercher une enchère, un produit, une marque ou un SKU..."
+            : "Search auctions, products, brands or SKU...";
+      }
+    }
+
+
+    /* =========================================
+       FORMAT FCFA
+    ========================================= */
+
+    function formatFCFA(value){
+
+      if(
+        value === null ||
+        value === undefined ||
+        isNaN(value)
+      ){
+        return "—";
+      }
+
+      return new Intl.NumberFormat("fr-FR")
+        .format(Number(value))
+        + " FCFA";
+    }
+
+
+    /* =========================================
+       ESCAPE HTML
+    ========================================= */
+
+    function escapeHTML(value){
+
+      if(value === null || value === undefined){
+        return "";
+      }
+
+      return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+    }
+
+
+    /* =========================================
+       FIND PRODUCT
+       Current inventory.json uses:
+       auction.product = product name
+    ========================================= */
+
+    function findProduct(auction){
+
+      if(!auction){
+        return null;
+      }
+
+      const productName =
+        String(auction.product || "")
+          .trim()
+          .toLowerCase();
+
+      if(!productName){
+        return null;
+      }
+
+      return inventoryData.find(product => {
+
+        const name =
+          String(product.name || "")
+            .trim()
+            .toLowerCase();
+
+        return name === productName;
+
+      }) || null;
+    }
+
+
+    /* =========================================
+       AUCTION STATUS
+       Current inventory.json uses:
+       status = "active"
+    ========================================= */
+
+    function getAuctionStatus(auction){
+
+      if(!auction){
+        return "ended";
+      }
+
+      const status =
+        String(auction.status || "")
+          .trim()
+          .toLowerCase();
+
+      if(status === "active"){
+        return "active";
+      }
+
+      if(
+        status === "ended" ||
+        status === "closed" ||
+        status === "sold"
+      ){
+        return "ended";
+      }
+
+      return "ended";
+    }
+
+
+    /* =========================================
+       STATUS LABEL
+    ========================================= */
+
+    function getStatusLabel(status){
+
+      if(status === "active"){
+
+        return `
+          <span class="lang-en">🔴 LIVE</span>
+          <span class="lang-fr">🔴 EN DIRECT</span>
+        `;
+
+      }
+
+      return `
+        <span class="lang-en">✓ ENDED</span>
+        <span class="lang-fr">✓ TERMINÉE</span>
+      `;
+    }
+
+
+    /* =========================================
+       RESERVE STATUS
+    ========================================= */
+
+    function isReserveMet(auction){
+
+      if(
+        auction.reservePrice === null ||
+        auction.reservePrice === undefined ||
+        Number(auction.reservePrice) <= 0
+      ){
+        return true;
+      }
+
+      return Number(auction.currentBid || 0)
+        >= Number(auction.reservePrice);
+    }
+
+
+    /* =========================================
+       PRODUCT IMAGE
+    ========================================= */
+
+    function getProductImage(product){
+
+      if(
+        product &&
+        Array.isArray(product.photos) &&
+        product.photos.length > 0 &&
+        product.photos[0]
+      ){
+
+        return `
+          <img
+            class="auction-image"
+            src="${escapeHTML(product.photos[0])}"
+            alt="${escapeHTML(product.name)}"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          >
+
+          <div
+            class="image-placeholder"
+            style="display:none;"
+          >
+            📷
+            <span>
+              <span class="lang-en">Image unavailable</span>
+              <span class="lang-fr">Image indisponible</span>
+            </span>
+          </div>
+        `;
+
+      }
+
+      return `
+        <div class="image-placeholder">
+          📷
+          <span>
+            <span class="lang-en">No photo available</span>
+            <span class="lang-fr">Aucune photo disponible</span>
+          </span>
+        </div>
+      `;
+    }
+
+
+    /* =========================================
+       WHATSAPP
+    ========================================= */
+
+    function getWhatsAppURL(auction,product){
+
+      const language =
+        localStorage.getItem("wt_language") || "fr";
+
+      const productName =
+        product
+          ? product.name
+          : auction.product || "N/A";
+
+      const sku =
+        product?.sku || "N/A";
+
+      const message =
+        language === "fr"
+          ? [
+              "Bonjour WESTRONIX TECH,",
+              "",
+              "Je suis intéressé(e) par cette enchère :",
+              "",
+              `Enchère : ${auction.id || "N/A"}`,
+              `Produit : ${productName}`,
+              `SKU : ${sku}`,
+              `Quantité : ${auction.quantity || 1}`,
+              `Enchère actuelle : ${formatFCFA(auction.currentBid)}`,
+              "",
+              "Merci de me confirmer les détails."
+            ].join("\n")
+          : [
+              "Hello WESTRONIX TECH,",
+              "",
+              "I am interested in this auction:",
+              "",
+              `Auction: ${auction.id || "N/A"}`,
+              `Product: ${productName}`,
+              `SKU: ${sku}`,
+              `Quantity: ${auction.quantity || 1}`,
+              `Current bid: ${formatFCFA(auction.currentBid)}`,
+              "",
+              "Please confirm the auction details."
+            ].join("\n");
+
+      return (
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message)
+      );
+    }
+
+
+    /* =========================================
+       CART COUNT
+    ========================================= */
+
+    function updateCartCount(){
+
+      let cart = [];
+
+      try{
+
+        cart = JSON.parse(
+          localStorage.getItem("wt_cart") || "[]"
+        );
+
+      }catch(error){
+
+        cart = [];
+
+      }
+
+      const count =
+        cart.reduce(
+          (total,item) =>
+            total + Number(item.quantity || 1),
+          0
+        );
+
+      const cartCount =
+        document.getElementById("cartCount");
+
+      if(cartCount){
+        cartCount.textContent = count;
+      }
+    }
+
+
+    /* =========================================
+       ADD AUCTION TO CART
+    ========================================= */
+
+    function addAuctionToCart(auction,product){
+
+      if(!auction || !product){
+
+        alert(
+          "Product information is unavailable."
+        );
+
+        return;
+      }
+
+      if(getAuctionStatus(auction) !== "active"){
+
+        alert(
+          "This auction is no longer active."
+        );
+
+        return;
+      }
+
+      const buyNow =
+        Number(auction.buyNow || 0);
+
+      if(buyNow <= 0){
+
+        alert(
+          "Buy It Now is not available for this auction."
+        );
+
+        return;
+      }
+
+      let cart = [];
+
+      try{
+
+        cart = JSON.parse(
+          localStorage.getItem("wt_cart") || "[]"
+        );
+
+      }catch(error){
+
+        cart = [];
+
+      }
+
+
+      /*
+        Auction purchases remain separate from
+        normal inventory products by using auctionId.
+      */
+
+      const existing =
+        cart.find(
+          item =>
+            item.auctionId === auction.id
+        );
+
+
+      if(existing){
+
+        existing.quantity =
+          Number(existing.quantity || 0) +
+          Number(auction.quantity || 1);
+
+      }else{
+
+        cart.push({
+
+          sku: product.sku,
+
+          auctionId: auction.id,
+
+          name: product.name,
+
+          price: buyNow,
+
+          quantity: Number(
+            auction.quantity || 1
+          ),
+
+          type: "auction",
+
+          image:
+            Array.isArray(product.photos) &&
+            product.photos.length
+              ? product.photos[0]
+              : ""
+
+        });
+
+      }
+
+
+      localStorage.setItem(
+        "wt_cart",
+        JSON.stringify(cart)
+      );
+
+      updateCartCount();
+
+      window.location.href =
+        "cart.html";
+    }
+
+
+    /* =========================================
+       PLACE BID
+       FRONT-END DEMO ONLY
+    ========================================= */
+
+    function placeBid(auctionId){
+
+      const auction =
+        auctionData.find(
+          item => item.id === auctionId
+        );
+
+      if(!auction){
+
+        alert(
+          "Auction not found."
+        );
+
+        return;
+      }
+
+
+      if(getAuctionStatus(auction) !== "active"){
+
+        alert(
+          "This auction is not currently accepting bids."
+        );
+
+        return;
+      }
+
+
+      const minimumIncrement =
+        Number(
+          auction.minimumIncrement || 1000
+        );
+
+
+      const minimumBid =
+        Number(
+          auction.currentBid ||
+          auction.startingBid ||
+          0
+        ) + minimumIncrement;
+
+
+      const language =
+        localStorage.getItem("wt_language") || "fr";
+
+
+      const input =
+        prompt(
+          language === "fr"
+            ? `Enchère actuelle : ${formatFCFA(auction.currentBid)}\n\nEnchère minimum suivante : ${formatFCFA(minimumBid)}\n\nEntrez votre enchère :`
+            : `Current bid: ${formatFCFA(auction.currentBid)}\n\nMinimum next bid: ${formatFCFA(minimumBid)}\n\nEnter your bid:`
+        );
+
+
+      if(input === null){
+        return;
+      }
+
+
+      const bid =
+        Number(
+          String(input)
+            .replace(/[^\d]/g,"")
+        );
+
+
+      if(!bid || bid < minimumBid){
+
+        alert(
+          language === "fr"
+            ? `Votre enchère doit être d'au moins ${formatFCFA(minimumBid)}.`
+            : `Your bid must be at least ${formatFCFA(minimumBid)}.`
+        );
+
+        return;
+      }
+
+
+      /*
+        IMPORTANT:
+
+        This is currently a front-end demonstration.
+
+        Bids are NOT permanently stored.
+
+        A future production auction system should
+        submit bids to a secure backend/database.
+      */
+
+      const product =
+        findProduct(auction);
+
+
+      const whatsappURL =
+        getWhatsAppURL(
+          auction,
+          product
+        );
+
+
+      const confirmation =
+        language === "fr"
+          ? `Votre enchère de ${formatFCFA(bid)} est prête.\n\nCliquez sur OK pour envoyer votre demande à WESTRONIX TECH via WhatsApp.`
+          : `Your bid of ${formatFCFA(bid)} is ready.\n\nClick OK to send your bid request to WESTRONIX TECH via WhatsApp.`;
+
+
+      if(confirm(confirmation)){
+
+        window.open(
+          whatsappURL +
+          "%0A%0A" +
+          encodeURIComponent(
+            language === "fr"
+              ? `Mon offre proposée : ${formatFCFA(bid)}`
+              : `My proposed bid: ${formatFCFA(bid)}`
+          ),
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+      }
+    }
+
+
+    /* =========================================
+       RENDER AUCTIONS
+    ========================================= */
+
+    function renderAuctions(){
+
+      const grid =
+        document.getElementById("auctionGrid");
+
+
+      const search =
+        document.getElementById("searchInput")
+          .value
+          .trim()
+          .toLowerCase();
+
+
+      const statusFilter =
+        document.getElementById("statusFilter")
+          .value;
+
+
+      const sortFilter =
+        document.getElementById("sortFilter")
+          .value;
+
+
+      let results =
+        auctionData
+          .map(auction => {
+
+            const product =
+              findProduct(auction);
+
+            const status =
+              getAuctionStatus(auction);
+
+            return {
+              auction,
+              product,
+              status
+            };
+
+          })
+          .filter(item => {
+
+            const {
+              auction,
+              product,
+              status
+            } = item;
+
+
+            if(
+              statusFilter !== "all" &&
+              status !== statusFilter
+            ){
+              return false;
+            }
+
+
+            if(!search){
+              return true;
+            }
+
+
+            const searchText = [
+
+              auction.id,
+
+              auction.product,
+
+              product?.name,
+
+              product?.brand,
+
+              product?.category,
+
+              product?.sku,
+
+              product?.processor,
+
+              product?.grade,
+
+              product?.condition
+
+            ]
+              .filter(Boolean)
+              .join(" ")
+              .toLowerCase();
+
+
+            return searchText.includes(
+              search
+            );
+
+          });
+
+
+      /* =======================================
+         SORT
+      ======================================= */
+
+      results.sort((a,b) => {
+
+        const auctionA =
+          a.auction;
+
+        const auctionB =
+          b.auction;
+
+
+        if(sortFilter === "currentBidLow"){
+
+          return Number(
+            auctionA.currentBid || 0
+          ) -
+          Number(
+            auctionB.currentBid || 0
+          );
+
+        }
+
+
+        if(sortFilter === "currentBidHigh"){
+
+          return Number(
+            auctionB.currentBid || 0
+          ) -
+          Number(
+            auctionA.currentBid || 0
+          );
+
+        }
+
+
+        if(sortFilter === "priceLow"){
+
+          return Number(
+            auctionA.buyNow || Infinity
+          ) -
+          Number(
+            auctionB.buyNow || Infinity
+          );
+
+        }
+
+
+        if(sortFilter === "priceHigh"){
+
+          return Number(
+            auctionB.buyNow || 0
+          ) -
+          Number(
+            auctionA.buyNow || 0
+          );
+
+        }
+
+
+        if(sortFilter === "startingLow"){
+
+          return Number(
+            auctionA.startingBid || 0
+          ) -
+          Number(
+            auctionB.startingBid || 0
+          );
+
+        }
+
+
+        return 0;
+
+      });
+
+
+      /* =======================================
+         RESULTS COUNT
+      ======================================= */
+
+      const language =
+        localStorage.getItem("wt_language") || "fr";
+
+
+      document.getElementById(
+        "resultsInfo"
+      ).textContent =
+        language === "fr"
+          ? `${results.length} enchère${results.length !== 1 ? "s" : ""}`
+          : `${results.length} auction${results.length !== 1 ? "s" : ""}`;
+
+
+      /* =======================================
+         EMPTY
+      ======================================= */
+
+      if(results.length === 0){
+
+        grid.innerHTML = `
+
+          <div class="message-box">
+
+            <h3>
+
+              <span class="lang-en">
+                No auctions found
+              </span>
+
+              <span class="lang-fr">
+                Aucune enchère trouvée
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-en">
+                Try another search or filter.
+              </span>
+
+              <span class="lang-fr">
+                Essayez une autre recherche ou un autre filtre.
+              </span>
+
+            </p>
+
+            <button
+              class="btn btn-primary"
+              onclick="resetFilters()"
+            >
+
+              <span class="lang-en">
+                Reset Filters
+              </span>
+
+              <span class="lang-fr">
+                Réinitialiser
+              </span>
+
+            </button>
+
+          </div>
+
+        `;
+
+        return;
+      }
+
+
+      /* =======================================
+         BUILD CARDS
+      ======================================= */
+
+      grid.innerHTML =
+        results.map(item => {
+
+          const {
+            auction,
+            product,
+            status
+          } = item;
+
+
+          const reserveMet =
+            isReserveMet(auction);
+
+
+          const title =
+            product?.name ||
+            auction.product ||
+            "Auction Lot";
+
+
+          const grade =
+            product?.grade ||
+            "N/A";
+
+
+          const quantity =
+            Number(
+              auction.quantity || 1
+            );
+
+
+          const description =
+            product
+              ? `${product.condition || "Tested equipment"}. ${product.category || "Technology equipment"}.`
+              : "Auction lot available from WESTRONIX TECH.";
+
+
+          const viewProductURL =
+            product
+              ? `product.html?sku=${encodeURIComponent(product.sku)}`
+              : "#";
+
+
+          const whatsappURL =
+            getWhatsAppURL(
+              auction,
+              product
+            );
+
+
+          const canBid =
+            status === "active";
+
+
+          const buyNowAvailable =
+            Number(
+              auction.buyNow || 0
+            ) > 0 &&
+            status === "active";
+
+
+          return `
+
+            <article
+              class="auction-card"
+              data-auction-id="${escapeHTML(auction.id)}"
+            >
+
+              <div class="auction-image-wrap">
+
+                ${getProductImage(product)}
+
+                <div class="status-badge status-${status}">
+                  ${getStatusLabel(status)}
+                </div>
+
+                <div class="grade-badge">
+                  Grade ${escapeHTML(grade)}
+                </div>
+
+              </div>
+
+
+              <div class="auction-content">
+
+                <div class="auction-id">
+                  Auction
+                  ${escapeHTML(auction.id)}
+                </div>
+
+
+                <h3 class="auction-title">
+                  ${escapeHTML(title)}
+                </h3>
+
+
+                <div class="sku">
+
+                  <span class="lang-en">SKU:</span>
+                  <span class="lang-fr">Réf. :</span>
+
+                  <strong>
+                    ${escapeHTML(
+                      product?.sku || "N/A"
+                    )}
+                  </strong>
+
+                </div>
+
+
+                <p class="description">
+                  ${escapeHTML(description)}
+                </p>
+
+
+                <div class="specs">
+
+                  <div class="spec">
+
+                    <strong>
+                      <span class="lang-en">Quantity</span>
+                      <span class="lang-fr">Quantité</span>
+                    </strong>
+
+                    <span>
+                      ${quantity}
+                      <span class="lang-en">
+                        unit${quantity !== 1 ? "s" : ""}
+                      </span>
+                      <span class="lang-fr">
+                        unité${quantity !== 1 ? "s" : ""}
+                      </span>
+                    </span>
+
+                  </div>
+
+
+                  <div class="spec">
+
+                    <strong>
+                      <span class="lang-en">Condition</span>
+                      <span class="lang-fr">État</span>
+                    </strong>
+
+                    <span>
+                      ${escapeHTML(
+                        product?.condition ||
+                        "—"
+                      )}
+                    </span>
+
+                  </div>
+
+
+                  <div class="spec">
+
+                    <strong>
+                      Processor
+                    </strong>
+
+                    <span>
+                      ${escapeHTML(
+                        product?.processor ||
+                        "—"
+                      )}
+                    </span>
+
+                  </div>
+
+
+                  <div class="spec">
+
+                    <strong>
+                      RAM / Storage
+                    </strong>
+
+                    <span>
+                      ${escapeHTML(
+                        product?.ram || "—"
+                      )}
+                      /
+                      ${escapeHTML(
+                        product?.storage || "—"
+                      )}
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="auction-info">
+
+                  <div class="price-row">
+
+                    <div class="price-label">
+
+                      <span class="lang-en">
+                        Starting Bid
+                      </span>
+
+                      <span class="lang-fr">
+                        Enchère de départ
+                      </span>
+
+                    </div>
+
+                    <div class="price-value">
+                      ${formatFCFA(
+                        auction.startingBid
+                      )}
+                    </div>
+
+                  </div>
+
+
+                  <div class="price-row">
+
+                    <div class="price-label">
+
+                      <span class="lang-en">
+                        Current Bid
+                      </span>
+
+                      <span class="lang-fr">
+                        Enchère actuelle
+                      </span>
+
+                    </div>
+
+                    <div class="price-value current-bid">
+                      ${formatFCFA(
+                        auction.currentBid
+                      )}
+                    </div>
+
+                  </div>
+
+
+                  <div class="price-row">
+
+                    <div class="price-label">
+
+                      <span class="lang-en">
+                        Minimum Increment
+                      </span>
+
+                      <span class="lang-fr">
+                        Incrément minimum
+                      </span>
+
+                    </div>
+
+                    <div class="price-value">
+                      ${formatFCFA(
+                        auction.minimumIncrement
+                      )}
+                    </div>
+
+                  </div>
+
+
+                  ${
+                    auction.reservePrice
+                      ? `
+
+                        <div class="price-row">
+
+                          <div class="price-label">
+
+                            <span class="lang-en">
+                              Reserve
+                            </span>
+
+                            <span class="lang-fr">
+                              Prix de réserve
+                            </span>
+
+                          </div>
+
+                          <div
+                            class="price-value ${
+                              reserveMet
+                                ? "reserve-met"
+                                : "reserve-not-met"
+                            }"
+                          >
+
+                            ${
+                              reserveMet
+                                ? `
+                                  <span class="lang-en">
+                                    ✓ Reserve Met
+                                  </span>
+
+                                  <span class="lang-fr">
+                                    ✓ Réserve atteinte
+                                  </span>
+                                `
+                                : `
+                                  <span class="lang-en">
+                                    Reserve Not Met
+                                  </span>
+
+                                  <span class="lang-fr">
+                                    Réserve non atteinte
+                                  </span>
+                                `
+                            }
+
+                          </div>
+
+                        </div>
+
+                      `
+                      : ""
+                  }
+
+
+                  ${
+                    auction.buyNow
+                      ? `
+
+                        <div class="price-row">
+
+                          <div class="price-label">
+
+                            <span class="lang-en">
+                              Buy It Now
+                            </span>
+
+                            <span class="lang-fr">
+                              Achat immédiat
+                            </span>
+
+                          </div>
+
+                          <div class="price-value buy-now">
+                            ${formatFCFA(
+                              auction.buyNow
+                            )}
+                          </div>
+
+                        </div>
+
+                      `
+                      : ""
+                  }
+
+                </div>
+
+
+                <div class="auction-status-box">
+
+                  <div class="auction-status-label">
+
+                    <span class="lang-en">
+                      Auction Status
+                    </span>
+
+                    <span class="lang-fr">
+                      Statut de l'enchère
+                    </span>
+
+                  </div>
+
+
+                  <div class="auction-status-value">
+
+                    ${
+                      status === "active"
+                        ? `
+                          <span class="lang-en">
+                            🔴 Active Now
+                          </span>
+
+                          <span class="lang-fr">
+                            🔴 En cours
+                          </span>
+                        `
+                        : `
+                          <span class="lang-en">
+                            ✓ Auction Ended
+                          </span>
+
+                          <span class="lang-fr">
+                            ✓ Enchère terminée
+                          </span>
+                        `
+                    }
+
+                  </div>
+
+                </div>
+
+
+                <div class="actions">
+
+                  ${
+                    product
+                      ? `
+
+                        <a
+                          href="${viewProductURL}"
+                          class="btn btn-outline"
+                        >
+
+                          👁
+
+                          <span class="lang-en">
+                            View Product
+                          </span>
+
+                          <span class="lang-fr">
+                            Voir le produit
+                          </span>
+
+                        </a>
+
+                      `
+                      : `
+
+                        <button
+                          class="btn btn-disabled"
+                          disabled
+                        >
+
+                          <span class="lang-en">
+                            Product Unavailable
+                          </span>
+
+                          <span class="lang-fr">
+                            Produit indisponible
+                          </span>
+
+                        </button>
+
+                      `
+                  }
+
+
+                  ${
+                    canBid
+                      ? `
+
+                        <button
+                          class="btn btn-primary"
+                          onclick="placeBid('${escapeHTML(auction.id)}')"
+                        >
+
+                          🔨
+
+                          <span class="lang-en">
+                            Place Bid
+                          </span>
+
+                          <span class="lang-fr">
+                            Enchérir
+                          </span>
+
+                        </button>
+
+                      `
+                      : `
+
+                        <button
+                          class="btn btn-disabled"
+                          disabled
+                        >
+
+                          ✓
+
+                          <span class="lang-en">
+                            Auction Ended
+                          </span>
+
+                          <span class="lang-fr">
+                            Enchère terminée
+                          </span>
+
+                        </button>
+
+                      `
+                  }
+
+
+                  ${
+                    buyNowAvailable && product
+                      ? `
+
+                        <button
+                          class="btn btn-yellow"
+                          onclick="addAuctionToCart(
+                            auctionData.find(a => a.id === '${escapeHTML(auction.id)}'),
+                            findProduct(
+                              auctionData.find(a => a.id === '${escapeHTML(auction.id)}')
+                            )
+                          )"
+                        >
+
+                          ⚡
+
+                          <span class="lang-en">
+                            Buy It Now
+                          </span>
+
+                          <span class="lang-fr">
+                            Acheter maintenant
+                          </span>
+
+                        </button>
+
+                      `
+                      : ""
+                  }
+
+
+                  <a
+                    href="${whatsappURL}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-whatsapp ${
+                      buyNowAvailable && product
+                        ? ""
+                        : "full"
+                    }"
+                  >
+
+                    💬
+
+                    <span class="lang-en">
+                      WhatsApp
+                    </span>
+
+                    <span class="lang-fr">
+                      WhatsApp
+                    </span>
+
+                  </a>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          `;
+
+        }).join("");
+
+    }
+
+
+    /* =========================================
+       RESET FILTERS
+    ========================================= */
+
+    function resetFilters(){
+
+      document.getElementById(
+        "searchInput"
+      ).value = "";
+
+      document.getElementById(
+        "statusFilter"
+      ).value = "all";
+
+      document.getElementById(
+        "sortFilter"
+      ).value = "currentBidLow";
+
+      renderAuctions();
+    }
+
+
+    /* =========================================
+       LOAD DATA
+    ========================================= */
+
+    async function loadAuctions(){
+
+      const grid =
+        document.getElementById(
+          "auctionGrid"
+        );
+
+
+      try{
+
+        grid.innerHTML = `
+
+          <div class="message-box">
+
+            <h3>
+
+              <span class="lang-en">
+                Loading auctions...
+              </span>
+
+              <span class="lang-fr">
+                Chargement des enchères...
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-en">
+                Please wait while WESTRONIX loads the latest auction inventory.
+              </span>
+
+              <span class="lang-fr">
+                Veuillez patienter pendant le chargement des dernières enchères WESTRONIX.
+              </span>
+
+            </p>
+
+          </div>
+
+        `;
+
+
+        /* =====================================
+           LOAD INVENTORY.JSON
+        ===================================== */
+
+        const response =
+          await fetch(
+            "inventory.json",
+            {
+              cache:"no-store"
+            }
+          );
+
+
+        if(!response.ok){
+
+          throw new Error(
+            "Unable to load inventory.json"
+          );
+
+        }
+
+
+        const data =
+          await response.json();
+
+
+        inventoryData =
+          Array.isArray(data.products)
+            ? data.products
+            : [];
+
+
+        auctionData =
+          Array.isArray(data.auctions)
+            ? data.auctions
+            : [];
+
+
+        if(auctionData.length === 0){
+
+          grid.innerHTML = `
+
+            <div class="message-box">
+
+              <h3>
+
+                <span class="lang-en">
+                  No auctions available
+                </span>
+
+                <span class="lang-fr">
+                  Aucune enchère disponible
+                </span>
+
+              </h3>
+
+              <p>
+
+                <span class="lang-en">
+                  There are currently no auction listings.
+                </span>
+
+                <span class="lang-fr">
+                  Il n'y a actuellement aucune enchère.
+                </span>
+
+              </p>
+
+            </div>
+
+          `;
+
+          updateCartCount();
+
+          return;
+        }
+
+
+        renderAuctions();
+
+        updateCartCount();
+
+      }
+      catch(error){
+
+        console.error(error);
+
+
+        grid.innerHTML = `
+
+          <div class="message-box">
+
+            <h3>
+
+              <span class="lang-en">
+                Unable to load auctions
+              </span>
+
+              <span class="lang-fr">
+                Impossible de charger les enchères
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-en">
+                Please make sure inventory.json is in the same folder as auctions.html.
+              </span>
+
+              <span class="lang-fr">
+                Vérifiez que inventory.json se trouve dans le même dossier que auctions.html.
+              </span>
+
+            </p>
+
+            <p style="font-size:13px;color:#9ca3af;">
+              ${escapeHTML(error.message)}
+            </p>
+
+            <button
+              class="btn btn-primary"
+              onclick="loadAuctions()"
+              style="max-width:180px;margin:15px auto 0;"
+            >
+
+              🔄
+
+              <span class="lang-en">
+                Try Again
+              </span>
+
+              <span class="lang-fr">
+                Réessayer
+              </span>
+
+            </button>
+
+          </div>
+
+        `;
+
+      }
+
+    }
+
+
+    /* =========================================
+       EVENT LISTENERS
+    ========================================= */
+
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "input",
+        renderAuctions
+      );
+
+
+    document
+      .getElementById("statusFilter")
+      .addEventListener(
+        "change",
+        renderAuctions
+      );
+
+
+    document
+      .getElementById("sortFilter")
+      .addEventListener(
+        "change",
+        renderAuctions
+      );
+
+
+    document
+      .getElementById("languageSelect")
+      .addEventListener(
+        "change",
+        function(){
+
+          setLanguage(
+            this.value
+          );
+
+          renderAuctions();
+
+        }
+      );
+
+
+    /* =========================================
+       INITIALIZE LANGUAGE
+    ========================================= */
+
+    const savedLanguage =
+      localStorage.getItem(
+        "wt_language"
+      ) || "fr";
+
+    setLanguage(
+      savedLanguage
+    );
+
+
+    /* =========================================
+       INITIALIZE
+    ========================================= */
+
+    updateCartCount();
+
+    loadAuctions();
+
+  </script>
+
+</body>
+</html>
+```
+
+This version is now aligned to your **actual current `inventory.json`** and does not require you to change that file. It also fixes the old `auctions.json` dependency and the mismatched field names.
+
+**Important:** your current auction data has no auction end date/time, so I intentionally removed the fake countdown system. When you're ready, we can add real auction timing with fields such as `startTime` and `endTime` to the data model.
+
+Next, I recommend we move to **`cart.html`**, because the auction Buy It Now and inventory Buy buttons now both feed into `wt_cart`.

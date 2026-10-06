@@ -1,0 +1,320 @@
+
+{ 
+
+  "lastUpdated": "2026-10-04", 
+
+  "currency": "FCFA", 
+
+  "location": "Lomé, Togo", 
+
+  "products": [ 
+
+    { 
+
+      "sku": "WT-D5420-0001", 
+
+      "name": "Dell Latitude 5420", 
+
+      "brand": "Dell", 
+
+      "category": "Laptop", 
+
+      "grade": "A", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 24, 
+
+      "price": 110000, 
+
+      "processor": "Intel Core i5 11th Gen", 
+
+      "ram": "8GB", 
+
+      "storage": "256GB SSD", 
+
+      "screen": "14 inch", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": true, 
+
+      "photos": [ 
+
+        "images/dell-latitude-5420-1.jpg", 
+
+        "images/dell-latitude-5420-2.jpg" 
+
+      ] 
+
+    }, 
+
+    { 
+
+      "sku": "WT-D5410-0001", 
+
+      "name": "Dell Latitude 5410", 
+
+      "brand": "Dell", 
+
+      "category": "Laptop", 
+
+      "grade": "B+", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 17, 
+
+      "price": 100000, 
+
+      "processor": "Intel Core i5 10th Gen", 
+
+      "ram": "8GB", 
+
+      "storage": "256GB SSD", 
+
+      "screen": "14 inch", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": false, 
+
+      "photos": [ 
+
+        "images/dell-latitude-5410-1.jpg" 
+
+      ] 
+
+    }, 
+
+    { 
+
+      "sku": "WT-HP840G7-0001", 
+
+      "name": "HP EliteBook 840 G7", 
+
+      "brand": "HP", 
+
+      "category": "Laptop", 
+
+      "grade": "A-", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 12, 
+
+      "price": 135000, 
+
+      "processor": "Intel Core i5 10th Gen", 
+
+      "ram": "16GB", 
+
+      "storage": "512GB SSD", 
+
+      "screen": "14 inch", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": true, 
+
+      "photos": [ 
+
+        "images/hp-840-g7-1.jpg" 
+
+      ] 
+
+    }, 
+
+    { 
+
+      "sku": "WT-LEN-S340-0001", 
+
+      "name": "Lenovo IdeaPad S340", 
+
+      "brand": "Lenovo", 
+
+      "category": "Laptop", 
+
+      "grade": "B", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 9, 
+
+      "price": 90000, 
+
+      "processor": "Intel Core i5", 
+
+      "ram": "8GB", 
+
+      "storage": "256GB SSD", 
+
+      "screen": "15.6 inch", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": false, 
+
+      "photos": [ 
+
+        "images/lenovo-s340-1.jpg" 
+
+      ] 
+
+    }, 
+
+    { 
+
+      "sku": "WT-D3551-0001", 
+
+      "name": "Dell Precision 3551", 
+
+      "brand": "Dell", 
+
+      "category": "Workstation", 
+
+      "grade": "A-", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 6, 
+
+      "price": 165000, 
+
+      "processor": "Intel Core i7", 
+
+      "ram": "16GB", 
+
+      "storage": "512GB SSD", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": true, 
+
+      "photos": [ 
+
+        "images/precision-3551-1.jpg" 
+
+      ] 
+
+    }, 
+
+    { 
+
+      "sku": "WT-HPZ15-0001", 
+
+      "name": "HP ZBook Power G9", 
+
+      "brand": "HP", 
+
+      "category": "Workstation", 
+
+      "grade": "A", 
+
+      "condition": "Tested Working", 
+
+      "quantity": 4, 
+
+      "price": 290000, 
+
+      "processor": "Intel Core i7-12850H", 
+
+      "ram": "16GB", 
+
+      "storage": "1TB SSD", 
+
+      "gpu": "NVIDIA RTX 12GB", 
+
+      "location": "Lomé, Togo", 
+
+      "status": "available", 
+
+      "featured": true, 
+
+      "photos": [ 
+
+        "images/hp-zbook-g9-1.jpg" 
+
+      ] 
+
+    } 
+
+  ], 
+
+  "auctions": [ 
+
+    { 
+
+      "id": "AUC-001", 
+
+      "product": "Dell Latitude 5420", 
+
+      "startingBid": 85000, 
+
+      "currentBid": 87000, 
+
+      "minimumIncrement": 2000, 
+
+      "reservePrice": 100000, 
+
+      "quantity": 1, 
+
+      "status": "active", 
+
+      "buyNow": 110000 
+
+    }, 
+
+    { 
+
+      "id": "AUC-002", 
+
+      "product": "HP EliteBook 840 G7", 
+
+      "startingBid": 100000, 
+
+      "currentBid": 107000, 
+
+      "minimumIncrement": 2000, 
+
+      "reservePrice": 125000, 
+
+      "quantity": 1, 
+
+      "status": "active", 
+
+      "buyNow": 135000 
+
+    } 
+
+  ], 
+
+  "categories": [ 
+
+    "Laptop", 
+
+    "Desktop", 
+
+    "Workstation", 
+
+    "Server", 
+
+    "Networking", 
+
+    "Accessories" 
+
+  ] 
+
+} 
+
+ 

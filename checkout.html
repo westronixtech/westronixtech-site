@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WESTRONIX TECH | Checkout</title>
+
+<meta
+name="description"
+content="WESTRONIX TECH checkout for refurbished laptops, workstations, electronics and auction lots."
+
+>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#1f2937;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  background:#071526;
+  color:white;
+  padding:14px 0;
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.brand img{
+  width:180px;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-left:auto;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
+  opacity:.9;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:#4da3ff;
+}
+
+.language-box{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.language-box select{
+  width:auto;
+  margin:0;
+  padding:7px 9px;
+  border-radius:6px;
+  border:1px solid #475569;
+  background:#0f2238;
+  color:white;
+  font-weight:bold;
+}
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.lang-en{
+  display:none;
+}
+
+.lang-fr{
+  display:inline;
+}
+
+body.en .lang-en{
+  display:inline;
+}
+
+body.en .lang-fr{
+  display:none;
+}
+
+/* =====================================================
+   USA → AFRICA ROUTE
+===================================================== */
+
+.route-bar{
+  background:#0b1d31;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:white;
+}
+
+.route-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:10px 20px;
+}
+
+.usa-africa-route{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:bold;
+  text-align:center;
+  flex-wrap:wrap;
+}
+
+.usa-flag{
+  display:inline-block;
+  animation:waveFlag 1.8s ease-in-out infinite;
+  transform-origin:left center;
+}
+
+.route-arrow{
+  font-size:25px;
+  color:#4da3ff;
+  animation:pulseArrow 1.4s ease-in-out infinite;
+}
+
+.africa-globe{
+  display:inline-block;
+  font-size:22px;
+  animation:rotateGlobe 4s linear infinite;
+}
+
+@keyframes waveFlag{
+  0%,100%{
+    transform:rotate(0deg);
+  }
+  25%{
+    transform:rotate(7deg);
+  }
+  50%{
+    transform:rotate(-5deg);
+  }
+  75%{
+    transform:rotate(4deg);
+  }
+}
+
+@keyframes pulseArrow{
+  0%,100%{
+    transform:translateX(0);
+    opacity:.65;
+  }
+  50%{
+    transform:translateX(7px);
+    opacity:1;
+  }
+}
+
+@keyframes rotateGlobe{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:20px;
+}
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.page-title{
+  margin:10px 0 25px;
+}
+
+.page-title h1{
+  margin:0 0 8px;
+  font-size:32px;
+}
+
+.page-title p{
+  margin:0;
+  color:#64748b;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.card h2{
+  margin-top:0;
+  color:#071526;
+}
+
+/* =====================================================
+   ORDER ITEMS
+===================================================== */
+
+.order-line{
+  display:flex;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.order-line:last-child{
+  border-bottom:none;
+}
+
+.product-photo{
+  width:120px;
+  height:120px;
+  border-radius:8px;
+  overflow:hidden;
+  background:#f0f0f0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:#64748b;
+}
+
+.product-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 8px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.inventory-badge{
+  background:#e8f3ff;
+  color:#075985;
+}
+
+.auction-badge{
+  background:#fff3cd;
+  color:#92400e;
+}
+
+.product-info{
+  flex:1;
+}
+
+.product-info h3{
+  margin:0 0 8px;
+}
+
+.product-meta{
+  color:#64748b;
+  font-size:14px;
+  margin:5px 0;
+}
+
+.price{
+  font-weight:bold;
+  font-size:17px;
+  margin-top:8px;
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary-box{
+  margin-top:20px;
+  border-top:1px solid #e5e7eb;
+  padding-top:15px;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:8px 0;
+  color:#475569;
+}
+
+.summary-total{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid #e5e7eb;
+  margin-top:10px;
+  padding-top:15px;
+  font-size:24px;
+  font-weight:bold;
+  color:#071526;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+label{
+  display:block;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  font-size:15px;
+  font-family:inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:none;
+  border-color:#1677ff;
+  box-shadow:0 0 0 2px rgba(22,119,255,.12);
+}
+
+.required{
+  color:#dc2626;
+}
+
+/* =====================================================
+   DELIVERY
+===================================================== */
+
+.delivery-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin:15px 0;
+}
+
+.delivery-option{
+  border:2px solid #e5e7eb;
+  border-radius:10px;
+  padding:15px;
+  cursor:pointer;
+}
+
+.delivery-option:hover{
+  border-color:#1677ff;
+}
+
+.delivery-option input{
+  width:auto;
+  margin-right:8px;
+}
+
+.delivery-option strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.delivery-option span{
+  font-size:13px;
+  color:#64748b;
+}
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+.payment-box{
+  background:#f8fafc;
+  border-left:4px solid #1677ff;
+  padding:15px;
+  border-radius:6px;
+  margin-top:15px;
+}
+
+.payment-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:7px 0;
+}
+
+.payment-total{
+  font-size:20px;
+  font-weight:bold;
+  border-top:1px solid #dbe2ea;
+  margin-top:8px;
+  padding-top:12px;
+}
+
+.notice{
+  background:#f1f5f9;
+  padding:14px;
+  border-radius:8px;
+  font-size:13px;
+  line-height:1.5;
+  color:#475569;
+  margin-top:15px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+  display:inline-block;
+  padding:13px 18px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  margin:5px 5px 5px 0;
+}
+
+.green{
+  background:#10b981;
+  color:white;
+}
+
+.green:hover{
+  background:#059669;
+}
+
+.blue{
+  background:#1677ff;
+  color:white;
+}
+
+.blue:hover{
+  background:#075dcc;
+}
+
+.gray{
+  background:#e5e7eb;
+  color:#111827;
+}
+
+.gray:hover{
+  background:#d1d5db;
+}
+
+.submit-btn{
+  width:100%;
+  background:#10b981;
+  color:white;
+  border:none;
+  padding:15px;
+  border-radius:8px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.submit-btn:hover{
+  background:#059669;
+}
+
+.hidden{
+  display:none !important;
+}
+
+/* =====================================================
+   CONFIRMATION
+===================================================== */
+
+.confirmation{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.confirmation-icon{
+  font-size:60px;
+}
+
+.order-number{
+  font-size:24px;
+  font-weight:bold;
+  color:#1677ff;
+  margin:15px 0;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  margin-top:40px;
+  background:#071526;
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+
+footer p{
+  color:#cbd5e1;
+}
+
+.footer-whatsapp{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 16px;
+  background:#10b981;
+  color:white;
+  text-decoration:none;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+  .header-inner{
+    justify-content:center;
+  }
+
+  .nav{
+    margin-left:0;
+    justify-content:center;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .container{
+    padding:15px;
+  }
+
+  .brand img{
+    width:160px;
+  }
+
+  .nav{
+    gap:10px;
+  }
+
+  .nav a{
+    font-size:12px;
+  }
+
+  .page-title h1{
+    font-size:26px;
+  }
+
+  .order-line{
+    display:block;
+  }
+
+  .product-photo{
+    width:100%;
+    height:200px;
+    margin-bottom:15px;
+  }
+
+  .delivery-options{
+    grid-template-columns:1fr;
+  }
+
+  .summary-total{
+    font-size:20px;
+  }
+
+  .payment-row,
+  .summary-row{
+    align-items:flex-start;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+  <div class="header-inner">
+
+```
+<a href="index.html" class="brand">
+
+  <img
+    src="images/westronix-logo.png"
+    alt="WESTRONIX TECH"
+  >
+
+</a>
+
+<nav class="nav">
+
+  <a href="index.html">
+    <span class="lang-en">Home</span>
+    <span class="lang-fr">Accueil</span>
+  </a>
+
+  <a href="inventory.html">
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+  </a>
+
+  <a href="auctions.html">
+    <span class="lang-en">Live Auctions</span>
+    <span class="lang-fr">Enchères</span>
+  </a>
+
+  <a href="sell-equipment.html">
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre</span>
+  </a>
+
+  <a href="africa-education.html">
+    <span class="lang-en">Africa Education</span>
+    <span class="lang-fr">Éducation</span>
+  </a>
+
+  <a href="cart.html">
+    🛒
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+  </a>
+
+</nav>
+
+<div class="language-box">
+
+  <span>🌐</span>
+
+  <select
+    id="languageSelect"
+    aria-label="Language">
+
+    <option value="fr">FR</option>
+    <option value="en">EN</option>
+
+  </select>
+
+</div>
+```
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     ROUTE BAR
+===================================================== -->
+
+<div class="route-bar">
+
+  <div class="route-inner">
+
+```
+<div class="usa-africa-route">
+
+  <span class="usa-flag">🇺🇸</span>
+
+  <span class="lang-en">
+    USA Technology
+  </span>
+
+  <span class="lang-fr">
+    Technologie des États-Unis
+  </span>
+
+  <span class="route-arrow">
+    →
+  </span>
+
+  <span class="africa-globe">
+    🌍
+  </span>
+
+  <span class="lang-en">
+    Togo & Africa
+  </span>
+
+  <span class="lang-fr">
+    Togo & Afrique
+  </span>
+
+</div>
+```
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="container">
+
+  <div class="page-title">
+
+```
+<h1>
+
+  🛒
+
+  <span class="lang-en">
+    Checkout
+  </span>
+
+  <span class="lang-fr">
+    Finaliser la commande
+  </span>
+
+</h1>
+
+<p>
+
+  <span class="lang-en">
+    Complete your order information below.
+  </span>
+
+  <span class="lang-fr">
+    Complétez les informations de votre commande ci-dessous.
+  </span>
+
+</p>
+```
+
+  </div>
+
+  <div id="checkoutContent">
+
+```
+<!-- =================================================
+     ORDER SUMMARY
+================================================== -->
+
+<div class="card">
+
+  <h2>
+
+    📦
+
+    <span class="lang-en">
+      Order Summary
+    </span>
+
+    <span class="lang-fr">
+      Résumé de la commande
+    </span>
+
+  </h2>
+
+  <div id="orderItems">
+
+    <span class="lang-en">
+      Loading...
+    </span>
+
+    <span class="lang-fr">
+      Chargement...
+    </span>
+
+  </div>
+
+  <div class="summary-box">
+
+    <div class="summary-row">
+
+      <span>
+
+        <span class="lang-en">
+          Items
+        </span>
+
+        <span class="lang-fr">
+          Articles
+        </span>
+
+      </span>
+
+      <strong id="itemCount">
+        0
+      </strong>
+
+    </div>
+
+    <div class="summary-row">
+
+      <span>
+
+        <span class="lang-en">
+          Subtotal
+        </span>
+
+        <span class="lang-fr">
+          Sous-total
+        </span>
+
+      </span>
+
+      <strong id="subtotal">
+        0 FCFA
+      </strong>
+
+    </div>
+
+    <div class="summary-row">
+
+      <span>
+
+        <span class="lang-en">
+          Delivery
+        </span>
+
+        <span class="lang-fr">
+          Livraison
+        </span>
+
+      </span>
+
+      <strong>
+
+        <span class="lang-en">
+          To be confirmed
+        </span>
+
+        <span class="lang-fr">
+          À confirmer
+        </span>
+
+      </strong>
+
+    </div>
+
+    <div class="summary-total">
+
+      <span>
+
+        <span class="lang-en">
+          Estimated Total
+        </span>
+
+        <span class="lang-fr">
+          Total estimé
+        </span>
+
+      </span>
+
+      <span id="grandTotal">
+        0 FCFA
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =================================================
+     CUSTOMER INFORMATION
+================================================== -->
+
+<div class="card">
+
+  <h2>
+
+    👤
+
+    <span class="lang-en">
+      Customer Information
+    </span>
+
+    <span class="lang-fr">
+      Informations client
+    </span>
+
+  </h2>
+
+  <label>
+
+    <span class="lang-en">Full Name</span>
+    <span class="lang-fr">Nom complet</span>
+
+    <span class="required">*</span>
+
+  </label>
+
+  <input
+    type="text"
+    id="customerName"
+    placeholder="Votre nom complet"
+    required
+  >
+
+  <label>
+
+    <span class="lang-en">Phone / WhatsApp</span>
+    <span class="lang-fr">Téléphone / WhatsApp</span>
+
+    <span class="required">*</span>
+
+  </label>
+
+  <input
+    type="tel"
+    id="customerPhone"
+    placeholder="+228 XX XX XX XX"
+    required
+  >
+
+  <label>
+
+    <span class="lang-en">Email</span>
+    <span class="lang-fr">E-mail</span>
+
+  </label>
+
+  <input
+    type="email"
+    id="customerEmail"
+    placeholder="you@example.com"
+  >
+
+  <label>
+
+    <span class="lang-en">Country</span>
+    <span class="lang-fr">Pays</span>
+
+    <span class="required">*</span>
+
+  </label>
+
+  <input
+    type="text"
+    id="customerCountry"
+    value="Togo"
+    required
+  >
+
+  <label>
+
+    <span class="lang-en">City</span>
+    <span class="lang-fr">Ville</span>
+
+    <span class="required">*</span>
+
+  </label>
+
+  <input
+    type="text"
+    id="customerCity"
+    placeholder="Lomé"
+    required
+  >
+
+</div>
+
+<!-- =================================================
+     DELIVERY / PICKUP
+================================================== -->
+
+<div class="card">
+
+  <h2>
+
+    🚚
+
+    <span class="lang-en">
+      Delivery / Pickup
+    </span>
+
+    <span class="lang-fr">
+      Livraison / Retrait
+    </span>
+
+  </h2>
+
+  <div class="delivery-options">
+
+    <label class="delivery-option">
+
+      <input
+        type="radio"
+        name="fulfillment"
+        value="delivery"
+        checked
+        onchange="updateFulfillment()"
+      >
+
+      <strong>
+
+        <span class="lang-en">
+          🚚 Delivery
+        </span>
+
+        <span class="lang-fr">
+          🚚 Livraison
+        </span>
+
+      </strong>
+
+      <span>
+
+        <span class="lang-en">
+          Delivery to your address or location.
+        </span>
+
+        <span class="lang-fr">
+          Livraison à votre adresse ou lieu indiqué.
+        </span>
+
+      </span>
+
+    </label>
+
+    <label class="delivery-option">
+
+      <input
+        type="radio"
+        name="fulfillment"
+        value="pickup"
+        onchange="updateFulfillment()"
+      >
+
+      <strong>
+
+        <span class="lang-en">
+          📍 Pickup
+        </span>
+
+        <span class="lang-fr">
+          📍 Retrait
+        </span>
+
+      </strong>
+
+      <span>
+
+        <span class="lang-en">
+          Pick up your order at the agreed location.
+        </span>
+
+        <span class="lang-fr">
+          Retirez votre commande au lieu convenu.
+        </span>
+
+      </span>
+
+    </label>
+
+  </div>
+
+  <div id="deliveryFields">
+
+    <label>
+
+      <span class="lang-en">
+        Delivery Address / Location
+      </span>
+
+      <span class="lang-fr">
+        Adresse / lieu de livraison
+      </span>
+
+    </label>
+
+    <textarea
+      id="deliveryAddress"
+      rows="3"
+      placeholder="Adresse, quartier ou point de repère"
+    ></textarea>
+
+    <label>
+
+      <span class="lang-en">
+        Preferred Delivery Time
+      </span>
+
+      <span class="lang-fr">
+        Heure de livraison souhaitée
+      </span>
+
+    </label>
+
+    <select id="deliveryTime">
+
+      <option value="">
+        Sélectionner
+      </option>
+
+      <option value="Morning">
+        Morning / Matin
+      </option>
+
+      <option value="Afternoon">
+        Afternoon / Après-midi
+      </option>
+
+      <option value="Evening">
+        Evening / Soir
+      </option>
+
+    </select>
+
+  </div>
+
+  <div id="pickupFields" class="hidden">
+
+    <div class="notice">
+
+      <strong>
+
+        <span class="lang-en">
+          Pickup:
+        </span>
+
+        <span class="lang-fr">
+          Retrait :
+        </span>
+
+      </strong>
+
+      <span class="lang-en">
+        WESTRONIX will contact you after your order is submitted
+        to confirm the pickup location and time.
+      </span>
+
+      <span class="lang-fr">
+        WESTRONIX vous contactera après l'envoi de la commande
+        pour confirmer le lieu et l'heure de retrait.
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =================================================
+     PAYMENT
+================================================== -->
+
+<div class="card">
+
+  <h2>
+
+    💳
+
+    <span class="lang-en">
+      Payment
+    </span>
+
+    <span class="lang-fr">
+      Paiement
+    </span>
+
+  </h2>
+
+  <label>
+
+    <span class="lang-en">
+      Preferred Payment Method
+    </span>
+
+    <span class="lang-fr">
+      Mode de paiement préféré
+    </span>
+
+  </label>
+
+  <select id="paymentMethod">
+
+    <option value="">
+      Sélectionner / Select
+    </option>
+
+    <option value="Mobile Money">
+      Mobile Money
+    </option>
+
+    <option value="Bank Transfer">
+      Bank Transfer / Virement bancaire
+    </option>
+
+    <option value="Cash">
+      Cash / Espèces
+    </option>
+
+    <option value="Other">
+      Other / Autre
+    </option>
+
+  </select>
+
+  <label>
+
+    <span class="lang-en">
+      Preferred Advance Payment
+    </span>
+
+    <span class="lang-fr">
+      Avance souhaitée
+    </span>
+
+  </label>
+
+  <select id="advanceOption">
+
+    <option value="0">
+      No advance specified / Aucune avance
+    </option>
+
+    <option value="30">
+      30% advance / 30% d'avance
+    </option>
+
+    <option value="50">
+      50% advance / 50% d'avance
+    </option>
+
+    <option value="100">
+      100% payment / Paiement intégral
+    </option>
+
+  </select>
+
+  <div class="payment-box">
+
+    <div class="payment-row">
+
+      <span>
+
+        <span class="lang-en">
+          Order Total
+        </span>
+
+        <span class="lang-fr">
+          Total commande
+        </span>
+
+      </span>
+
+      <strong id="paymentTotal">
+        0 FCFA
+      </strong>
+
+    </div>
+
+    <div class="payment-row">
+
+      <span>
+
+        <span class="lang-en">
+          Suggested Advance
+        </span>
+
+        <span class="lang-fr">
+          Avance suggérée
+        </span>
+
+      </span>
+
+      <strong id="advanceAmount">
+        0 FCFA
+      </strong>
+
+    </div>
+
+    <div class="payment-row">
+
+      <span>
+
+        <span class="lang-en">
+          Estimated Balance
+        </span>
+
+        <span class="lang-fr">
+          Solde estimé
+        </span>
+
+      </span>
+
+      <strong id="balanceAmount">
+        0 FCFA
+      </strong>
+
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>
+
+      <span class="lang-en">
+        Important:
+      </span>
+
+      <span class="lang-fr">
+        Important :
+      </span>
+
+    </strong>
+
+    <span class="lang-en">
+      Do not send payment yet. WESTRONIX will first confirm
+      product availability, delivery or pickup arrangements,
+      final delivery charges and the exact amount to pay.
+    </span>
+
+    <span class="lang-fr">
+      N'effectuez pas encore de paiement. WESTRONIX confirmera
+      d'abord la disponibilité des produits, les modalités de
+      livraison ou de retrait, les frais de livraison et le
+      montant exact à payer.
+    </span>
+
+  </div>
+
+</div>
+
+<!-- =================================================
+     NOTES / SUBMIT
+================================================== -->
+
+<div class="card">
+
+  <h2>
+
+    📝
+
+    <span class="lang-en">
+      Order Notes
+    </span>
+
+    <span class="lang-fr">
+      Notes de commande
+    </span>
+
+  </h2>
+
+  <textarea
+    id="customerNotes"
+    rows="5"
+    placeholder="Anything else WESTRONIX should know about your order?"
+  ></textarea>
+
+  <button
+    class="submit-btn"
+    onclick="submitOrder()"
+  >
+
+    💬
+
+    <span class="lang-en">
+      Submit Order via WhatsApp
+    </span>
+
+    <span class="lang-fr">
+      Envoyer la commande via WhatsApp
+    </span>
+
+  </button>
+
+  <br>
+
+  <a
+    href="cart.html"
+    class="btn blue"
+  >
+
+    ←
+
+    <span class="lang-en">
+      Back to Cart
+    </span>
+
+    <span class="lang-fr">
+      Retour au panier
+    </span>
+
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <!-- =================================================
+       CONFIRMATION
+  ================================================== -->
+
+  <div
+    id="confirmation"
+    class="card confirmation hidden"
+  >
+
+```
+<div class="confirmation-icon">
+  ✅
+</div>
+
+<h2>
+
+  <span class="lang-en">
+    Order Request Submitted
+  </span>
+
+  <span class="lang-fr">
+    Demande de commande envoyée
+  </span>
+
+</h2>
+
+<p>
+
+  <span class="lang-en">
+    Thank you for choosing WESTRONIX TECH.
+  </span>
+
+  <span class="lang-fr">
+    Merci d'avoir choisi WESTRONIX TECH.
+  </span>
+
+</p>
+
+<div class="order-number">
+
+  Order #:
+
+  <span id="generatedOrderNumber"></span>
+
+</div>
+
+<p>
+
+  <span class="lang-en">
+    Your order details have been prepared for WhatsApp.
+    WESTRONIX will confirm availability, delivery and payment
+    instructions.
+  </span>
+
+  <span class="lang-fr">
+    Les détails de votre commande ont été préparés pour WhatsApp.
+    WESTRONIX confirmera la disponibilité, la livraison et les
+    instructions de paiement.
+  </span>
+
+</p>
+
+<a
+  href="inventory.html"
+  class="btn blue"
+>
+
+  <span class="lang-en">
+    Continue Shopping
+  </span>
+
+  <span class="lang-fr">
+    Continuer les achats
+  </span>
+
+</a>
+
+<a
+  href="auctions.html"
+  class="btn gray"
+>
+
+  <span class="lang-en">
+    View Auctions
+  </span>
+
+  <span class="lang-fr">
+    Voir les enchères
+  </span>
+
+</a>
+```
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <h3>
+    WESTRONIX TECH
+  </h3>
+
+  <p>
+    Recover • Refurbish • Resell • Reuse • Impact
+  </p>
+
+  <p>
+    🇺🇸 USA → 🇹🇬 TOGO
+  </p>
+
+<a
+class="footer-whatsapp"
+href="https://wa.me/22892953333"
+target="_blank"
+rel="noopener"
+
+>
+
+```
+💬 WhatsApp: +228 92 95 33 33
+```
+
+  </a>
+
+</footer>
+
+<script>
+
+/* =====================================================
+   WESTRONIX CHECKOUT
+===================================================== */
+
+const CART_KEY = "wt_cart";
+
+const WHATSAPP_URL =
+  "https://wa.me/22892953333";
+
+let cart = [];
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+function applyLanguage(language){
+
+  if(language === "en"){
+
+    document.body.classList.add("en");
+
+  }else{
+
+    document.body.classList.remove("en");
+
+  }
+
+  localStorage.setItem(
+    "wt_language",
+    language
+  );
+
+  const selector =
+    document.getElementById("languageSelect");
+
+  if(selector){
+    selector.value = language;
+  }
+
+}
+
+
+function initializeLanguage(){
+
+  const savedLanguage =
+    localStorage.getItem("wt_language") || "fr";
+
+  applyLanguage(savedLanguage);
+
+}
+
+
+document
+  .getElementById("languageSelect")
+  .addEventListener(
+    "change",
+    function(){
+
+      applyLanguage(this.value);
+
+    }
+  );
+
+
+/* =====================================================
+   LOAD CART
+===================================================== */
+
+function loadCart(){
+
+  try{
+
+    cart =
+      JSON.parse(
+        localStorage.getItem(CART_KEY) || "[]"
+      );
+
+    if(!Array.isArray(cart)){
+      cart = [];
+    }
+
+  }catch(error){
+
+    console.error(
+      "Unable to load cart:",
+      error
+    );
+
+    cart = [];
+
+  }
+
+}
+
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+function getPrice(item){
+
+  return Number(
+    item.price ??
+    item.buyNow ??
+    item.buyNowPrice ??
+    0
+  );
+
+}
+
+
+function getName(item){
+
+  return (
+    item.name ||
+    item.productName ||
+    item.product ||
+    "WESTRONIX Product"
+  );
+
+}
+
+
+function getSKU(item){
+
+  return (
+    item.sku ||
+    item.productSku ||
+    "N/A"
+  );
+
+}
+
+
+function isAuction(item){
+
+  return Boolean(
+    item.isAuction ||
+    item.auctionId ||
+    item.type === "auction"
+  );
+
+}
+
+
+function getPhoto(item){
+
+  return (
+    item.photo ||
+    item.image ||
+    (
+      Array.isArray(item.photos)
+      ? item.photos[0]
+      : ""
+    )
+  );
+
+}
+
+
+function formatPrice(value){
+
+  return Number(value || 0)
+    .toLocaleString("fr-FR")
+    + " FCFA";
+
+}
+
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   TOTALS
+===================================================== */
+
+function calculateSubtotal(){
+
+  return cart.reduce(
+
+    (total,item)=>{
+
+      const price =
+        getPrice(item);
+
+      const quantity =
+        Math.max(
+          1,
+          Number(item.quantity) || 1
+        );
+
+      return total +
+        (price * quantity);
+
+    },
+
+    0
+
+  );
+
+}
+
+
+function calculateItemCount(){
+
+  return cart.reduce(
+
+    (total,item)=>{
+
+      return total +
+        Math.max(
+          1,
+          Number(item.quantity) || 1
+        );
+
+    },
+
+    0
+
+  );
+
+}
+
+
+/* =====================================================
+   ORDER SUMMARY
+===================================================== */
+
+function loadOrderSummary(){
+
+  const container =
+    document.getElementById(
+      "orderItems"
+    );
+
+  if(cart.length === 0){
+
+    container.innerHTML = `
+
+      <p>
+
+        <span class="lang-en">
+          Your cart is empty.
+        </span>
+
+        <span class="lang-fr">
+          Votre panier est vide.
+        </span>
+
+      </p>
+
+      <a
+        href="inventory.html"
+        class="btn blue"
+      >
+        Inventaire
+      </a>
+
+      <a
+        href="auctions.html"
+        class="btn gray"
+      >
+        Enchères
+      </a>
+
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML = "";
+
+
+  cart.forEach(item=>{
+
+    const price =
+      getPrice(item);
+
+    const quantity =
+      Math.max(
+        1,
+        Number(item.quantity) || 1
+      );
+
+    const subtotal =
+      price * quantity;
+
+    const auction =
+      isAuction(item);
+
+    const photo =
+      getPhoto(item);
+
+
+    container.innerHTML += `
+
+      <div class="order-line">
+
+        <div class="product-photo">
+
+          ${
+            photo
+
+            ?
+
+            `
+            <img
+              src="${escapeHTML(photo)}"
+              alt="${escapeHTML(getName(item))}"
+              onerror="
+                this.style.display='none';
+                this.parentElement.innerHTML='📷';
+              "
+            >
+            `
+
+            :
+
+            `
+            <div>
+              📷
+              <br>
+              No Photo
+            </div>
+            `
+          }
+
+        </div>
+
+        <div class="product-info">
+
+          <span class="badge ${
+            auction
+            ? "auction-badge"
+            : "inventory-badge"
+          }">
+
+            ${
+              auction
+              ? "🔨 AUCTION LOT"
+              : "✓ INVENTORY"
+            }
+
+          </span>
+
+          <h3>
+            ${escapeHTML(getName(item))}
+          </h3>
+
+          <p class="product-meta">
+
+            <b>SKU:</b>
+            ${escapeHTML(getSKU(item))}
+
+          </p>
+
+          ${
+            auction && item.auctionId
+
+            ?
+
+            `
+            <p class="product-meta">
+
+              <b>Auction:</b>
+              ${escapeHTML(item.auctionId)}
+
+            </p>
+            `
+
+            :
+
+            ""
+          }
+
+          <p class="product-meta">
+
+            <b>Quantity:</b>
+            ${quantity}
+
+          </p>
+
+          <p class="price">
+
+            ${formatPrice(price)}
+
+            ${
+              auction
+              ? "/ lot"
+              : "/ unit"
+            }
+
+          </p>
+
+          <p>
+
+            <b>Subtotal:</b>
+            ${formatPrice(subtotal)}
+
+          </p>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  const subtotal =
+    calculateSubtotal();
+
+
+  document.getElementById(
+    "itemCount"
+  ).textContent =
+    calculateItemCount();
+
+
+  document.getElementById(
+    "subtotal"
+  ).textContent =
+    formatPrice(subtotal);
+
+
+  document.getElementById(
+    "grandTotal"
+  ).textContent =
+    formatPrice(subtotal);
+
+
+  document.getElementById(
+    "paymentTotal"
+  ).textContent =
+    formatPrice(subtotal);
+
+
+  updateAdvance();
+
+}
+
+
+/* =====================================================
+   FULFILLMENT
+===================================================== */
+
+function updateFulfillment(){
+
+  const selected =
+    document.querySelector(
+      'input[name="fulfillment"]:checked'
+    );
+
+  if(!selected){
+    return;
+  }
+
+  const method =
+    selected.value;
+
+
+  document.getElementById(
+    "deliveryFields"
+  ).classList.toggle(
+    "hidden",
+    method !== "delivery"
+  );
+
+
+  document.getElementById(
+    "pickupFields"
+  ).classList.toggle(
+    "hidden",
+    method !== "pickup"
+  );
+
+}
+
+
+/* =====================================================
+   ADVANCE PAYMENT
+===================================================== */
+
+function updateAdvance(){
+
+  const total =
+    calculateSubtotal();
+
+
+  const percentage =
+    Number(
+      document.getElementById(
+        "advanceOption"
+      ).value
+    );
+
+
+  const advance =
+    total *
+    percentage /
+    100;
+
+
+  const balance =
+    total -
+    advance;
+
+
+  document.getElementById(
+    "advanceAmount"
+  ).textContent =
+    formatPrice(advance);
+
+
+  document.getElementById(
+    "balanceAmount"
+  ).textContent =
+    formatPrice(balance);
+
+}
+
+
+document
+  .getElementById("advanceOption")
+  .addEventListener(
+    "change",
+    updateAdvance
+  );
+
+
+/* =====================================================
+   ORDER NUMBER
+===================================================== */
+
+function generateOrderNumber(){
+
+  const now =
+    new Date();
+
+
+  const date =
+    now.getFullYear().toString() +
+    String(
+      now.getMonth()+1
+    ).padStart(2,"0") +
+    String(
+      now.getDate()
+    ).padStart(2,"0");
+
+
+  const random =
+    Math.floor(
+      1000 +
+      Math.random() * 9000
+    );
+
+
+  return (
+    "WT-" +
+    date +
+    "-" +
+    random
+  );
+
+}
+
+
+/* =====================================================
+   SUBMIT ORDER
+===================================================== */
+
+function submitOrder(){
+
+  if(cart.length === 0){
+
+    alert(
+      "Your cart is empty."
+    );
+
+    return;
+
+  }
+
+
+  const name =
+    document.getElementById(
+      "customerName"
+    ).value.trim();
+
+
+  const phone =
+    document.getElementById(
+      "customerPhone"
+    ).value.trim();
+
+
+  const email =
+    document.getElementById(
+      "customerEmail"
+    ).value.trim();
+
+
+  const country =
+    document.getElementById(
+      "customerCountry"
+    ).value.trim();
+
+
+  const city =
+    document.getElementById(
+      "customerCity"
+    ).value.trim();
+
+
+  const notes =
+    document.getElementById(
+      "customerNotes"
+    ).value.trim();
+
+
+  if(
+    !name ||
+    !phone ||
+    !country ||
+    !city
+  ){
+
+    alert(
+      "Please complete all required customer information."
+    );
+
+    return;
+
+  }
+
+
+  const fulfillment =
+    document.querySelector(
+      'input[name="fulfillment"]:checked'
+    ).value;
+
+
+  const address =
+    document.getElementById(
+      "deliveryAddress"
+    ).value.trim();
+
+
+  const deliveryTime =
+    document.getElementById(
+      "deliveryTime"
+    ).value;
+
+
+  if(
+    fulfillment === "delivery" &&
+    !address
+  ){
+
+    alert(
+      "Please enter your delivery address or location."
+    );
+
+    return;
+
+  }
+
+
+  const paymentMethod =
+    document.getElementById(
+      "paymentMethod"
+    ).value;
+
+
+  const advancePercentage =
+    Number(
+      document.getElementById(
+        "advanceOption"
+      ).value
+    );
+
+
+  const subtotal =
+    calculateSubtotal();
+
+
+  const advance =
+    subtotal *
+    advancePercentage /
+    100;
+
+
+  const balance =
+    subtotal -
+    advance;
+
+
+  const orderNumber =
+    generateOrderNumber();
+
+
+  /* =================================================
+     BUILD WHATSAPP MESSAGE
+  ================================================== */
+
+  const lines = [];
+
+
+  lines.push(
+    "🛒 WESTRONIX TECH — NEW ORDER"
+  );
+
+  lines.push(
+    "============================"
+  );
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "Order #: " +
+    orderNumber
+  );
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "👤 CUSTOMER"
+  );
+
+  lines.push(
+    "Name: " +
+    name
+  );
+
+  lines.push(
+    "Phone: " +
+    phone
+  );
+
+  lines.push(
+    "Email: " +
+    (email || "Not provided")
+  );
+
+  lines.push(
+    "Country: " +
+    country
+  );
+
+  lines.push(
+    "City: " +
+    city
+  );
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "🚚 FULFILLMENT"
+  );
+
+  lines.push(
+    "Method: " +
+    (
+      fulfillment === "delivery"
+      ? "Delivery"
+      : "Pickup"
+    )
+  );
+
+
+  if(
+    fulfillment === "delivery"
+  ){
+
+    lines.push(
+      "Address: " +
+      address
+    );
+
+    lines.push(
+      "Preferred Time: " +
+      (
+        deliveryTime ||
+        "Not specified"
+      )
+    );
+
+  }
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "📦 ORDER ITEMS"
+  );
+
+  lines.push(
+    "----------------------------"
+  );
+
+
+  cart.forEach(
+    (item,index)=>{
+
+      const price =
+        getPrice(item);
+
+
+      const quantity =
+        Math.max(
+          1,
+          Number(item.quantity) || 1
+        );
+
+
+      const itemSubtotal =
+        price * quantity;
+
+
+      lines.push(
+        (
+          index + 1
+        ) +
+        ". " +
+        getName(item)
+      );
+
+
+      lines.push(
+        "SKU: " +
+        getSKU(item)
+      );
+
+
+      lines.push(
+        "Type: " +
+        (
+          isAuction(item)
+          ? "Auction Lot"
+          : "Inventory"
+        )
+      );
+
+
+      lines.push(
+        "Quantity: " +
+        quantity
+      );
+
+
+      lines.push(
+        "Price: " +
+        formatPrice(price)
+      );
+
+
+      lines.push(
+        "Subtotal: " +
+        formatPrice(itemSubtotal)
+      );
+
+
+      lines.push(
+        "----------------------------"
+      );
+
+    }
+  );
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "💰 PAYMENT"
+  );
+
+  lines.push(
+    "Order Subtotal: " +
+    formatPrice(subtotal)
+  );
+
+  lines.push(
+    "Delivery: To be confirmed"
+  );
+
+  lines.push(
+    "Preferred Method: " +
+    (
+      paymentMethod ||
+      "Not specified"
+    )
+  );
+
+  lines.push(
+    "Advance Preference: " +
+    advancePercentage +
+    "%"
+  );
+
+  lines.push(
+    "Suggested Advance: " +
+    formatPrice(advance)
+  );
+
+  lines.push(
+    "Estimated Balance: " +
+    formatPrice(balance)
+  );
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "📝 NOTES"
+  );
+
+  lines.push(
+    notes || "None"
+  );
+
+
+  lines.push(
+    ""
+  );
+
+  lines.push(
+    "Please confirm product availability, delivery charges, final total and payment instructions."
+  );
+
+
+  const message =
+    lines.join("\n");
+
+
+  /* =================================================
+     SAVE LAST ORDER LOCALLY
+  ================================================== */
+
+  const orderData = {
+
+    orderNumber:
+      orderNumber,
+
+    customer:{
+      name:name,
+      phone:phone,
+      email:email,
+      country:country,
+      city:city
+    },
+
+    fulfillment:
+      fulfillment,
+
+    address:
+      fulfillment === "delivery"
+      ? address
+      : "",
+
+    deliveryTime:
+      fulfillment === "delivery"
+      ? deliveryTime
+      : "",
+
+    paymentMethod:
+      paymentMethod,
+
+    advancePercentage:
+      advancePercentage,
+
+    subtotal:
+      subtotal,
+
+    items:
+      cart,
+
+    notes:
+      notes,
+
+    status:
+      "Pending Confirmation",
+
+    createdAt:
+      new Date().toISOString()
+
+  };
+
+
+  localStorage.setItem(
+    "wt_last_order",
+    JSON.stringify(
+      orderData
+    )
+  );
+
+
+  /* =================================================
+     OPEN WHATSAPP
+  ================================================== */
+
+  const whatsappLink =
+    WHATSAPP_URL +
+    "?text=" +
+    encodeURIComponent(
+      message
+    );
+
+
+  window.open(
+    whatsappLink,
+    "_blank"
+  );
+
+
+  /* =================================================
+     SHOW CONFIRMATION
+  ================================================== */
+
+  document.getElementById(
+    "generatedOrderNumber"
+  ).textContent =
+    orderNumber;
+
+
+  document.getElementById(
+    "checkoutContent"
+  ).classList.add(
+    "hidden"
+  );
+
+
+  document.getElementById(
+    "confirmation"
+  ).classList.remove(
+    "hidden"
+  );
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    initializeLanguage();
+
+    loadCart();
+
+    loadOrderSummary();
+
+    updateFulfillment();
+
+  }
+);
+
+</script>
+
+</body>
+</html>

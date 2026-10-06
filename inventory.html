@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WESTRONIX TECH | Inventory Marketplace</title>
+
+<style>
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+a{text-decoration:none;color:inherit}
+
+button,input,select{font:inherit}
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.lang-en,
+.lang-fr{
+  display:none !important;
+}
+
+body.language-en .lang-en{
+  display:inline !important;
+}
+
+body.language-fr .lang-fr{
+  display:inline !important;
+}
+
+body.language-en div.lang-en,
+body.language-fr div.lang-fr,
+body.language-en p.lang-en,
+body.language-fr p.lang-fr,
+body.language-en h1.lang-en,
+body.language-fr h1.lang-fr,
+body.language-en h2.lang-en,
+body.language-fr h2.lang-fr,
+body.language-en h3.lang-en,
+body.language-fr h3.lang-fr{
+  display:block !important;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+  background:#071526;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 14px rgba(0,0,0,.15);
+}
+
+.header-inner{
+  max-width:1280px;
+  margin:auto;
+  min-height:76px;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+
+.logo img{
+  width:175px;
+  height:auto;
+  max-height:55px;
+  object-fit:contain;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex:1;
+}
+
+.nav a{
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  opacity:.92;
+  transition:.2s;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:#69adff;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.language-select{
+  border:1px solid #ffffff33;
+  background:#ffffff0d;
+  color:#fff;
+  border-radius:8px;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+.language-select option{
+  color:#111;
+}
+
+.cart-button{
+  background:#1677ff;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:9px 13px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.cart-count{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:22px;
+  height:22px;
+  padding:0 5px;
+  margin-left:5px;
+  background:#fff;
+  color:#1677ff;
+  border-radius:50%;
+  font-size:12px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  background:
+    radial-gradient(circle at 20% 20%,rgba(22,119,255,.24),transparent 32%),
+    linear-gradient(135deg,#071526,#0d2443 65%,#123d70);
+  color:#fff;
+  padding:65px 20px 70px;
+}
+
+.hero-inner{
+  max-width:1180px;
+  margin:auto;
+  text-align:center;
+}
+
+.usa-africa-route{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+  padding:7px 12px;
+  border:1px solid #ffffff22;
+  border-radius:12px;
+  background:#ffffff0b;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.3px;
+  overflow:hidden;
+}
+
+.usa-flag{
+  display:inline-block;
+  font-size:28px;
+  transform-origin:left center;
+  animation:usaFlagWave 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+}
+
+.route-arrow{
+  display:inline-block;
+  color:#69adff;
+  font-size:23px;
+  font-weight:900;
+  animation:routeArrowPulse 2s ease-in-out infinite;
+}
+
+.africa-globe{
+  display:inline-block;
+  font-size:29px;
+  transform-origin:center;
+  animation:africaGlobeRotate 8s linear infinite;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));
+}
+
+@keyframes usaFlagWave{
+  0%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
+  20%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
+  40%{transform:perspective(120px) rotateY(-8deg) rotateZ(2deg) skewY(-2deg)}
+  60%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
+  80%{transform:perspective(120px) rotateY(-5deg) rotateZ(1deg) skewY(-1deg)}
+  100%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
+}
+
+@keyframes routeArrowPulse{
+  0%,100%{transform:translateX(0);opacity:.65}
+  50%{transform:translateX(5px);opacity:1}
+}
+
+@keyframes africaGlobeRotate{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+.hero h1{
+  margin:0 0 12px;
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.05;
+}
+
+.hero p{
+  max-width:760px;
+  margin:0 auto;
+  color:#d8e7fa;
+  font-size:17px;
+  line-height:1.7;
+}
+
+/* =========================================================
+   MARKETPLACE BAR
+========================================================= */
+
+.marketplace-bar{
+  background:#fff;
+  border-bottom:1px solid #e3e8f0;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.marketplace-inner{
+  max-width:1280px;
+  margin:auto;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.marketplace-note{
+  font-size:14px;
+  color:#64748b;
+  font-weight:600;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.controls{
+  max-width:1280px;
+  margin:auto;
+  padding:28px 22px 10px;
+}
+
+.search-row{
+  display:flex;
+  gap:12px;
+}
+
+.search-box{
+  flex:1;
+}
+
+.search-box input{
+  width:100%;
+  padding:15px 18px;
+  border:1px solid #d6dce5;
+  border-radius:10px;
+  background:#fff;
+  outline:none;
+  font-size:16px;
+  transition:.2s;
+}
+
+.search-box input:focus{
+  border-color:#1677ff;
+  box-shadow:0 0 0 3px rgba(22,119,255,.1);
+}
+
+.category-select{
+  min-width:190px;
+  padding:15px;
+  border:1px solid #d6dce5;
+  border-radius:10px;
+  background:#fff;
+  color:#172033;
+  outline:none;
+}
+
+.results-info{
+  margin-top:15px;
+  color:#64748b;
+  font-size:14px;
+}
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+.inventory-section{
+  max-width:1280px;
+  margin:auto;
+  padding:18px 22px 70px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e4e8ef;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(15,23,42,.06);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(15,23,42,.12);
+}
+
+.product-image{
+  height:235px;
+  background:#eef2f7;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.card:hover .product-image img{
+  transform:scale(1.03);
+}
+
+.image-placeholder{
+  color:#64748b;
+  font-weight:800;
+  text-align:center;
+  padding:20px;
+}
+
+.grade-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#e8faf3;
+  color:#087f58;
+  border:1px solid #bcebd9;
+  padding:6px 10px;
+  border-radius:7px;
+  font-size:12px;
+  font-weight:900;
+  z-index:2;
+}
+
+.status-badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  padding:6px 10px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:900;
+  background:#fff;
+  color:#087f58;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.card-content{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.brand{
+  color:#1677ff;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  margin-bottom:7px;
+}
+
+.card h2{
+  margin:0;
+  font-size:20px;
+  line-height:1.3;
+  color:#172033;
+}
+
+.sku{
+  color:#64748b;
+  font-size:12px;
+  margin-top:6px;
+}
+
+.specs{
+  margin-top:15px;
+  border-top:1px solid #edf0f4;
+  padding-top:14px;
+  color:#536174;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.spec{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.spec strong{
+  color:#172033;
+  text-align:right;
+}
+
+.price{
+  margin-top:18px;
+  font-size:25px;
+  font-weight:900;
+  color:#111827;
+}
+
+.price small{
+  font-size:12px;
+  color:#64748b;
+  font-weight:600;
+}
+
+.card-actions{
+  margin-top:auto;
+  padding-top:18px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.btn{
+  border:0;
+  border-radius:8px;
+  padding:11px 10px;
+  text-align:center;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s;
+  font-size:13px;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-primary{
+  background:#1677ff;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#0867e5;
+}
+
+.btn-secondary{
+  background:#071526;
+  color:#fff;
+}
+
+.btn-whatsapp{
+  grid-column:1 / -1;
+  background:#10b981;
+  color:#fff;
+}
+
+.btn-whatsapp:hover{
+  background:#059669;
+}
+
+.btn-quote{
+  grid-column:1 / -1;
+  background:#eef4ff;
+  color:#0758c7;
+  border:1px solid #cfe0ff;
+}
+
+.btn-quote:hover{
+  background:#e2edff;
+}
+
+/* =========================================================
+   LOADING / EMPTY
+========================================================= */
+
+.loading,
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  padding:70px 20px;
+  color:#64748b;
+}
+
+.loading-spinner{
+  width:36px;
+  height:36px;
+  border:4px solid #dbe5f2;
+  border-top-color:#1677ff;
+  border-radius:50%;
+  margin:0 auto 15px;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#071526;
+  color:#fff;
+  margin-top:20px;
+}
+
+.footer-inner{
+  max-width:1280px;
+  margin:auto;
+  padding:45px 22px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-logo{
+  font-size:24px;
+  font-weight:900;
+}
+
+.footer-logo span{
+  color:#69adff;
+}
+
+.footer-text{
+  color:#aebed1;
+  line-height:1.7;
+  max-width:500px;
+}
+
+.footer-column h3{
+  margin-top:0;
+}
+
+.footer-column a{
+  display:block;
+  color:#b9c8d9;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.footer-column a:hover{
+  color:#69adff;
+}
+
+.footer-bottom{
+  border-top:1px solid #ffffff18;
+  padding:18px 22px;
+  text-align:center;
+  color:#91a4ba;
+  font-size:13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .header-inner{
+    flex-wrap:wrap;
+  }
+
+  .nav{
+    order:3;
+    flex-basis:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding-bottom:8px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:12px 16px;
+  }
+
+  .logo img{
+    width:145px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .header-actions{
+    margin-left:auto;
+  }
+
+  .hero{
+    padding:48px 18px 55px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .marketplace-inner{
+    padding:14px 16px;
+  }
+
+  .marketplace-note{
+    font-size:12px;
+  }
+
+  .controls{
+    padding:22px 16px 8px;
+  }
+
+  .search-row{
+    flex-direction:column;
+  }
+
+  .category-select{
+    width:100%;
+  }
+
+  .inventory-section{
+    padding:15px 16px 55px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+}
+
+@media(max-width:560px){
+
+  .header-actions{
+    gap:5px;
+  }
+
+  .language-select{
+    padding:7px 5px;
+    font-size:12px;
+  }
+
+  .cart-button{
+    font-size:12px;
+    padding:8px 9px;
+  }
+
+  .usa-africa-route{
+    gap:7px;
+    padding:6px 10px;
+    font-size:12px;
+  }
+
+  .usa-flag{
+    font-size:24px;
+  }
+
+  .route-arrow{
+    font-size:19px;
+  }
+
+  .africa-globe{
+    font-size:25px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .usa-flag,
+  .route-arrow,
+  .africa-globe,
+  .loading-spinner{
+    animation:none;
+  }
+
+  .card:hover,
+  .btn:hover{
+    transform:none;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+```
+<a href="index.html" class="logo">
+  <img src="images/westronix-logo.png" alt="WESTRONIX TECH">
+</a>
+
+<nav class="nav">
+
+  <a href="index.html">
+    <span class="lang-en">Home</span>
+    <span class="lang-fr">Accueil</span>
+  </a>
+
+  <a href="inventory.html" class="active">
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+  </a>
+
+  <a href="auctions.html">
+    <span class="lang-en">Live Auctions</span>
+    <span class="lang-fr">Enchères</span>
+  </a>
+
+  <a href="sell-equipment.html">
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre du matériel</span>
+  </a>
+
+  <a href="africa-education.html">
+    <span class="lang-en">Africa Education</span>
+    <span class="lang-fr">Éducation en Afrique</span>
+  </a>
+
+</nav>
+
+<div class="header-actions">
+
+  <select
+    id="languageSelect"
+    class="language-select"
+    aria-label="Language">
+
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+
+  </select>
+
+  <button
+    class="cart-button"
+    type="button"
+    onclick="window.location.href='cart.html'">
+
+    🛒
+
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+
+    <span
+      id="cartCount"
+      class="cart-count">0</span>
+
+  </button>
+
+</div>
+```
+
+  </div>
+
+</header>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+```
+<div class="usa-africa-route">
+
+  <span class="usa-flag">🇺🇸</span>
+
+  <span class="route-arrow">→</span>
+
+  <span class="africa-globe">🌍</span>
+
+  <span class="lang-en">USA → AFRICA</span>
+  <span class="lang-fr">USA → AFRIQUE</span>
+
+</div>
+
+<h1>
+  <span class="lang-en">Available Inventory</span>
+  <span class="lang-fr">Inventaire disponible</span>
+</h1>
+
+<p>
+
+  <span class="lang-en">
+    Business-grade technology sourced from the United States,
+    tested and prepared for customers, businesses and organizations
+    across Africa.
+  </span>
+
+  <span class="lang-fr">
+    Technologies professionnelles provenant des États-Unis,
+    testées et préparées pour les particuliers, entreprises
+    et organisations à travers l'Afrique.
+  </span>
+
+</p>
+```
+
+  </div>
+
+</section>
+
+<!-- =======================================================
+     MARKETPLACE BAR
+======================================================= -->
+
+<section class="marketplace-bar">
+
+  <div class="marketplace-inner">
+
+```
+<div class="marketplace-note">
+
+  <span class="lang-en">
+    Refurbished &amp; tested technology
+  </span>
+
+  <span class="lang-fr">
+    Technologies testées et reconditionnées
+  </span>
+
+</div>
+
+<div class="marketplace-note">
+  📍 Lomé, Togo
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =======================================================
+     SEARCH / FILTERS
+======================================================= -->
+
+<section class="controls">
+
+  <div class="search-row">
+
+```
+<div class="search-box">
+
+  <input
+    id="searchBox"
+    type="search"
+    placeholder="Rechercher Dell, HP, Lenovo, serveur..."
+    autocomplete="off">
+
+</div>
+
+<select
+  id="categoryFilter"
+  class="category-select">
+
+  <option value="all">
+    Toutes les catégories
+  </option>
+
+</select>
+```
+
+  </div>
+
+  <div
+    id="resultsInfo"
+    class="results-info">
+  </div>
+
+</section>
+
+<!-- =======================================================
+     INVENTORY
+======================================================= -->
+
+<section class="inventory-section">
+
+  <div
+    id="inventoryGrid"
+    class="grid">
+
+```
+<div class="loading">
+
+  <div class="loading-spinner"></div>
+
+  <span class="lang-en">
+    Loading inventory...
+  </span>
+
+  <span class="lang-fr">
+    Chargement de l'inventaire...
+  </span>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+```
+<div>
+
+  <div class="footer-logo">
+    WESTRONIX <span>TECH</span>
+  </div>
+
+  <p class="footer-text">
+
+    <span class="lang-en">
+      Recover → Refurbish → Resell → Reuse → Impact.
+      Technology distribution from the USA to Togo and across Africa.
+    </span>
+
+    <span class="lang-fr">
+      Récupérer → Reconditionner → Revendre → Réutiliser → Impact.
+      Distribution technologique des États-Unis vers le Togo et l'Afrique.
+    </span>
+
+  </p>
+
+</div>
+
+<div class="footer-column">
+
+  <h3>
+    <span class="lang-en">Marketplace</span>
+    <span class="lang-fr">Marketplace</span>
+  </h3>
+
+  <a href="inventory.html">
+    <span class="lang-en">Inventory</span>
+    <span class="lang-fr">Inventaire</span>
+  </a>
+
+  <a href="auctions.html">
+    <span class="lang-en">Auctions</span>
+    <span class="lang-fr">Enchères</span>
+  </a>
+
+  <a href="cart.html">
+    <span class="lang-en">Cart</span>
+    <span class="lang-fr">Panier</span>
+  </a>
+
+</div>
+
+<div class="footer-column">
+
+  <h3>
+    <span class="lang-en">Connect</span>
+    <span class="lang-fr">Contact</span>
+  </h3>
+
+  <a
+    href="https://wa.me/22892953333"
+    target="_blank"
+    rel="noopener">
+    WhatsApp
+  </a>
+
+  <a href="mailto:westronix.tech@gmail.com">
+    westronix.tech@gmail.com
+  </a>
+
+  <a href="sell-equipment.html">
+    <span class="lang-en">Sell Equipment</span>
+    <span class="lang-fr">Vendre du matériel</span>
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <div class="footer-bottom">
+
+```
+© 2026 WESTRONIX TECH —
+<span class="lang-en">Technology Distribution Across Africa</span>
+<span class="lang-fr">Distribution technologique à travers l'Afrique</span>
+```
+
+  </div>
+
+</footer>
+
+<script>
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+let currentLanguage =
+  localStorage.getItem('wt_language') || 'fr';
+
+function applyLanguage(language){
+
+  currentLanguage =
+    language === 'en' ? 'en' : 'fr';
+
+  localStorage.setItem(
+    'wt_language',
+    currentLanguage
+  );
+
+  document.body.classList.remove(
+    'language-en',
+    'language-fr'
+  );
+
+  document.body.classList.add(
+    currentLanguage === 'en'
+      ? 'language-en'
+      : 'language-fr'
+  );
+
+  document.documentElement.lang =
+    currentLanguage;
+
+  const selector =
+    document.getElementById('languageSelect');
+
+  if(selector){
+    selector.value =
+      currentLanguage;
+  }
+
+  updatePlaceholders();
+  updateResultsInfo();
+}
+
+
+/* =========================================================
+   PLACEHOLDERS / FILTER LABELS
+========================================================= */
+
+function updatePlaceholders(){
+
+  const searchBox =
+    document.getElementById('searchBox');
+
+  if(searchBox){
+
+    searchBox.placeholder =
+      currentLanguage === 'en'
+        ? 'Search Dell, HP, Lenovo, Server...'
+        : 'Rechercher Dell, HP, Lenovo, serveur...';
+
+  }
+
+  const categoryFilter =
+    document.getElementById('categoryFilter');
+
+  if(categoryFilter){
+
+    const firstOption =
+      categoryFilter.querySelector(
+        'option[value="all"]'
+      );
+
+    if(firstOption){
+
+      firstOption.textContent =
+        currentLanguage === 'en'
+          ? 'All categories'
+          : 'Toutes les catégories';
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   LANGUAGE SELECTOR
+========================================================= */
+
+document
+  .getElementById('languageSelect')
+  .addEventListener(
+    'change',
+    function(){
+
+      applyLanguage(this.value);
+
+      renderProducts(
+        getFilteredProducts()
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   INVENTORY
+========================================================= */
+
+let inventoryData = [];
+
+
+async function loadInventory(){
+
+  try{
+
+    const response =
+      await fetch('inventory.json');
+
+    if(!response.ok){
+
+      throw new Error(
+        'Inventory file could not be loaded.'
+      );
+
+    }
+
+    const data =
+      await response.json();
+
+    inventoryData =
+      Array.isArray(data.products)
+        ? data.products
+        : [];
+
+    populateCategories(
+      Array.isArray(data.categories)
+        ? data.categories
+        : []
+    );
+
+    renderProducts(
+      inventoryData
+    );
+
+    updateResultsInfo();
+
+  }catch(error){
+
+    console.error(error);
+
+    document
+      .getElementById('inventoryGrid')
+      .innerHTML = `
+
+        <div class="empty">
+
+          <h2>
+            ${
+              currentLanguage === 'en'
+                ? 'Unable to load inventory'
+                : 'Impossible de charger l’inventaire'
+            }
+          </h2>
+
+          <p>
+            ${
+              currentLanguage === 'en'
+                ? 'Please check that inventory.json is in the same folder as inventory.html.'
+                : 'Vérifiez que inventory.json se trouve dans le même dossier que inventory.html.'
+            }
+          </p>
+
+        </div>
+
+      `;
+
+  }
+
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+function populateCategories(categories){
+
+  const filter =
+    document.getElementById(
+      'categoryFilter'
+    );
+
+  if(!filter){
+    return;
+  }
+
+  filter.innerHTML = '';
+
+  const allOption =
+    document.createElement('option');
+
+  allOption.value = 'all';
+
+  allOption.textContent =
+    currentLanguage === 'en'
+      ? 'All categories'
+      : 'Toutes les catégories';
+
+  filter.appendChild(allOption);
+
+  categories.forEach(category => {
+
+    const option =
+      document.createElement('option');
+
+    option.value = category;
+    option.textContent = category;
+
+    filter.appendChild(option);
+
+  });
+
+}
+
+
+/* =========================================================
+   FILTERING
+========================================================= */
+
+function getFilteredProducts(){
+
+  const searchElement =
+    document.getElementById('searchBox');
+
+  const categoryElement =
+    document.getElementById('categoryFilter');
+
+  const term =
+    searchElement
+      ? searchElement.value.trim().toLowerCase()
+      : '';
+
+  const category =
+    categoryElement
+      ? categoryElement.value
+      : 'all';
+
+  return inventoryData.filter(product => {
+
+    const searchable = [
+
+      product.name,
+      product.brand,
+      product.category,
+      product.sku,
+      product.processor,
+      product.ram,
+      product.storage,
+      product.screen,
+      product.gpu,
+      product.condition,
+      product.location
+
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
+
+    const matchesSearch =
+      !term ||
+      searchable.includes(term);
+
+    const matchesCategory =
+      category === 'all' ||
+      product.category === category;
+
+    return (
+      matchesSearch &&
+      matchesCategory
+    );
+
+  });
+
+}
+
+
+document
+  .getElementById('searchBox')
+  .addEventListener(
+    'input',
+    function(){
+
+      renderProducts(
+        getFilteredProducts()
+      );
+
+      updateResultsInfo();
+
+    }
+  );
+
+
+document
+  .getElementById('categoryFilter')
+  .addEventListener(
+    'change',
+    function(){
+
+      renderProducts(
+        getFilteredProducts()
+      );
+
+      updateResultsInfo();
+
+    }
+  );
+
+
+/* =========================================================
+   PRODUCT RENDERING
+========================================================= */
+
+function renderProducts(products){
+
+  const grid =
+    document.getElementById(
+      'inventoryGrid'
+    );
+
+  if(!grid){
+    return;
+  }
+
+  grid.innerHTML = '';
+
+  if(!products.length){
+
+    grid.innerHTML = `
+
+      <div class="empty">
+
+        <h2>
+          ${
+            currentLanguage === 'en'
+              ? 'No products found'
+              : 'Aucun produit trouvé'
+          }
+        </h2>
+
+        <p>
+          ${
+            currentLanguage === 'en'
+              ? 'Try another search or category.'
+              : 'Essayez une autre recherche ou catégorie.'
+          }
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  products.forEach(product => {
+
+    const card =
+      document.createElement('article');
+
+    card.className = 'card';
+
+
+    const photo =
+      Array.isArray(product.photos) &&
+      product.photos.length
+        ? product.photos[0]
+        : '';
+
+
+    const status =
+      String(
+        product.status || ''
+      ).toLowerCase();
+
+
+    const statusText =
+      status === 'available'
+        ? (
+            currentLanguage === 'en'
+              ? 'Available'
+              : 'Disponible'
+          )
+        : (
+            product.status ||
+            (
+              currentLanguage === 'en'
+                ? 'Check availability'
+                : 'Vérifier disponibilité'
+            )
+          );
+
+
+    const condition =
+      product.condition ||
+      (
+        currentLanguage === 'en'
+          ? 'Tested Working'
+          : 'Testé et fonctionnel'
+      );
+
+
+    const location =
+      product.location ||
+      'Lomé, Togo';
+
+
+    const quantity =
+      Number.isFinite(
+        Number(product.quantity)
+      )
+        ? Number(product.quantity)
+        : 0;
+
+
+    const price =
+      Number(product.price) || 0;
+
+
+    const whatsappText =
+      currentLanguage === 'en'
+
+        ? `Hello WESTRONIX TECH, I am interested in ${product.name} (SKU: ${product.sku}).`
+
+        : `Bonjour WESTRONIX TECH, je suis intéressé(e) par ${product.name} (SKU : ${product.sku}).`;
+
+
+    const quoteText =
+      currentLanguage === 'en'
+
+        ? `Hello WESTRONIX TECH, I would like to request a quote for ${product.name} (SKU: ${product.sku}). Quantity: ${quantity}.`
+
+        : `Bonjour WESTRONIX TECH, je souhaite demander un devis pour ${product.name} (SKU : ${product.sku}). Quantité : ${quantity}.`;
+
+
+    card.innerHTML = `
+
+      <div class="product-image">
+
+        ${
+          photo
+
+            ? `
+
+              <img
+                src="${escapeHTML(photo)}"
+                alt="${escapeHTML(product.name)}"
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+
+              <div
+                class="image-placeholder"
+                style="display:none;">
+                ${escapeHTML(product.name)}
+              </div>
+
+            `
+
+            : `
+
+              <div class="image-placeholder">
+                ${escapeHTML(product.name)}
+              </div>
+
+            `
+        }
+
+
+        <div class="grade-badge">
+
+          ${
+            currentLanguage === 'en'
+              ? 'GRADE'
+              : 'GRADE'
+          }
+
+          ${escapeHTML(product.grade || 'N/A')}
+
+        </div>
+
+
+        <div class="status-badge">
+          ${escapeHTML(statusText)}
+        </div>
+
+      </div>
+
+
+      <div class="card-content">
+
+        <div class="brand">
+          ${escapeHTML(product.brand || '')}
+        </div>
+
+
+        <h2>
+          ${escapeHTML(product.name)}
+        </h2>
+
+
+        <div class="sku">
+          SKU: ${escapeHTML(product.sku)}
+        </div>
+
+
+        <div class="specs">
+
+          <div class="spec">
+
+            <span>
+              ${
+                currentLanguage === 'en'
+                  ? 'Processor'
+                  : 'Processeur'
+              }
+            </span>
+
+            <strong>
+              ${escapeHTML(product.processor || 'N/A')}
+            </strong>
+
+          </div>
+
+
+          <div class="spec">
+
+            <span>RAM</span>
+
+            <strong>
+              ${escapeHTML(product.ram || 'N/A')}
+            </strong>
+
+          </div>
+
+
+          <div class="spec">
+
+            <span>
+              ${
+                currentLanguage === 'en'
+                  ? 'Storage'
+                  : 'Stockage'
+              }
+            </span>
+
+            <strong>
+              ${escapeHTML(product.storage || 'N/A')}
+            </strong>
+
+          </div>
+
+
+          ${
+            product.screen
+
+              ? `
+
+                <div class="spec">
+
+                  <span>
+                    ${
+                      currentLanguage === 'en'
+                        ? 'Screen'
+                        : 'Écran'
+                    }
+                  </span>
+
+                  <strong>
+                    ${escapeHTML(product.screen)}
+                  </strong>
+
+                </div>
+
+              `
+
+              : ''
+          }
+
+
+          ${
+            product.gpu
+
+              ? `
+
+                <div class="spec">
+
+                  <span>
+                    GPU
+                  </span>
+
+                  <strong>
+                    ${escapeHTML(product.gpu)}
+                  </strong>
+
+                </div>
+
+              `
+
+              : ''
+          }
+
+
+          <div class="spec">
+
+            <span>
+              ${
+                currentLanguage === 'en'
+                  ? 'Condition'
+                  : 'État'
+              }
+            </span>
+
+            <strong>
+              ${escapeHTML(condition)}
+            </strong>
+
+          </div>
+
+
+          <div class="spec">
+
+            <span>
+              ${
+                currentLanguage === 'en'
+                  ? 'Quantity'
+                  : 'Quantité'
+              }
+            </span>
+
+            <strong>
+              ${escapeHTML(quantity)}
+            </strong>
+
+          </div>
+
+
+          <div class="spec">
+
+            <span>
+              ${
+                currentLanguage === 'en'
+                  ? 'Location'
+                  : 'Emplacement'
+              }
+            </span>
+
+            <strong>
+              ${escapeHTML(location)}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="price">
+
+          ${price.toLocaleString()}
+
+          FCFA
+
+          <small>
+            /
+            ${
+              currentLanguage === 'en'
+                ? 'unit'
+                : 'unité'
+            }
+          </small>
+
+        </div>
+
+
+        <div class="card-actions">
+
+
+          <a
+            href="product.html?sku=${encodeURIComponent(product.sku)}"
+            class="btn btn-primary">
+
+            ${
+              currentLanguage === 'en'
+                ? 'View Product'
+                : 'Voir le produit'
+            }
+
+          </a>
+
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="addToCart('${escapeJS(product.sku)}')">
+
+            ${
+              currentLanguage === 'en'
+                ? 'Add to Cart'
+                : 'Ajouter au panier'
+            }
+
+          </button>
+
+
+          <a
+            href="https://wa.me/22892953333?text=${encodeURIComponent(whatsappText)}"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-whatsapp">
+
+            💬 WhatsApp
+
+          </a>
+
+
+          <a
+            href="https://wa.me/22892953333?text=${encodeURIComponent(quoteText)}"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-quote">
+
+            ${
+              currentLanguage === 'en'
+                ? 'Request a Quote'
+                : 'Demander un devis'
+            }
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+function addToCart(sku){
+
+  const product =
+    inventoryData.find(
+      item => item.sku === sku
+    );
+
+  if(!product){
+    return;
+  }
+
+
+  let cart = [];
+
+  try{
+
+    cart =
+      JSON.parse(
+        localStorage.getItem('wt_cart') || '[]'
+      );
+
+    if(!Array.isArray(cart)){
+      cart = [];
+    }
+
+  }catch(error){
+
+    cart = [];
+
+  }
+
+
+  const existing =
+    cart.find(
+      item => item.sku === sku
+    );
+
+
+  if(existing){
+
+    const currentQuantity =
+      Number(existing.quantity) || 0;
+
+    const maximumQuantity =
+      Number(product.quantity) || Infinity;
+
+    if(
+      currentQuantity >=
+      maximumQuantity
+    ){
+
+      alert(
+        currentLanguage === 'en'
+          ? 'The maximum available quantity is already in your cart.'
+          : 'La quantité maximale disponible est déjà dans votre panier.'
+      );
+
+      return;
+
+    }
+
+    existing.quantity =
+      currentQuantity + 1;
+
+  }else{
+
+    cart.push({
+
+      sku:product.sku,
+
+      name:product.name,
+
+      price:product.price,
+
+      quantity:1,
+
+      type:'inventory',
+
+      image:
+        Array.isArray(product.photos) &&
+        product.photos.length
+          ? product.photos[0]
+          : ''
+
+    });
+
+  }
+
+
+  localStorage.setItem(
+    'wt_cart',
+    JSON.stringify(cart)
+  );
+
+
+  updateCartCount();
+
+
+  alert(
+    currentLanguage === 'en'
+      ? product.name + ' was added to your cart.'
+      : product.name + ' a été ajouté à votre panier.'
+  );
+
+}
+
+
+/* =========================================================
+   CART COUNT
+========================================================= */
+
+function updateCartCount(){
+
+  let cart = [];
+
+  try{
+
+    cart =
+      JSON.parse(
+        localStorage.getItem('wt_cart') || '[]'
+      );
+
+    if(!Array.isArray(cart)){
+      cart = [];
+    }
+
+  }catch(error){
+
+    cart = [];
+
+  }
+
+
+  const count =
+    cart.reduce(
+      (total,item) =>
+        total + Number(item.quantity || 1),
+      0
+    );
+
+
+  const element =
+    document.getElementById(
+      'cartCount'
+    );
+
+
+  if(element){
+    element.textContent = count;
+  }
+
+}
+
+
+/* =========================================================
+   RESULTS COUNT
+========================================================= */
+
+function updateResultsInfo(){
+
+  const element =
+    document.getElementById(
+      'resultsInfo'
+    );
+
+  if(!element){
+    return;
+  }
+
+
+  if(!inventoryData.length){
+
+    element.textContent = '';
+
+    return;
+
+  }
+
+
+  const filtered =
+    getFilteredProducts();
+
+
+  if(currentLanguage === 'en'){
+
+    element.textContent =
+      `${filtered.length} product${filtered.length === 1 ? '' : 's'} found`;
+
+  }else{
+
+    element.textContent =
+      `${filtered.length} produit${filtered.length === 1 ? '' : 's'} trouvé${filtered.length === 1 ? '' : 's'}`;
+
+  }
+
+}
+
+
+/* =========================================================
+   SECURITY HELPERS
+========================================================= */
+
+function escapeHTML(value){
+
+  return String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+
+}
+
+
+function escapeJS(value){
+
+  return String(value ?? '')
+    .replace(/\\/g,'\\\\')
+    .replace(/'/g,"\\'")
+    .replace(/"/g,'\\"');
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+applyLanguage(currentLanguage);
+
+updateCartCount();
+
+loadInventory();
+
+</script>
+
+</body>
+</html>

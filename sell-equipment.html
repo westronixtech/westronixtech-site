@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Sell Equipment | WESTRONIX TECH</title>
+
+<meta name="description"
+      content="Sell used laptops, desktops, workstations, servers, networking equipment and IT assets to WESTRONIX TECH. Bulk equipment purchasing from businesses, schools, ITAD companies and suppliers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Inter", Arial, sans-serif;
+        background: #f5f7fa;
+        color: #172033;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        font: inherit;
+    }
+
+    .container {
+        width: min(1180px, 92%);
+        margin: 0 auto;
+    }
+
+    /* =========================================
+       LANGUAGE
+    ========================================= */
+
+    .lang-fr {
+        display: none;
+    }
+
+    body.language-fr .lang-en {
+        display: none;
+    }
+
+    body.language-fr .lang-fr {
+        display: inline;
+    }
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    header {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+    }
+
+    .brand-text strong {
+        display: block;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.4px;
+    }
+
+    .brand-text span {
+        display: block;
+        color: #667085;
+        font-size: 11px;
+        margin-top: 1px;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        color: #344054;
+        font-size: 13px;
+        font-weight: 600;
+        transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+        color: #0b63ce;
+    }
+
+    .cart-link {
+        background: #0b63ce;
+        color: #ffffff !important;
+        padding: 9px 13px;
+        border-radius: 8px;
+    }
+
+    .cart-link:hover {
+        background: #084f9f;
+    }
+
+    .language-select {
+        border: 1px solid #d0d5dd;
+        border-radius: 8px;
+        padding: 8px 10px;
+        background: #ffffff;
+        color: #344054;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        width: auto;
+    }
+
+    /* =========================================
+       TOP BANNER
+    ========================================= */
+
+    .top-banner {
+        background: #0f172a;
+        color: #ffffff;
+        text-align: center;
+        padding: 9px 15px;
+        font-size: 12px;
+    }
+
+    .top-banner strong {
+        color: #93c5fd;
+    }
+
+    /* =========================================
+       USA → TOGO ROUTE
+    ========================================= */
+
+    .route-strip {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 12px 0;
+    }
+
+    .route {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #344054;
+    }
+
+    .flag {
+        font-size: 25px;
+        display: inline-block;
+    }
+
+    .flag-usa {
+        animation: wave 1.8s ease-in-out infinite;
+        transform-origin: center bottom;
+    }
+
+    .route-arrow {
+        font-size: 25px;
+        color: #0b63ce;
+        animation: pulseArrow 1.5s ease-in-out infinite;
+    }
+
+    .globe {
+        display: inline-block;
+        font-size: 25px;
+        animation: rotateGlobe 4s linear infinite;
+    }
+
+    @keyframes wave {
+        0%, 100% {
+            transform: rotate(-3deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+    }
+
+    @keyframes pulseArrow {
+        0%, 100% {
+            transform: translateX(0);
+            opacity: 0.65;
+        }
+        50% {
+            transform: translateX(5px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes rotateGlobe {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+        background:
+            linear-gradient(
+                135deg,
+                rgba(11, 99, 206, 0.96),
+                rgba(15, 23, 42, 0.97)
+            ),
+            url("images/sell-equipment-bg.jpg") center/cover;
+        color: #ffffff;
+        padding: 72px 0;
+    }
+
+    .hero-content {
+        max-width: 820px;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+        padding: 7px 13px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.08;
+        letter-spacing: -1.8px;
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        max-width: 740px;
+        font-size: 18px;
+        color: #e5efff;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* =========================================
+       BUTTONS
+    ========================================= */
+
+    .btn {
+        border: none;
+        border-radius: 9px;
+        padding: 13px 19px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .btn-primary {
+        background: #ffffff;
+        color: #0b63ce;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+    }
+
+    .btn-whatsapp {
+        background: #16a34a;
+        color: #ffffff;
+    }
+
+    .btn-whatsapp:hover {
+        background: #15803d;
+    }
+
+    .btn-dark {
+        background: #172033;
+        color: #ffffff;
+    }
+
+    .btn-dark:hover {
+        background: #0f172a;
+    }
+
+    /* =========================================
+       SECTIONS
+    ========================================= */
+
+    section {
+        padding: 64px 0;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 38px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(27px, 4vw, 38px);
+        letter-spacing: -1px;
+        margin-bottom: 10px;
+    }
+
+    .section-header p {
+        color: #667085;
+    }
+
+    /* =========================================
+       PROCESS
+    ========================================= */
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+    }
+
+    .process-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 23px 15px;
+        text-align: center;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .process-icon {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 14px;
+        border-radius: 50%;
+        background: #eaf3ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+    }
+
+    .process-card h3 {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    .process-card p {
+        color: #667085;
+        font-size: 12px;
+    }
+
+    /* =========================================
+       WHAT WE BUY
+    ========================================= */
+
+    .buy-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .buy-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 13px;
+        padding: 22px;
+        transition: 0.2s ease;
+    }
+
+    .buy-card:hover {
+        transform: translateY(-2px);
+        border-color: #b9d5f7;
+        box-shadow: 0 8px 24px rgba(15,23,42,0.07);
+    }
+
+    .buy-card .icon {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .buy-card h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .buy-card p {
+        font-size: 13px;
+        color: #667085;
+    }
+
+    /* =========================================
+       AUDIENCE
+    ========================================= */
+
+    .audience {
+        background: #ffffff;
+    }
+
+    .audience-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .audience-card {
+        padding: 25px;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: #f9fafb;
+    }
+
+    .audience-card h3 {
+        margin-bottom: 7px;
+        font-size: 17px;
+    }
+
+    .audience-card p {
+        color: #667085;
+        font-size: 13px;
+    }
+
+    /* =========================================
+       TRUST
+    ========================================= */
+
+    .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .trust-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 30px;
+    }
+
+    .trust-card h3 {
+        margin-bottom: 14px;
+        font-size: 21px;
+    }
+
+    .trust-list {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+    }
+
+    .trust-list li {
+        display: flex;
+        gap: 10px;
+        color: #475467;
+        font-size: 14px;
+    }
+
+    .trust-list span {
+        color: #16a34a;
+        font-weight: 800;
+    }
+
+    /* =========================================
+       FORM
+    ========================================= */
+
+    .form-section {
+        background: #eef4fa;
+    }
+
+    .form-wrapper {
+        max-width: 980px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #dfe5ec;
+        border-radius: 18px;
+        padding: clamp(22px, 5vw, 42px);
+        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+    }
+
+    .form-intro {
+        margin-bottom: 30px;
+    }
+
+    .form-intro h2 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .form-intro p {
+        color: #667085;
+        font-size: 14px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
+    }
+
+    label {
+        font-size: 13px;
+        font-weight: 700;
+        color: #344054;
+    }
+
+    label span {
+        color: #dc2626;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        border: 1px solid #d0d5dd;
+        border-radius: 9px;
+        padding: 12px 13px;
+        color: #172033;
+        background: #ffffff;
+        outline: none;
+        transition: 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #0b63ce;
+        box-shadow: 0 0 0 3px rgba(11,99,206,0.10);
+    }
+
+    textarea {
+        min-height: 125px;
+        resize: vertical;
+    }
+
+    .help-text {
+        color: #667085;
+        font-size: 11px;
+    }
+
+    .photo-box {
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 22px;
+        text-align: center;
+        background: #f8fafc;
+    }
+
+    .photo-box input {
+        border: none;
+        padding: 0;
+        background: transparent;
+    }
+
+    .photo-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .photo-preview-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 1;
+        background: #e5e7eb;
+    }
+
+    .photo-preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .submit-area {
+        margin-top: 28px;
+        padding-top: 25px;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .submit-area .btn {
+        min-width: 210px;
+    }
+
+    .form-notice {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        color: #9a3412;
+        padding: 13px 15px;
+        border-radius: 9px;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .contact-box {
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: 18px;
+        padding: 38px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 35px;
+        align-items: center;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .contact-box p {
+        color: #cbd5e1;
+        font-size: 14px;
+    }
+
+    .contact-info {
+        display: grid;
+        gap: 11px;
+    }
+
+    .contact-info a,
+    .contact-info div {
+        color: #e2e8f0;
+        font-size: 14px;
+    }
+
+    .contact-info strong {
+        color: #ffffff;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+        background: #020617;
+        color: #94a3b8;
+        padding: 30px 0;
+        font-size: 12px;
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .footer-brand {
+        color: #ffffff;
+        font-weight: 800;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1100px) {
+        .nav {
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 12px 0;
+        }
+
+        .nav-right {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            flex: 1;
+        }
+
+        .process-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .buy-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 800px) {
+        .hero {
+            padding: 52px 0;
+        }
+
+        .audience-grid,
+        .trust-grid,
+        .contact-box {
+            grid-template-columns: 1fr;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group.full {
+            grid-column: auto;
+        }
+
+        .nav-right {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .nav-links {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        section {
+            padding: 48px 0;
+        }
+
+        .process-grid,
+        .buy-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .contact-box {
+            padding: 26px;
+        }
+
+        .submit-area {
+            flex-direction: column;
+        }
+
+        .submit-area .btn {
+            width: 100%;
+        }
+
+        .route {
+            font-size: 11px;
+            gap: 7px;
+        }
+
+        .flag,
+        .route-arrow,
+        .globe {
+            font-size: 20px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- TOP BANNER -->
+<div class="top-banner">
+    <span class="lang-en">
+        <strong>WESTRONIX TECH</strong> — We buy used and surplus IT equipment in bulk.
+        USA sourcing → Africa distribution.
+    </span>
+
+    <span class="lang-fr">
+        <strong>WESTRONIX TECH</strong> — Nous achetons des équipements informatiques
+        usagés et excédentaires en gros. Approvisionnement USA → distribution Afrique.
+    </span>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="container nav">
+
+        <a href="index.html" class="brand">
+            <img
+                src="images/westronix-logo.png"
+                alt="WESTRONIX TECH"
+                class="logo"
+            >
+
+            <div class="brand-text">
+                <strong>WESTRONIX TECH</strong>
+
+                <span class="lang-en">
+                    USA → TOGO • Technology Distribution
+                </span>
+
+                <span class="lang-fr">
+                    USA → TOGO • Distribution technologique
+                </span>
+            </div>
+        </a>
+
+        <div class="nav-right">
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    <span class="lang-en">Home</span>
+                    <span class="lang-fr">Accueil</span>
+                </a>
+
+                <a href="inventory.html">
+                    <span class="lang-en">Inventory</span>
+                    <span class="lang-fr">Inventaire</span>
+                </a>
+
+                <a href="auctions.html">
+                    <span class="lang-en">Live Auctions</span>
+                    <span class="lang-fr">Enchères</span>
+                </a>
+
+                <a href="sell-equipment.html" class="active">
+                    <span class="lang-en">Sell Equipment</span>
+                    <span class="lang-fr">Vendre du matériel</span>
+                </a>
+
+                <a href="africa-education.html">
+                    <span class="lang-en">Africa Education</span>
+                    <span class="lang-fr">Éducation en Afrique</span>
+                </a>
+
+                <a href="cart.html" class="cart-link">
+                    🛒
+                    <span class="lang-en">Cart</span>
+                    <span class="lang-fr">Panier</span>
+                    <span id="cartCount">0</span>
+                </a>
+
+            </nav>
+
+            <select
+                id="languageSelect"
+                class="language-select"
+                aria-label="Language"
+            >
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+
+        </div>
+    </div>
+</header>
+
+<!-- USA → TOGO ROUTE -->
+<div class="route-strip">
+    <div class="container route">
+
+        <span class="flag flag-usa">🇺🇸</span>
+
+        <span class="lang-en">USA Technology Sourcing</span>
+        <span class="lang-fr">Approvisionnement technologique USA</span>
+
+        <span class="route-arrow">→</span>
+
+        <span class="globe">🌍</span>
+
+        <span class="lang-en">Togo & Africa</span>
+        <span class="lang-fr">Togo & Afrique</span>
+
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                <span class="lang-en">Sell Your Equipment</span>
+                <span class="lang-fr">Vendez votre matériel</span>
+            </span>
+
+            <h1>
+                <span class="lang-en">
+                    Turn Your Surplus IT Equipment Into Value
+                </span>
+
+                <span class="lang-fr">
+                    Transformez votre matériel informatique excédentaire en valeur
+                </span>
+            </h1>
+
+            <p>
+                <span class="lang-en">
+                    WESTRONIX TECH purchases used, surplus and retired
+                    technology from businesses, schools, ITAD companies,
+                    repair shops, resellers and organizations.
+                </span>
+
+                <span class="lang-fr">
+                    WESTRONIX TECH achète des équipements technologiques
+                    usagés, excédentaires ou retirés auprès des entreprises,
+                    écoles, sociétés ITAD, ateliers de réparation, revendeurs
+                    et organisations.
+                </span>
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#supplierForm" class="btn btn-primary">
+                    📋
+                    <span class="lang-en">Submit Equipment</span>
+                    <span class="lang-fr">Soumettre du matériel</span>
+                </a>
+
+                <a
+                    href="https://wa.me/22892953333"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp"
+                >
+                    💬
+                    <span class="lang-en">WhatsApp Us</span>
+                    <span class="lang-fr">WhatsApp</span>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                <span class="lang-en">How Selling Works</span>
+                <span class="lang-fr">Comment ça fonctionne</span>
+            </h2>
+
+            <p>
+                <span class="lang-en">
+                    A simple process designed for individual sellers,
+                    businesses and bulk IT equipment suppliers.
+                </span>
+
+                <span class="lang-fr">
+                    Un processus simple pour les vendeurs individuels,
+                    entreprises et fournisseurs d'équipements informatiques en gros.
+                </span>
+            </p>
+
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+                <div class="process-icon">📋</div>
+                <h3>
+                    <span class="lang-en">1. Submit Inventory</span>
+                    <span class="lang-fr">1. Soumettre l'inventaire</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Tell us what equipment you have available.
+                    </span>
+                    <span class="lang-fr">
+                        Indiquez-nous les équipements disponibles.
+                    </span>
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-icon">🔎</div>
+                <h3>
+                    <span class="lang-en">2. Evaluation</span>
+                    <span class="lang-fr">2. Évaluation</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        We review models, quantity, condition and location.
+                    </span>
+                    <span class="lang-fr">
+                        Nous examinons les modèles, quantités, états et localisation.
+                    </span>
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-icon">💰</div>
+                <h3>
+                    <span class="lang-en">3. Receive Offer</span>
+                    <span class="lang-fr">3. Recevoir une offre</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        We provide a purchase offer based on the equipment.
+                    </span>
+                    <span class="lang-fr">
+                        Nous proposons un prix d'achat selon le matériel.
+                    </span>
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-icon">🚚</div>
+                <h3>
+                    <span class="lang-en">4. Logistics</span>
+                    <span class="lang-fr">4. Logistique</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Coordinate pickup, shipping or delivery.
+                    </span>
+                    <span class="lang-fr">
+                        Organisez l'enlèvement, l'expédition ou la livraison.
+                    </span>
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-icon">♻️</div>
+                <h3>
+                    <span class="lang-en">5. Processing</span>
+                    <span class="lang-fr">5. Traitement</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Equipment is tested, refurbished, reused or recycled.
+                    </span>
+                    <span class="lang-fr">
+                        Le matériel est testé, reconditionné, réutilisé ou recyclé.
+                    </span>
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-icon">✅</div>
+                <h3>
+                    <span class="lang-en">6. Payment</span>
+                    <span class="lang-fr">6. Paiement</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Payment is completed according to the agreed terms.
+                    </span>
+                    <span class="lang-fr">
+                        Le paiement est effectué selon les conditions convenues.
+                    </span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE BUY -->
+<section>
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                <span class="lang-en">What We Buy</span>
+                <span class="lang-fr">Ce que nous achetons</span>
+            </h2>
+
+            <p>
+                <span class="lang-en">
+                    From small lots to pallets, truckloads and enterprise
+                    equipment refreshes.
+                </span>
+
+                <span class="lang-fr">
+                    Des petits lots aux palettes, chargements complets et
+                    renouvellements informatiques d'entreprise.
+                </span>
+            </p>
+
+        </div>
+
+        <div class="buy-grid">
+
+            <div class="buy-card">
+                <div class="icon">💻</div>
+                <h3>
+                    <span class="lang-en">Laptops</span>
+                    <span class="lang-fr">Ordinateurs portables</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Dell, HP, Lenovo, Apple and other business-class laptops.
+                    </span>
+                    <span class="lang-fr">
+                        Dell, HP, Lenovo, Apple et autres ordinateurs professionnels.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">🖥️</div>
+                <h3>
+                    <span class="lang-en">Desktops & Workstations</span>
+                    <span class="lang-fr">Ordinateurs & stations de travail</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Business desktops, engineering workstations and professional systems.
+                    </span>
+                    <span class="lang-fr">
+                        Ordinateurs professionnels, stations d'ingénierie et systèmes spécialisés.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">🗄️</div>
+                <h3>
+                    <span class="lang-en">Servers</span>
+                    <span class="lang-fr">Serveurs</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Rack servers, tower servers and enterprise computing equipment.
+                    </span>
+                    <span class="lang-fr">
+                        Serveurs rack, serveurs tour et équipements informatiques professionnels.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">🌐</div>
+                <h3>
+                    <span class="lang-en">Networking</span>
+                    <span class="lang-fr">Réseau</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Switches, routers, firewalls, access points and networking equipment.
+                    </span>
+                    <span class="lang-fr">
+                        Switches, routeurs, pare-feu, points d'accès et équipements réseau.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">📱</div>
+                <h3>
+                    <span class="lang-en">Phones & Tablets</span>
+                    <span class="lang-fr">Téléphones & tablettes</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Smartphones, tablets and mobile devices in bulk.
+                    </span>
+                    <span class="lang-fr">
+                        Smartphones, tablettes et appareils mobiles en gros.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">💾</div>
+                <h3>
+                    <span class="lang-en">Storage</span>
+                    <span class="lang-fr">Stockage</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        SSDs, hard drives and other computer storage components.
+                    </span>
+                    <span class="lang-fr">
+                        SSD, disques durs et autres composants de stockage informatique.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">⚙️</div>
+                <h3>
+                    <span class="lang-en">Processors & Components</span>
+                    <span class="lang-fr">Processeurs & composants</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        CPUs, memory, graphics cards and other IT components.
+                    </span>
+                    <span class="lang-fr">
+                        Processeurs, mémoire, cartes graphiques et autres composants.
+                    </span>
+                </p>
+            </div>
+
+            <div class="buy-card">
+                <div class="icon">📦</div>
+                <h3>
+                    <span class="lang-en">Mixed IT Assets</span>
+                    <span class="lang-fr">Lots informatiques mixtes</span>
+                </h3>
+                <p>
+                    <span class="lang-en">
+                        Mixed lots, retired equipment and surplus technology inventories.
+                    </span>
+                    <span class="lang-fr">
+                        Lots mixtes, équipements retirés et stocks technologiques excédentaires.
+                    </span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="audience">
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                <span class="lang-en">Who We Work With</span>
+                <span class="lang-fr">Avec qui nous travaillons</span>
+            </h2>
+
+            <p>
+                <span class="lang-en">
+                    We work with organizations that need a reliable buyer
+                    for used and surplus technology.
+                </span>
+
+                <span class="lang-fr">
+                    Nous travaillons avec les organisations qui recherchent
+                    un acheteur fiable pour leurs technologies usagées ou excédentaires.
+                </span>
+            </p>
+
+        </div>
+
+        <div class="audience-grid">
+
+            <div class="audience-card">
+                <h3>🏢 <span class="lang-en">Businesses</span><span class="lang-fr">Entreprises</span></h3>
+                <p>
+                    <span class="lang-en">
+                        Sell equipment after upgrades, office moves,
+                        refresh cycles or technology replacements.
+                    </span>
+                    <span class="lang-fr">
+                        Vendez votre matériel après une mise à niveau,
+                        un déménagement ou un renouvellement informatique.
+                    </span>
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>🎓 <span class="lang-en">Schools & Universities</span><span class="lang-fr">Écoles & universités</span></h3>
+                <p>
+                    <span class="lang-en">
+                        Turn retired computers and technology into value
+                        while supporting responsible reuse.
+                    </span>
+                    <span class="lang-fr">
+                        Donnez une nouvelle valeur aux ordinateurs retirés
+                        tout en favorisant leur réutilisation responsable.
+                    </span>
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>♻️ <span class="lang-en">ITAD & E-Waste Companies</span><span class="lang-fr">Entreprises ITAD & e-déchets</span></h3>
+                <p>
+                    <span class="lang-en">
+                        We can evaluate reusable equipment from larger
+                        IT asset disposition programs.
+                    </span>
+                    <span class="lang-fr">
+                        Nous pouvons évaluer les équipements réutilisables
+                        provenant de programmes ITAD importants.
+                    </span>
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>🔧 <span class="lang-en">Repair Shops</span><span class="lang-fr">Ateliers de réparation</span></h3>
+                <p>
+                    <span class="lang-en">
+                        Sell working, untested, damaged or surplus
+                        equipment and components.
+                    </span>
+                    <span class="lang-fr">
+                        Vendez du matériel fonctionnel, non testé,
+                        endommagé ou excédentaire.
+                    </span>
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>📦 <span class="lang-en">Brokers & Wholesalers</span><span class="lang-fr">Courtiers & grossistes</span></h3>
+                <p>
+                    <span class="lang-en">
+                        Work with us on recurring inventory and bulk
+                        technology opportunities.
+                    </span>
+                    <span class="lang-fr">
+                        Travaillez avec nous sur les stocks récurrents
+                        et les opportunités technologiques en gros.
+                    </span>
+                </p>
+            </div>
+
+            <div class="audience-card">
+                <h3>🏭 <span class="lang-en">Enterprise Organizations</span><span class="lang-fr">Organisations professionnelles</span></h3>
+                <p>
+                    <span class="lang-en">
+                        We are interested in larger technology refreshes,
+                        decommissions and surplus inventories.
+                    </span>
+                    <span class="lang-fr">
+                        Nous recherchons également les renouvellements
+                        informatiques importants et stocks excédentaires.
+                    </span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TRUST -->
+<section>
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                <span class="lang-en">Why Sell to WESTRONIX?</span>
+                <span class="lang-fr">Pourquoi vendre à WESTRONIX ?</span>
+            </h2>
+
+            <p>
+                <span class="lang-en">
+                    We focus on long-term relationships, responsible
+                    technology reuse and transparent transactions.
+                </span>
+
+                <span class="lang-fr">
+                    Nous privilégions les relations à long terme,
+                    la réutilisation responsable et des transactions transparentes.
+                </span>
+            </p>
+
+        </div>
+
+        <div class="trust-grid">
+
+            <div class="trust-card">
+
+                <h3>
+                    <span class="lang-en">Our Value to Sellers</span>
+                    <span class="lang-fr">Notre valeur pour les vendeurs</span>
+                </h3>
+
+                <ul class="trust-list">
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Bulk purchasing from small lots to enterprise quantities</span>
+                        <span class="lang-fr">Achats en gros, des petits lots aux quantités professionnelles</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Fast evaluation of equipment information</span>
+                        <span class="lang-fr">Évaluation rapide des informations sur le matériel</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Flexible pickup and shipping arrangements</span>
+                        <span class="lang-fr">Solutions flexibles d'enlèvement et d'expédition</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Clear equipment grading and evaluation</span>
+                        <span class="lang-fr">Évaluation et classement clairs du matériel</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Long-term supplier relationships</span>
+                        <span class="lang-fr">Relations durables avec les fournisseurs</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">USA sourcing network supporting African markets</span>
+                        <span class="lang-fr">Réseau d'approvisionnement USA pour les marchés africains</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="trust-card">
+
+                <h3>
+                    <span class="lang-en">Responsible Technology Reuse</span>
+                    <span class="lang-fr">Réutilisation responsable des technologies</span>
+                </h3>
+
+                <ul class="trust-list">
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Reuse and refurbishment are prioritized whenever practical</span>
+                        <span class="lang-fr">La réutilisation et le reconditionnement sont privilégiés lorsque possible</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Working equipment can be refurbished for resale</span>
+                        <span class="lang-fr">Le matériel fonctionnel peut être reconditionné pour la revente</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Usable technology can support schools and communities</span>
+                        <span class="lang-fr">Les technologies utilisables peuvent soutenir les écoles et communautés</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Components can be recovered for additional reuse</span>
+                        <span class="lang-fr">Les composants peuvent être récupérés pour une nouvelle utilisation</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Non-reusable equipment can enter responsible recycling</span>
+                        <span class="lang-fr">Le matériel non réutilisable peut être orienté vers un recyclage responsable</span>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        <span class="lang-en">Data-bearing equipment is handled with data security in mind</span>
+                        <span class="lang-fr">Les équipements contenant des données sont traités avec attention à la sécurité des données</span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SUPPLIER FORM -->
+<section class="form-section" id="supplierForm">
+
+    <div class="container">
+
+        <div class="form-wrapper">
+
+            <div class="form-intro">
+
+                <h2>
+                    <span class="lang-en">Submit Your Equipment</span>
+                    <span class="lang-fr">Soumettez votre matériel</span>
+                </h2>
+
+                <p>
+                    <span class="lang-en">
+                        Complete the form below. After submission, WESTRONIX
+                        will prepare a structured inquiry that you can send
+                        directly through WhatsApp.
+                    </span>
+
+                    <span class="lang-fr">
+                        Remplissez le formulaire ci-dessous. Après soumission,
+                        WESTRONIX préparera une demande structurée que vous
+                        pourrez envoyer directement par WhatsApp.
+                    </span>
+                </p>
+
+            </div>
+
+            <form id="equipmentForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="company">
+                            <span class="lang-en">Company / Seller Name</span>
+                            <span class="lang-fr">Nom de l'entreprise / vendeur</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            required
+                            placeholder="Company or seller name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName">
+                            <span class="lang-en">Contact Name</span>
+                            <span class="lang-fr">Nom du contact</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="contactName"
+                            required
+                            placeholder="Your full name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <span class="lang-en">Email</span>
+                            <span class="lang-fr">E-mail</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="name@company.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            <span class="lang-en">Phone / WhatsApp</span>
+                            <span class="lang-fr">Téléphone / WhatsApp</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            required
+                            placeholder="+1..."
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sellerType">
+                            <span class="lang-en">Seller Type</span>
+                            <span class="lang-fr">Type de vendeur</span>
+                        </label>
+
+                        <select id="sellerType" name="sellerType">
+                            <option value="">Select</option>
+                            <option>Business</option>
+                            <option>School / University</option>
+                            <option>ITAD Company</option>
+                            <option>E-Waste Company</option>
+                            <option>Repair Shop</option>
+                            <option>Broker / Wholesaler</option>
+                            <option>Enterprise</option>
+                            <option>Individual</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">
+                            <span class="lang-en">Equipment Category</span>
+                            <span class="lang-fr">Catégorie du matériel</span>
+                            <span>*</span>
+                        </label>
+
+                        <select id="category" name="category" required>
+                            <option value="">Select category</option>
+                            <option>Laptops</option>
+                            <option>Desktops</option>
+                            <option>Workstations</option>
+                            <option>Servers</option>
+                            <option>Networking</option>
+                            <option>Smartphones</option>
+                            <option>Tablets</option>
+                            <option>SSDs / Hard Drives</option>
+                            <option>Processors / CPUs</option>
+                            <option>Computer Components</option>
+                            <option>Mixed IT Equipment</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="manufacturer">
+                            <span class="lang-en">Manufacturer</span>
+                            <span class="lang-fr">Fabricant</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="manufacturer"
+                            name="manufacturer"
+                            placeholder="Dell, HP, Lenovo, Apple..."
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model">
+                            <span class="lang-en">Model / Part Number</span>
+                            <span class="lang-fr">Modèle / référence</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="model"
+                            name="model"
+                            placeholder="Latitude 5420, EliteBook 840 G7..."
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">
+                            <span class="lang-en">Quantity</span>
+                            <span class="lang-fr">Quantité</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            min="1"
+                            required
+                            placeholder="Example: 50"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition">
+                            <span class="lang-en">Condition</span>
+                            <span class="lang-fr">État</span>
+                            <span>*</span>
+                        </label>
+
+                        <select id="condition" name="condition" required>
+                            <option value="">Select condition</option>
+                            <option>Tested Working</option>
+                            <option>Refurbished</option>
+                            <option>Used - Good</option>
+                            <option>Used - Fair</option>
+                            <option>Untested</option>
+                            <option>Damaged</option>
+                            <option>AS-IS Bulk</option>
+                            <option>Scrap / Parts</option>
+                            <option>Mixed Condition</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">
+                            <span class="lang-en">Equipment Location</span>
+                            <span class="lang-fr">Localisation du matériel</span>
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            required
+                            placeholder="City, State, Country"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="askingPrice">
+                            <span class="lang-en">Asking Price</span>
+                            <span class="lang-fr">Prix demandé</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="askingPrice"
+                            name="askingPrice"
+                            placeholder="Optional — total or per unit"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transaction">
+                            <span class="lang-en">Preferred Transaction</span>
+                            <span class="lang-fr">Transaction souhaitée</span>
+                        </label>
+
+                        <select id="transaction" name="transaction">
+                            <option value="">Select</option>
+                            <option>WESTRONIX Pickup</option>
+                            <option>Seller Ships</option>
+                            <option>Local Delivery</option>
+                            <option>Open to Options</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataStatus">
+                            <span class="lang-en">Data / Hard Drive Status</span>
+                            <span class="lang-fr">État des données / disques</span>
+                        </label>
+
+                        <select id="dataStatus" name="dataStatus">
+                            <option value="">Select</option>
+                            <option>Data Already Wiped</option>
+                            <option>Drives Removed</option>
+                            <option>Data Still Present</option>
+                            <option>No Storage Included</option>
+                            <option>Unknown</option>
+                        </select>
+                    </div>
+
+                    <!-- PHOTOS -->
+                    <div class="form-group full">
+
+                        <label for="photos">
+                            <span class="lang-en">Equipment Photos</span>
+                            <span class="lang-fr">Photos du matériel</span>
+                        </label>
+
+                        <div class="photo-box">
+
+                            <input
+                                type="file"
+                                id="photos"
+                                name="photos"
+                                accept="image/*"
+                                multiple
+                            >
+
+                            <div class="help-text">
+
+                                <span class="lang-en">
+                                    Select multiple photos to preview them before sending your inquiry.
+                                </span>
+
+                                <span class="lang-fr">
+                                    Sélectionnez plusieurs photos pour les prévisualiser avant d'envoyer votre demande.
+                                </span>
+
+                            </div>
+
+                            <div
+                                id="photoPreview"
+                                class="photo-preview"
+                            ></div>
+
+                        </div>
+
+                        <div class="help-text">
+
+                            <span class="lang-en">
+                                Important: browsers cannot automatically attach these local files to WhatsApp.
+                                After WhatsApp opens, attach the photos manually.
+                            </span>
+
+                            <span class="lang-fr">
+                                Important : le navigateur ne peut pas joindre automatiquement ces fichiers locaux
+                                à WhatsApp. Après l'ouverture de WhatsApp, ajoutez les photos manuellement.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- NOTES -->
+                    <div class="form-group full">
+
+                        <label for="notes">
+                            <span class="lang-en">Additional Information</span>
+                            <span class="lang-fr">Informations supplémentaires</span>
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            placeholder="Tell us more about the equipment, quantity, specifications, purchase history, packaging, accessories, testing status, etc."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="form-notice">
+
+                    <strong>
+                        <span class="lang-en">Before submitting:</span>
+                        <span class="lang-fr">Avant de soumettre :</span>
+                    </strong>
+
+                    <span class="lang-en">
+                        Please provide accurate equipment information.
+                        Final pricing depends on model, quantity, condition,
+                        specifications, location and logistics.
+                    </span>
+
+                    <span class="lang-fr">
+                        Veuillez fournir des informations exactes sur le matériel.
+                        Le prix final dépend du modèle, de la quantité, de l'état,
+                        des spécifications, de la localisation et de la logistique.
+                    </span>
+
+                </div>
+
+                <div class="submit-area">
+
+                    <button
+                        type="submit"
+                        class="btn btn-dark"
+                    >
+                        📲
+
+                        <span class="lang-en">
+                            Submit & Contact WESTRONIX
+                        </span>
+
+                        <span class="lang-fr">
+                            Soumettre & contacter WESTRONIX
+                        </span>
+
+                    </button>
+
+                    <a
+                        href="https://wa.me/22892953333"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-whatsapp"
+                    >
+                        💬
+
+                        <span class="lang-en">
+                            Contact Us on WhatsApp
+                        </span>
+
+                        <span class="lang-fr">
+                            Nous contacter sur WhatsApp
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div>
+
+                <h2>
+                    <span class="lang-en">Have a Large IT Lot?</span>
+                    <span class="lang-fr">Vous avez un gros lot informatique ?</span>
+                </h2>
+
+                <p>
+
+                    <span class="lang-en">
+                        If you have pallets, truckloads, enterprise
+                        refreshes or recurring inventory, contact us directly.
+                        We are interested in long-term supplier relationships.
+                    </span>
+
+                    <span class="lang-fr">
+                        Si vous disposez de palettes, chargements complets,
+                        renouvellements informatiques d'entreprise ou stocks
+                        récurrents, contactez-nous directement. Nous recherchons
+                        des relations durables avec nos fournisseurs.
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="contact-info">
+
+                <div>
+                    <strong>Email:</strong>
+                    <a href="mailto:westronix.tech@gmail.com">
+                        westronix.tech@gmail.com
+                    </a>
+                </div>
+
+                <div>
+                    <strong>WhatsApp / Togo:</strong>
+                    <a
+                        href="https://wa.me/22892953333"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        +228 92 95 33 33
+                    </a>
+                </div>
+
+                <div>
+                    <strong>USA → Africa:</strong>
+
+                    <span class="lang-en">
+                        Technology sourcing and distribution
+                    </span>
+
+                    <span class="lang-fr">
+                        Approvisionnement et distribution technologique
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://wa.me/22892953333"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp"
+                >
+                    💬
+
+                    <span class="lang-en">
+                        Start a WhatsApp Conversation
+                    </span>
+
+                    <span class="lang-fr">
+                        Démarrer une conversation WhatsApp
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            <span class="footer-brand">WESTRONIX TECH</span>
+
+            <span class="lang-en">
+                — Recover • Refurbish • Resell • Reuse • Impact
+            </span>
+
+            <span class="lang-fr">
+                — Récupérer • Reconditionner • Revendre • Réutiliser • Impacter
+            </span>
+        </div>
+
+        <div>
+            © 2026 WESTRONIX TECH.
+            <span class="lang-en">All rights reserved.</span>
+            <span class="lang-fr">Tous droits réservés.</span>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+    /* =========================================
+       LANGUAGE SYSTEM
+    ========================================= */
+
+    const languageSelect =
+        document.getElementById("languageSelect");
+
+    function applyLanguage(language) {
+
+        if (language === "fr") {
+
+            document.body.classList.add("language-fr");
+
+            document.documentElement.lang = "fr";
+
+        } else {
+
+            document.body.classList.remove("language-fr");
+
+            document.documentElement.lang = "en";
+        }
+
+        localStorage.setItem("wt_language", language);
+
+        if (languageSelect) {
+            languageSelect.value = language;
+        }
+    }
+
+    const savedLanguage =
+        localStorage.getItem("wt_language") || "fr";
+
+    applyLanguage(savedLanguage);
+
+    if (languageSelect) {
+
+        languageSelect.addEventListener("change", function () {
+
+            applyLanguage(this.value);
+
+        });
+    }
+
+    /* =========================================
+       CART COUNT
+    ========================================= */
+
+    function updateCartCount() {
+
+        const cartCount =
+            document.getElementById("cartCount");
+
+        if (!cartCount) return;
+
+        try {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("wt_cart") || "[]"
+                );
+
+            const count =
+                cart.reduce((total, item) => {
+
+                    return total +
+                        (Number(item.quantity) || 0);
+
+                }, 0);
+
+            cartCount.textContent = count;
+
+        } catch (error) {
+
+            cartCount.textContent = "0";
+        }
+    }
+
+    updateCartCount();
+
+    window.addEventListener(
+        "storage",
+        updateCartCount
+    );
+
+    /* =========================================
+       PHOTO PREVIEW
+    ========================================= */
+
+    const photoInput =
+        document.getElementById("photos");
+
+    const photoPreview =
+        document.getElementById("photoPreview");
+
+    if (photoInput) {
+
+        photoInput.addEventListener(
+            "change",
+            function () {
+
+                photoPreview.innerHTML = "";
+
+                const files =
+                    Array.from(this.files || []);
+
+                files.forEach((file) => {
+
+                    if (!file.type.startsWith("image/")) {
+                        return;
+                    }
+
+                    const reader =
+                        new FileReader();
+
+                    reader.onload =
+                        function (event) {
+
+                            const item =
+                                document.createElement("div");
+
+                            item.className =
+                                "photo-preview-item";
+
+                            const image =
+                                document.createElement("img");
+
+                            image.src =
+                                event.target.result;
+
+                            image.alt =
+                                file.name;
+
+                            item.appendChild(image);
+
+                            photoPreview.appendChild(item);
+                        };
+
+                    reader.readAsDataURL(file);
+
+                });
+
+            }
+        );
+    }
+
+    /* =========================================
+       HELPERS
+    ========================================= */
+
+    function clean(value) {
+
+        return String(value || "").trim();
+    }
+
+    function createSubmissionId() {
+
+        const now = new Date();
+
+        const year =
+            now.getFullYear();
+
+        const month =
+            String(now.getMonth() + 1)
+                .padStart(2, "0");
+
+        const day =
+            String(now.getDate())
+                .padStart(2, "0");
+
+        const random =
+            Math.floor(
+                1000 + Math.random() * 9000
+            );
+
+        return `WT-SELL-${year}${month}${day}-${random}`;
+    }
+
+    /* =========================================
+       FORM SUBMISSION
+    ========================================= */
+
+    const equipmentForm =
+        document.getElementById("equipmentForm");
+
+    if (equipmentForm) {
+
+        equipmentForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                if (!equipmentForm.checkValidity()) {
+
+                    equipmentForm.reportValidity();
+
+                    return;
+                }
+
+                const submissionId =
+                    createSubmissionId();
+
+                const formData = {
+
+                    submissionId,
+
+                    submittedAt:
+                        new Date().toISOString(),
+
+                    company:
+                        clean(
+                            document.getElementById("company").value
+                        ),
+
+                    contactName:
+                        clean(
+                            document.getElementById("contactName").value
+                        ),
+
+                    email:
+                        clean(
+                            document.getElementById("email").value
+                        ),
+
+                    phone:
+                        clean(
+                            document.getElementById("phone").value
+                        ),
+
+                    sellerType:
+                        clean(
+                            document.getElementById("sellerType").value
+                        ),
+
+                    category:
+                        clean(
+                            document.getElementById("category").value
+                        ),
+
+                    manufacturer:
+                        clean(
+                            document.getElementById("manufacturer").value
+                        ),
+
+                    model:
+                        clean(
+                            document.getElementById("model").value
+                        ),
+
+                    quantity:
+                        clean(
+                            document.getElementById("quantity").value
+                        ),
+
+                    condition:
+                        clean(
+                            document.getElementById("condition").value
+                        ),
+
+                    location:
+                        clean(
+                            document.getElementById("location").value
+                        ),
+
+                    askingPrice:
+                        clean(
+                            document.getElementById("askingPrice").value
+                        ),
+
+                    transaction:
+                        clean(
+                            document.getElementById("transaction").value
+                        ),
+
+                    dataStatus:
+                        clean(
+                            document.getElementById("dataStatus").value
+                        ),
+
+                    notes:
+                        clean(
+                            document.getElementById("notes").value
+                        )
+                };
+
+                /* Save locally for now */
+
+                localStorage.setItem(
+                    "wt_equipment_submission",
+                    JSON.stringify(formData)
+                );
+
+                /* =========================================
+                   WHATSAPP MESSAGE
+                ========================================= */
+
+                let message = "";
+
+                message +=
+                    "WESTRONIX TECH — EQUIPMENT SALE INQUIRY\n";
+
+                message +=
+                    "--------------------------------------\n\n";
+
+                message +=
+                    `Submission #: ${formData.submissionId}\n\n`;
+
+                message +=
+                    "SELLER INFORMATION\n";
+
+                message +=
+                    `Company / Seller: ${formData.company}\n`;
+
+                message +=
+                    `Contact: ${formData.contactName}\n`;
+
+                message +=
+                    `Email: ${formData.email}\n`;
+
+                message +=
+                    `Phone / WhatsApp: ${formData.phone}\n`;
+
+                message +=
+                    `Seller Type: ${formData.sellerType || "Not specified"}\n\n`;
+
+                message +=
+                    "EQUIPMENT\n";
+
+                message +=
+                    `Category: ${formData.category}\n`;
+
+                message +=
+                    `Manufacturer: ${formData.manufacturer || "Not specified"}\n`;
+
+                message +=
+                    `Model / Part #: ${formData.model || "Not specified"}\n`;
+
+                message +=
+                    `Quantity: ${formData.quantity}\n`;
+
+                message +=
+                    `Condition: ${formData.condition}\n`;
+
+                message +=
+                    `Location: ${formData.location}\n`;
+
+                message +=
+                    `Asking Price: ${formData.askingPrice || "Not specified"}\n`;
+
+                message +=
+                    `Preferred Transaction: ${formData.transaction || "Not specified"}\n`;
+
+                message +=
+                    `Data / Drive Status: ${formData.dataStatus || "Not specified"}\n\n`;
+
+                message +=
+                    "ADDITIONAL INFORMATION\n";
+
+                message +=
+                    `${formData.notes || "None provided"}\n\n`;
+
+                message +=
+                    "I am interested in selling this equipment to WESTRONIX TECH.\n";
+
+                message +=
+                    "Please review the information and let me know the next steps.\n\n";
+
+                message +=
+                    "IMPORTANT: I will attach equipment photos manually in WhatsApp.";
+
+                const whatsappUrl =
+                    "https://wa.me/22892953333?text=" +
+                    encodeURIComponent(message);
+
+                window.open(
+                    whatsappUrl,
+                    "_blank",
+                    "noopener"
+                );
+
+                /* =========================================
+                   CONFIRMATION
+                ========================================= */
+
+                setTimeout(() => {
+
+                    const isFrench =
+                        localStorage.getItem("wt_language") === "fr";
+
+                    if (isFrench) {
+
+                        alert(
+                            "Votre demande a été préparée.\n\n" +
+                            "Numéro de demande : " +
+                            submissionId +
+                            "\n\n" +
+                            "WhatsApp va s'ouvrir afin que vous puissiez envoyer la demande.\n\n" +
+                            "Veuillez ajouter manuellement les photos du matériel avant l'envoi."
+                        );
+
+                    } else {
+
+                        alert(
+                            "Your equipment submission has been prepared.\n\n" +
+                            "Submission #: " +
+                            submissionId +
+                            "\n\n" +
+                            "WhatsApp will open so you can send the inquiry.\n\n" +
+                            "Please attach your equipment photos manually before sending."
+                        );
+                    }
+
+                }, 400);
+
+            }
+        );
+    }
+
+</script>
+```
+
+</body>
+</html>
