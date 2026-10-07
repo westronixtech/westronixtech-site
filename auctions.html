@@ -2882,10 +2882,3 @@
 
 </body>
 </html>
-```
-
-This version is now aligned to your **actual current `inventory.json`** and does not require you to change that file. It also fixes the old `auctions.json` dependency and the mismatched field names.
-
-**Important:** your current auction data has no auction end date/time, so I intentionally removed the fake countdown system. When you're ready, we can add real auction timing with fields such as `startTime` and `endTime` to the data model.
-
-Next, I recommend we move to **`cart.html`**, because the auction Buy It Now and inventory Buy buttons now both feed into `wt_cart`.
