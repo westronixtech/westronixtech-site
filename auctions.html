@@ -830,7 +830,7 @@
   </style>
 </head>
 
-<body>
+<body class="lang-fr">
 
   <!-- =========================================
        HEADER
@@ -841,8 +841,7 @@
     <div class="header-inner">
 
      <a href="index.html" class="brand" aria-label="WESTRONIX TECH Home">
-westronix-logo.jpg
-<span>WESTRONIX TECH</span>
+        <img src="images/westronix-logo.jpg" alt="WESTRONIX TECH">
       </a>
 
       <nav>
@@ -1041,7 +1040,54 @@ westronix-logo.jpg
     </div>
 
 
-    <div id="auctionGrid" class="auction-grid"></div>
+    <div id="auctionGrid" class="auction-grid">
+      <article class="auction-card">
+        <div class="auction-image-wrap">
+          <div class="image-placeholder">💻<span>WESTRONIX TECH</span></div>
+          <div class="status-badge status-live">🔴 EN DIRECT</div>
+          <div class="grade-badge">Grade A</div>
+        </div>
+        <div class="auction-content">
+          <div class="auction-id">Auction AUC-001</div>
+          <h3 class="auction-title">Dell Latitude 5420</h3>
+          <div class="sku">Réf. : <strong>WT-D5420-0001</strong></div>
+          <p class="description">Tested Working. Laptop.</p>
+          <div class="auction-info">
+            <div class="price-row"><span class="price-label">Enchère de départ</span><span class="price-value">85 000 FCFA</span></div>
+            <div class="price-row"><span class="price-label">Enchère actuelle</span><span class="price-value current-bid">87 000 FCFA</span></div>
+            <div class="price-row"><span class="price-label">Achat immédiat</span><span class="price-value buy-now">110 000 FCFA</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-outline" href="product.html?sku=WT-D5420-0001">👁 Voir le produit</a>
+            <button class="btn btn-primary" onclick="placeBid('AUC-001')">🔨 Enchérir</button>
+            <a class="btn btn-whatsapp full" href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="auction-card">
+        <div class="auction-image-wrap">
+          <div class="image-placeholder">💻<span>WESTRONIX TECH</span></div>
+          <div class="status-badge status-live">🔴 EN DIRECT</div>
+          <div class="grade-badge">Grade A-</div>
+        </div>
+        <div class="auction-content">
+          <div class="auction-id">Auction AUC-002</div>
+          <h3 class="auction-title">HP EliteBook 840 G7</h3>
+          <div class="sku">Réf. : <strong>WT-HP840G7-0001</strong></div>
+          <p class="description">Tested Working. Laptop.</p>
+          <div class="auction-info">
+            <div class="price-row"><span class="price-label">Enchère de départ</span><span class="price-value">100 000 FCFA</span></div>
+            <div class="price-row"><span class="price-label">Enchère actuelle</span><span class="price-value current-bid">107 000 FCFA</span></div>
+            <div class="price-row"><span class="price-label">Achat immédiat</span><span class="price-value buy-now">135 000 FCFA</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-outline" href="product.html?sku=WT-HP840G7-0001">👁 Voir le produit</a>
+            <button class="btn btn-primary" onclick="placeBid('AUC-002')">🔨 Enchérir</button>
+            <a class="btn btn-whatsapp full" href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    </div>
 
   </main>
 
@@ -2822,6 +2868,13 @@ westronix-logo.jpg
     ========================================= */
 
     updateCartCount();
+
+    window.addEventListener("error", function(event){
+      const grid = document.getElementById("auctionGrid");
+      if(grid && !grid.children.length){
+        grid.innerHTML = '<div class="message-box"><h3>WESTRONIX Live Auctions</h3><p>Les enchères sont temporairement indisponibles. Veuillez réessayer.</p><button class="btn btn-primary" onclick="location.reload()">🔄 Réessayer</button></div>';
+      }
+    });
 
     loadAuctions();
 
