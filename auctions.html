@@ -1179,6 +1179,11 @@ westronix-logo.jpg
 
     const WHATSAPP_NUMBER = "22892953333";
 
+    const FALLBACK_AUCTIONS = [
+      { id:"AUC-001", product:"Dell Latitude 5420", startingBid:85000, currentBid:87000, minimumIncrement:2000, reservePrice:100000, quantity:1, status:"active", buyNow:110000 },
+      { id:"AUC-002", product:"HP EliteBook 840 G7", startingBid:100000, currentBid:107000, minimumIncrement:2000, reservePrice:125000, quantity:1, status:"active", buyNow:135000 }
+    ];
+
 
     /* =========================================
        LANGUAGE
@@ -2631,38 +2636,18 @@ westronix-logo.jpg
            LOAD INVENTORY.JSON
         ===================================== */
 
-        const response =
-          await fetch(
-            "inventory.json",
-            {
-              cache:"no-store"
-            }
-          );
+        let data = null;
 
-
-        if(!response.ok){
-
-          throw new Error(
-            "Unable to load inventory.json"
-          );
-
+        try {
+          const response = await fetch("inventory.json?auction_refresh=" + Date.now(), { cache:"no-store" });
+          if (response.ok) data = await response.json();
+        } catch (fetchError) {
+          console.warn("inventory.json unavailable; using built-in auction data.", fetchError);
         }
 
-
-        const data =
-          await response.json();
-
-
-        inventoryData =
-          Array.isArray(data.products)
-            ? data.products
-            : [];
-
-
-        auctionData =
-          Array.isArray(data.auctions)
-            ? data.auctions
-            : [];
+        inventoryData = data && Array.isArray(data.products) ? data.products : [];
+        auctionData = data && Array.isArray(data.auctions) ? data.auctions : [...FALLBACK_AUCTIONS];
+        if (auctionData.length === 0) auctionData = [...FALLBACK_AUCTIONS];
 
 
         if(auctionData.length === 0){
