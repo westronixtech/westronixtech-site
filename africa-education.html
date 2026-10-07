@@ -783,114 +783,202 @@
     }
 
     @media (max-width: 768px) {
-      .header-inner {
-        min-height: 76px;
-      }
-
-      .brand-logo {
-        width: 58px;
-        height: 58px;
-      }
-
-      .brand-name {
-        font-size: 18px;
-      }
-
-      .brand-tagline {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav {
-        position: absolute;
-        top: 76px;
-        left: 0;
-        right: 0;
-        background: #07111f;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px;
-        border-top: 1px solid rgba(255,255,255,.08);
-        box-shadow: 0 15px 25px rgba(0,0,0,.2);
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .nav a {
-        width: 100%;
-        padding: 13px 14px;
-        font-size: 14px;
-      }
-
-      .nav a:last-child {
-        margin: 3px 0 0;
-      }
-
-      .hero {
-        padding: 70px 0 75px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1px;
-      }
-
-      .hero-buttons,
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .btn,
-      .cta-buttons .btn {
-        width: 100%;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .mission-box {
-        padding: 35px 25px;
-      }
-
-      .impact-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group.full {
-        grid-column: auto;
-      }
-
-      .request-form {
-        padding: 25px 20px;
-      }
-
-      .request-info h2 {
-        font-size: 30px;
-      }
-
-      .form-submit {
-        flex-direction: column;
-      }
-
-      .language-inner {
-        min-height: 44px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+      .header-inner { min-height:76px; }
+      .brand-logo { width:58px; height:58px; }
+      .brand-name { font-size:18px; }
+      .brand-tagline { display:none; }
+      .menu-toggle { display:block; }
+      .nav { position:absolute; top:76px; left:0; right:0; background:#07111f; display:none; flex-direction:column; align-items:stretch; padding:10px; }
+      .nav.open { display:flex; }
+      .nav a { width:100%; padding:13px 14px; font-size:14px; }
+      .hero { padding:70px 0 75px; }
+      .hero-buttons,.cta-buttons { flex-direction:column; }
+      .hero-buttons .btn,.cta-buttons .btn { width:100%; }
+      .section { padding:60px 0; }
+      .mission-box { padding:35px 25px; }
+      .impact-grid,.process-grid { grid-template-columns:1fr; }
+      .form-grid { grid-template-columns:1fr; }
+      .form-group.full { grid-column:auto; }
+      .request-form { padding:25px 20px; }
+      .request-info h2 { font-size:30px; }
+      .form-submit { flex-direction:column; }
+      .language-inner { min-height:44px; }
+      .footer-grid { grid-template-columns:1fr; gap:30px; }
     }
+  </style>
+</head>
 
-    @media (max-
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-link" aria-label="WESTRONIX TECH Home">
+      <img src="images/westronix-logo.jpg" alt="WESTRONIX TECH" class="brand-logo">
+      <div>
+        <div class="brand-name">WESTRONIX TECH</div>
+        <div class="brand-tagline">Tech from USA → Togo</div>
+      </div>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="inventory.html">Inventory</a>
+      <a href="auctions.html">Live Auctions</a>
+      <a href="sell-equipment.html">Sell Equipment</a>
+      <a href="africa-education.html">Africa Education</a>
+      <a href="cart.html">🛒 Cart <span id="cartCount" class="cart-count">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="language-bar">
+  <div class="language-inner">
+    <span class="language-label">Language / Langue</span>
+    <a class="language-btn active" href="africa-education.html">EN</a>
+    <a class="language-btn" href="africa-education.html">FR</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-badge">🌍 WESTRONIX TECH • AFRICA EDUCATION</div>
+    <h1>Technology That Opens Doors.</h1>
+    <p>We help schools, students and communities in Africa access reliable technology for digital learning, STEM education and economic opportunity.</p>
+    <div class="hero-buttons">
+      <a href="#request" class="btn btn-primary">Request Education Support</a>
+      <a href="donation.html" class="btn btn-green">Support the Program</a>
+      <a href="inventory.html" class="btn btn-light">View Available Technology</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="mission-box">
+      <h2>Our Education Mission</h2>
+      <p>WESTRONIX TECH connects quality technology from the United States with educational needs in Togo and across Africa. Our goal is to make computers and digital tools more accessible through responsible reuse, refurbishment, donations and affordable technology programs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Where We Create Impact</h2>
+    <p class="section-subtitle">Practical technology programs designed around real educational and community needs.</p>
+    <div class="impact-grid">
+      <div class="impact-card"><div class="impact-icon">💻</div><h3>Computer Access</h3><p>Reliable refurbished laptops and computers for students, teachers, schools and community programs.</p></div>
+      <div class="impact-card"><div class="impact-icon">🔬</div><h3>STEM Learning</h3><p>Technology that supports science, technology, engineering, mathematics and digital skills.</p></div>
+      <div class="impact-card"><div class="impact-icon">🏫</div><h3>Computer Labs</h3><p>Support for schools and organizations seeking to establish or improve affordable computer labs.</p></div>
+      <div class="impact-card"><div class="impact-icon">♻️</div><h3>Responsible Reuse</h3><p>Give usable technology a second life while helping reduce electronic waste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">How the Program Works</h2>
+    <p class="section-subtitle">A simple pathway from technology recovery to educational impact.</p>
+    <div class="process-grid">
+      <div class="process-step"><span class="step-number">1</span><h3>Recover</h3><p>We identify usable technology through responsible sourcing, IT asset disposition and equipment recovery.</p></div>
+      <div class="process-step"><span class="step-number">2</span><h3>Refurbish</h3><p>Equipment is inspected, tested, prepared for reuse and securely processed before deployment.</p></div>
+      <div class="process-step"><span class="step-number">3</span><h3>Connect</h3><p>Schools, organizations and community partners tell us what technology they need.</p></div>
+      <div class="process-step"><span class="step-number">4</span><h3>Impact</h3><p>Technology reaches learners and educators where it can create lasting digital opportunities.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section request-section" id="request">
+  <div class="container request-layout">
+    <div class="request-info">
+      <h2>Tell Us What Your School or Organization Needs</h2>
+      <p>Whether you need laptops for students, equipment for a computer lab, or support for a digital-learning initiative, send us your request.</p>
+      <div class="info-list">
+        <div class="info-item"><div class="info-item-icon">📍</div><div><strong>Focus</strong><span>Togo and broader African education initiatives</span></div></div>
+        <div class="info-item"><div class="info-item-icon">💻</div><div><strong>Technology</strong><span>Laptops, desktops, networking equipment and accessories</span></div></div>
+        <div class="info-item"><div class="info-item-icon">🤝</div><div><strong>Partnerships</strong><span>Schools, nonprofits, community organizations and sponsors</span></div></div>
+      </div>
+    </div>
+
+    <form class="request-form" onsubmit="submitEducationRequest(event)">
+      <h3 class="form-title">Education Support Request</h3>
+      <p class="form-description">Tell us about your organization and your technology needs.</p>
+      <div class="form-grid">
+        <div class="form-group"><label>Organization / School</label><input id="orgName" required></div>
+        <div class="form-group"><label>Contact Name</label><input id="contactName" required></div>
+        <div class="form-group"><label>Email</label><input id="email" type="email"></div>
+        <div class="form-group"><label>Phone / WhatsApp</label><input id="phone" required></div>
+        <div class="form-group"><label>Country</label><input id="country" value="Togo"></div>
+        <div class="form-group"><label>Estimated Students / Users</label><input id="users" type="number" min="1"></div>
+        <div class="form-group full"><label>What technology do you need?</label><textarea id="needs" required placeholder="Example: 20 laptops for a school computer lab..."></textarea></div>
+      </div>
+      <div class="form-submit">
+        <button class="btn btn-primary" type="submit">Send Request</button>
+        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="https://wa.me/22892953333?text=Hello%20WESTRONIX%20TECH%2C%20I%20would%20like%20to%20discuss%20an%20Africa%20Education%20technology%20request.">Contact on WhatsApp</a>
+      </div>
+      <div id="formStatus" class="form-status"></div>
+      <div class="form-note">Submitting this form prepares a request for WESTRONIX TECH. For urgent requests, contact us directly on WhatsApp.</div>
+    </form>
+  </div>
+</section>
+
+<section class="section impact-cta">
+  <div class="container">
+    <h2>Help Put Technology in the Hands of Learners.</h2>
+    <p>Businesses, schools, organizations and individuals can help expand access to technology through equipment donations, sponsorships and education partnerships.</p>
+    <div class="cta-buttons">
+      <a href="donation.html" class="btn btn-green">Donate Equipment</a>
+      <a href="sell-equipment.html" class="btn btn-light">Sell or Donate Equipment</a>
+      <a href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contact WESTRONIX</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="images/westronix-logo.jpg" alt="WESTRONIX TECH">
+      <h3>WESTRONIX TECH</h3>
+      <p>Tech from USA → Togo. Responsible technology reuse, refurbishment, distribution and education impact.</p>
+    </div>
+    <div class="footer-column"><h4>Marketplace</h4><a href="inventory.html">Inventory</a><a href="auctions.html">Live Auctions</a><a href="cart.html">Shopping Cart</a><a href="sell-equipment.html">Sell Equipment</a></div>
+    <div class="footer-column"><h4>Education</h4><a href="africa-education.html">Africa Education</a><a href="donation.html">Donate Equipment</a><a href="#request">Request Support</a></div>
+    <div class="footer-column"><h4>Contact</h4><a href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">WhatsApp: +228 92 95 33 33</a><a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a><a href="index.html">WESTRONIX TECH</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 WESTRONIX TECH. All Rights Reserved.</span><span>Recover → Refurbish → Resell → Reuse → Impact</span></div>
+</footer>
+
+<script>
+  function submitEducationRequest(event) {
+    event.preventDefault();
+    const org = document.getElementById("orgName").value.trim();
+    const contact = document.getElementById("contactName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const needs = document.getElementById("needs").value.trim();
+    const message = [
+      "Hello WESTRONIX TECH,",
+      "",
+      "Africa Education Support Request",
+      "Organization: " + org,
+      "Contact: " + contact,
+      "Phone/WhatsApp: " + phone,
+      "Country: " + document.getElementById("country").value.trim(),
+      "Users: " + document.getElementById("users").value.trim(),
+      "Technology needed: " + needs
+    ].join("\n");
+    const status = document.getElementById("formStatus");
+    status.className = "form-status success";
+    status.textContent = "Your request is ready. Opening WhatsApp...";
+    window.open("https://wa.me/22892953333?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+  }
+
+  (function updateCart() {
+    try {
+      const cart = JSON.parse(localStorage.getItem("wt_cart") || "[]");
+      const count = cart.reduce((sum, item) => sum + Number(item.quantity || 1), 0);
+      document.getElementById("cartCount").textContent = count;
+    } catch (e) {}
+  })();
+</script>
+
+</body>
+</html>
