@@ -154,13 +154,46 @@ body.language-fr h3.lang-fr{
 }
 
 /* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle{
+  display:none;
+  border:1px solid #ffffff33;
+  background:#ffffff0d;
+  color:#fff;
+  border-radius:8px;
+  width:42px;
+  height:40px;
+  font-size:23px;
+  line-height:1;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+
+.menu-toggle:hover{
+  background:#ffffff18;
+}
+
+/* =========================================================
    HERO
 ========================================================= */
 
 .hero{
   background:
-    radial-gradient(circle at 20% 20%,rgba(22,119,255,.24),transparent 32%),
-    linear-gradient(135deg,#071526,#0d2443 65%,#123d70);
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(22,119,255,.24),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #071526,
+      #0d2443 65%,
+      #123d70
+    );
+
   color:#fff;
   padding:65px 20px 70px;
 }
@@ -211,22 +244,75 @@ body.language-fr h3.lang-fr{
 }
 
 @keyframes usaFlagWave{
-  0%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
-  20%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
-  40%{transform:perspective(120px) rotateY(-8deg) rotateZ(2deg) skewY(-2deg)}
-  60%{transform:perspective(120px) rotateY(10deg) rotateZ(-2deg) skewY(2deg)}
-  80%{transform:perspective(120px) rotateY(-5deg) rotateZ(1deg) skewY(-1deg)}
-  100%{transform:perspective(120px) rotateY(0deg) rotateZ(0deg) skewY(0deg)}
+  0%{
+    transform:
+      perspective(120px)
+      rotateY(0deg)
+      rotateZ(0deg)
+      skewY(0deg)
+  }
+
+  20%{
+    transform:
+      perspective(120px)
+      rotateY(10deg)
+      rotateZ(-2deg)
+      skewY(2deg)
+  }
+
+  40%{
+    transform:
+      perspective(120px)
+      rotateY(-8deg)
+      rotateZ(2deg)
+      skewY(-2deg)
+  }
+
+  60%{
+    transform:
+      perspective(120px)
+      rotateY(10deg)
+      rotateZ(-2deg)
+      skewY(2deg)
+  }
+
+  80%{
+    transform:
+      perspective(120px)
+      rotateY(-5deg)
+      rotateZ(1deg)
+      skewY(-1deg)
+  }
+
+  100%{
+    transform:
+      perspective(120px)
+      rotateY(0deg)
+      rotateZ(0deg)
+      skewY(0deg)
+  }
 }
 
 @keyframes routeArrowPulse{
-  0%,100%{transform:translateX(0);opacity:.65}
-  50%{transform:translateX(5px);opacity:1}
+  0%,100%{
+    transform:translateX(0);
+    opacity:.65
+  }
+
+  50%{
+    transform:translateX(5px);
+    opacity:1
+  }
 }
 
 @keyframes africaGlobeRotate{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
+  from{
+    transform:rotate(0deg)
+  }
+
+  to{
+    transform:rotate(360deg)
+  }
 }
 
 .hero h1{
@@ -244,8 +330,94 @@ body.language-fr h3.lang-fr{
 }
 
 /* =========================================================
+   RESPONSIVE HEADER
+========================================================= */
+
+@media(max-width:1000px){
+
+  .header-inner{
+    flex-wrap:wrap;
+  }
+
+  .nav{
+    order:3;
+    flex-basis:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding-bottom:8px;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:12px 16px;
+    position:relative;
+  }
+
+  .logo img{
+    width:145px;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav{
+    display:none;
+    order:3;
+    flex-basis:100%;
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:8px 0 4px;
+  }
+
+  .nav.mobile-open{
+    display:flex;
+  }
+
+  .nav a{
+    display:block;
+    padding:13px 10px;
+    border-top:1px solid #ffffff12;
+    text-align:left;
+  }
+
+  .nav a:last-child{
+    border-bottom:1px solid #ffffff12;
+  }
+
+  .header-actions{
+    margin-left:auto;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .header-actions{
+    gap:5px;
+  }
+
+  .language-select{
+    padding:7px 5px;
+    font-size:12px;
+  }
+
+  .cart-button{
+    font-size:12px;
+    padding:8px 9px;
+  }
+
+}
+
+/* =========================================================
    MARKETPLACE BAR
 ========================================================= */
+
 
 .marketplace-bar{
   background:#fff;
@@ -760,79 +932,95 @@ footer{
      HEADER
 ======================================================= -->
 
-<a href="index.html" class="logo" aria-label="WESTRONIX TECH Home">
-  <img
-    src="westronix-logo.jpg"
-    alt="WESTRONIX TECH"
-    width="175"
-    height="55"
-  >
+<header class="header">
 
-</a>
+  <div class="header-inner">
 
-<nav class="nav">
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="WESTRONIX TECH Home">
 
-  <a href="index.html">
-    <span class="lang-en">Home</span>
-    <span class="lang-fr">Accueil</span>
-  </a>
+      <img
+        src="westronix-logo.jpg"
+        alt="WESTRONIX TECH"
+        width="175"
+        height="55">
 
-  <a href="inventory.html" class="active">
-    <span class="lang-en">Inventory</span>
-    <span class="lang-fr">Inventaire</span>
-  </a>
+    </a>
 
-  <a href="auctions.html">
-    <span class="lang-en">Live Auctions</span>
-    <span class="lang-fr">Enchères</span>
-  </a>
 
-  <a href="sell-equipment.html">
-    <span class="lang-en">Sell Equipment</span>
-    <span class="lang-fr">Vendre du matériel</span>
-  </a>
+    <nav class="nav">
 
-  <a href="africa-education.html">
-    <span class="lang-en">Africa Education</span>
-    <span class="lang-fr">Éducation en Afrique</span>
-  </a>
+      <a href="index.html">
+        <span class="lang-en">Home</span>
+        <span class="lang-fr">Accueil</span>
+      </a>
 
-</nav>
+      <a href="inventory.html" class="active">
+        <span class="lang-en">Inventory</span>
+        <span class="lang-fr">Inventaire</span>
+      </a>
 
-<div class="header-actions">
+      <a href="auctions.html">
+        <span class="lang-en">Live Auctions</span>
+        <span class="lang-fr">Enchères</span>
+      </a>
 
-  <select
-    id="languageSelect"
-    class="language-select"
-    aria-label="Language">
+      <a href="sell-equipment.html">
+        <span class="lang-en">Sell Equipment</span>
+        <span class="lang-fr">Vendre du matériel</span>
+      </a>
 
-    <option value="fr">Français</option>
-    <option value="en">English</option>
+      <a href="africa-education.html">
+        <span class="lang-en">Africa Education</span>
+        <span class="lang-fr">Éducation en Afrique</span>
+      </a>
 
-  </select>
+    </nav>
 
-  <button
-    class="cart-button"
-    type="button"
-    onclick="window.location.href='cart.html'">
 
-    🛒
+    <div class="header-actions">
 
-    <span class="lang-en">Cart</span>
-    <span class="lang-fr">Panier</span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false">
+        ☰
+      </button>
 
-    <span
-      id="cartCount"
-      class="cart-count">0</span>
+      <select
+        id="languageSelect"
+        class="language-select"
+        aria-label="Language">
 
-  </button>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
 
-</div>
+      </select>
 
+      <button
+        class="cart-button"
+        type="button"
+        onclick="window.location.href='cart.html'">
+
+        🛒
+
+        <span class="lang-en">Cart</span>
+        <span class="lang-fr">Panier</span>
+
+        <span id="cartCount" class="cart-count">0</span>
+
+      </button>
+
+    </div>
 
   </div>
 
 </header>
+
 
 <!-- =======================================================
      HERO
@@ -842,41 +1030,37 @@ footer{
 
   <div class="hero-inner">
 
-    
-<div class="usa-africa-route">
+    <div class="usa-africa-route">
 
-  <span class="usa-flag">🇺🇸</span>
+      <span class="usa-flag">🇺🇸</span>
+      <span class="route-arrow">→</span>
+      <span class="africa-globe">🌍</span>
 
-  <span class="route-arrow">→</span>
+      <span class="lang-en">USA → AFRICA</span>
+      <span class="lang-fr">USA → AFRIQUE</span>
 
-  <span class="africa-globe">🌍</span>
+    </div>
 
-  <span class="lang-en">USA → AFRICA</span>
-  <span class="lang-fr">USA → AFRIQUE</span>
+    <h1>
+      <span class="lang-en">Available Inventory</span>
+      <span class="lang-fr">Inventaire disponible</span>
+    </h1>
 
-</div>
+    <p>
 
-<h1>
-  <span class="lang-en">Available Inventory</span>
-  <span class="lang-fr">Inventaire disponible</span>
-</h1>
+      <span class="lang-en">
+        Business-grade technology sourced from the United States,
+        tested and prepared for customers, businesses and organizations
+        across Africa.
+      </span>
 
-<p>
+      <span class="lang-fr">
+        Technologies professionnelles provenant des États-Unis,
+        testées et préparées pour les particuliers, entreprises
+        et organisations à travers l'Afrique.
+      </span>
 
-  <span class="lang-en">
-    Business-grade technology sourced from the United States,
-    tested and prepared for customers, businesses and organizations
-    across Africa.
-  </span>
-
-  <span class="lang-fr">
-    Technologies professionnelles provenant des États-Unis,
-    testées et préparées pour les particuliers, entreprises
-    et organisations à travers l'Afrique.
-  </span>
-
-</p>
-
+    </p>
 
   </div>
 
@@ -2056,6 +2240,77 @@ function escapeJS(value){
     .replace(/\\/g,'\\\\')
     .replace(/'/g,"\\'")
     .replace(/"/g,'\\"');
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+  document.getElementById('menuToggle');
+
+const navigation =
+  document.querySelector('.nav');
+
+if(menuToggle && navigation){
+
+  menuToggle.addEventListener(
+    'click',
+    function(){
+
+      const isOpen =
+        navigation.classList.toggle(
+          'mobile-open'
+        );
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen ? 'true' : 'false'
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen
+          ? 'Close menu'
+          : 'Open menu'
+      );
+
+      menuToggle.textContent =
+        isOpen ? '✕' : '☰';
+
+    }
+  );
+
+  navigation
+    .querySelectorAll('a')
+    .forEach(link => {
+
+      link.addEventListener(
+        'click',
+        function(){
+
+          navigation.classList.remove(
+            'mobile-open'
+          );
+
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          menuToggle.setAttribute(
+            'aria-label',
+            'Open menu'
+          );
+
+          menuToggle.textContent = '☰';
+
+        }
+      );
+
+    });
 
 }
 
