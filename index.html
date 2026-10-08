@@ -387,6 +387,20 @@ html[lang="fr"] .lang-fr{
   min-width:145px;
   text-align:center;
   box-shadow:0 3px 8px rgba(0,0,0,.22);
+  transform-origin:center;
+  animation:clockPulse 2.8s ease-in-out infinite;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.market-clock:hover{
+  transform:scale(1.06);
+  box-shadow:0 5px 14px rgba(197,138,36,.45);
+}
+@keyframes clockPulse{
+  0%,100%{transform:scale(1);box-shadow:0 3px 8px rgba(0,0,0,.22);}
+  50%{transform:scale(1.035);box-shadow:0 5px 13px rgba(197,138,36,.38);}
+}
+@media (prefers-reduced-motion:reduce){
+  .market-clock{animation:none;}
 }
 
 .menu-toggle{
