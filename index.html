@@ -1457,7 +1457,9 @@ html[lang="fr"] .lang-fr{
 
 }
 
-\n.tagline-indent{display:inline-block;margin-left:18px;font-size:14px;}\n.globe-animated{display:inline-block;transform-origin:center;animation:globeSpin 3s linear infinite;}\n@keyframes globeSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}\n@media (prefers-reduced-motion:reduce){.globe-animated{animation:none;}}\n</style>
+\n.tagline-indent{display:inline-block;margin-left:18px;font-size:14px;}
+.usa-africa-brand{font-size:18px;font-weight:900;color:#ffffff;letter-spacing:.2px;white-space:nowrap;}
+.usa-africa-brand .globe-animated{font-size:19px;}\n.globe-animated{display:inline-block;transform-origin:center;animation:globeSpin 3s linear infinite;}\n@keyframes globeSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}\n@media (prefers-reduced-motion:reduce){.globe-animated{animation:none;}}\n</style>
 </head>
 
 <body>
@@ -1480,7 +1482,7 @@ html[lang="fr"] .lang-fr{
         >
         <div class="market-logo-text">
           <div class="market-logo-name">WESTRONIX TECH</div>
-          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.<br><span class="tagline-indent">Technology from &#127482;&#127480; USA → <span class="globe-animated" aria-label="World">🌍</span> Africa.</span></div>
+          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.<br><span class="tagline-indent">Technology <strong class="usa-africa-brand">🇺🇸 USA → <span class="globe-animated" aria-label="World">🌍</span> Africa.</strong></span></div>
         </div>
       </a>
 
@@ -4451,6 +4453,3 @@ loadData();
 
 </body>
 </html>
-```
-
-This version uses the **root `<html lang="...">` state as the single source of truth**, so switching the selector actually switches the entire page between French and English rather than displaying both languages. The **🇺🇸 flag waves**, the **→ arrow pulses**, and the **🌍 globe rotates slowly**, with reduced-motion support.
