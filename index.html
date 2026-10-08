@@ -125,19 +125,41 @@ html[lang="fr"] .lang-fr{
 .market-logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   flex:0 0 auto;
-  min-width:220px;
+  min-width:235px;
   color:#fff;
+  perspective:600px;
 }
 
 .market-logo img{
-  width:68px;
-  height:68px;
+  width:82px;
+  height:82px;
   object-fit:contain;
-  background:#fff;
-  border-radius:10px;
-  padding:4px;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  display:block;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));
+  transform-origin:center;
+  animation:logoFloat 3.6s ease-in-out infinite;
+  transition:transform .3s ease,filter .3s ease;
+}
+
+.market-logo:hover img{
+  transform:scale(1.08) rotate(-2deg);
+  filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));
+}
+
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-3px) scale(1.025);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .market-logo img{
+    animation:none;
+  }
 }
 
 .market-logo-text{
