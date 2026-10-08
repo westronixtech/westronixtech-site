@@ -188,79 +188,56 @@ html[lang="fr"] .lang-fr{
   color:#fff;
   overflow:hidden;
   vertical-align:middle;
-  text-shadow:0 0 8px rgba(105,173,255,.55),0 0 18px rgba(22,119,255,.28);
-  animation:brandFloat 4s ease-in-out infinite;
 }
 .usa-africa-brand .kinetic-word{
   display:inline-block;
   opacity:0;
-  transform:translateY(10px);
-  animation:premiumReveal 1s cubic-bezier(.22,.61,.36,1) forwards,
-             radiantPulse 2.8s ease-in-out 1.8s infinite;
+  transform:translateY(115%) rotate(2deg);
+  animation:kineticReveal .75s cubic-bezier(.2,.8,.2,1) forwards;
 }
-.usa-africa-brand .kinetic-usa{animation-delay:.15s,.2s;}
+.usa-africa-brand .kinetic-usa{animation-delay:.15s;}
 .usa-africa-brand .kinetic-arrow{
-  display:inline-block;
   opacity:0;
-  transform:translateX(-10px);
-  color:#69adff;
-  text-shadow:0 0 8px rgba(105,173,255,.75);
-  animation:premiumArrow .8s cubic-bezier(.22,.61,.36,1) .5s forwards,
-             arrowShimmer 2.6s ease-in-out 1.6s infinite;
+  transform:translateX(-18px) scale(.7);
+  animation:kineticArrow .65s cubic-bezier(.2,.8,.2,1) .48s forwards;
 }
 .usa-africa-brand .globe-animated{
   display:inline-block;
   opacity:0;
-  transform:scale(.82);
-  animation:premiumGlobe .9s cubic-bezier(.22,.61,.36,1) .72s forwards,
-             globeGlow 2.5s ease-in-out 1.7s infinite;
+  transform:translateY(10px) scale(.65) rotate(-18deg);
+  animation:kineticGlobe .8s cubic-bezier(.2,.8,.2,1) .7s forwards,globeGlow 2.4s ease-in-out 1.5s infinite;
   -webkit-text-fill-color:initial;
   filter:drop-shadow(0 0 7px rgba(105,173,255,.65));
 }
-.usa-africa-brand .kinetic-africa{animation-delay:.95s,1s;}
-
-@keyframes premiumReveal{
-  0%{opacity:0;transform:translateY(10px);}
-  70%{opacity:1;transform:translateY(-2px);}
-  100%{opacity:1;transform:translateY(0);}
+.usa-africa-brand .kinetic-africa{
+  animation-delay:.82s;
 }
-@keyframes premiumArrow{
-  0%{opacity:0;transform:translateX(-10px);}
-  70%{opacity:1;transform:translateX(3px);}
-  100%{opacity:1;transform:translateX(0);}
+@keyframes kineticReveal{
+  0%{opacity:0;transform:translateY(115%) rotate(2deg);}
+  70%{opacity:1;transform:translateY(-8%) rotate(0);}
+  100%{opacity:1;transform:translateY(0) rotate(0);}
 }
-@keyframes premiumGlobe{
-  0%{opacity:0;transform:scale(.82);}
-  70%{opacity:1;transform:scale(1.08);}
-  100%{opacity:1;transform:scale(1);}
+@keyframes kineticArrow{
+  0%{opacity:0;transform:translateX(-18px) scale(.7);}
+  70%{opacity:1;transform:translateX(4px) scale(1.08);}
+  100%{opacity:1;transform:translateX(0) scale(1);}
 }
-@keyframes radiantPulse{
-  0%,100%{text-shadow:0 0 7px rgba(105,173,255,.45),0 0 15px rgba(22,119,255,.18);}
-  50%{text-shadow:0 0 12px rgba(105,173,255,.85),0 0 24px rgba(22,119,255,.38);}
-}
-@keyframes arrowShimmer{
-  0%,100%{opacity:.82;transform:translateX(0);}
-  50%{opacity:1;transform:translateX(4px);}
+@keyframes kineticGlobe{
+  0%{opacity:0;transform:translateY(10px) scale(.65) rotate(-18deg);}
+  70%{opacity:1;transform:translateY(-2px) scale(1.12) rotate(5deg);}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0);}
 }
 @keyframes globeGlow{
-  0%,100%{filter:drop-shadow(0 0 5px rgba(105,173,255,.45));}
-  50%{filter:drop-shadow(0 0 12px rgba(105,173,255,.95));}
-}
-@keyframes brandFloat{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-2px);}
+  0%,100%{filter:drop-shadow(0 0 5px rgba(105,173,255,.35));}
+  50%{filter:drop-shadow(0 0 12px rgba(105,173,255,.9));}
 }
 @media (prefers-reduced-motion:reduce){
-  .usa-africa-brand,
   .usa-africa-brand .kinetic-word,
   .usa-africa-brand .kinetic-arrow,
   .usa-africa-brand .globe-animated{
     animation:none;
     opacity:1;
     transform:none;
-  }
-  .usa-africa-brand{
-    text-shadow:none;
   }
 }
 .market-search{
