@@ -175,6 +175,71 @@ html[lang="fr"] .lang-fr{
 }
 
 .market-logo-tagline{margin:5px 0 0;color:#aebdce;font-size:12px;line-height:1.35;font-weight:700;white-space:normal;}
+.tagline-indent{display:inline-block;margin-left:18px;font-size:14px;}
+.usa-africa-brand{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  color:#fff;
+  overflow:hidden;
+  vertical-align:middle;
+}
+.usa-africa-brand .kinetic-word{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(115%) rotate(2deg);
+  animation:kineticReveal .75s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.usa-africa-brand .kinetic-usa{animation-delay:.15s;}
+.usa-africa-brand .kinetic-arrow{
+  opacity:0;
+  transform:translateX(-18px) scale(.7);
+  animation:kineticArrow .65s cubic-bezier(.2,.8,.2,1) .48s forwards;
+}
+.usa-africa-brand .globe-animated{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(10px) scale(.65) rotate(-18deg);
+  animation:kineticGlobe .8s cubic-bezier(.2,.8,.2,1) .7s forwards,globeGlow 2.4s ease-in-out 1.5s infinite;
+  -webkit-text-fill-color:initial;
+  filter:drop-shadow(0 0 7px rgba(105,173,255,.65));
+}
+.usa-africa-brand .kinetic-africa{
+  animation-delay:.82s;
+}
+@keyframes kineticReveal{
+  0%{opacity:0;transform:translateY(115%) rotate(2deg);}
+  70%{opacity:1;transform:translateY(-8%) rotate(0);}
+  100%{opacity:1;transform:translateY(0) rotate(0);}
+}
+@keyframes kineticArrow{
+  0%{opacity:0;transform:translateX(-18px) scale(.7);}
+  70%{opacity:1;transform:translateX(4px) scale(1.08);}
+  100%{opacity:1;transform:translateX(0) scale(1);}
+}
+@keyframes kineticGlobe{
+  0%{opacity:0;transform:translateY(10px) scale(.65) rotate(-18deg);}
+  70%{opacity:1;transform:translateY(-2px) scale(1.12) rotate(5deg);}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0);}
+}
+@keyframes globeGlow{
+  0%,100%{filter:drop-shadow(0 0 5px rgba(105,173,255,.35));}
+  50%{filter:drop-shadow(0 0 12px rgba(105,173,255,.9));}
+}
+@media (prefers-reduced-motion:reduce){
+  .usa-africa-brand .kinetic-word,
+  .usa-africa-brand .kinetic-arrow,
+  .usa-africa-brand .globe-animated{
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+}
 
 .market-search{
   flex:1;
@@ -1514,7 +1579,7 @@ html[lang="fr"] .lang-fr{
         >
         <div class="market-logo-text">
           <div class="market-logo-name">WESTRONIX TECH</div>
-          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.<br><span class="tagline-indent">Technology <strong class="usa-africa-brand">🇺🇸 USA → <span class="globe-animated" aria-label="World">🌍</span> Africa.</strong></span></div>
+          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.<br><span class="tagline-indent">Technology <strong class="usa-africa-brand"><span class="kinetic-word kinetic-usa">🇺🇸 USA</span><span class="kinetic-arrow">→</span><span class="globe-animated" aria-label="World">🌍</span><span class="kinetic-word kinetic-africa">Africa.</span></strong></span></div>
         </div>
       </a>
 
