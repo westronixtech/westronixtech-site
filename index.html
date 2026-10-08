@@ -1458,8 +1458,40 @@ html[lang="fr"] .lang-fr{
 }
 
 \n.tagline-indent{display:inline-block;margin-left:18px;font-size:14px;}
-.usa-africa-brand{font-size:18px;font-weight:900;color:#ffffff;letter-spacing:.2px;white-space:nowrap;}
-.usa-africa-brand .globe-animated{font-size:19px;}\n.globe-animated{display:inline-block;transform-origin:center;animation:globeSpin 3s linear infinite;}\n@keyframes globeSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}\n@media (prefers-reduced-motion:reduce){.globe-animated{animation:none;}}\n</style>
+.usa-africa-brand{
+  position:relative;
+  display:inline-block;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  color:#fff;
+  background:linear-gradient(90deg,#fff,#ffd166,#fff,#69adff,#fff);
+  background-size:300% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:usaAfricaRadiance 3.2s ease-in-out infinite,usaAfricaFloat 2.6s ease-in-out infinite;
+  filter:drop-shadow(0 0 5px rgba(255,209,102,.25));
+}
+.usa-africa-brand .globe-animated{
+  font-size:21px;
+  -webkit-text-fill-color:initial;
+  filter:drop-shadow(0 0 7px rgba(105,173,255,.65));
+}
+@keyframes usaAfricaRadiance{
+  0%{background-position:0% 50%;filter:drop-shadow(0 0 4px rgba(255,209,102,.18));}
+  50%{background-position:100% 50%;filter:drop-shadow(0 0 11px rgba(255,209,102,.65));}
+  100%{background-position:0% 50%;filter:drop-shadow(0 0 4px rgba(255,209,102,.18));}
+}
+@keyframes usaAfricaFloat{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-2px) scale(1.025);}
+}
+@media (prefers-reduced-motion:reduce){
+  .usa-africa-brand{animation:none;filter:none;}
+  .usa-africa-brand .globe-animated{animation:none;}
+}\n.globe-animated{display:inline-block;transform-origin:center;animation:globeSpin 3s linear infinite;}\n@keyframes globeSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}\n@media (prefers-reduced-motion:reduce){.globe-animated{animation:none;}}\n</style>
 </head>
 
 <body>
