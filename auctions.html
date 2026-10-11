@@ -973,6 +973,10 @@
 
   <main>
 
+    <div class="message-box" role="note" style="margin:16px 0;">
+      <strong><span class="lang-en">Bid requests are sent to WESTRONIX for review; this page does not record or accept bids automatically.</span><span class="lang-fr">Les demandes d’enchère sont envoyées à WESTRONIX pour examen ; cette page n’enregistre ni n’accepte automatiquement les enchères.</span></strong>
+    </div>
+
     <div class="toolbar">
 
       <input
@@ -991,6 +995,10 @@
 
         <option value="active">
           Active Now
+        </option>
+
+        <option value="upcoming">
+          Upcoming
         </option>
 
         <option value="ended">
@@ -1225,10 +1233,7 @@
 
     const WHATSAPP_NUMBER = "22892953333";
 
-    const FALLBACK_AUCTIONS = [
-      { id:"AUC-001", product:"Dell Latitude 5420", startingBid:85000, currentBid:87000, minimumIncrement:2000, reservePrice:100000, quantity:1, status:"active", buyNow:110000 },
-      { id:"AUC-002", product:"HP EliteBook 840 G7", startingBid:100000, currentBid:107000, minimumIncrement:2000, reservePrice:125000, quantity:1, status:"active", buyNow:135000 }
-    ];
+    const AUCTIONS_URL = "auctions.json";
 
 
     /* =========================================
@@ -1329,24 +1334,13 @@
         return null;
       }
 
-      const productName =
-        String(auction.product || "")
-          .trim()
-          .toLowerCase();
-
-      if(!productName){
-        return null;
-      }
+      const productSku = String(auction.productSku || auction.sku || "").trim().toLowerCase();
+      const productName = String(auction.product || "").trim().toLowerCase();
 
       return inventoryData.find(product => {
-
-        const name =
-          String(product.name || "")
-            .trim()
-            .toLowerCase();
-
-        return name === productName;
-
+        const sku = String(product.sku || "").trim().toLowerCase();
+        const name = String(product.name || "").trim().toLowerCase();
+        return (productSku && sku === productSku) || (productName && name === productName);
       }) || null;
     }
 
@@ -1363,23 +1357,23 @@
         return "ended";
       }
 
-      const status =
-        String(auction.status || "")
-          .trim()
-          .toLowerCase();
+      const status = String(auction.status || "").trim().toLowerCase();
+      if(status === "ended" || status === "closed" || status === "sold") return "ended";
 
-      if(status === "active"){
-        return "active";
-      }
+      // Auction timestamps are stored in Lomé local time (UTC).
+      const parseUtc = value => {
+        if(!value) return NaN;
+        const raw = String(value);
+        return Date.parse(/[zZ]|[+-]\\d{2}:?\\d{2}$/.test(raw) ? raw : raw + "Z");
+      };
+      const startsAt = parseUtc(auction.startTime);
+      const endsAt = parseUtc(auction.endTime);
+      const now = Date.now();
 
-      if(
-        status === "ended" ||
-        status === "closed" ||
-        status === "sold"
-      ){
-        return "ended";
-      }
-
+      if(Number.isFinite(startsAt) && now < startsAt) return "upcoming";
+      if(Number.isFinite(endsAt) && now > endsAt) return "ended";
+      if(status === "active" || status === "live") return "active";
+      if(status === "upcoming") return "upcoming";
       return "ended";
     }
 
@@ -1391,14 +1385,17 @@
     function getStatusLabel(status){
 
       if(status === "active"){
-
         return `
           <span class="lang-en">🔴 LIVE</span>
           <span class="lang-fr">🔴 EN DIRECT</span>
         `;
-
       }
-
+      if(status === "upcoming"){
+        return `
+          <span class="lang-en">⏳ UPCOMING</span>
+          <span class="lang-fr">⏳ À VENIR</span>
+        `;
+      }
       return `
         <span class="lang-en">✓ ENDED</span>
         <span class="lang-fr">✓ TERMINÉE</span>
@@ -2678,22 +2675,37 @@
         `;
 
 
-        /* =====================================
-           LOAD INVENTORY.JSON
-        ===================================== */
+        /* Load product inventory and auction listings from their own data files. */
+        const [inventoryResponse, auctionsResponse] = await Promise.all([
+          fetch("inventory.json?refresh=" + Date.now(), { cache:"no-store" }),
+          fetch(AUCTIONS_URL + "?refresh=" + Date.now(), { cache:"no-store" })
+        ]);
 
-        let data = null;
+        if(!inventoryResponse.ok) throw new Error("inventory.json HTTP " + inventoryResponse.status);
+        if(!auctionsResponse.ok) throw new Error("auctions.json HTTP " + auctionsResponse.status);
 
-        try {
-          const response = await fetch("inventory.json?auction_refresh=" + Date.now(), { cache:"no-store" });
-          if (response.ok) data = await response.json();
-        } catch (fetchError) {
-          console.warn("inventory.json unavailable; using built-in auction data.", fetchError);
+        const inventoryFile = await inventoryResponse.json();
+        const auctionsFile = await auctionsResponse.json();
+
+        inventoryData = inventoryFile && Array.isArray(inventoryFile.products) ? inventoryFile.products : [];
+        if(!auctionsFile || !Array.isArray(auctionsFile.auctions)) {
+          throw new Error("auctions.json does not contain a valid auctions array.");
         }
 
-        inventoryData = data && Array.isArray(data.products) ? data.products : [];
-        auctionData = data && Array.isArray(data.auctions) ? data.auctions : [...FALLBACK_AUCTIONS];
-        if (auctionData.length === 0) auctionData = [...FALLBACK_AUCTIONS];
+        auctionData = auctionsFile.auctions.map(item => ({
+          id: item.auctionId || item.id || "",
+          productSku: item.productSku || item.sku || "",
+          product: item.product || item.productName || "",
+          quantity: Number(item.quantity || 1),
+          startingBid: Number(item.startingBid || 0),
+          currentBid: Number(item.currentBid || item.startingBid || 0),
+          minimumIncrement: Number(item.minimumIncrement || 1000),
+          reservePrice: item.reservePrice,
+          buyNow: Number(item.buyNowPrice || item.buyNow || 0),
+          startTime: item.startTime || "",
+          endTime: item.endTime || "",
+          status: item.status || ""
+        })).filter(item => item.id);
 
 
         if(auctionData.length === 0){
