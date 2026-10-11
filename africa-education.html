@@ -916,7 +916,7 @@
         <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="https://wa.me/22892953333?text=Hello%20WESTRONIX%20TECH%2C%20I%20would%20like%20to%20discuss%20an%20Africa%20Education%20technology%20request.">Contact on WhatsApp</a>
       </div>
       <div id="formStatus" class="form-status"></div>
-      <div class="form-note">Submitting this form prepares a request for WESTRONIX TECH. For urgent requests, contact us directly on WhatsApp.</div>
+      <div class="form-note">Submitting this form opens WhatsApp with your request; it does not submit a grant application or guarantee equipment or funding. WESTRONIX TECH has not represented this page as a tax-deductible charity donation program. For urgent requests, contact us directly on WhatsApp.</div>
     </form>
   </div>
 </section>
@@ -960,10 +960,13 @@
       "Africa Education Support Request",
       "Organization: " + org,
       "Contact: " + contact,
+      "Email: " + document.getElementById("email").value.trim(),
       "Phone/WhatsApp: " + phone,
       "Country: " + document.getElementById("country").value.trim(),
-      "Users: " + document.getElementById("users").value.trim(),
-      "Technology needed: " + needs
+      "Estimated students/users: " + document.getElementById("users").value.trim(),
+      "Technology needed: " + needs,
+      "",
+      "This is a request for discussion only. It is not a guarantee of funding, equipment, or charitable assistance."
     ].join("\n");
     const status = document.getElementById("formStatus");
     status.className = "form-status success";
