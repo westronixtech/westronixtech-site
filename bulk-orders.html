@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Request bulk laptops, desktops, phones and IT equipment from WESTRONIX TECH.">
+<title>Bulk Orders & Business Sourcing | WESTRONIX TECH</title>
+<style>
+:root{--navy:#071526;--blue:#1677ff;--green:#10b981;--ink:#172033;--muted:#5e6b7c;--line:#dbe3ec;--bg:#f5f7fb}*{box-sizing:border-box}body{margin:0;font:16px/1.55 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}a{color:inherit}.top{background:var(--navy);color:white;padding:15px max(20px,calc((100% - 1120px)/2));display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.brand{font-weight:900;font-size:20px;text-decoration:none;letter-spacing:.3px}.top nav{display:flex;gap:15px;flex-wrap:wrap}.top nav a{font-size:14px;text-decoration:none;color:#e4edf8}.wrap{max-width:1000px;margin:auto;padding:30px 20px 60px}.hero{background:linear-gradient(130deg,#071526,#12345b);color:#fff;border-radius:18px;padding:clamp(26px,5vw,48px);margin-bottom:24px}.eyebrow{color:#9dc7ff;font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,48px);line-height:1.08;margin:10px 0 14px}.hero p{max-width:740px;color:#dce8f7;margin:0}.steps,.form-card,.notice{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;margin-bottom:20px}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{border-left:3px solid var(--blue);padding-left:12px}.step strong{display:block;margin-bottom:4px}.step span{font-size:14px;color:var(--muted)}h2{margin:0 0 7px;font-size:25px}.muted{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:14px;font-weight:700}input,select,textarea{width:100%;min-height:46px;border:1px solid #c8d3e0;border-radius:8px;padding:11px 12px;font:inherit;background:white;color:var(--ink)}textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{outline:3px solid #1677ff26;border-color:var(--blue)}.check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted)}.check input{width:18px;min-height:18px;margin-top:3px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;min-height:48px;padding:12px 18px;background:var(--blue);color:white;font-weight:800;text-decoration:none;cursor:pointer}.btn.secondary{background:#eaf1fa;color:#15324f}.notice{background:#fff8e8;border-color:#f3d79a;color:#6b4b0b;font-size:14px}footer{text-align:center;padding:24px;color:var(--muted);font-size:13px}footer a{color:#155db4}.small{font-size:13px;color:var(--muted)}@media(max-width:650px){.grid,.steps-grid{grid-template-columns:1fr}.top{align-items:flex-start}.form-card,.steps{padding:18px}.hero{border-radius:12px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="index.html">WESTRONIX TECH</a><nav aria-label="Main navigation"><a href="inventory.html">Shop Inventory</a><a href="request-product.html">Product Requests</a><a href="sell-equipment.html">Sell Equipment</a><a href="recycle-donate.html">Recycle / Donate</a></nav></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">Business • Schools • Resellers • Organizations</div><h1>Bulk Orders & Custom Sourcing</h1><p>Tell us what your organization needs, from a small batch of laptops to larger equipment lots. We review the specification, quantity, timing and destination before confirming whether we can quote or source it.</p><div class="actions"><a class="btn" href="#bulkForm">Request a bulk quote</a><a class="btn secondary" href="inventory.html">Browse current inventory</a></div></section>
+<section class="steps"><h2>How the request works</h2><p class="muted">Submitting a request starts a conversation; it does not place an order.</p><div class="steps-grid"><div class="step"><strong>1. Share your requirements</strong><span>Product types, quantity, condition, budget and delivery destination.</span></div><div class="step"><strong>2. Review and clarify</strong><span>WESTRONIX reviews feasibility, availability and any missing details.</span></div><div class="step"><strong>3. Receive a proposal</strong><span>Any quote, shipping estimate, warranty or payment terms must be confirmed in writing.</span></div></div></section>
+<section class="form-card"><h2 id="bulkForm">Request a bulk order or sourcing quote</h2><p class="muted">Fields marked * are required. Do not include passwords, payment-card details or other sensitive information.</p>
+<form id="bulkOrderForm">
+<div class="grid">
+<div class="field"><label for="buyerName">Your name *</label><input id="buyerName" name="Contact name" autocomplete="name" required></div>
+<div class="field"><label for="org">Organization / business</label><input id="org" name="Organization" autocomplete="organization"></div>
+<div class="field"><label for="contact">WhatsApp or phone *</label><input id="contact" name="WhatsApp / phone" autocomplete="tel" required></div>
+<div class="field"><label for="email">Email</label><input id="email" name="Email" type="email" autocomplete="email"></div>
+<div class="field"><label for="buyerType">I am a… *</label><select id="buyerType" name="Buyer type" required><option value="">Choose…</option><option>Reseller / distributor</option><option>Business / enterprise</option><option>School / university</option><option>Nonprofit / community organization</option><option>Government / public institution</option><option>Individual buyer</option><option>Other</option></select></div>
+<div class="field"><label for="destination">Delivery country and city *</label><input id="destination" name="Delivery destination" placeholder="e.g. Lomé, Togo" required></div>
+<div class="field"><label for="category">Equipment needed *</label><select id="category" name="Equipment category" required><option value="">Choose…</option><option>Laptops</option><option>Desktop computers</option><option>Workstations</option><option>Servers / networking</option><option>Smartphones / tablets</option><option>Monitors / accessories</option><option>Mixed IT equipment lot</option><option>Other / custom specification</option></select></div>
+<div class="field"><label for="quantity">Estimated quantity *</label><input id="quantity" name="Estimated quantity" type="number" min="1" max="100000" step="1" required placeholder="e.g. 25"></div>
+<div class="field"><label for="condition">Preferred condition *</label><select id="condition" name="Preferred condition" required><option value="">Choose…</option><option>New</option><option>Used, tested working</option><option>Refurbished</option><option>Mixed grades / open to options</option><option>Untested / as-is lot</option></select></div>
+<div class="field"><label for="budget">Target budget (optional)</label><input id="budget" name="Target budget and currency" placeholder="e.g. 3,000 USD or 1,800,000 FCFA"></div>
+<div class="field"><label for="timeline">When do you need it?</label><select id="timeline" name="Required timeline"><option value="">Not decided</option><option>As soon as practical</option><option>Within 30 days</option><option>Within 1–3 months</option><option>3+ months</option></select></div>
+<div class="field"><label for="specs">Brand / model / minimum specs</label><input id="specs" name="Brand, model and specifications" placeholder="e.g. Core i5, 16 GB RAM, 512 GB SSD"></div>
+<div class="field full"><label for="details">Additional requirements</label><textarea id="details" name="Additional requirements" placeholder="Preferred brands, quantities by configuration, accessories, packaging, shipping or documentation needs…"></textarea></div>
+<label class="check field full"><input type="checkbox" required><span>I understand this is an inquiry only. Availability, price, shipping, payment, warranty and delivery dates are not confirmed until WESTRONIX TECH provides written confirmation.</span></label>
+</div>
+<div class="actions"><button class="btn" type="submit">Continue to WhatsApp</button><a class="btn secondary" href="mailto:westronix.tech@gmail.com?subject=WESTRONIX%20Bulk%20Order%20Inquiry">Email instead</a></div>
+<p class="small">This form opens WhatsApp with a prepared message. It does not save the request to a WESTRONIX database or create an order.</p>
+</form></section>
+<div class="notice"><strong>Important:</strong> Custom sourcing depends on supplier availability and review. Do not assume equipment is reserved, a quote is binding, or an order is accepted until written terms are agreed.</div>
+</main>
+<footer>WESTRONIX TECH · Recover • Refurbish • Resell • Reuse • Impact · <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a> · <a href="https://wa.me/22892953333">WhatsApp</a></footer>
+<script>
+(function(){
+ const form=document.getElementById('bulkOrderForm');
+ form.addEventListener('submit',function(event){
+  event.preventDefault();
+  if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const lines=['Hello WESTRONIX TECH,','BULK ORDER / CUSTOM SOURCING INQUIRY',''];
+  for(const [key,value] of data.entries()){if(String(value).trim())lines.push(key+': '+String(value).trim());}
+  lines.push('','Please review and let me know whether you can provide a written quote. This message is an inquiry only, not an order.');
+  window.open('https://wa.me/22892953333?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener,noreferrer');
+ });
+})();
+</script>
+</body>
+</html>
