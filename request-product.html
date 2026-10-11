@@ -18,9 +18,16 @@ main{max-width:1000px;margin:28px auto;padding:0 18px 45px}.notice{background:#f
 </head>
 <body>
 <header><div class="top"><a class="brand" href="index.html">WESTRONIX <span>TECH</span></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home / Accueil</a><a href="inventory.html">Shop Inventory / Inventaire</a><a href="bulk-orders.html">Bulk Orders / Achats en gros</a><a href="sell-equipment.html">Sell Equipment / Vendre du matériel</a><a href="africa-education.html">Education / Éducation</a><a href="support.html">Support / Assistance</a><a href="signin.html">Account / Compte</a><a href="cart.html">Cart / Panier</a></nav></div></header>
-<section class="hero"><h1>Product Requests & Offers</h1><p>Demandez un produit que vous recherchez ou proposez un prix pour un article listé. Your request is reviewed by WESTRONIX TECH; submission does not guarantee availability or acceptance.</p></section>
+<section class="hero"><h1>Product Requests & Offers</h1><p>Find what you need, make a private offer on a listed product, or request something not currently available. WESTRONIX will review your message and confirm availability, price and terms separately.</p></section>
 <main>
-<div class="notice"><strong>Important / Important :</strong> This page currently sends your details to WESTRONIX through WhatsApp. It does not yet save requests or offers in a central database. / Cette page transmet vos informations par WhatsApp et ne les enregistre pas encore dans une base de données centrale.</div>
+<div class="notice"><strong>How it works / Comment ça marche :</strong> 1) Send your request or private offer in WhatsApp. 2) WESTRONIX reviews the request and checks availability. 3) We confirm price, quantity, delivery and payment terms with you in writing. 4) Fulfillment starts only after final terms are agreed. Sending this form does not reserve stock, accept an offer or confirm an order. Details are sent through WhatsApp and are not yet stored in a central WESTRONIX database. / Envoyez votre demande ou offre privée sur WhatsApp ; WESTRONIX vérifie la disponibilité puis confirme les conditions par écrit. L’envoi ne réserve pas le stock et ne confirme pas une commande.</div>
+<div class="journey" aria-label="Customer journey" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 20px">
+<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px"><strong>1. Find</strong><br><span class="intro">Choose a listed item or request one.</span></div>
+<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px"><strong>2. Contact</strong><br><span class="intro">Buy, make a private offer, or request.</span></div>
+<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px"><strong>3. Verify</strong><br><span class="intro">We check stock and sourcing options.</span></div>
+<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px"><strong>4. Confirm</strong><br><span class="intro">Agree on final price and delivery.</span></div>
+<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px"><strong>5. Fulfill & support</strong><br><span class="intro">Proceed only after confirmation.</span></div>
+</div>
 <div class="tabs" role="tablist" aria-label="Request type"><button type="button" class="tab active" id="requestTab" role="tab" aria-selected="true" aria-controls="requestPanel">Request a Product / Demander un produit</button><button type="button" class="tab" id="offerTab" role="tab" aria-selected="false" aria-controls="offerPanel">Make an Offer / Faire une offre</button></div>
 <section class="panel" id="requestPanel" role="tabpanel" aria-labelledby="requestTab"><h2>Request a product</h2><p class="intro">Tell us what you need, even if it is not currently listed.</p>
 <form id="requestForm"><div class="grid">
@@ -43,7 +50,7 @@ main{max-width:1000px;margin:28px auto;padding:0 18px 45px}.notice{background:#f
 <div class="field"><label for="oQty">Quantity / Quantité *</label><input id="oQty" name="quantity" type="number" min="1" max="10000" value="1" required></div>
 <div class="field full"><label for="oNotes">Notes / Conditions proposées</label><textarea id="oNotes" name="notes" placeholder="Delivery needs, bulk quantity, timing, questions…"></textarea></div>
 </div><button class="submit" type="submit">Send offer on WhatsApp / Envoyer l'offre par WhatsApp</button><p class="smallprint">All offers are subject to review. Do not send payment before receiving confirmed order details.</p></form></section>
-</main><footer>WESTRONIX TECH · Technology USA → 🌍 Africa · <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a><p class="westronix-policy-links" style="margin:14px 0 0;font-size:13px"><a href="privacy.html">Privacy / Confidentialité</a> · <a href="terms.html">Terms / Conditions</a> · <a href="support.html">Support</a> · <a href="signin.html">Account / Compte</a></p></footer>
+</main><footer>WESTRONIX TECH · Technology from USA → West Africa · <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a><p class="westronix-policy-links" style="margin:14px 0 0;font-size:13px"><a href="privacy.html">Privacy / Confidentialité</a> · <a href="terms.html">Terms / Conditions</a> · <a href="support.html">Support</a> · <a href="signin.html">Account / Compte</a></p></footer>
 <script>
 (function(){
  const params=new URLSearchParams(location.search);
