@@ -860,13 +860,20 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media(prefers-reduced-motion:reduce){.market-logo.westronix-logo-header img{animation:none;}}
 
 </style>
+<style id="westronix-shared-logo-style">
+/* WESTRONIX shared header logo: match the homepage size and hover motion */
+.westronix-shared-brand{display:flex!important;align-items:center!important;gap:12px!important;flex-shrink:0!important;text-decoration:none!important;}
+.westronix-shared-logo{display:block!important;width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transition:transform .25s ease,filter .25s ease;}
+.westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
+@media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="market-logo westronix-logo-header" aria-label="WESTRONIX TECH Home"><img src="westronix-logo.jpg" alt="WESTRONIX TECH logo" width="82" height="82"><div class="market-logo-text"><div class="market-logo-name">WESTRONIX TECH</div><div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.</div></div></a>
+    <a href="index.html" class="market-logo westronix-logo-header westronix-shared-brand" aria-label="WESTRONIX TECH Home"><img class="westronix-shared-logo" src="westronix-logo.jpg" alt="WESTRONIX TECH logo"  ><div class="market-logo-text"><div class="market-logo-name">WESTRONIX TECH</div><div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.</div></div></a>
     <button class="menu-toggle" type="button" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
     <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="inventory.html">Shop Inventory</a><a href="request-product.html">Request a Product</a><a href="bulk-orders.html">Bulk Orders</a><a href="sell-equipment.html">Sell Equipment</a><a href="recycle-donate.html">Recycle / Donate</a><a href="support.html">Support</a><a href="signin.html">Account</a><a href="cart.html">🛒 Cart <span id="cartCount" class="cart-count">0</span></a></nav>
   </div>
