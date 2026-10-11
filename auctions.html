@@ -1370,8 +1370,11 @@
       const endsAt = parseUtc(auction.endTime);
       const now = Date.now();
 
-      if(Number.isFinite(startsAt) && now < startsAt) return "upcoming";
-      if(Number.isFinite(endsAt) && now > endsAt) return "ended";
+      if(Number.isFinite(startsAt) && Number.isFinite(endsAt)){
+        if(now < startsAt) return "upcoming";
+        if(now > endsAt) return "ended";
+        return "active";
+      }
       if(status === "active" || status === "live") return "active";
       if(status === "upcoming") return "upcoming";
       return "ended";
