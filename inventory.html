@@ -491,6 +491,10 @@ body.language-fr h3.lang-fr{
   color:#64748b;
   font-size:14px;
 }
+.empty-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.empty-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+.btn-outline{background:#fff;color:#071526;border:1px solid #cbd5e1}
+.btn:disabled{opacity:.48;cursor:not-allowed;transform:none}
 
 /* =========================================================
    INVENTORY
@@ -1128,6 +1132,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   <input
     id="searchBox"
     type="search"
+    aria-label="Search inventory by product, brand, model, SKU or specifications"
     placeholder="Rechercher Dell, HP, Lenovo, serveur..."
     autocomplete="off">
 
@@ -1135,7 +1140,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 <select
   id="categoryFilter"
-  class="category-select">
+  class="category-select"
+  aria-label="Filter inventory by category">
 
   <option value="all">
     Toutes les catégories
@@ -1320,6 +1326,22 @@ function applyLanguage(language){
   }
 
   updatePlaceholders();
+  if(typeof inventoryData !== 'undefined'){
+    const categoryFilter = document.getElementById('categoryFilter');
+    const selectedCategory = categoryFilter ? categoryFilter.value : 'all';
+    const categories = [...new Set(inventoryData.map(product => product.category).filter(Boolean))];
+    if(categories.length){
+      populateCategories(categories);
+    } else if(categoryFilter){
+      [...categoryFilter.options].forEach(option => {
+        if(option.value !== 'all') option.textContent = localizeCategory(option.value);
+      });
+      categoryFilter.value = selectedCategory;
+    }
+    if(categoryFilter && [...categoryFilter.options].some(option => option.value === selectedCategory)){
+      categoryFilter.value = selectedCategory;
+    }
+  }
   updateResultsInfo();
 }
 
@@ -1459,31 +1481,19 @@ async function loadInventory(){
 
     console.error(error);
 
-    document
-      .getElementById('inventoryGrid')
-      .innerHTML = `
-
-        <div class="empty">
-
-          <h2>
-            ${
-              currentLanguage === 'en'
-                ? 'Unable to load inventory'
-                : 'Impossible de charger l’inventaire'
-            }
-          </h2>
-
-          <p>
-            ${
-              currentLanguage === 'en'
-                ? 'Please check that inventory.json is in the same folder as inventory.html.'
-                : 'Vérifiez que inventory.json se trouve dans le même dossier que inventory.html.'
-            }
-          </p>
-
+    document.getElementById('inventoryGrid').innerHTML = `
+      <div class="empty" role="alert">
+        <h2>${currentLanguage === 'en' ? 'Inventory could not be loaded' : 'Impossible de charger l’inventaire'}</h2>
+        <p>${currentLanguage === 'en'
+          ? 'Please try again. If the issue continues, contact WESTRONIX or request the product you need.'
+          : 'Veuillez réessayer. Si le problème persiste, contactez WESTRONIX ou demandez le produit recherché.'}</p>
+        <div class="empty-actions">
+          <button type="button" class="btn btn-primary" onclick="loadInventory()">${currentLanguage === 'en' ? 'Try again' : 'Réessayer'}</button>
+          <a class="btn btn-secondary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+          <a class="btn btn-outline" href="bulk-orders.html">${currentLanguage === 'en' ? 'Bulk Orders' : 'Achats en gros'}</a>
         </div>
-
-      `;
+      </div>
+    `;
 
   }
 
@@ -1494,43 +1504,45 @@ async function loadInventory(){
    CATEGORIES
 ========================================================= */
 
+function localizeCategory(category){
+  const labels = {
+    Laptop: { en: 'Laptops', fr: 'Ordinateurs portables' },
+    Desktop: { en: 'Desktops', fr: 'Ordinateurs de bureau' },
+    Workstation: { en: 'Workstations', fr: 'Stations de travail' },
+    Server: { en: 'Servers', fr: 'Serveurs' },
+    Networking: { en: 'Networking', fr: 'Réseau' },
+    Accessories: { en: 'Accessories', fr: 'Accessoires' },
+    Phone: { en: 'Phones', fr: 'Téléphones' },
+    Tablet: { en: 'Tablets', fr: 'Tablettes' },
+    Monitor: { en: 'Monitors', fr: 'Écrans' },
+    Components: { en: 'Components', fr: 'Composants' }
+  };
+  return labels[category]?.[currentLanguage] || category;
+}
+
 function populateCategories(categories){
+  const filter = document.getElementById('categoryFilter');
+  if(!filter) return;
 
-  const filter =
-    document.getElementById(
-      'categoryFilter'
-    );
-
-  if(!filter){
-    return;
-  }
-
+  const previousValue = filter.value;
   filter.innerHTML = '';
 
-  const allOption =
-    document.createElement('option');
-
+  const allOption = document.createElement('option');
   allOption.value = 'all';
-
-  allOption.textContent =
-    currentLanguage === 'en'
-      ? 'All categories'
-      : 'Toutes les catégories';
-
+  allOption.textContent = currentLanguage === 'en' ? 'All categories' : 'Toutes les catégories';
   filter.appendChild(allOption);
 
-  categories.forEach(category => {
+  [...new Set(categories.filter(category => typeof category === 'string' && category.trim()))]
+    .forEach(category => {
+      const option = document.createElement('option');
+      option.value = category;
+      option.textContent = localizeCategory(category);
+      filter.appendChild(option);
+    });
 
-    const option =
-      document.createElement('option');
-
-    option.value = category;
-    option.textContent = category;
-
-    filter.appendChild(option);
-
-  });
-
+  if([...filter.options].some(option => option.value === previousValue)){
+    filter.value = previousValue;
+  }
 }
 
 
@@ -1645,32 +1657,35 @@ function renderProducts(products){
   grid.innerHTML = '';
 
   if(!products.length){
+    const hasActiveFilters =
+      Boolean(document.getElementById('searchBox')?.value.trim()) ||
+      (document.getElementById('categoryFilter')?.value || 'all') !== 'all';
 
-    grid.innerHTML = `
-
-      <div class="empty">
-
-        <h2>
-          ${
-            currentLanguage === 'en'
-              ? 'No verified inventory is currently published'
-              : 'Aucun stock vérifié n’est actuellement publié'
-          }
-        </h2>
-
-        <p>
-          ${
-            currentLanguage === 'en'
-              ? 'You can request a product and we will review sourcing options.'
-              : 'Vous pouvez demander un produit ; nous examinerons les possibilités d’approvisionnement.'
-          }
-        </p>
-        <p><a class="btn primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a></p>
-
-      </div>
-
-    `;
-
+    if(hasActiveFilters){
+      grid.innerHTML = `
+        <div class="empty">
+          <h2>${currentLanguage === 'en' ? 'No matching products found' : 'Aucun produit correspondant'}</h2>
+          <p>${currentLanguage === 'en' ? 'Try a different search term or remove the category filter.' : 'Essayez un autre terme ou retirez le filtre de catégorie.'}</p>
+          <div class="empty-actions">
+            <button type="button" class="btn btn-primary" onclick="clearInventoryFilters()">${currentLanguage === 'en' ? 'Clear filters' : 'Effacer les filtres'}</button>
+            <a class="btn btn-outline" href="request-product.html">${currentLanguage === 'en' ? 'Request this product' : 'Demander ce produit'}</a>
+          </div>
+        </div>
+      `;
+    } else {
+      grid.innerHTML = `
+        <div class="empty">
+          <h2>${currentLanguage === 'en' ? 'No verified products are currently published' : 'Aucun produit vérifié n’est actuellement publié'}</h2>
+          <p>${currentLanguage === 'en'
+            ? 'Our public catalog currently has no verified listings. You can request a specific item or ask about a bulk requirement; availability and pricing will be confirmed separately.'
+            : 'Notre catalogue public ne contient actuellement aucune annonce vérifiée. Vous pouvez demander un article précis ou un devis en gros ; la disponibilité et le prix seront confirmés séparément.'}</p>
+          <div class="empty-actions">
+            <a class="btn btn-primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+            <a class="btn btn-secondary" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
+          </div>
+        </div>
+      `;
+    }
     return;
   }
 
@@ -1715,28 +1730,33 @@ function renderProducts(products){
 
     const condition =
       product.condition ||
-      (
-        currentLanguage === 'en'
-          ? 'Tested Working'
-          : 'Testé et fonctionnel'
-      );
-
+      (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmé');
 
     const location =
       product.location ||
-      'Lomé, Togo';
+      (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmé');
 
+    const hasQuantity =
+      product.quantity !== null &&
+      product.quantity !== undefined &&
+      product.quantity !== '' &&
+      Number.isFinite(Number(product.quantity)) &&
+      Number(product.quantity) >= 0;
+    const quantity = hasQuantity ? Number(product.quantity) : null;
 
-    const quantity =
-      Number.isFinite(
-        Number(product.quantity)
-      )
-        ? Number(product.quantity)
-        : 0;
+    const hasPrice =
+      product.price !== null &&
+      product.price !== undefined &&
+      product.price !== '' &&
+      Number.isFinite(Number(product.price)) &&
+      Number(product.price) > 0;
+    const price = hasPrice ? Number(product.price) : null;
 
-
-    const price =
-      Number(product.price) || 0;
+    const canAddToCart =
+      status === 'available' &&
+      hasQuantity &&
+      quantity > 0 &&
+      hasPrice;
 
 
     const whatsappText =
@@ -1950,7 +1970,11 @@ function renderProducts(products){
             </span>
 
             <strong>
-              ${escapeHTML(quantity)}
+              ${quantity === null
+                ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée')
+                : quantity === 0
+                  ? (currentLanguage === 'en' ? 'Out of stock' : 'Épuisé')
+                  : escapeHTML(quantity)}
             </strong>
 
           </div>
@@ -1976,20 +2000,10 @@ function renderProducts(products){
 
 
         <div class="price">
-
-          ${price.toLocaleString()}
-
-          FCFA
-
-          <small>
-            /
-            ${
-              currentLanguage === 'en'
-                ? 'unit'
-                : 'unité'
-            }
-          </small>
-
+          ${hasPrice
+            ? `${price.toLocaleString()} FCFA`
+            : (currentLanguage === 'en' ? 'Price on request' : 'Prix sur demande')}
+          ${hasPrice ? `<small>/ ${currentLanguage === 'en' ? 'unit' : 'unité'}</small>` : ''}
         </div>
 
 
@@ -2012,14 +2026,8 @@ function renderProducts(products){
           <button
             type="button"
             class="btn btn-secondary"
-            onclick="addToCart('${escapeJS(product.sku)}')">
-
-            ${
-              currentLanguage === 'en'
-                ? 'Add to Cart'
-                : 'Ajouter au panier'
-            }
-
+            ${canAddToCart ? `onclick="addToCart('${escapeJS(product.sku)}')"` : 'disabled title="Availability, quantity and price must be confirmed before adding to cart"'}>
+            ${currentLanguage === 'en' ? 'Add to Cart' : 'Ajouter au panier'}
           </button>
 
 
@@ -2067,6 +2075,15 @@ function renderProducts(products){
    CART
 ========================================================= */
 
+function clearInventoryFilters(){
+  const searchBox = document.getElementById('searchBox');
+  const categoryFilter = document.getElementById('categoryFilter');
+  if(searchBox) searchBox.value = '';
+  if(categoryFilter) categoryFilter.value = 'all';
+  renderProducts(getFilteredProducts());
+  updateResultsInfo();
+}
+
 function addToCart(sku){
 
   const product =
@@ -2075,6 +2092,16 @@ function addToCart(sku){
     );
 
   if(!product){
+    return;
+  }
+
+  const priceIsConfirmed = product.price !== null && product.price !== undefined && product.price !== '' && Number.isFinite(Number(product.price)) && Number(product.price) > 0;
+  const quantityIsConfirmed = product.quantity !== null && product.quantity !== undefined && product.quantity !== '' && Number.isFinite(Number(product.quantity)) && Number(product.quantity) > 0;
+
+  if(String(product.status || '').toLowerCase() !== 'available' || !priceIsConfirmed || !quantityIsConfirmed){
+    alert(currentLanguage === 'en'
+      ? 'This listing is not yet confirmed for cart purchase. Please request a quote or contact WESTRONIX.'
+      : 'Cette annonce n’est pas encore confirmée pour un achat par panier. Demandez un devis ou contactez WESTRONIX.');
     return;
   }
 
@@ -2111,7 +2138,7 @@ function addToCart(sku){
       Number(existing.quantity) || 0;
 
     const maximumQuantity =
-      Number(product.quantity) || Infinity;
+      Number(product.quantity);
 
     if(
       currentQuantity >=
@@ -2238,11 +2265,10 @@ function updateResultsInfo(){
 
 
   if(!inventoryData.length){
-
-    element.textContent = '';
-
+    element.textContent = currentLanguage === 'en'
+      ? '0 verified products currently published'
+      : '0 produit vérifié actuellement publié';
     return;
-
   }
 
 
