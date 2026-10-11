@@ -1403,8 +1403,35 @@ async function loadInventory(){
         : []
     );
 
+    // Preserve a search or category selected on the homepage.
+    const params = new URLSearchParams(window.location.search);
+    const searchBox = document.getElementById('searchBox');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const query = params.get('q');
+    const requestedCategory = (params.get('category') || '')
+      .trim()
+      .toLowerCase()
+      .replace(/s$/, '');
+
+    if (searchBox && query) {
+      searchBox.value = query;
+    }
+
+    if (categoryFilter && requestedCategory) {
+      const matchingOption = Array.from(categoryFilter.options).find(option => {
+        const optionCategory = String(option.value || '')
+          .trim()
+          .toLowerCase()
+          .replace(/s$/, '');
+        return optionCategory === requestedCategory;
+      });
+      if (matchingOption) {
+        categoryFilter.value = matchingOption.value;
+      }
+    }
+
     renderProducts(
-      inventoryData
+      getFilteredProducts()
     );
 
     updateResultsInfo();
