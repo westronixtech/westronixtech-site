@@ -3,30 +3,6 @@
   "currency": "FCFA",
   "location": "No verified inventory currently published",
   "products": [],
-  "auctions": [
-    {
-      "id": "AUC-001",
-      "product": "Dell Latitude 5420",
-      "startingBid": 85000,
-      "currentBid": 87000,
-      "minimumIncrement": 2000,
-      "reservePrice": 100000,
-      "quantity": 1,
-      "status": "active",
-      "buyNow": 110000
-    },
-    {
-      "id": "AUC-002",
-      "product": "HP EliteBook 840 G7",
-      "startingBid": 100000,
-      "currentBid": 107000,
-      "minimumIncrement": 2000,
-      "reservePrice": 125000,
-      "quantity": 1,
-      "status": "active",
-      "buyNow": 135000
-    }
-  ],
   "categories": [
     "Laptop",
     "Desktop",
