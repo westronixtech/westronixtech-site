@@ -401,6 +401,18 @@ html[lang="fr"] .lang-fr{
   flex-wrap:wrap;
 }
 
+.nav-icon{
+  width:15px;
+  height:15px;
+  display:inline-block;
+  vertical-align:-3px;
+  margin-right:5px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
 .market-links a{
   color:#fff;
   padding:14px 0;
@@ -511,10 +523,6 @@ html[lang="fr"] .lang-fr{
 
   .market-links a{
     padding:7px 0;
-  }
-
-  .market-clock{
-    display:none;
   }
 }
 
@@ -1497,8 +1505,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      UNIVERSAL HEADER
-===================================================== -->
-
 <header class="site-header">
 
   <div class="marketplace-top">
@@ -1513,7 +1519,7 @@ html[lang="fr"] .lang-fr{
         >
         <div class="market-logo-text">
           <div class="market-logo-name">WESTRONIX TECH</div>
-          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.<br><span class="tagline-indent">Technology <strong class="usa-africa-brand">USA → <span class="globe-animated" aria-label="World">🌍</span> Africa.</strong></span></div>
+          <div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.</div>
         </div>
       </a>
 
@@ -1581,14 +1587,14 @@ html[lang="fr"] .lang-fr{
     <div class="market-nav-inner">
 
       <div class="market-links">
-<a href="inventory.html">💻 <span class="lang-en">Shop Inventory</span><span class="lang-fr">Inventaire</span></a>
-<a href="request-product.html">🔎 <span class="lang-en">Request a Product</span><span class="lang-fr">Demander un produit</span></a>
-<a href="bulk-orders.html">📦 <span class="lang-en">Bulk Orders</span><span class="lang-fr">Achats en gros</span></a>
-<a href="sell-equipment.html">♻️ <span class="lang-en">Sell Equipment</span><span class="lang-fr">Vendre du matériel</span></a>
-<a href="africa-education.html">🎓 <span class="lang-en">Education</span><span class="lang-fr">Éducation</span></a>
-<a href="support.html">💬 <span class="lang-en">Support</span><span class="lang-fr">Assistance</span></a>
+<a href="inventory.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg> <span class="lang-en">Shop Inventory</span><span class="lang-fr">Inventaire</span></a>
+<a href="request-product.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M8 10.5h5M10.5 8v5"/></svg> <span class="lang-en">Request a Product</span><span class="lang-fr">Demander un produit</span></a>
+<a href="bulk-orders.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg> <span class="lang-en">Bulk Orders</span><span class="lang-fr">Achats en gros</span></a>
+<a href="sell-equipment.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 11.9-3"/></svg> <span class="lang-en">Sell Equipment</span><span class="lang-fr">Vendre du matériel</span></a>
+<a href="africa-education.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c4 3 8 3 12 0v-5M22 9v6"/></svg> <span class="lang-en">Education</span><span class="lang-fr">Éducation</span></a>
+<a href="support.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l-2 2v-6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 10h8M8 14h5"/></svg> <span class="lang-en">Support</span><span class="lang-fr">Assistance</span></a>
 </div>
-<div id="marketClock" class="market-clock" aria-live="polite">🕐 --:--:--</div>
+
 
     </div>
   </nav>
@@ -1597,17 +1603,11 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      HERO
-===================================================== -->
-
-
-===================================================== -->
-
-
-<section id="deals" class="deals-strip" aria-label="WESTRONIX deals">
+<section id="deals" class="deals-strip" aria-label="WESTRONIX opportunities">
   <div class="container deals-inner">
-    <strong>🔥 <span class="lang-en">WESTRONIX DEALS</span><span class="lang-fr">OFFRES WESTRONIX</span></strong>
-    <span class="lang-en">Tested technology • Refurbished equipment • Bulk & business pricing</span>
-    <span class="lang-fr">Technologie testée • Matériel reconditionné • Tarifs gros & entreprises</span>
+    <strong><span class="lang-en">WESTRONIX OPPORTUNITIES</span><span class="lang-fr">OPPORTUNITÉS WESTRONIX</span></strong>
+    <span class="lang-en">Product requests • Equipment inquiries • Bulk purchasing</span>
+    <span class="lang-fr">Demandes de produits • Équipements • Achats en gros</span>
   </div>
 </section>
 
@@ -1657,25 +1657,17 @@ html[lang="fr"] .lang-fr{
 
       <h1>
 
-        <span class="lang-en">
-          Technology from USA to Africa.
-        </span>
+        <span class="lang-en">Technology sourcing and reuse for Africa.</span>
 
-        <span class="lang-fr">
-          La technologie des USA vers l'Afrique.
-        </span>
+        <span class="lang-fr">Approvisionnement et réemploi technologiques pour l’Afrique.</span>
 
       </h1>
 
       <p class="hero-copy">
 
-        <span class="lang-en">
-          Tested computers, refurbished electronics, IT equipment, bulk purchasing and technology services — built for customers, businesses, schools and organizations.
-        </span>
+        <span class="lang-en">Technology sourcing, equipment reuse, bulk purchasing and technology services for customers, businesses, schools and organizations.</span>
 
-        <span class="lang-fr">
-          Ordinateurs testés, appareils électroniques reconditionnés, équipements informatiques, achats en gros et services technologiques — pour particuliers, entreprises, écoles et organisations.
-        </span>
+        <span class="lang-fr">Approvisionnement technologique, réemploi d’équipements, achats en gros et services pour particuliers, entreprises, écoles et organisations.</span>
 
       </p>
 
@@ -1734,8 +1726,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      MARKETPLACE FEATURE CARDS
-===================================================== -->
-
 <section class="marketplace-section">
 
   <div class="container">
@@ -1755,11 +1745,11 @@ html[lang="fr"] .lang-fr{
 
         <p>
           <span class="lang-en">
-            Browse tested and refurbished computers and technology currently available.
+            Browse listed technology products and check availability with our team.
           </span>
 
           <span class="lang-fr">
-            Découvrez les ordinateurs et équipements technologiques testés et disponibles.
+            Découvrez les produits technologiques répertoriés et vérifiez leur disponibilité auprès de notre équipe.
           </span>
         </p>
 
@@ -1890,8 +1880,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      FEATURED INVENTORY
-===================================================== -->
-
 <section class="section" id="shop">
 
   <div class="container">
@@ -1952,8 +1940,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      AVAILABLE LOTS
-===================================================== -->
-
 <section class="section" id="available-lots">
   <div class="container">
     <div class="section-head">
@@ -1987,8 +1973,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      WHY WESTRONIX
-===================================================== -->
-
 <section class="section">
 
   <div class="container">
@@ -2163,8 +2147,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      WHOLESALE
-===================================================== -->
-
 <section class="section">
 
   <div class="container">
@@ -2200,15 +2182,13 @@ html[lang="fr"] .lang-fr{
         <p class="muted">
 
           <span class="lang-en">
-            WESTRONIX works toward supplying tested laptops, desktops,
-            workstations, networking equipment and other IT assets
-            for resellers, organizations and institutions.
+            WESTRONIX aims to source laptops, desktops,
+            workstations, networking equipment and other IT assets for resellers, organizations and institutions.
           </span>
 
           <span class="lang-fr">
             WESTRONIX travaille à fournir des ordinateurs portables,
-            ordinateurs de bureau, stations de travail, équipements réseau
-            et autres actifs informatiques testés aux revendeurs,
+            ordinateurs de bureau, stations de travail, équipements réseau et autres actifs informatiques pour les revendeurs,
             organisations et institutions.
           </span>
 
@@ -2290,8 +2270,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      WEFIXIT
-===================================================== -->
-
 <section class="section" id="wefixit">
 
   <div class="container">
@@ -2492,8 +2470,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      EDUCATION / IMPACT
-===================================================== -->
-
 <section class="section">
 
   <div class="container">
@@ -2656,8 +2632,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      SELL EQUIPMENT
-===================================================== -->
-
 <section class="section">
 
   <div class="container">
@@ -2762,8 +2736,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      FINAL CTA
-===================================================== -->
-
 <section class="cta">
 
   <div class="container">
@@ -2831,8 +2803,6 @@ html[lang="fr"] .lang-fr{
 
 <!-- =====================================================
      FOOTER
-===================================================== -->
-
 <footer class="footer">
 
   <div class="container">
@@ -3093,19 +3063,6 @@ function searchInventory(){
   if(category !== "all") params.set("category", category);
 
   window.location.href = "inventory.html" + (params.toString() ? "?" + params.toString() : "");
-}
-
-function updateMarketClock(){
-  const clock = document.getElementById("marketClock");
-  if(!clock) return;
-
-  const now = new Date();
-  const time = new Intl.DateTimeFormat(
-    currentLanguage === "fr" ? "fr-FR" : "en-US",
-    {hour:"2-digit",minute:"2-digit",second:"2-digit"}
-  ).format(now);
-
-  clock.textContent = "🕐 " + time;
 }
 
 const searchButton = document.getElementById("searchButton");
@@ -3977,12 +3934,6 @@ if(homeSearch){
   );
 
 }
-
-/* =========================================================
-   MARKET CLOCK REFRESH
-========================================================= */
-
-setInterval(updateMarketClock,1000);
 
 /* =========================================================
    INITIALIZE
