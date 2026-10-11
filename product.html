@@ -1425,43 +1425,42 @@ function renderProduct(product){
       : '';
 
 
-  const price =
-    Number(
-      product.price || 0
-    ).toLocaleString();
-
+  const hasPrice =
+    product.price !== null &&
+    product.price !== undefined &&
+    product.price !== '' &&
+    Number.isFinite(Number(product.price)) &&
+    Number(product.price) > 0;
+  const price = hasPrice ? Number(product.price).toLocaleString() : null;
 
   const status =
-    String(
-      product.status || 'available'
-    ).toLowerCase();
-
-
+    String(product.status || '').toLowerCase();
   const statusText =
     status === 'available'
-      ? (
-          currentLanguage === 'en'
-            ? 'Available'
-            : 'Disponible'
-        )
-      : escapeHTML(
-          product.status
-        );
-
+      ? (currentLanguage === 'en' ? 'Available — verify before purchase' : 'Disponible — à confirmer avant achat')
+      : (product.status
+        ? escapeHTML(product.status)
+        : (currentLanguage === 'en' ? 'Availability not confirmed' : 'Disponibilité non confirmée'));
 
   const condition =
     product.condition ||
-    (
-      currentLanguage === 'en'
-        ? 'Tested Working'
-        : 'Testé et fonctionnel'
-    );
+    (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmé');
 
-
-  const quantity =
-    Number(
-      product.quantity || 0
-    );
+  const hasQuantity =
+    product.quantity !== null &&
+    product.quantity !== undefined &&
+    product.quantity !== '' &&
+    Number.isFinite(Number(product.quantity)) &&
+    Number(product.quantity) >= 0;
+  const quantity = hasQuantity ? Number(product.quantity) : null;
+  const location =
+    product.location ||
+    (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmé');
+  const canPurchase =
+    status === 'available' &&
+    hasPrice &&
+    hasQuantity &&
+    quantity > 0;
 
 
   let thumbnails = '';
@@ -1598,21 +1597,8 @@ function renderProduct(product){
 
 
         <div class="price">
-
-          ${price}
-          FCFA
-
-          <small>
-
-            /
-            ${
-              currentLanguage === 'en'
-                ? 'unit'
-                : 'unité'
-            }
-
-          </small>
-
+          ${hasPrice ? `${price} FCFA` : (currentLanguage === 'en' ? 'Price on request' : 'Prix sur demande')}
+          ${hasPrice ? `<small>/ ${currentLanguage === 'en' ? 'unit' : 'unité'}</small>` : ''}
         </div>
 
 
@@ -1704,7 +1690,11 @@ function renderProduct(product){
             currentLanguage === 'en'
               ? 'Quantity Available'
               : 'Quantité disponible',
-            quantity
+            quantity === null
+              ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée')
+              : quantity === 0
+                ? (currentLanguage === 'en' ? 'Out of stock' : 'Épuisé')
+                : quantity
           )}
 
 
@@ -1712,7 +1702,7 @@ function renderProduct(product){
             currentLanguage === 'en'
               ? 'Location'
               : 'Emplacement',
-            product.location
+            location
           )}
 
 
@@ -1756,7 +1746,8 @@ function renderProduct(product){
 
           <button
             onclick="addToCart()"
-            class="btn cart">
+            class="btn cart"
+            ${canPurchase ? '' : 'disabled title="Availability, stock and price must be confirmed"'}>
 
             🛒
 
@@ -1771,7 +1762,8 @@ function renderProduct(product){
 
           <button
             onclick="buyNow()"
-            class="btn buy">
+            class="btn buy"
+            ${canPurchase ? '' : 'disabled title="Availability, stock and price must be confirmed"'}>
 
             ⚡
 
@@ -1807,12 +1799,16 @@ function renderProduct(product){
 
             ${
               currentLanguage === 'en'
-                ? quantity > 0
-                  ? `${quantity} unit${quantity === 1 ? '' : 's'} currently listed`
-                  : 'Currently out of stock'
-                : quantity > 0
-                  ? `${quantity} unité${quantity === 1 ? '' : 's'} actuellement disponible${quantity === 1 ? '' : 's'}`
-                  : 'Actuellement en rupture de stock'
+                ? quantity === null
+                  ? 'Quantity not confirmed'
+                  : quantity > 0
+                    ? `${quantity} unit${quantity === 1 ? '' : 's'} currently listed`
+                    : 'Currently out of stock'
+                : quantity === null
+                  ? 'Quantité non confirmée'
+                  : quantity > 0
+                    ? `${quantity} unité${quantity === 1 ? '' : 's'} actuellement disponible${quantity === 1 ? '' : 's'}`
+                    : 'Actuellement en rupture de stock'
             }
 
           </div>
@@ -2022,15 +2018,19 @@ function updateCartCount(){
 function addToCart(){
 
   if(!currentProduct){
-
-    alert(
-      currentLanguage === 'en'
-        ? 'Product information is not available.'
-        : 'Les informations du produit ne sont pas disponibles.'
-    );
-
+    alert(currentLanguage === 'en'
+      ? 'Product information is not available.'
+      : 'Les informations du produit ne sont pas disponibles.');
     return;
+  }
 
+  const priceIsConfirmed = currentProduct.price !== null && currentProduct.price !== undefined && currentProduct.price !== '' && Number.isFinite(Number(currentProduct.price)) && Number(currentProduct.price) > 0;
+  const quantityIsConfirmed = currentProduct.quantity !== null && currentProduct.quantity !== undefined && currentProduct.quantity !== '' && Number.isFinite(Number(currentProduct.quantity)) && Number(currentProduct.quantity) > 0;
+  if(String(currentProduct.status || '').toLowerCase() !== 'available' || !priceIsConfirmed || !quantityIsConfirmed){
+    alert(currentLanguage === 'en'
+      ? 'This product is not confirmed for purchase yet. Please request a quote to confirm availability, stock and price.'
+      : 'Ce produit n’est pas encore confirmé pour l’achat. Demandez un devis pour confirmer la disponibilité, le stock et le prix.');
+    return;
   }
 
 
@@ -2108,12 +2108,17 @@ function addToCart(){
 ========================================================= */
 
 function buyNow(){
-
+  if(!currentProduct) return;
+  const priceIsConfirmed = currentProduct.price !== null && currentProduct.price !== undefined && currentProduct.price !== '' && Number.isFinite(Number(currentProduct.price)) && Number(currentProduct.price) > 0;
+  const quantityIsConfirmed = currentProduct.quantity !== null && currentProduct.quantity !== undefined && currentProduct.quantity !== '' && Number.isFinite(Number(currentProduct.quantity)) && Number(currentProduct.quantity) > 0;
+  if(String(currentProduct.status || '').toLowerCase() !== 'available' || !priceIsConfirmed || !quantityIsConfirmed){
+    alert(currentLanguage === 'en'
+      ? 'Availability, stock and price must be confirmed before purchase.'
+      : 'La disponibilité, le stock et le prix doivent être confirmés avant l’achat.');
+    return;
+  }
   addToCart();
-
-  window.location.href =
-    'cart.html';
-
+  window.location.href = 'cart.html';
 }
 
 
@@ -2141,7 +2146,7 @@ I would like to request a quote for:
 
 Product: ${currentProduct.name}
 SKU: ${currentProduct.sku}
-Price: ${Number(currentProduct.price || 0).toLocaleString()} FCFA
+Price: ${currentProduct.price && Number(currentProduct.price) > 0 ? Number(currentProduct.price).toLocaleString() + ' FCFA' : 'Price not confirmed'}
 
 Please provide more information.`
 
@@ -2153,7 +2158,7 @@ Je souhaite demander un devis pour :
 
 Produit : ${currentProduct.name}
 SKU : ${currentProduct.sku}
-Prix : ${Number(currentProduct.price || 0).toLocaleString()} FCFA
+Prix : ${currentProduct.price && Number(currentProduct.price) > 0 ? Number(currentProduct.price).toLocaleString() + ' FCFA' : 'Prix non confirmé'}
 
 Merci de me fournir plus d'informations.`;
 
@@ -2187,7 +2192,7 @@ I am interested in:
 
 Product: ${product.name}
 SKU: ${product.sku}
-Price: ${Number(product.price || 0).toLocaleString()} FCFA
+Price: ${product.price && Number(product.price) > 0 ? Number(product.price).toLocaleString() + ' FCFA' : 'Price not confirmed'}
 
 Is this product still available?`
 
@@ -2199,7 +2204,7 @@ Je suis intéressé(e) par :
 
 Produit : ${product.name}
 SKU : ${product.sku}
-Prix : ${Number(product.price || 0).toLocaleString()} FCFA
+Prix : ${product.price && Number(product.price) > 0 ? Number(product.price).toLocaleString() + ' FCFA' : 'Prix non confirmé'}
 
 Ce produit est-il toujours disponible ?`;
 
