@@ -3676,13 +3676,8 @@ function renderFeatured(){
 
     target.innerHTML = `
       <div class="empty">
-
-        ${
-          currentLanguage === "fr"
-            ? "Aucun produit en vedette."
-            : "No featured product available."
-        }
-
+        <p>${currentLanguage === "fr" ? "Aucun stock vérifié n’est actuellement publié." : "No verified inventory is currently published."}</p>
+        <a href="request-product.html" class="btn primary">${currentLanguage === "fr" ? "Demander un produit" : "Request a Product"}</a>
       </div>
     `;
 
