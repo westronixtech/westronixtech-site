@@ -1799,39 +1799,20 @@ html[lang="fr"] .lang-fr{
 
       </a>
 
-      <a href="auctions.html" class="marketplace-card">
-
-        <div class="marketplace-icon">
-          🔨
-        </div>
-
+      <a href="request-product.html" class="marketplace-card">
+        <div class="marketplace-icon">📦</div>
         <h3>
-          <span class="lang-en">Auction Preview</span>
-          <span class="lang-fr">Aperçu des enchères</span>
+          <span class="lang-en">Available Lots</span>
+          <span class="lang-fr">Lots disponibles</span>
         </h3>
-
         <p>
-          <span class="lang-en">
-            Genuine bidding is not active yet. Auction listings will appear after secure bidding and published rules are ready.
-          </span>
-
-          <span class="lang-fr">
-            Les enchères réelles ne sont pas encore actives. Les lots seront affichés après mise en place des règles et du système sécurisé.
-          </span>
+          <span class="lang-en">View equipment opportunities and request information.</span>
+          <span class="lang-fr">Découvrez les opportunités d’équipements et demandez des informations.</span>
         </p>
-
         <div class="marketplace-link">
-
-          <span class="lang-en">
-            View Auctions →
-          </span>
-
-          <span class="lang-fr">
-            Voir les enchères →
-          </span>
-
+          <span class="lang-en">Request Information →</span>
+          <span class="lang-fr">Demander des informations →</span>
         </div>
-
       </a>
 
       <a href="sell-equipment.html" class="marketplace-card">
@@ -1995,65 +1976,35 @@ html[lang="fr"] .lang-fr{
      AUCTIONS
 ===================================================== -->
 
-<section class="section" id="auctions">
-
+<section class="section" id="available-lots">
   <div class="container">
-
     <div class="section-head">
-
       <div>
-
         <h2>
-          🔨
-
-          <span class="lang-en">
-            Live Auctions
-          </span>
-
-          <span class="lang-fr">
-            Enchères en direct
-          </span>
-
+          <span class="lang-en">Available Lots</span>
+          <span class="lang-fr">Lots disponibles</span>
         </h2>
-
         <div class="muted">
-
-          <span class="lang-en">
-            Bid on equipment lots from WESTRONIX TECH.
-          </span>
-
-          <span class="lang-fr">
-            Enchérissez sur des lots d'équipements WESTRONIX TECH.
-          </span>
-
+          <span class="lang-en">View equipment opportunities and request information.</span>
+          <span class="lang-fr">Découvrez les opportunités d’équipements et demandez des informations.</span>
         </div>
-
       </div>
-
-      <a href="auctions.html" class="section-link">
-
-        <span class="lang-en">
-          See all auctions →
-        </span>
-
-        <span class="lang-fr">
-          Voir toutes les enchères →
-        </span>
-
-      </a>
-
     </div>
-
-    <div class="grid" id="auctionGrid">
-
-      <div class="loading">
-        Loading auctions...
+    <div class="panel">
+      <div>
+        <p class="muted">
+          <span class="lang-en">Ask our team about equipment lots, quantities, condition and availability. Details are confirmed directly before any commitment.</span>
+          <span class="lang-fr">Contactez notre équipe pour connaître les lots, quantités, états et disponibilités. Les détails sont confirmés directement avant tout engagement.</span>
+        </p>
+        <div class="panel-actions">
+          <a href="request-product.html" class="btn primary">
+            <span class="lang-en">Request Information</span>
+            <span class="lang-fr">Demander des informations</span>
+          </a>
+        </div>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- =====================================================
@@ -3079,11 +3030,7 @@ const WHATSAPP_URL =
   `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const INVENTORY_URL = "inventory.json";
-const AUCTIONS_URL = "auctions.json";
-
 let inventory = [];
-let auctions = [];
-
 let currentLanguage =
   localStorage.getItem("wt_language") || "fr";
 
@@ -3346,7 +3293,6 @@ function applyLanguage(lang){
   );
 
   renderProducts();
-  renderAuctions();
   renderFeatured();
 
 }
@@ -3497,168 +3443,40 @@ function productImage(product){
 ========================================================= */
 
 async function loadData(){
-
-  const productGrid =
-    document.getElementById("productGrid");
-
-  const auctionGrid =
-    document.getElementById("auctionGrid");
-
+  const productGrid = document.getElementById("productGrid");
   try{
-
-    const [
-      inventoryResponse,
-      auctionsResponse
-    ] = await Promise.all([
-
-      fetch(
-        INVENTORY_URL,
-        {
-          cache:"no-store"
-        }
-      ),
-
-      fetch(
-        AUCTIONS_URL,
-        {
-          cache:"no-store"
-        }
-      )
-
-    ]);
-
+    const inventoryResponse = await fetch(INVENTORY_URL,{cache:"no-store"});
     if(!inventoryResponse.ok){
-
-      throw new Error(
-        `inventory.json HTTP ${inventoryResponse.status}`
-      );
-
+      throw new Error(`inventory.json HTTP ${inventoryResponse.status}`);
     }
-
-    if(!auctionsResponse.ok){
-
-      throw new Error(
-        `auctions.json HTTP ${auctionsResponse.status}`
-      );
-
+    const inventoryData = await inventoryResponse.json();
+    if(!inventoryData || !Array.isArray(inventoryData.products)){
+      throw new Error("inventory.json does not contain a valid products array.");
     }
-
-    const inventoryData =
-      await inventoryResponse.json();
-
-    const auctionsData =
-      await auctionsResponse.json();
-
-    if(
-      !inventoryData ||
-      !Array.isArray(inventoryData.products)
-    ){
-
-      throw new Error(
-        "inventory.json does not contain a valid products array."
-      );
-
-    }
-
-    if(
-      !auctionsData ||
-      !Array.isArray(auctionsData.auctions)
-    ){
-
-      throw new Error(
-        "auctions.json does not contain a valid auctions array."
-      );
-
-    }
-
-    inventory =
-      inventoryData.products;
-
-    auctions =
-      auctionsData.auctions;
-
-    console.log(
-      `WESTRONIX inventory loaded: ${inventory.length} products`
-    );
-
-    console.log(
-      `WESTRONIX auctions loaded: ${auctions.length} auctions`
-    );
-
+    inventory = inventoryData.products;
+    console.log(`WESTRONIX inventory loaded: ${inventory.length} products`);
     renderFeatured();
     renderProducts();
-    renderAuctions();
-
   }catch(error){
-
-    console.error(
-      "WESTRONIX data loading error:",
-      error
-    );
-
+    console.error("WESTRONIX inventory loading error:",error);
     if(productGrid){
-
       productGrid.innerHTML = `
         <div class="empty">
-
-          <strong>
-            ${
-              currentLanguage === "fr"
-                ? "Impossible de charger l'inventaire."
-                : "Unable to load inventory."
-            }
-          </strong>
-
-          <br><br>
-
-          <small>
-            ${
-              currentLanguage === "fr"
-                ? "Vérifiez que inventory.json existe dans le même dossier que index.html et contient un tableau products valide."
-                : "Make sure inventory.json exists in the same folder as index.html and contains a valid products array."
-            }
-          </small>
-
+          <strong>${currentLanguage === "fr" ? "L’inventaire est temporairement indisponible." : "Inventory is temporarily unavailable."}</strong>
+          <p>${currentLanguage === "fr" ? "Vous pouvez demander des informations à notre équipe." : "You can request information from our team."}</p>
+          <a href="request-product.html" class="btn primary">${currentLanguage === "fr" ? "Demander un produit" : "Request a Product"}</a>
         </div>
       `;
-
     }
-
-    if(auctionGrid){
-
-      auctionGrid.innerHTML = `
-        <div class="empty">
-
-          <strong>
-            ${
-              currentLanguage === "fr"
-                ? "Impossible de charger les enchères."
-                : "Unable to load auctions."
-            }
-          </strong>
-
-          <br><br>
-
-          <small>
-            ${
-              currentLanguage === "fr"
-                ? "Vérifiez que auctions.json existe dans le même dossier que index.html et contient un tableau auctions valide."
-                : "Make sure auctions.json exists in the same folder as index.html and contains a valid auctions array."
-            }
-          </small>
-
-        </div>
-      `;
-
-    }
-
+    renderFeatured();
   }
-
 }
 
 /* =========================================================
    FEATURED PRODUCT
 ========================================================= */
+
+
 
 function renderFeatured(){
 
@@ -3984,277 +3802,6 @@ function renderProducts(){
    AUCTION STATUS
 ========================================================= */
 
-function getAuctionStatus(auction){
-
-  const now =
-    new Date();
-
-  const start =
-    new Date(auction.startTime);
-
-  const end =
-    new Date(auction.endTime);
-
-  if(
-    Number.isNaN(start.getTime()) ||
-    Number.isNaN(end.getTime())
-  ){
-
-    return "unknown";
-
-  }
-
-  if(now < start){
-    return "upcoming";
-  }
-
-  if(now > end){
-    return "ended";
-  }
-
-  return "live";
-
-}
-
-/* =========================================================
-   COUNTDOWN
-========================================================= */
-
-function countdownText(endTime){
-
-  const end =
-    new Date(endTime).getTime();
-
-  if(Number.isNaN(end)){
-    return "—";
-  }
-
-  const now =
-    Date.now();
-
-  const difference =
-    Math.max(0,end-now);
-
-  const totalSeconds =
-    Math.floor(difference / 1000);
-
-  const days =
-    Math.floor(
-      totalSeconds / 86400
-    );
-
-  const hours =
-    Math.floor(
-      (totalSeconds % 86400) / 3600
-    );
-
-  const minutes =
-    Math.floor(
-      (totalSeconds % 3600) / 60
-    );
-
-  const seconds =
-    totalSeconds % 60;
-
-  if(days > 0){
-
-    return `${days}d ${String(hours).padStart(2,"0")}h ${String(minutes).padStart(2,"0")}m`;
-
-  }
-
-  return `${String(hours).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
-
-}
-
-/* =========================================================
-   AUCTION GRID
-========================================================= */
-
-function renderAuctions(){
-
-  const grid =
-    document.getElementById("auctionGrid");
-
-  if(!grid) return;
-
-  const live =
-    auctions
-      .filter(
-        auction =>
-          getAuctionStatus(auction) === "live"
-      )
-      .slice(0,3);
-
-  if(!live.length){
-
-    grid.innerHTML = `
-      <div class="empty">
-
-        <div style="font-size:30px;margin-bottom:10px">
-          🔨
-        </div>
-
-        <strong>
-
-          ${
-            currentLanguage === "fr"
-              ? "Aucune enchère en direct actuellement."
-              : "No live auctions right now."
-          }
-
-        </strong>
-
-        <br><br>
-
-        <a
-          href="auctions.html"
-          class="btn primary"
-        >
-
-          ${
-            currentLanguage === "fr"
-              ? "Voir les enchères"
-              : "View Auctions"
-          }
-
-        </a>
-
-      </div>
-    `;
-
-    return;
-
-  }
-
-  grid.innerHTML =
-    live.map(function(auction){
-
-      const product =
-        inventory.find(
-          p => p.sku === auction.productSku
-        );
-
-      return `
-
-        <article class="card auction-card">
-
-          <div class="card-image">
-
-            ${
-              product
-                ? productImage(product)
-                : `<div class="image-fallback">🔨 WESTRONIX AUCTION</div>`
-            }
-
-          </div>
-
-          <div class="card-body">
-
-            <span class="badge">
-
-              🔴
-
-              ${
-                currentLanguage === "fr"
-                  ? "EN DIRECT"
-                  : "LIVE"
-              }
-
-            </span>
-
-            <div class="card-title">
-
-              ${
-                escapeHTML(
-                  product?.name ||
-                  auction.productSku ||
-                  "Auction Lot"
-                )
-              }
-
-            </div>
-
-            <div class="specs">
-
-              ${
-                currentLanguage === "fr"
-                  ? "Lot :"
-                  : "Lot:"
-              }
-
-              ${Number(auction.quantity) || 1}
-
-              ${
-                product?.grade
-                  ? " • Grade " +
-                    escapeHTML(product.grade)
-                  : ""
-              }
-
-            </div>
-
-            <div class="price auction-price">
-
-              ${money(
-                auction.currentBid ??
-                auction.startingBid
-              )}
-
-            </div>
-
-            <div class="countdown">
-
-              ⏰
-
-              <span
-                class="auction-countdown"
-                data-end="${escapeHTML(auction.endTime)}"
-              >
-                ${countdownText(auction.endTime)}
-              </span>
-
-            </div>
-
-            <div class="card-actions">
-
-              <a
-                href="auctions.html"
-                class="btn dark"
-              >
-
-                ${
-                  currentLanguage === "fr"
-                    ? "Voir"
-                    : "View"
-                }
-
-              </a>
-
-              <a
-                href="auctions.html"
-                class="btn primary"
-              >
-
-                ${
-                  currentLanguage === "fr"
-                    ? "Enchérir"
-                    : "Bid"
-                }
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-      `;
-
-    }).join("");
-
-}
-
 /* =========================================================
    ADD TO CART
 ========================================================= */
@@ -4461,23 +4008,16 @@ if(homeSearch){
 }
 
 /* =========================================================
-   CLOCK + COUNTDOWN REFRESH
+   MARKET CLOCK REFRESH
 ========================================================= */
 
-setInterval(function(){
-  updateMarketClock();
-
-  document
-    .querySelectorAll(".auction-countdown")
-    .forEach(function(element){
-      element.textContent = countdownText(element.dataset.end);
-    });
-
-},1000);
+setInterval(updateMarketClock,1000);
 
 /* =========================================================
    INITIALIZE
 ========================================================= */
+
+
 
 applyLanguage(currentLanguage);
 
