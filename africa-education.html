@@ -805,7 +805,49 @@
       .language-inner { min-height:44px; }
       .footer-grid { grid-template-columns:1fr; gap:30px; }
     }
-  </style>
+  
+/* WESTRONIX Electric Marketplace theme — shared design tokens and action colors */
+:root {
+  --navy: #071526;
+  --navy2: #0d2036;
+  --blue: #1677ff;
+  --blue-dark: #0b5fd1;
+  --yellow: #ffd400;
+  --green: #10b981;
+  --purple: #7c3aed;
+  --cyan: #06b6d4;
+  --coral: #ff5a36;
+  --bg: #f5f7fb;
+}
+body { background-color: var(--bg); }
+header, .top, .market-header, .market-nav, footer {
+  background-color: var(--navy);
+}
+.btn-primary, .btn.primary, .btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green) {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.btn-offer, .make-offer, .offer-btn, .btn.quote, a.btn[href*="request-product.html"] {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--navy);
+}
+.btn-whatsapp, .btn.whatsapp, .btn-green, .btn.green, .whatsapp-nav {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: var(--navy);
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Education identity uses purple accents; contact actions remain green. */
+.btn-primary, .btn.primary { background-color: var(--purple); border-color: var(--purple); color: #fff; }
+.hero-badge, .section-heading::after { border-color: var(--purple); }
+
+</style>
 </head>
 
 <body>
