@@ -14,6 +14,48 @@ main{max-width:1000px;margin:28px auto;padding:0 18px 45px}.notice{background:#f
 .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;padding:12px 18px;border-radius:9px;font-weight:800;cursor:pointer}.tab.active{background:var(--blue);border-color:var(--blue);color:white}
 .panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 5px 20px #0f172a0a}.panel h2{margin:0 0 6px}.intro{color:var(--muted);margin:0 0 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.field{margin-bottom:13px}.field.full{grid-column:1/-1}label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:var(--ink);font:inherit}input:focus,select:focus,textarea:focus{outline:2px solid #bfdbfe;border-color:var(--blue)}textarea{min-height:95px;resize:vertical}.help{font-size:12px;color:var(--muted);margin-top:4px}.submit{background:var(--green);border:0;color:#052e24;font-weight:800;padding:13px 18px;border-radius:9px;cursor:pointer;width:100%;font-size:16px}.submit:hover{filter:brightness(.96)}.smallprint{font-size:12px;color:var(--muted);margin-top:12px}footer{text-align:center;color:var(--muted);font-size:13px;padding:22px}
 @media(max-width:650px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:18px}.nav{gap:11px}}
+
+/* WESTRONIX Electric Marketplace theme — shared design tokens and action colors */
+:root {
+  --navy: #071526;
+  --navy2: #0d2036;
+  --blue: #1677ff;
+  --blue-dark: #0b5fd1;
+  --yellow: #ffd400;
+  --green: #10b981;
+  --purple: #7c3aed;
+  --cyan: #06b6d4;
+  --coral: #ff5a36;
+  --bg: #f5f7fb;
+}
+body { background-color: var(--bg); }
+header, .top, .market-header, .market-nav, footer {
+  background-color: var(--navy);
+}
+.btn-primary, .btn.primary, .btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green) {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.btn-offer, .make-offer, .offer-btn, .btn.quote, a.btn[href*="request-product.html"] {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--navy);
+}
+.btn-whatsapp, .btn.whatsapp, .btn-green, .btn.green, .whatsapp-nav {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: var(--navy);
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* The offer form uses yellow; WhatsApp request submission stays green. */
+#offerPanel .submit { background-color: var(--yellow); color: var(--navy); }
+#requestPanel .submit { background-color: var(--green); color: var(--navy); }
+
 </style>
 </head>
 <body>
