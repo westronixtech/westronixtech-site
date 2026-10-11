@@ -1762,24 +1762,8 @@ function renderProduct(product){
 
 
           <a
-          <a
-            class="btn quote"
-            href="request-product.html?product=${encodeURIComponent(currentProduct.name)}&sku=${encodeURIComponent(currentProduct.sku)}"
-            aria-label="Make an offer for this product">
-            🤝
-            ${currentLanguage === 'en' ? 'Make an Offer' : 'Faire une offre'}
-          </a>
-
-
-            id="whatsappLink"
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="btn whatsapp">
-
-            💬 WhatsApp
-
-          </a>
+                    <a class="btn quote" href="request-product.html?product=${encodeURIComponent(currentProduct.name)}&amp;sku=${encodeURIComponent(currentProduct.sku)}" aria-label="Make an offer for this product">🤝 ${currentLanguage === 'en' ? 'Make an Offer' : 'Faire une offre'}</a>
+          <a id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer" class="btn whatsapp">💬 WhatsApp</a>
 
 
           <div class="quantity-note">
