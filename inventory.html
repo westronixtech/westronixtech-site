@@ -1615,18 +1615,19 @@ function renderProducts(products){
         <h2>
           ${
             currentLanguage === 'en'
-              ? 'No products found'
-              : 'Aucun produit trouvé'
+              ? 'No verified inventory is currently published'
+              : 'Aucun stock vérifié n’est actuellement publié'
           }
         </h2>
 
         <p>
           ${
             currentLanguage === 'en'
-              ? 'Try another search or category.'
-              : 'Essayez une autre recherche ou catégorie.'
+              ? 'You can request a product and we will review sourcing options.'
+              : 'Vous pouvez demander un produit ; nous examinerons les possibilités d’approvisionnement.'
           }
         </p>
+        <p><a class="btn primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a></p>
 
       </div>
 
