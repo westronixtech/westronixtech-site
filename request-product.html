@@ -56,10 +56,22 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 #offerPanel .submit { background-color: var(--yellow); color: var(--navy); }
 #requestPanel .submit { background-color: var(--green); color: var(--navy); }
 
+
+/* WESTRONIX universal animated header logo — matched to index.html */
+.market-logo.westronix-logo-header{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;color:#fff;text-decoration:none;perspective:600px;}
+.market-logo.westronix-logo-header img{width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain;background:transparent;border-radius:0;padding:0;display:block;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transform-origin:center;animation:logoFloat 3.6s ease-in-out infinite;transition:transform .3s ease,filter .3s ease;}
+.market-logo.westronix-logo-header:hover img{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
+@keyframes logoFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-3px) scale(1.025);}}
+.market-logo.westronix-logo-header .market-logo-text{line-height:1.05;}
+.market-logo.westronix-logo-header .market-logo-name{margin:0;color:#fff;font-size:20px;font-weight:900;letter-spacing:.2px;}
+.market-logo.westronix-logo-header .market-logo-tagline{margin:5px 0 0;color:#aebdce;font-size:12px;line-height:1.35;font-weight:700;white-space:normal;}
+@media(max-width:650px){.market-logo.westronix-logo-header{gap:8px;min-width:0;}.market-logo.westronix-logo-header img{width:56px!important;height:56px!important;}.market-logo.westronix-logo-header .market-logo-text{display:none;}}
+@media(prefers-reduced-motion:reduce){.market-logo.westronix-logo-header img{animation:none;}}
+
 </style>
 </head>
 <body>
-<header><div class="top"><a class="brand" href="index.html" aria-label="WESTRONIX TECH home"><img src="westronix-logo.jpg" alt="WESTRONIX TECH logo" onerror="this.style.display='none'"> <span>WESTRONIX TECH</span></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home / Accueil</a><a href="inventory.html">Shop Inventory / Inventaire</a><a href="bulk-orders.html">Bulk Orders / Achats en gros</a><a href="sell-equipment.html">Sell Equipment / Vendre du matériel</a><a href="africa-education.html">Education / Éducation</a><a href="support.html">Support / Assistance</a><a href="signin.html">Account / Compte</a><a href="cart.html">Cart / Panier</a></nav></div></header>
+<header><div class="top"><a href="index.html" class="market-logo westronix-logo-header" aria-label="WESTRONIX TECH Home"><img src="westronix-logo.jpg" alt="WESTRONIX TECH logo" width="82" height="82"><div class="market-logo-text"><div class="market-logo-name">WESTRONIX TECH</div><div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.</div></div></a><nav class="nav" aria-label="Main navigation"><a href="index.html">Home / Accueil</a><a href="inventory.html">Shop Inventory / Inventaire</a><a href="bulk-orders.html">Bulk Orders / Achats en gros</a><a href="sell-equipment.html">Sell Equipment / Vendre du matériel</a><a href="africa-education.html">Education / Éducation</a><a href="support.html">Support / Assistance</a><a href="signin.html">Account / Compte</a><a href="cart.html">Cart / Panier</a></nav></div></header>
 <section class="hero"><h1>Product Requests & Offers</h1><p>Find what you need, make a private offer on a listed product, or request something not currently available. WESTRONIX will review your message and confirm availability, price and terms separately.</p></section>
 <main>
 <div class="notice"><strong>How it works / Comment ça marche :</strong> 1) Send your request or private offer in WhatsApp. 2) WESTRONIX reviews the request and checks availability. 3) We confirm price, quantity, delivery and payment terms with you in writing. 4) Fulfillment starts only after final terms are agreed. Sending this form does not reserve stock, accept an offer or confirm an order. Details are sent through WhatsApp and are not yet stored in a central WESTRONIX database. / Envoyez votre demande ou offre privée sur WhatsApp ; WESTRONIX vérifie la disponibilité puis confirme les conditions par écrit. L’envoi ne réserve pas le stock et ne confirme pas une commande.</div>
