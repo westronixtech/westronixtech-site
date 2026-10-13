@@ -1,0 +1,79 @@
+{
+  "sku": "WT-DELL-D3551-16-512",
+  "legacySku": "WT-D3551-0001",
+  "brand": "Dell",
+  "model": "Precision 3551",
+  "category": "Workstation",
+  "title": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
+  "configuration": {
+    "processor": {
+      "value": "Intel Core i7",
+      "status": "NEEDS VERIFICATION"
+    },
+    "ram": {
+      "value": "16GB",
+      "status": "NEEDS VERIFICATION"
+    },
+    "storage": {
+      "value": "512GB SSD",
+      "status": "NEEDS VERIFICATION"
+    },
+    "display": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "graphics": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "operatingSystem": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "windowsActivation": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    }
+  },
+  "condition": {
+    "label": "NEEDS VERIFICATION",
+    "grade": null,
+    "cosmeticNotes": null,
+    "status": "NEEDS VERIFICATION"
+  },
+  "testing": {
+    "status": "NEEDS VERIFICATION"
+  },
+  "battery": {
+    "status": "NEEDS VERIFICATION"
+  },
+  "security": {
+    "dataWipeStatus": "NEEDS VERIFICATION",
+    "biosPasswordStatus": "NEEDS VERIFICATION"
+  },
+  "accessories": {
+    "chargerIncluded": "NEEDS VERIFICATION"
+  },
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "quantity": null,
+    "warranty": "NEEDS VERIFICATION",
+    "fulfillment": "NEEDS VERIFICATION"
+  },
+  "photos": {
+    "sourceFolder": "WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/",
+    "status": "NOT REVIEWED — originals not yet enumerated/inspected; do not expose publicly",
+    "originalFiles": [],
+    "publicPhotoRefs": []
+  },
+  "publication": {
+    "informationVerified": false,
+    "photosVerified": false,
+    "approvedForWebsite": false,
+    "listingStatus": "DRAFT / BLOCKED",
+    "orderable": false,
+    "indexInPublicInventory": false
+  },
+  "note": "Staging-only product record. Do not copy into inventory.json until every required verification and explicit approval is complete."
+}
