@@ -1253,7 +1253,7 @@ let currentProduct = null;
 
 async async function loadProduct(){
   try{
-    const response = await fetch('draft-data/WT-DELL-D3551-16-512.json', {cache:'no-store'});
+    const response = await fetch('draft-data/DELL-D3551-16-512.json', {cache:'no-store'});
     if(!response.ok) throw new Error('Draft product data could not be loaded.');
     currentProduct = await response.json();
     renderProduct(currentProduct);
@@ -1381,7 +1381,7 @@ function renderProduct(product){
     <div class="product-layout">
       <div class="product-image-area">
         <div class="draft-photo-note">
-          <div><strong>Original photographs pending review</strong><p>No photo is displayed until the original files can be identified and checked for serial numbers, service tags, asset labels, barcodes, QR codes, or other sensitive identifiers. Original files must remain untouched.</p><p><code>WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/</code></p></div>
+          <div><strong>Original photographs pending review</strong><p>No photo is displayed until the original files can be identified and checked for serial numbers, service tags, asset labels, barcodes, QR codes, or other sensitive identifiers. Original files must remain untouched.</p><p><code>WESTRONIX/Product-Photos/DELL-D3551-16-512/01-Originals/</code></p></div>
         </div>
       </div>
       <div>
