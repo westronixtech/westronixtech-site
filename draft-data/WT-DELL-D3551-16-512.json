@@ -1,5 +1,5 @@
 {
-  "sku": "WT-DELL-D3551-16-512",
+  "sku": "DELL-D3551-16-512",
   "legacySku": "WT-D3551-0001",
   "brand": "Dell",
   "model": "Precision 3551",
@@ -75,5 +75,10 @@
     "orderable": false,
     "indexInPublicInventory": false
   },
-  "note": "Staging-only product record. Do not copy into inventory.json until every required verification and explicit approval is complete."
+  "note": "Staging-only product record. Do not copy into inventory.json until every required verification and explicit approval is complete.",
+  "formerProposedSku": "WT-DELL-D3551-16-512",
+  "aliases": [
+    "WT-D3551-0001"
+  ],
+  "migrationNote": "WT-DELL-D3551-16-512 was used as a prior proposed SKU in an existing draft sheet; retained here as formerProposedSku for reconciliation, not silently treated as an approved alias."
 }
