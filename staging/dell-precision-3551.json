@@ -1,0 +1,142 @@
+{
+  "sku": "WT-DELL-D3551-16-512",
+  "legacySku": "WT-D3551-0001",
+  "brand": "Dell",
+  "model": "Precision 3551",
+  "name": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
+  "category": "Workstation",
+  "configuration": {
+    "processor": { "value": "Intel Core i7", "status": "USER_CONFIRMED_CONFIGURATION", "exactModel": null, "generation": null },
+    "ram": { "value": "16GB", "status": "USER_CONFIRMED_CONFIGURATION" },
+    "storage": { "value": "512GB SSD", "status": "USER_CONFIRMED_CONFIGURATION" },
+    "display": { "value": null, "status": "NEEDS VERIFICATION" },
+    "gpu": { "value": null, "status": "NEEDS VERIFICATION" },
+    "operatingSystem": { "value": null, "status": "NEEDS VERIFICATION" },
+    "windowsActivation": { "value": null, "status": "NEEDS VERIFICATION" }
+  },
+  "condition": {
+    "label": "NEEDS VERIFICATION",
+    "grade": null,
+    "cosmeticNotes": null,
+    "testingStatus": "NEEDS VERIFICATION",
+    "batteryStatus": null,
+    "dataWiped": null,
+    "biosPasswordStatus": null,
+    "chargerIncluded": null
+  },
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "quantity": null,
+    "warranty": null,
+    "fulfillmentShipping": null
+  },
+  "status": "DRAFT / BLOCKED",
+  "informationVerified": false,
+  "photosVerified": false,
+  "approvedForWebsite": false,
+  "publicCatalog": false,
+  "orderable": false,
+  "cartEnabled": false,
+  "buyNowEnabled": false,
+  "checkoutEnabled": false,
+  "auctionEnabled": false,
+  "sourcePhotos": {
+    "originalsFolderFound": "WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/",
+    "requestedFolder": "WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/",
+    "requestedFolderFound": false,
+    "originalsModified": false,
+    "notes": "Originals are still stored under the legacy SKU folder. Do not move or overwrite them without approval."
+  },
+  "photos": [
+    {
+      "filename": "Front.jpeg",
+      "view": "Front / open view",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/Front.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "FrontScreen.jpeg",
+      "view": "Screen powered on",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/FrontScreen.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "FrontSide.jpeg",
+      "view": "Closed lid / top surface",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/FrontSide.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; retain visible marks"
+    },
+    {
+      "filename": "KeyBorad.jpeg",
+      "view": "Keyboard / trackpad",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/KeyBorad.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "LefiSide.jpeg",
+      "view": "Left side / ports",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/LefiSide.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "Left.jpeg",
+      "view": "Left side / closed angle",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/Left.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "Right.jpeg",
+      "view": "Right side / closed angle",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/Right.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "RightSide.jpeg",
+      "view": "Right side / ports",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/RightSide.jpeg",
+      "publicCandidate": true,
+      "reviewStatus": "STAGING_ONLY; photo approval pending"
+    },
+    {
+      "filename": "BackSide.jpeg",
+      "view": "Bottom / identification label",
+      "source": "https://westronixtech.sharepoint.com/Shared%20Documents/WESTRONIX/Product-Photos/WT-D3551-0001/01-Originals/BackSide.jpeg",
+      "publicCandidate": false,
+      "reviewStatus": "WITHHELD: visible identification label; do not expose publicly unless identifier is safely excluded and photo is reviewed"
+    }
+  ],
+  "needsVerification": [
+    "Exact CPU model and generation",
+    "Display size",
+    "GPU",
+    "Operating system and reset state",
+    "Windows activation status",
+    "Cosmetic condition and grade",
+    "Visible cosmetic defects and notes",
+    "Testing status",
+    "Battery status / health measurement",
+    "Data-wipe status",
+    "BIOS/password/device-lock status",
+    "Included charger and accessories",
+    "Current quantity",
+    "Current selling price",
+    "Warranty",
+    "Fulfillment/shipping",
+    "Public-photo safety and final photo approval"
+  ],
+  "migrationNotes": [
+    "Keep legacy SKU WT-D3551-0001 as an alias.",
+    "Do not add this draft to inventory.json.",
+    "Do not link this staging page from customer navigation.",
+    "Do not enable cart, Buy Now, checkout, auction, or order request functionality for this SKU.",
+    "User stated that the supplied details have been verified by them; values not actually supplied here remain null and must not be inferred."
+  ]
+}
