@@ -6,79 +6,42 @@
   "category": "Workstation",
   "title": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
   "configuration": {
-    "processor": {
-      "value": "Intel Core i7",
-      "status": "NEEDS VERIFICATION"
-    },
-    "ram": {
-      "value": "16GB",
-      "status": "NEEDS VERIFICATION"
-    },
-    "storage": {
-      "value": "512GB SSD",
-      "status": "NEEDS VERIFICATION"
-    },
-    "display": {
-      "value": null,
-      "status": "NEEDS VERIFICATION"
-    },
-    "graphics": {
-      "value": null,
-      "status": "NEEDS VERIFICATION"
-    },
-    "operatingSystem": {
-      "value": null,
-      "status": "NEEDS VERIFICATION"
-    },
-    "windowsActivation": {
-      "value": null,
-      "status": "NEEDS VERIFICATION"
-    }
+    "processor": {"value": "Intel Core i7", "status": "USER-VERIFIED"},
+    "ram": {"value": "16GB", "status": "USER-VERIFIED"},
+    "storage": {"value": "512GB SSD", "status": "USER-VERIFIED"},
+    "display": {"value": null, "status": "NOT PROVIDED IN RECORD"},
+    "graphics": {"value": null, "status": "NOT PROVIDED IN RECORD"},
+    "operatingSystem": {"value": null, "status": "NOT PROVIDED IN RECORD"},
+    "windowsActivation": {"value": null, "status": "NOT PROVIDED IN RECORD"}
   },
-  "condition": {
-    "label": "NEEDS VERIFICATION",
-    "grade": null,
-    "cosmeticNotes": null,
-    "status": "NEEDS VERIFICATION"
-  },
-  "testing": {
-    "status": "NEEDS VERIFICATION"
-  },
-  "battery": {
-    "status": "NEEDS VERIFICATION"
-  },
-  "security": {
-    "dataWipeStatus": "NEEDS VERIFICATION",
-    "biosPasswordStatus": "NEEDS VERIFICATION"
-  },
-  "accessories": {
-    "chargerIncluded": "NEEDS VERIFICATION"
-  },
-  "sales": {
-    "price": null,
-    "currency": "FCFA",
-    "quantity": null,
-    "warranty": "NEEDS VERIFICATION",
-    "fulfillment": "NEEDS VERIFICATION"
-  },
+  "condition": {"label": "USER-VERIFIED", "grade": null, "cosmeticNotes": null, "status": "USER-VERIFIED; DETAILS NOT IN RECORD"},
+  "testing": {"status": "USER-VERIFIED; DETAILS NOT IN RECORD"},
+  "battery": {"status": "USER-VERIFIED; DETAILS NOT IN RECORD"},
+  "security": {"dataWipeStatus": "USER-VERIFIED; DETAILS NOT IN RECORD", "biosPasswordStatus": "USER-VERIFIED; DETAILS NOT IN RECORD"},
+  "accessories": {"chargerIncluded": "USER-VERIFIED; DETAILS NOT IN RECORD"},
+  "sales": {"price": null, "currency": "FCFA", "quantity": null, "warranty": "NOT PROVIDED IN RECORD", "fulfillment": "NOT PROVIDED IN RECORD"},
   "photos": {
     "sourceFolder": "WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/",
-    "status": "NOT REVIEWED — originals not yet enumerated/inspected; do not expose publicly",
+    "status": "USER ATTESTS VERIFIED; photo files/references still need to be attached to this record before display",
     "originalFiles": [],
     "publicPhotoRefs": []
   },
   "publication": {
-    "informationVerified": false,
-    "photosVerified": false,
+    "informationVerified": true,
+    "photosVerified": true,
     "approvedForWebsite": false,
-    "listingStatus": "DRAFT / BLOCKED",
+    "listingStatus": "USER-VERIFIED DRAFT — NOT PUBLISHED",
     "orderable": false,
     "indexInPublicInventory": false
   },
-  "note": "Staging-only product record. Do not copy into inventory.json until every required verification and explicit approval is complete.",
+  "verificationAttestation": {
+    "confirmedBy": "User",
+    "confirmation": "User states that all items on the final verification checklist have been personally verified.",
+    "recordedOn": "2026-10-13",
+    "scope": "User attestation recorded; assistant has not independently inspected the equipment or source photo files."
+  },
+  "note": "The user has confirmed checklist completion. This record remains staging-only, unpublished, and non-orderable. Null product/sales fields and missing photo references must not be guessed or exposed publicly.",
   "formerProposedSku": "WT-DELL-D3551-16-512",
-  "aliases": [
-    "WT-D3551-0001"
-  ],
+  "aliases": ["WT-D3551-0001"],
   "migrationNote": "WT-DELL-D3551-16-512 was used as a prior proposed SKU in an existing draft sheet; retained here as formerProposedSku for reconciliation, not silently treated as an approved alias."
 }
