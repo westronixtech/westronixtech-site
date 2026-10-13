@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "recordType": "product-draft",
+  "sku": "DELL-D3551-16-512",
+  "aliases": [
+    "WT-D3551-0001"
+  ],
+  "migrationNotes": [
+    "A separate existing product verification sheet uses proposed SKU WT-DELL-D3551-16-512. Reconcile this prior draft identifier before SKU migration; do not silently merge or discard it."
+  ],
+  "brand": "Dell",
+  "model": "Precision 3551",
+  "category": "Workstation",
+  "title": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
+  "configuration": {
+    "processor": {
+      "value": "Intel Core i7",
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "ram": {
+      "value": "16GB",
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "storage": {
+      "value": "512GB SSD",
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "exactCpuModelGeneration": {
+      "value": null,
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "display": {
+      "value": null,
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "gpu": {
+      "value": null,
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "operatingSystem": {
+      "value": null,
+      "verificationStatus": "NEEDS VERIFICATION"
+    },
+    "activationStatus": {
+      "value": null,
+      "verificationStatus": "NEEDS VERIFICATION"
+    }
+  },
+  "condition": {
+    "status": "NEEDS VERIFICATION",
+    "grade": null,
+    "cosmeticNotes": null
+  },
+  "testingStatus": "NEEDS VERIFICATION",
+  "batteryStatus": "NEEDS VERIFICATION",
+  "dataWipeStatus": "NEEDS VERIFICATION",
+  "biosPasswordStatus": "NEEDS VERIFICATION",
+  "accessories": {
+    "charger": "NEEDS VERIFICATION",
+    "other": "NEEDS VERIFICATION"
+  },
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "quantity": null,
+    "warranty": "NEEDS VERIFICATION",
+    "fulfillmentShipping": "NEEDS VERIFICATION"
+  },
+  "photos": {
+    "sourceFolder": "WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/",
+    "sourceFilesFound": false,
+    "reviewStatus": "NEEDS VERIFICATION",
+    "publicApproval": false,
+    "references": [],
+    "note": "No original product photographs were found/verified in the accessible search results. Do not use stock images or publish unreviewed photos."
+  },
+  "publication": {
+    "informationVerified": false,
+    "photosVerified": false,
+    "approvedForWebsite": false,
+    "listingStatus": "DRAFT / BLOCKED",
+    "customerVisible": false,
+    "orderable": false,
+    "allowAddToCart": false,
+    "allowBuyNow": false,
+    "allowCheckout": false,
+    "allowAuction": false
+  },
+  "customerDescription": "Draft listing for a Dell Precision 3551 mobile workstation. Configuration, condition, testing, availability, price, warranty, and fulfillment details are pending verification. This listing is not available to order.",
+  "internalVerificationChecklist": [
+    "Exact CPU specification",
+    "RAM",
+    "Storage",
+    "Display",
+    "GPU",
+    "Operating system/reset state",
+    "Cosmetic condition and grade",
+    "Cosmetic defects",
+    "Testing status",
+    "Battery status",
+    "Data-wipe status",
+    "BIOS/password status",
+    "Included charger/accessories",
+    "Current quantity",
+    "Selling price",
+    "Warranty",
+    "Fulfillment/shipping",
+    "Public-photo safety review"
+  ]
+}
