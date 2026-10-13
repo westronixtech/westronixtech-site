@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "recordType": "product-listing",
+  "listingStatus": "DRAFT",
+  "publication": {
+    "informationVerified": false,
+    "photosVerified": false,
+    "approvedForWebsite": false,
+    "customerVisible": false,
+    "orderable": false,
+    "blockReason": "Physical configuration, condition, price, quantity, fulfillment, warranty, and public-photo safety have not been verified."
+  },
+  "identity": {
+    "sku": "WT-DELL-D3551-16-512",
+    "legacySkuAlias": "WT-D3551-0001",
+    "brand": "Dell",
+    "model": "Precision 3551",
+    "category": "Workstation"
+  },
+  "titleDraft": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
+  "customerFacingTitleUntilVerification": "Dell Precision 3551 Mobile Workstation",
+  "configuration": {
+    "processor": {
+      "value": "Intel Core i7",
+      "status": "NEEDS VERIFICATION"
+    },
+    "memory": {
+      "value": "16GB",
+      "status": "NEEDS VERIFICATION"
+    },
+    "storage": {
+      "value": "512GB SSD",
+      "status": "NEEDS VERIFICATION"
+    },
+    "display": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "graphics": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "operatingSystem": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    },
+    "windowsActivation": {
+      "value": null,
+      "status": "NEEDS VERIFICATION"
+    }
+  },
+  "condition": {
+    "label": "NEEDS VERIFICATION",
+    "cosmeticGrade": null,
+    "defects": null,
+    "testingStatus": "NEEDS VERIFICATION",
+    "batteryStatus": "NEEDS VERIFICATION",
+    "dataWipeStatus": "NEEDS VERIFICATION",
+    "biosPasswordStatus": "NEEDS VERIFICATION"
+  },
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "quantity": null,
+    "warranty": null,
+    "fulfillmentShipping": null,
+    "chargerAccessories": null,
+    "status": "NEEDS VERIFICATION"
+  },
+  "photos": {
+    "sourceFolder": "WESTRONIX/Product-Photos/WT-DELL-D3551-16-512/01-Originals/",
+    "sourceFiles": [],
+    "photoReviewStatus": "NEEDS VERIFICATION",
+    "publicUseApproved": false,
+    "originalFilesMustRemainUntouched": true,
+    "identifierSafetyReviewRequired": true,
+    "defectDisclosureRequired": true,
+    "note": "Source folder path was provided, but original files could not be enumerated or visually inspected through the current SharePoint connection. Do not expose any image until reviewed."
+  },
+  "searchMetadata": {
+    "brand": "Dell",
+    "model": "Precision 3551",
+    "category": "Workstation",
+    "sku": "WT-DELL-D3551-16-512",
+    "aliases": [
+      "WT-D3551-0001"
+    ],
+    "indexInPublicInventory": false
+  },
+  "verificationChecklist": [
+    "Exact CPU model/generation",
+    "RAM capacity",
+    "Storage type/capacity",
+    "Display size",
+    "GPU",
+    "Operating system and reset state",
+    "Windows activation status",
+    "Cosmetic condition and grade",
+    "Visible cosmetic defects",
+    "Testing status",
+    "Battery status",
+    "Data-wipe status",
+    "BIOS/password status",
+    "Included charger/accessories",
+    "Current physical quantity",
+    "Authoritative selling price",
+    "Warranty",
+    "Fulfillment/shipping",
+    "Public-photo safety and photo approval"
+  ],
+  "provenance": {
+    "sourceRecord": "WESTRONIX_Dell_Precision_3551_Product_Sheet.xlsx",
+    "sourceRecordLocation": "SharePoint: Shared Documents/WESTRONIX/Product-Records/WT-DELL-D3551-16-512/",
+    "lastPrepared": "2026-10-13"
+  }
+}
