@@ -91,8 +91,17 @@
         "reason": "Underside regulatory label may expose device identifiers; do not publish without a redacted safe derivative."
       }
     ],
-    "publicPhotoRefs": [],
-    "status": "Photos retrieved and visually screened. Candidate files still need to be copied into repository-hosted assets; no public photo URLs configured yet."
+    "publicPhotoRefs": [
+      "Front-enhanced-review.jpg",
+      "FrontScreen-enhanced-review.jpg",
+      "FrontSide-enhanced-review.jpg",
+      "KeyBorad-enhanced-review.jpg",
+      "LefiSide-enhanced-review.jpg",
+      "Left-enhanced-review.jpg",
+      "Right-enhanced-review.jpg",
+      "RightSide-enhanced-review.jpg"
+    ],
+    "status": "Eight candidate review images are present on the staging branch at repository root and wired into the draft gallery. Visual review and final publication approval still required."
   },
   "publication": {
     "informationVerified": false,
