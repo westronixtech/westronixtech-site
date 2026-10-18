@@ -1359,7 +1359,7 @@ function showError(message){
 function renderProduct(product){
   const container = document.getElementById('productContainer');
   const photos = product.photos && Array.isArray(product.photos.publicPhotoRefs)
-    ? product.photos.publicPhotoRefs.filter(path => typeof path === 'string' && !path.includes('..') && /^(Front-enhanced-review|FrontScreen-enhanced-review|FrontSide-enhanced-review|KeyBorad-enhanced-review|LefiSide-enhanced-review|Left-enhanced-review|Right-enhanced-review|RightSide-enhanced-review)\.jpg$/.test(path))
+    ? product.photos.publicPhotoRefs.filter(path => typeof path === 'string' && !path.includes('..') && /^(Front-enhanced-review|FrontScreen-enhanced-review|FrontSide-enhanced-review|KeyBorad-enhanced-review|LefiSide-enhanced-review|Left-enhanced-review|Right-enhanced-review|RightSide-enhanced-review)\\.jpg$/.test(path))
     : [];
   const photoMarkup = photos.length
     ? `<div class="draft-photo-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px">
@@ -1368,56 +1368,46 @@ function renderProduct(product){
           <figcaption style="font-size:12px;color:#64748b;overflow-wrap:anywhere">${escapeHTML(path.split('/').pop())}</figcaption>
         </figure>`).join('')}
       </div>`
-    : `<div class="draft-photo-note"><div><strong>Photos screened — repository upload pending</strong><p>Eight candidate views were selected from the Final Review folder. The underside photo is withheld because its regulatory label may expose device identifiers. The candidate images are not shown until their repository-hosted copies are available.</p><p><code>WESTRONIX/Product-Photos/DELL-D3551-16-512/03-Final-Review/</code></p></div></div>`;
-  const verification = [
-    ['Exact CPU model / generation','NEEDS UNIT-LEVEL VERIFICATION'],
-    ['RAM and storage','NEEDS UNIT-LEVEL VERIFICATION'],
-    ['Display and GPU','NEEDS UNIT-LEVEL VERIFICATION'],
-    ['Operating system / activation','NEEDS VERIFICATION'],
-    ['Cosmetic condition / grade','NEEDS VERIFICATION'],
-    ['Functional testing','NEEDS VERIFICATION'],
-    ['Battery status','NEEDS VERIFICATION'],
-    ['Data wipe / BIOS / passwords','NEEDS VERIFICATION'],
-    ['Charger / accessories','NEEDS VERIFICATION'],
-    ['Current price / quantity','NEEDS VERIFICATION'],
-    ['Warranty / fulfillment','NEEDS VERIFICATION'],
-    ['Public-photo safety / hosting','PENDING']
-  ];
+    : `<div class="draft-photo-note"><div><strong>Approved photos — display needs checking</strong><p>The approved eight-view set is referenced by this draft. The underside photo remains withheld because its label may expose device identifiers.</p></div></div>`;
+  const condition = product.condition?.label || 'Not specified';
+  const priceDisplay = product.sales?.priceDisplay === 'contact' ? 'Contact for price' : 'Price to be confirmed';
+  const availabilityDisplay = product.sales?.availabilityDisplay === 'confirm' ? 'Confirm availability' : 'Availability to be confirmed';
   container.innerHTML = `
     <div class="draft-guard" role="status">
       <span class="draft-pill">INTERNAL STAGING ONLY</span>
-      <strong>DRAFT / BLOCKED — NOT APPROVED FOR WEBSITE</strong>
-      This product is not listed in the public inventory. Ordering, checkout, auction, and purchase actions are intentionally absent.
+      <strong>DRAFT — NOT APPROVED FOR WEBSITE</strong>
+      This product is not in the public inventory. Ordering and checkout remain disabled.
     </div>
     <div class="product-layout">
       <div class="product-image-area">${photoMarkup}</div>
       <div>
         <div class="brand">Dell</div>
-        <div class="grade" style="background:#fff4d6;color:#7a4b00;border-color:#e5b94c">DRAFT — CONDITION UNVERIFIED</div>
+        <div class="grade" style="background:#e8f7ef;color:#166534;border-color:#86d6a5">${escapeHTML(condition)}</div>
         <h1 class="product-title">${escapeHTML(product.title)}</h1>
-        <div class="sku">Proposed SKU: ${escapeHTML(product.sku)}<br>Legacy alias: ${escapeHTML(product.legacySku)}</div>
-        <div class="price">Price not yet verified</div>
-        <p>Draft intake information only. Verify the specific unit, its condition, pricing and fulfillment before publication.</p>
+        <div class="sku">SKU: ${escapeHTML(product.sku)}<br>Legacy SKU: ${escapeHTML(product.legacySku)}</div>
+        <div class="price">${escapeHTML(priceDisplay)}</div>
+        <p>Availability: ${escapeHTML(availabilityDisplay)}.</p>
         <div class="verification-grid">
-          <div class="verification-item"><strong>Processor</strong>${escapeHTML(product.configuration?.processor?.value || 'Not confirmed')}<small>VERIFY EXACT MODEL</small></div>
-          <div class="verification-item"><strong>Memory</strong>${escapeHTML(product.configuration?.ram?.value || 'Not confirmed')}<small>VERIFY UNIT</small></div>
-          <div class="verification-item"><strong>Storage</strong>${escapeHTML(product.configuration?.storage?.value || 'Not confirmed')}<small>VERIFY UNIT</small></div>
-          <div class="verification-item"><strong>Condition / testing</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
-          <div class="verification-item"><strong>Price / quantity</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
-          <div class="verification-item"><strong>Warranty / shipping</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
+          <div class="verification-item"><strong>Processor</strong>${escapeHTML(product.configuration?.processor?.value || 'Not specified')}</div>
+          <div class="verification-item"><strong>Memory</strong>${escapeHTML(product.configuration?.ram?.value || 'Not specified')}</div>
+          <div class="verification-item"><strong>Storage</strong>${escapeHTML(product.configuration?.storage?.value || 'Not specified')}</div>
+          <div class="verification-item"><strong>Condition</strong>${escapeHTML(condition)}</div>
         </div>
       </div>
     </div>
     <section class="message" style="text-align:left;margin-top:22px">
-      <h2>Publication verification checklist</h2>
-      <div class="verification-grid">
-        ${verification.map(([label,status])=>`<div class="verification-item"><strong>${escapeHTML(label)}</strong><small>${escapeHTML(status)}</small></div>`).join('')}
-      </div>
-      <p><strong>Publication gate:</strong> Information verified: NO · Photos verified: NO · Approved for website: NO · Orderable: NO</p>
+      <h2>Simple listing checklist</h2>
+      <ul>
+        <li>Product identity: Dell Precision 3551; core specs recorded as user-attested.</li>
+        <li>Condition: ${escapeHTML(condition)} (selected by user; no cosmetic note supplied).</li>
+        <li>Photos: eight-view set approved by user; underside-label image withheld.</li>
+        <li>Price: ${escapeHTML(priceDisplay)}.</li>
+        <li>Availability: ${escapeHTML(availabilityDisplay)}.</li>
+      </ul>
+      <p><strong>Status:</strong> Draft only. Do not publish, add to public inventory, or enable ordering until the user explicitly approves publication.</p>
     </section>
   `;
 }
-
 
 function changeMainImage(
   photo,
