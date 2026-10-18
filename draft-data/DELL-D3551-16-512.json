@@ -1,0 +1,117 @@
+{
+  "sku": "DELL-D3551-16-512",
+  "legacySku": "WT-D3551-0001",
+  "brand": "Dell",
+  "model": "Precision 3551",
+  "category": "Workstation",
+  "title": "Dell Precision 3551 Mobile Workstation | Core i7 | 16GB RAM | 512GB SSD",
+  "configuration": {
+    "processor": {
+      "value": "Intel Core i7",
+      "status": "USER-ATTESTED; exact model/generation not independently verified"
+    },
+    "ram": {
+      "value": "16GB",
+      "status": "USER-ATTESTED"
+    },
+    "storage": {
+      "value": "512GB SSD",
+      "status": "USER-ATTESTED"
+    },
+    "display": {
+      "value": null,
+      "status": "NOT VERIFIED FOR THIS UNIT"
+    },
+    "graphics": {
+      "value": null,
+      "status": "NOT VERIFIED FOR THIS UNIT"
+    },
+    "operatingSystem": {
+      "value": null,
+      "status": "NOT VERIFIED FOR THIS UNIT"
+    },
+    "windowsActivation": {
+      "value": null,
+      "status": "NOT VERIFIED FOR THIS UNIT"
+    }
+  },
+  "condition": {
+    "label": null,
+    "grade": null,
+    "cosmeticNotes": null,
+    "status": "NOT VERIFIED FOR PUBLICATION"
+  },
+  "testing": {
+    "status": "NOT VERIFIED FOR PUBLICATION"
+  },
+  "battery": {
+    "status": "NOT VERIFIED FOR PUBLICATION"
+  },
+  "security": {
+    "dataWipeStatus": "NOT VERIFIED FOR PUBLICATION",
+    "biosPasswordStatus": "NOT VERIFIED FOR PUBLICATION"
+  },
+  "accessories": {
+    "chargerIncluded": null,
+    "status": "NOT VERIFIED FOR PUBLICATION"
+  },
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "quantity": null,
+    "warranty": null,
+    "fulfillment": null
+  },
+  "photos": {
+    "sourceFolder": "WESTRONIX/Product-Photos/DELL-D3551-16-512/03-Final-Review/",
+    "sourceFiles": [
+      "BackSide-enhanced-review.jpg",
+      "Front-enhanced-review.jpg",
+      "FrontScreen-enhanced-review.jpg",
+      "FrontSide-enhanced-review.jpg",
+      "KeyBorad-enhanced-review.jpg",
+      "LefiSide-enhanced-review.jpg",
+      "Left-enhanced-review.jpg",
+      "Right-enhanced-review.jpg",
+      "RightSide-enhanced-review.jpg"
+    ],
+    "candidatePublicFiles": [
+      "Front-enhanced-review.jpg",
+      "FrontScreen-enhanced-review.jpg",
+      "FrontSide-enhanced-review.jpg",
+      "KeyBorad-enhanced-review.jpg",
+      "LefiSide-enhanced-review.jpg",
+      "Left-enhanced-review.jpg",
+      "Right-enhanced-review.jpg",
+      "RightSide-enhanced-review.jpg"
+    ],
+    "withheldFiles": [
+      {
+        "file": "BackSide-enhanced-review.jpg",
+        "reason": "Underside regulatory label may expose device identifiers; do not publish without a redacted safe derivative."
+      }
+    ],
+    "publicPhotoRefs": [],
+    "status": "Photos retrieved and visually screened. Candidate files still need to be copied into repository-hosted assets; no public photo URLs configured yet."
+  },
+  "publication": {
+    "informationVerified": false,
+    "photosVerified": false,
+    "approvedForWebsite": false,
+    "listingStatus": "DRAFT / BLOCKED — NOT PUBLISHED",
+    "orderable": false,
+    "indexInPublicInventory": false
+  },
+  "verificationAttestation": {
+    "confirmedBy": "User",
+    "confirmation": "User previously stated that the final verification checklist was completed.",
+    "recordedOn": "2026-10-13",
+    "scope": "User attestation preserved; exact configuration, current price/quantity, individual unit condition and photo identifier safety are not independently verified here."
+  },
+  "note": "Staging-only record. Do not add to root inventory.json or enable ordering. The page must remain blocked until the photo files are hosted in the repository and all publication fields are verified and explicitly approved.",
+  "formerProposedSku": "WT-DELL-D3551-16-512",
+  "aliases": [
+    "WT-D3551-0001"
+  ],
+  "migrationNote": "Use DELL-D3551-16-512 as the current proposed SKU; retain WT-D3551-0001 as the legacy alias. WT-DELL-D3551-16-512 was a prior proposed identifier."
+}
