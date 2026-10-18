@@ -1,0 +1,19 @@
+{
+  "sku": "",
+  "brand": "",
+  "model": "",
+  "category": "",
+  "title": "",
+  "condition": "",
+  "specifications": {},
+  "sales": {
+    "price": null,
+    "currency": "FCFA",
+    "priceDisplay": "contact",
+    "quantity": null,
+    "availabilityDisplay": "confirm"
+  },
+  "photos": [],
+  "status": "DRAFT",
+  "notesInternal": ""
+}
