@@ -7,7 +7,8 @@
 
 ## 1. Operating rules
 - Do not claim inventory, customers, suppliers, certifications, partnerships, charitable status, fulfillment capacity, or services that have not been verified.
-- Publish a product only after WESTRONIX physically receives and verifies it. Empty inventory is preferable to sample or fabricated stock.
+- Publish a product only after WESTRONIX physically receives it and completes the short publish check in [PRODUCT_LISTING_WORKFLOW.md](PRODUCT_LISTING_WORKFLOW.md). Do not require verification of optional specifications to publish.
+- Use [product-template.json](product-template.json) as the minimal starting record; unknown optional specifications stay blank rather than delaying a listing or being guessed.
 - Keep private Make an Offer negotiations separate from public auctions.
 - Keep internal operations, supplier records, permissions, reporting, and audit history out of customer navigation.
 - Label a capability Available only after it is implemented and tested. Otherwise use Proposed, In development, or Future.
@@ -42,7 +43,8 @@ Do not add separate top-level links for both Shop and Inventory. Do not promote 
 ## 4. One source of truth per data type
 - `inventory.json` contains products and product categories only.
 - `auctions.json` contains auction lots only. Do not duplicate auction lots in `inventory.json`.
-- Do not add demonstration records to public production data.
+- Product records are the source for product facts; do not retype the same facts into multiple places.
+- Drafts and templates must never be added to public production `inventory.json`.
 - Do not maintain duplicate donation pages or duplicate homepage implementations as active customer destinations. Before deleting a legacy file, check internal links and add a replacement/redirect plan if needed.
 
 ## 5. Make an Offer workflow
