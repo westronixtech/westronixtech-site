@@ -1251,7 +1251,7 @@ let currentProduct = null;
    LOAD PRODUCT
 ========================================================= */
 
-async async function loadProduct(){
+async function loadProduct(){
   try{
     const response = await fetch('draft-data/DELL-D3551-16-512.json', {cache:'no-store'});
     if(!response.ok) throw new Error('Draft product data could not be loaded.');
@@ -1358,10 +1358,21 @@ function showError(message){
 
 function renderProduct(product){
   const container = document.getElementById('productContainer');
+  const photos = product.photos && Array.isArray(product.photos.publicPhotoRefs)
+    ? product.photos.publicPhotoRefs.filter(path => typeof path === 'string' && path.startsWith('images/products/DELL-D3551-16-512/'))
+    : [];
+  const photoMarkup = photos.length
+    ? `<div class="draft-photo-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px">
+        ${photos.map((path,index)=>`<figure style="margin:0;border:1px solid #e3e8f0;border-radius:9px;padding:8px;background:#fff">
+          <img src="${escapeHTML(path)}" alt="Dell Precision 3551 product view ${index+1}" loading="lazy" style="display:block;width:100%;height:150px;object-fit:contain;background:#f6f8fb" onerror="this.closest('figure').style.display='none'">
+          <figcaption style="font-size:12px;color:#64748b;overflow-wrap:anywhere">${escapeHTML(path.split('/').pop())}</figcaption>
+        </figure>`).join('')}
+      </div>`
+    : `<div class="draft-photo-note"><div><strong>Photos screened — repository upload pending</strong><p>Eight candidate views were selected from the Final Review folder. The underside photo is withheld because its regulatory label may expose device identifiers. The candidate images are not shown until their repository-hosted copies are available.</p><p><code>WESTRONIX/Product-Photos/DELL-D3551-16-512/03-Final-Review/</code></p></div></div>`;
   const verification = [
-    ['Exact CPU model / generation','NEEDS VERIFICATION'],
-    ['RAM and storage','NEEDS VERIFICATION'],
-    ['Display and GPU','NEEDS VERIFICATION'],
+    ['Exact CPU model / generation','NEEDS UNIT-LEVEL VERIFICATION'],
+    ['RAM and storage','NEEDS UNIT-LEVEL VERIFICATION'],
+    ['Display and GPU','NEEDS UNIT-LEVEL VERIFICATION'],
     ['Operating system / activation','NEEDS VERIFICATION'],
     ['Cosmetic condition / grade','NEEDS VERIFICATION'],
     ['Functional testing','NEEDS VERIFICATION'],
@@ -1370,31 +1381,27 @@ function renderProduct(product){
     ['Charger / accessories','NEEDS VERIFICATION'],
     ['Current price / quantity','NEEDS VERIFICATION'],
     ['Warranty / fulfillment','NEEDS VERIFICATION'],
-    ['Public-photo safety','NEEDS VERIFICATION']
+    ['Public-photo safety / hosting','PENDING']
   ];
   container.innerHTML = `
     <div class="draft-guard" role="status">
       <span class="draft-pill">INTERNAL STAGING ONLY</span>
-      <strong> DRAFT / BLOCKED — NOT APPROVED FOR WEBSITE </strong>
+      <strong>DRAFT / BLOCKED — NOT APPROVED FOR WEBSITE</strong>
       This product is not listed in the public inventory. Ordering, checkout, auction, and purchase actions are intentionally absent.
     </div>
     <div class="product-layout">
-      <div class="product-image-area">
-        <div class="draft-photo-note">
-          <div><strong>Original photographs pending review</strong><p>No photo is displayed until the original files can be identified and checked for serial numbers, service tags, asset labels, barcodes, QR codes, or other sensitive identifiers. Original files must remain untouched.</p><p><code>WESTRONIX/Product-Photos/DELL-D3551-16-512/01-Originals/</code></p></div>
-        </div>
-      </div>
+      <div class="product-image-area">${photoMarkup}</div>
       <div>
         <div class="brand">Dell</div>
         <div class="grade" style="background:#fff4d6;color:#7a4b00;border-color:#e5b94c">DRAFT — CONDITION UNVERIFIED</div>
         <h1 class="product-title">${escapeHTML(product.title)}</h1>
         <div class="sku">Proposed SKU: ${escapeHTML(product.sku)}<br>Legacy alias: ${escapeHTML(product.legacySku)}</div>
         <div class="price">Price not yet verified</div>
-        <p>Draft intake information only. The configuration and physical condition must be verified against this specific unit before publication.</p>
+        <p>Draft intake information only. Verify the specific unit, its condition, pricing and fulfillment before publication.</p>
         <div class="verification-grid">
-          <div class="verification-item"><strong>Processor</strong>Intel Core i7<small>NEEDS VERIFICATION</small></div>
-          <div class="verification-item"><strong>Memory</strong>16GB RAM<small>NEEDS VERIFICATION</small></div>
-          <div class="verification-item"><strong>Storage</strong>512GB SSD<small>NEEDS VERIFICATION</small></div>
+          <div class="verification-item"><strong>Processor</strong>${escapeHTML(product.configuration?.processor?.value || 'Not confirmed')}<small>VERIFY EXACT MODEL</small></div>
+          <div class="verification-item"><strong>Memory</strong>${escapeHTML(product.configuration?.ram?.value || 'Not confirmed')}<small>VERIFY UNIT</small></div>
+          <div class="verification-item"><strong>Storage</strong>${escapeHTML(product.configuration?.storage?.value || 'Not confirmed')}<small>VERIFY UNIT</small></div>
           <div class="verification-item"><strong>Condition / testing</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
           <div class="verification-item"><strong>Price / quantity</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
           <div class="verification-item"><strong>Warranty / shipping</strong>Not confirmed<small>NEEDS VERIFICATION</small></div>
