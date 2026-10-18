@@ -60,7 +60,9 @@
     "currency": "FCFA",
     "quantity": null,
     "warranty": null,
-    "fulfillment": null
+    "fulfillment": null,
+    "priceDisplay": "contact",
+    "availabilityDisplay": "confirm"
   },
   "photos": {
     "sourceFolder": "WESTRONIX/Product-Photos/DELL-D3551-16-512/03-Final-Review/",
@@ -107,7 +109,7 @@
     "informationVerified": false,
     "photosVerified": true,
     "approvedForWebsite": false,
-    "listingStatus": "DRAFT / BLOCKED — NOT PUBLISHED; photo set approved, product facts and commercial fields still require verification",
+    "listingStatus": "DRAFT — simplified workflow: photos approved; add honest condition and complete a basic identity/condition check before publishing. Price may be Contact for price; availability may be Confirm availability. Optional specifications do not block publication.",
     "orderable": false,
     "indexInPublicInventory": false
   },
@@ -117,7 +119,7 @@
     "recordedOn": "2026-10-13",
     "scope": "User attestation preserved; exact configuration, current price/quantity, individual unit condition and photo identifier safety are not independently verified here."
   },
-  "note": "Staging-only record. User approved the eight-photo set for staging. Do not add to root inventory.json or enable ordering until all product facts and commercial fields are verified and user explicitly approves publication.",
+  "note": "Staging-only record. Eight-photo set approved by user. Follow PRODUCT_LISTING_WORKFLOW.md: only brand/model, honest condition, price or Contact for price, accurate availability, and a basic identity/condition check are required for publication. Unknown optional specifications may be omitted; never guess. Do not add to public inventory or enable ordering without the required fields and explicit publication approval.",
   "formerProposedSku": "WT-DELL-D3551-16-512",
   "aliases": [
     "WT-D3551-0001"
