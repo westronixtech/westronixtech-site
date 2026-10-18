@@ -101,13 +101,13 @@
       "Right-enhanced-review.jpg",
       "RightSide-enhanced-review.jpg"
     ],
-    "status": "Eight candidate review images are present on the staging branch at repository root and wired into the draft gallery. Visual review and final publication approval still required."
+    "status": "PHOTO SET APPROVED BY USER for staging review. Eight repository-hosted candidate images are wired into the draft gallery. BackSide-enhanced-review.jpg remains withheld due to possible device identifiers."
   },
   "publication": {
     "informationVerified": false,
-    "photosVerified": false,
+    "photosVerified": true,
     "approvedForWebsite": false,
-    "listingStatus": "DRAFT / BLOCKED — NOT PUBLISHED",
+    "listingStatus": "DRAFT / BLOCKED — NOT PUBLISHED; photo set approved, product facts and commercial fields still require verification",
     "orderable": false,
     "indexInPublicInventory": false
   },
@@ -117,7 +117,7 @@
     "recordedOn": "2026-10-13",
     "scope": "User attestation preserved; exact configuration, current price/quantity, individual unit condition and photo identifier safety are not independently verified here."
   },
-  "note": "Staging-only record. Do not add to root inventory.json or enable ordering. The page must remain blocked until the photo files are hosted in the repository and all publication fields are verified and explicitly approved.",
+  "note": "Staging-only record. User approved the eight-photo set for staging. Do not add to root inventory.json or enable ordering until all product facts and commercial fields are verified and user explicitly approves publication.",
   "formerProposedSku": "WT-DELL-D3551-16-512",
   "aliases": [
     "WT-D3551-0001"
