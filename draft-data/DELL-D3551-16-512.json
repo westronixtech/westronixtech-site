@@ -36,10 +36,10 @@
     }
   },
   "condition": {
-    "label": null,
+    "label": "Refurbished",
     "grade": null,
     "cosmeticNotes": null,
-    "status": "NOT VERIFIED FOR PUBLICATION"
+    "status": "USER-SELECTED CONDITION; detailed cosmetic notes not provided"
   },
   "testing": {
     "status": "NOT VERIFIED FOR PUBLICATION"
@@ -106,10 +106,10 @@
     "status": "PHOTO SET APPROVED BY USER for staging review. Eight repository-hosted candidate images are wired into the draft gallery. BackSide-enhanced-review.jpg remains withheld due to possible device identifiers."
   },
   "publication": {
-    "informationVerified": false,
+    "informationVerified": true,
     "photosVerified": true,
     "approvedForWebsite": false,
-    "listingStatus": "DRAFT — simplified workflow: photos approved; add honest condition and complete a basic identity/condition check before publishing. Price may be Contact for price; availability may be Confirm availability. Optional specifications do not block publication.",
+    "listingStatus": "DRAFT — condition selected as Refurbished; user previously attested final verification checklist completed. Price display: Contact for price. Availability: Confirm availability. Not approved for public website; not orderable.",
     "orderable": false,
     "indexInPublicInventory": false
   },
@@ -117,9 +117,9 @@
     "confirmedBy": "User",
     "confirmation": "User previously stated that the final verification checklist was completed.",
     "recordedOn": "2026-10-13",
-    "scope": "User attestation preserved; exact configuration, current price/quantity, individual unit condition and photo identifier safety are not independently verified here."
+    "scope": "User previously attested final verification checklist completion on 2026-10-13 and selected Refurbished as the condition label in the current conversation. Detailed cosmetic notes were not provided; assistant has not independently inspected the equipment."
   },
-  "note": "Staging-only record. Eight-photo set approved by user. Follow PRODUCT_LISTING_WORKFLOW.md: only brand/model, honest condition, price or Contact for price, accurate availability, and a basic identity/condition check are required for publication. Unknown optional specifications may be omitted; never guess. Do not add to public inventory or enable ordering without the required fields and explicit publication approval.",
+  "note": "Staging-only record. Eight-photo set approved by user. Condition selected as Refurbished. Price display is Contact for price and availability is Confirm availability. Do not add to public inventory or enable ordering; user has not approved publication. Unknown optional specifications may be omitted; never guess.",
   "formerProposedSku": "WT-DELL-D3551-16-512",
   "aliases": [
     "WT-D3551-0001"
