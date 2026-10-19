@@ -545,6 +545,84 @@ body.language-fr h3.lang-fr{
   transition:.3s;
 }
 
+/* Dell Precision 3551 card: preserve the full front-facing product photo */
+.card-dell-3551 .product-image{
+  background:#fff;
+  border-bottom:1px solid #edf0f4;
+}
+.card-dell-3551 .product-image img{
+  object-fit:contain;
+  padding:12px 18px;
+}
+.processor-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:3;
+  max-width:calc(100% - 24px);
+  padding:10px 13px;
+  border:1px solid #d6dce5;
+  border-radius:9px;
+  background:#fff;
+  color:#172033;
+  box-shadow:0 3px 12px rgba(15,23,42,.15);
+  font-size:15px;
+  font-weight:900;
+  line-height:1.2;
+}
+.tested-badge{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  z-index:3;
+  padding:7px 10px;
+  border:1px solid #bcebd9;
+  border-radius:8px;
+  background:#e8faf3;
+  color:#087f58;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  font-size:12px;
+  font-weight:900;
+}
+.dell-card-spec-summary{
+  margin-top:15px;
+  padding:13px 0 14px;
+  border-top:1px solid #edf0f4;
+  border-bottom:1px solid #edf0f4;
+  color:#334155;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.6;
+}
+.dell-stock-note{
+  margin-top:12px;
+  color:#64748b;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+}
+.dell-cart-icon{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  margin-right:7px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.card-dell-3551 .btn-cart{
+  color:#111;
+  font-size:14px;
+  font-weight:900;
+}
+.card-dell-3551 .btn-primary{font-size:14px;}
+@media(max-width:420px){
+  .processor-badge{font-size:13px;padding:8px 10px}
+  .card-dell-3551 .product-image{height:220px}
+}
+
 .product-photo-link{
   display:block;
   width:100%;
@@ -662,19 +740,25 @@ body.language-fr h3.lang-fr{
   margin-top:auto;
   padding-top:18px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  align-items:stretch;
 }
 
 .btn{
-  border:0;
-  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
   padding:11px 10px;
+  border:1px solid transparent;
+  border-radius:8px;
   text-align:center;
   font-weight:800;
   cursor:pointer;
-  transition:.2s;
+  transition:background-color .2s,border-color .2s,transform .2s;
   font-size:13px;
+  line-height:1.2;
 }
 
 .btn:hover{
@@ -683,16 +767,24 @@ body.language-fr h3.lang-fr{
 
 .btn-primary{
   background:#1677ff;
+  border-color:#1677ff;
   color:#fff;
 }
 
 .btn-primary:hover{
   background:#0867e5;
+  border-color:#0867e5;
 }
 
-.btn-secondary{
-  background:#071526;
-  color:#fff;
+.btn-cart{
+  background:#ffd814;
+  border-color:#fcd200;
+  color:#172033;
+}
+
+.btn-cart:hover{
+  background:#f7ca00;
+  border-color:#f2c200;
 }
 
 .btn-whatsapp{
@@ -997,6 +1089,25 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .westronix-shared-logo{display:block!important;width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transition:transform .25s ease,filter .25s ease;}
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
+</style>
+<!-- Inventory card purchase-action color override -->
+<style id="inventory-card-action-overrides">
+/* Keep Amazon-style cart buttons yellow despite the shared generic button rule. */
+.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart{
+  background-color:#ffd814;
+  border-color:#fcd200;
+  color:#111;
+}
+.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart:hover{
+  background-color:#f7ca00;
+  border-color:#f2c200;
+  color:#111;
+}
+.card-actions .btn{
+  min-height:44px;
+  align-items:center;
+  justify-content:center;
+}
 </style>
 </head>
 
@@ -1510,7 +1621,7 @@ async function loadInventory(){
           : 'Veuillez réessayer. Si le problème persiste, contactez WESTRONIX ou demandez le produit recherché.'}</p>
         <div class="empty-actions">
           <button type="button" class="btn btn-primary" onclick="loadInventory()">${currentLanguage === 'en' ? 'Try again' : 'Réessayer'}</button>
-          <a class="btn btn-secondary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+          <a class="btn btn-cart" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
           <a class="btn btn-outline" href="bulk-orders.html">${currentLanguage === 'en' ? 'Bulk Orders' : 'Achats en gros'}</a>
         </div>
       </div>
@@ -1702,7 +1813,7 @@ function renderProducts(products){
             : 'Notre catalogue public ne contient actuellement aucune annonce vérifiée. Vous pouvez demander un article précis ou un devis en gros ; la disponibilité et le prix seront confirmés séparément.'}</p>
           <div class="empty-actions">
             <a class="btn btn-primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
-            <a class="btn btn-secondary" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
+            <a class="btn btn-cart" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
           </div>
         </div>
       `;
@@ -1716,7 +1827,8 @@ function renderProducts(products){
     const card =
       document.createElement('article');
 
-    card.className = 'card';
+    const isDell3551 = product.sku === 'DELL-D3551-16-512' || product.sku === 'WT-D3551-0001';
+    card.className = isDell3551 ? 'card card-dell-3551' : 'card';
 
 
     const photo =
@@ -1839,22 +1951,9 @@ function renderProducts(products){
         }
 
 
-        <div class="grade-badge">
-
-          ${
-            currentLanguage === 'en'
-              ? 'GRADE'
-              : 'GRADE'
-          }
-
-          ${escapeHTML(product.grade || 'N/A')}
-
-        </div>
-
-
-        <div class="status-badge">
-          ${escapeHTML(statusText)}
-        </div>
+        ${isDell3551
+          ? '<div class="processor-badge">Intel Core i7 10th Gen</div><div class="tested-badge">✓ TESTED • Not graded</div>'
+          : '<div class="grade-badge">GRADE ' + escapeHTML(product.grade || 'N/A') + '</div><div class="status-badge">' + escapeHTML(statusText) + '</div>'}
 
       </div>
 
@@ -1876,7 +1975,8 @@ function renderProducts(products){
         </div>
 
 
-        <div class="specs">
+        ${isDell3551 ? '<div class="dell-card-spec-summary">Intel Core i7 • 16GB • 512GB SSD</div><div class="dell-stock-note">Stock: ' + (quantity === null ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée') : escapeHTML(quantity)) + ' • To be confirmed / À confirmer</div>' : ''}
+        <div class="specs" ${isDell3551 ? 'hidden' : ''}>
 
           <div class="spec">
 
@@ -2047,8 +2147,8 @@ function renderProducts(products){
 
             ${
               currentLanguage === 'en'
-                ? 'View Product'
-                : 'Voir le produit'
+                ? 'View'
+                : 'Voir'
             }
 
           </a>
@@ -2056,8 +2156,13 @@ function renderProducts(products){
 
           <button
             type="button"
-            class="btn btn-secondary"
+            class="btn btn-cart"
             ${canAddToCart ? `onclick="addToCart('${escapeJS(product.sku)}')"` : 'disabled title="Availability, quantity and price must be confirmed before adding to cart"'}>
+            <svg class="dell-cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+            </svg>
             ${currentLanguage === 'en' ? 'Add to Cart' : 'Ajouter au panier'}
           </button>
 
