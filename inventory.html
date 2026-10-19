@@ -662,19 +662,25 @@ body.language-fr h3.lang-fr{
   margin-top:auto;
   padding-top:18px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  align-items:stretch;
 }
 
 .btn{
-  border:0;
-  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
   padding:11px 10px;
+  border:1px solid transparent;
+  border-radius:8px;
   text-align:center;
   font-weight:800;
   cursor:pointer;
-  transition:.2s;
+  transition:background-color .2s,border-color .2s,transform .2s;
   font-size:13px;
+  line-height:1.2;
 }
 
 .btn:hover{
@@ -683,16 +689,24 @@ body.language-fr h3.lang-fr{
 
 .btn-primary{
   background:#1677ff;
+  border-color:#1677ff;
   color:#fff;
 }
 
 .btn-primary:hover{
   background:#0867e5;
+  border-color:#0867e5;
 }
 
-.btn-secondary{
-  background:#071526;
-  color:#fff;
+.btn-cart{
+  background:#ffd814;
+  border-color:#fcd200;
+  color:#172033;
+}
+
+.btn-cart:hover{
+  background:#f7ca00;
+  border-color:#f2c200;
 }
 
 .btn-whatsapp{
@@ -1510,7 +1524,7 @@ async function loadInventory(){
           : 'Veuillez réessayer. Si le problème persiste, contactez WESTRONIX ou demandez le produit recherché.'}</p>
         <div class="empty-actions">
           <button type="button" class="btn btn-primary" onclick="loadInventory()">${currentLanguage === 'en' ? 'Try again' : 'Réessayer'}</button>
-          <a class="btn btn-secondary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+          <a class="btn btn-cart" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
           <a class="btn btn-outline" href="bulk-orders.html">${currentLanguage === 'en' ? 'Bulk Orders' : 'Achats en gros'}</a>
         </div>
       </div>
@@ -1702,7 +1716,7 @@ function renderProducts(products){
             : 'Notre catalogue public ne contient actuellement aucune annonce vérifiée. Vous pouvez demander un article précis ou un devis en gros ; la disponibilité et le prix seront confirmés séparément.'}</p>
           <div class="empty-actions">
             <a class="btn btn-primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
-            <a class="btn btn-secondary" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
+            <a class="btn btn-cart" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
           </div>
         </div>
       `;
@@ -2047,8 +2061,8 @@ function renderProducts(products){
 
             ${
               currentLanguage === 'en'
-                ? 'View Product'
-                : 'Voir le produit'
+                ? 'View'
+                : 'Voir'
             }
 
           </a>
@@ -2056,7 +2070,7 @@ function renderProducts(products){
 
           <button
             type="button"
-            class="btn btn-secondary"
+            class="btn btn-cart"
             ${canAddToCart ? `onclick="addToCart('${escapeJS(product.sku)}')"` : 'disabled title="Availability, quantity and price must be confirmed before adding to cart"'}>
             ${currentLanguage === 'en' ? 'Add to Cart' : 'Ajouter au panier'}
           </button>
