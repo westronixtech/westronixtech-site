@@ -828,7 +828,11 @@ function setLanguage(lang){
   document.body.classList.remove("lang-en","lang-fr");
   document.body.classList.add("lang-" + lang);
 
-  localStorage.setItem("wt_language",lang);
+  try{
+    localStorage.setItem("wt_language",lang);
+  }catch(error){
+    console.warn("Language preference could not be saved:",error);
+  }
 
   const selector = document.getElementById("languageSelect");
 
@@ -839,18 +843,22 @@ function setLanguage(lang){
 
 function initializeLanguage(){
 
-  const savedLanguage =
-    localStorage.getItem("wt_language") || "fr";
+  let savedLanguage = "fr";
+  try{
+    savedLanguage = localStorage.getItem("wt_language") || "fr";
+  }catch(error){
+    console.warn("Language preference could not be read:",error);
+  }
 
   setLanguage(savedLanguage);
 }
 
-document.getElementById("languageSelect").addEventListener(
-  "change",
-  function(){
+const languageSelector = document.getElementById("languageSelect");
+if(languageSelector){
+  languageSelector.addEventListener("change",function(){
     setLanguage(this.value);
-  }
-);
+  });
+}
 
 /* LOAD CART */
 
