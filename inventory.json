@@ -1,8 +1,36 @@
 {
-  "lastUpdated": "2026-10-10",
+  "lastUpdated": "2026-10-18",
   "currency": "FCFA",
-  "location": "No verified inventory currently published",
-  "products": [],
+  "location": "Lomé, Togo",
+  "products": [
+    {
+      "sku": "DELL-D3551-16-512",
+      "legacySku": "WT-D3551-0001",
+      "brand": "Dell",
+      "name": "Dell Precision 3551 Mobile Workstation",
+      "category": "Workstation",
+      "processor": "Intel Core i7",
+      "ram": "16GB",
+      "storage": "512GB SSD",
+      "condition": "Refurbished",
+      "grade": "Not graded",
+      "price": null,
+      "currency": "FCFA",
+      "quantity": null,
+      "location": "To be confirmed / À confirmer",
+      "status": "Confirm availability / Disponibilité à confirmer",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Front-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontScreen-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontSide-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/KeyBorad-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/LefiSide-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Left-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Right-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
+      ]
+    }
+  ],
   "categories": [
     "Laptop",
     "Desktop",
