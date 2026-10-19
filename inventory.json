@@ -20,14 +20,14 @@
       "location": "To be confirmed / À confirmer",
       "status": "Confirm availability / Disponibilité à confirmer",
       "photos": [
-        "images/products/dell-precision-3551/Front-enhanced-review.jpg",
-        "images/products/dell-precision-3551/FrontScreen-enhanced-review.jpg",
-        "images/products/dell-precision-3551/FrontSide-enhanced-review.jpg",
-        "images/products/dell-precision-3551/KeyBorad-enhanced-review.jpg",
-        "images/products/dell-precision-3551/LefiSide-enhanced-review.jpg",
-        "images/products/dell-precision-3551/Left-enhanced-review.jpg",
-        "images/products/dell-precision-3551/Right-enhanced-review.jpg",
-        "images/products/dell-precision-3551/RightSide-enhanced-review.jpg"
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Front-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontScreen-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontSide-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/KeyBorad-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/LefiSide-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Left-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Right-enhanced-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
       ]
     }
   ],
