@@ -780,6 +780,15 @@ html[lang="fr"] .lang-fr{
   overflow:hidden;
 }
 
+.feature-product-image-link{
+  display:flex;
+  width:100%;
+  height:100%;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
 .feature-product-image img{
   width:100%;
   height:100%;
@@ -1008,6 +1017,15 @@ html[lang="fr"] .lang-fr{
   align-items:center;
   justify-content:center;
   overflow:hidden;
+}
+
+.card-image-link{
+  display:flex;
+  width:100%;
+  height:100%;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
 }
 
 .card-image img{
@@ -3639,9 +3657,13 @@ function renderFeatured(){
     <div class="feature-product">
 
       <div class="feature-product-image">
-
-        ${productImage(featured)}
-
+        <a
+          class="feature-product-image-link"
+          href="product.html?sku=${encodeURIComponent(featured.sku)}"
+          aria-label="${currentLanguage === "fr" ? "Voir le produit" : "View product"}: ${escapeHTML(featured.name)}"
+        >
+          ${productImage(featured)}
+        </a>
       </div>
 
       <div class="feature-product-body">
@@ -3823,9 +3845,13 @@ function renderProducts(){
         <article class="card">
 
           <div class="card-image">
-
-            ${productImage(product)}
-
+            <a
+              class="card-image-link"
+              href="product.html?sku=${encodeURIComponent(product.sku)}"
+              aria-label="${currentLanguage === "fr" ? "Voir le produit" : "View product"}: ${escapeHTML(product.name)}"
+            >
+              ${productImage(product)}
+            </a>
           </div>
 
           <div class="card-body">
@@ -3840,7 +3866,7 @@ function renderProducts(){
                   : "TESTED"
               }
 
-              • ${escapeHTML(product.grade || "—")}
+              • GRADE ${escapeHTML(product.grade || "—")}
 
             </span>
 
@@ -3906,20 +3932,17 @@ function renderProducts(){
               </a>
 
               <button
-                class="btn primary"
+                class="btn primary btn-cart"
                 type="button"
                 onclick="addToCart('${escapeHTML(product.sku)}')"
                 ${available ? "" : "disabled"}
               >
-
-                🛒
-
-                ${
-                  currentLanguage === "fr"
-                    ? "Ajouter"
-                    : "Add"
-                }
-
+                <svg class="product-card-cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+                </svg>
+                ${currentLanguage === "fr" ? "Ajouter au panier" : "Add to Cart"}
               </button>
 
             </div>

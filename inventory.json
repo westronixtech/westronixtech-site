@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18",
+  "lastUpdated": "2026-10-19",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -12,12 +12,12 @@
       "processor": "Intel Core i7",
       "ram": "16GB",
       "storage": "512GB SSD",
-      "condition": "Refurbished",
-      "grade": "Not graded",
+      "condition": "Tested",
+      "grade": "B",
       "price": 160000,
       "currency": "FCFA",
       "quantity": 150,
-      "location": "To be confirmed / À confirmer",
+      "location": "Confirmed / Confirmé",
       "status": "available",
       "photos": [
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Front-enhanced-review.jpg",
