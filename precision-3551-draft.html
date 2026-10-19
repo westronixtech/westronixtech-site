@@ -1359,7 +1359,7 @@ function showError(message){
 function renderProduct(product){
   const container = document.getElementById('productContainer');
   const photos = product.photos && Array.isArray(product.photos.publicPhotoRefs)
-    ? product.photos.publicPhotoRefs.filter(path => typeof path === 'string' && !path.includes('..') && /^(Front-enhanced-review|FrontScreen-enhanced-review|FrontSide-enhanced-review|KeyBorad-enhanced-review|LefiSide-enhanced-review|Left-enhanced-review|Right-enhanced-review|RightSide-enhanced-review)\\.jpg$/.test(path))
+    ? product.photos.publicPhotoRefs.filter(path => typeof path === 'string' && !path.includes('..') && /^(Front-enhanced-review|FrontScreen-enhanced-review|FrontSide-enhanced-review|KeyBorad-enhanced-review|LefiSide-enhanced-review|Left-enhanced-review|Right-enhanced-review|RightSide-enhanced-review)\.jpg$/.test(path))
     : [];
   const photoMarkup = photos.length
     ? `<div class="draft-photo-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px">
