@@ -687,7 +687,24 @@ footer p{
   </a>
 
   <div class="cart-layout">
-<section id="cartContainer"></section>
+<section id="cartContainer">
+  <!-- Static fallback: keeps the page useful if cart JavaScript fails to start. -->
+  <div class="empty" id="cartLoadingFallback">
+    <div class="empty-icon">🛒</div>
+    <h2>
+      <span class="lang-en">Loading your cart…</span>
+      <span class="lang-fr">Chargement de votre panier…</span>
+    </h2>
+    <p>
+      <span class="lang-en">If this message remains, refresh the page. You can continue browsing the inventory below.</span>
+      <span class="lang-fr">Si ce message reste affiché, actualisez la page. Vous pouvez continuer à consulter l’inventaire ci-dessous.</span>
+    </p>
+    <a href="inventory.html" class="btn blue">
+      <span class="lang-en">Browse Inventory</span>
+      <span class="lang-fr">Voir l’inventaire</span>
+    </a>
+  </div>
+</section>
 
 <aside id="totalContainer" class="total-box" style="display:none;">
 
