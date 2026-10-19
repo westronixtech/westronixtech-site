@@ -1090,6 +1090,25 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<!-- Inventory card purchase-action color override -->
+<style id="inventory-card-action-overrides">
+/* Keep Amazon-style cart buttons yellow despite the shared generic button rule. */
+.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart{
+  background-color:#ffd814;
+  border-color:#fcd200;
+  color:#111;
+}
+.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart:hover{
+  background-color:#f7ca00;
+  border-color:#f2c200;
+  color:#111;
+}
+.card-actions .btn{
+  min-height:44px;
+  align-items:center;
+  justify-content:center;
+}
+</style>
 </head>
 
 <body>
