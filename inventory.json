@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18",
+  "lastUpdated": "2026-10-19",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -7,13 +7,13 @@
       "sku": "DELL-D3551-16-512",
       "legacySku": "WT-D3551-0001",
       "brand": "Dell",
-      "name": "Dell Precision 3551 Mobile Workstation",
+      "name": "Dell Precision 3551 Laptop",
       "category": "Laptop",
       "processor": "Intel Core i7",
       "ram": "16GB",
       "storage": "512GB SSD",
       "condition": "Refurbished",
-      "grade": "Not graded",
+      "grade": "Graded B",
       "price": 160000,
       "currency": "FCFA",
       "quantity": 150,
