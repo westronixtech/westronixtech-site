@@ -1081,6 +1081,29 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media(max-width:650px){.market-logo.westronix-logo-header{gap:8px;min-width:0;}.market-logo.westronix-logo-header img{width:56px!important;height:56px!important;}.market-logo.westronix-logo-header .market-logo-text{display:none;}}
 @media(prefers-reduced-motion:reduce){.market-logo.westronix-logo-header img{animation:none;}}
 
+
+/* FINAL CART ACTION OVERRIDE: keep purchase buttons yellow despite generic button rules */
+body .card-actions .btn.btn-cart,
+body .card-dell-3551 .btn.btn-cart {
+  background-color:#ffd814 !important;
+  background:#ffd814 !important;
+  border-color:#fcd200 !important;
+  color:#111111 !important;
+  font-weight:900;
+}
+body .card-actions .btn.btn-cart:hover,
+body .card-dell-3551 .btn.btn-cart:hover {
+  background-color:#f7ca00 !important;
+  background:#f7ca00 !important;
+  border-color:#f2c200 !important;
+  color:#111111 !important;
+}
+body .card-actions .btn.btn-cart svg,
+body .card-dell-3551 .btn.btn-cart svg {
+  color:#111111 !important;
+  stroke:currentColor;
+}
+
 </style>
 
 <style id="westronix-shared-logo-style">
