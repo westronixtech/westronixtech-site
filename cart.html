@@ -93,7 +93,7 @@ footer a{color:#fff}
       <a href="sell-equipment.html" data-i18n="sell">Vendre du matériel</a>
       <a href="africa-education.html" data-i18n="education">Éducation</a>
       <a href="support.html" data-i18n="support">Assistance</a>
-      <a href="cart.html" aria-current="page"><span aria-hidden="true">🛒</span> <span data-i18n="cart">Panier</span></a>
+      <a href="cart.html" aria-current="page"><span data-i18n="cart">Panier</span></a>
     </nav>
     <div class="header-tools">
       <a href="signin.html" data-i18n="account">Compte</a>
@@ -107,7 +107,7 @@ footer a{color:#fff}
 </header>
 <main>
   <div class="page-heading">
-    <h1><span aria-hidden="true">🛒</span> <span data-i18n="heading">Votre panier</span></h1>
+    <h1><span data-i18n="heading">Votre panier</span></h1>
     <span id="cartCountBadge" class="count" aria-label="Cart item count">0</span>
   </div>
   <div class="actions-top"><a class="btn btn-blue" href="inventory.html">← <span data-i18n="continue">Continuer les achats</span></a></div>
@@ -122,8 +122,8 @@ footer a{color:#fff}
       <div class="summary-row"><span data-i18n="tax">Taxes de vente estimées</span><strong data-i18n="confirm">À confirmer</strong></div>
       <div class="summary-total"><span data-i18n="total">Total</span><span id="cartTotal">0 FCFA</span></div>
       <p class="summary-disclaimer" data-i18n="summaryDisclaimer">Le total affiché correspond au sous-total des articles. Le retrait et les taxes seront confirmés avant paiement.</p>
-      <button id="checkoutButton" class="btn btn-yellow" type="button">🛒 <span data-i18n="checkout">Passer à la commande</span></button>
-      <button id="whatsappButton" class="btn btn-green" type="button">💬 <span data-i18n="whatsapp">Commander par WhatsApp</span></button>
+      <button id="checkoutButton" class="btn btn-yellow" type="button"><span data-i18n="checkout">Passer à la commande</span></button>
+      <button id="whatsappButton" class="btn btn-green" type="button"><span data-i18n="whatsapp">Commander par WhatsApp</span></button>
       <button id="clearCartButton" class="btn" type="button" style="background:#fff;color:#b91c1c;border:1px solid #dc3545">🗑 <span data-i18n="clear">Vider le panier</span></button>
       <div class="checkout-note"><strong data-i18n="beforePayment">Avant le paiement :</strong> <span data-i18n="note">WESTRONIX confirmera la disponibilité, la livraison ou le retrait, les frais applicables, le mode de paiement et le montant final. Aucun paiement n'est effectué sur cette page.</span></div>
     </aside>
@@ -133,7 +133,7 @@ footer a{color:#fff}
   <strong>WESTRONIX TECH</strong>
   <p>Recover • Refurbish • Resell • Reuse • Impact</p>
   <p>USA → TOGO</p>
-  <a class="btn btn-green" href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">💬 WhatsApp: +228 92 95 33 33</a>
+  <a class="btn btn-green" href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">WhatsApp: +228 92 95 33 33</a>
   <div class="footer-links"><a href="privacy.html">Privacy / Confidentialité</a><a href="terms.html">Terms / Conditions</a><a href="support.html">Support</a></div>
 </div></footer>
 <script>
@@ -183,7 +183,7 @@ footer a{color:#fff}
   function node(tag,className,content){const el=document.createElement(tag);if(className)el.className=className;if(content!==undefined)el.textContent=content;return el}
   function makeButton(label,className,onClick,aria){const button=node('button','btn '+className,label);button.type='button';button.addEventListener('click',onClick);if(aria)button.setAttribute('aria-label',aria);return button}
   function renderEmpty(container){
-    const box=node('div','empty');box.append(node('div','empty-icon','🛒'),node('h2','',t('emptyTitle')),node('p','',t('emptyText')));
+    const box=node('div','empty');box.append(node('h2','',t('emptyTitle')),node('p','',t('emptyText')));
     const actions=node('div','empty-actions');
     const browse=node('a','btn btn-blue',t('browse'));browse.href='inventory.html';
     const auctions=node('a','btn btn-gray',t('auctions'));auctions.href='auctions.html';
