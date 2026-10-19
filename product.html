@@ -1232,6 +1232,7 @@ const sku =
 
 
 let inventoryData = [];
+let inventoryLocation = '';
 
 let currentProduct = null;
 
@@ -1280,6 +1281,11 @@ async function loadProduct(){
       Array.isArray(data.products)
         ? data.products
         : [];
+
+    inventoryLocation =
+      typeof data.location === 'string' && data.location.trim()
+        ? data.location.trim()
+        : '';
 
 
     currentProduct =
@@ -1467,6 +1473,7 @@ function renderProduct(product){
     Number(product.quantity) >= 0;
   const quantity = hasQuantity ? Number(product.quantity) : null;
   const location =
+    inventoryLocation ||
     product.location ||
     (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmé');
   const canPurchase =
