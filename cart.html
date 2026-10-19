@@ -874,6 +874,11 @@ function loadCartFromStorage(){
       cart = [];
     }
 
+    // Ignore malformed entries so one bad value cannot break cart rendering.
+    cart = cart.filter(item =>
+      item && typeof item === "object" && !Array.isArray(item)
+    );
+
   }catch(error){
 
     console.error("Unable to load cart:",error);
@@ -964,6 +969,11 @@ function getItemImage(item){
 
   if(item.image){
     return item.image;
+  }
+
+  // The homepage currently stores its product image as "photo".
+  if(item.photo){
+    return item.photo;
   }
 
   if(
@@ -1101,7 +1111,7 @@ function loadCart(){
             class="product-image"
             src="${escapeHTML(image)}"
             alt="${escapeHTML(name)}"
-            onerror="this.src="westronix-logo.jpg""
+            onerror="this.onerror=null;this.src='westronix-logo.jpg';"
           >
 
           <div class="product-info">
