@@ -3603,6 +3603,11 @@ function renderFeatured(){
   const grade =
     featured.grade || "—";
 
+  const featuredAvailable =
+    String(featured.status || "").toLowerCase() === "available" &&
+    Number(featured.quantity) > 0 &&
+    Number(featured.price) > 0;
+
   target.innerHTML = `
 
     <div class="feature-product">
@@ -3674,6 +3679,7 @@ function renderFeatured(){
             type="button"
             class="btn btn-cart"
             onclick="addToCart('${escapeHTML(featured.sku)}')"
+            ${featuredAvailable ? "" : "disabled title=\"" + (currentLanguage === "fr" ? "Disponibilité, quantité et prix à confirmer" : "Availability, quantity and price must be confirmed") + "\""}
           >
             <svg class="product-card-cart-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="9" cy="21" r="1"></circle>
