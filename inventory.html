@@ -1092,21 +1092,68 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 </style>
 <!-- Inventory card purchase-action color override -->
 <style id="inventory-card-action-overrides">
-/* Keep Amazon-style cart buttons yellow despite the shared generic button rule. */
-.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart{
-  background-color:#ffd814;
+/* Agreed product-card design standard: clear photo/details separation and accessible actions. */
+.card{
+  display:flex;
+  flex-direction:column;
+  border:1px solid #e4e8ef;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(13,23,38,.07);
+  background:#fff;
+}
+.product-image{
+  border-bottom:1px solid #e4e8ef;
+  background:#fff;
+}
+.card-content{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding:18px;
+}
+.card-actions{
+  margin-top:auto;
+  padding-top:14px;
+  gap:10px;
+}
+.card-actions .btn{
+  display:inline-flex;
+  min-height:46px;
+  align-items:center;
+  justify-content:center;
+  padding:12px 14px;
+  border-radius:9px;
+  text-align:center;
+  line-height:1.2;
+  font-weight:800;
+}
+.card-actions .btn.btn-primary{
+  background:#1677ff;
+  border-color:#1677ff;
+  color:#fff;
+}
+.card-actions .btn.btn-cart,
+.card-dell-3551 .btn-cart{
+  background:#ffd814;
   border-color:#fcd200;
   color:#111;
+  font-size:14px;
+  font-weight:900;
 }
-.btn:not(.secondary):not(.whatsapp):not(.btn-whatsapp):not(.quote):not(.btn-green):not(.green).btn-cart:hover{
-  background-color:#f7ca00;
+.card-actions .btn.btn-cart:hover,
+.card-dell-3551 .btn-cart:hover{
+  background:#f7ca00;
   border-color:#f2c200;
   color:#111;
 }
-.card-actions .btn{
-  min-height:44px;
-  align-items:center;
-  justify-content:center;
+.card-actions .btn:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+}
+@media(max-width:480px){
+  .card-content{padding:15px}
+  .card-actions{grid-template-columns:1fr}
+  .card-actions .btn{width:100%;min-height:48px;font-size:14px}
 }
 </style>
 </head>
