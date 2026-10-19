@@ -1597,6 +1597,32 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
  .category-tile:hover{transform:none}
 }
 
+
+/* FINAL CART ACTION OVERRIDE: keep purchase buttons yellow despite generic button rules */
+.feature-product-actions .btn.btn-cart,
+.card-actions .btn.primary,
+.card-actions .btn.btn-cart {
+  background-color:#ffd814 !important;
+  background:#ffd814 !important;
+  border-color:#fcd200 !important;
+  color:#111111 !important;
+  font-weight:900;
+}
+.feature-product-actions .btn.btn-cart:hover,
+.card-actions .btn.primary:hover,
+.card-actions .btn.btn-cart:hover {
+  background-color:#f7ca00 !important;
+  background:#f7ca00 !important;
+  border-color:#f2c200 !important;
+  color:#111111 !important;
+}
+.feature-product-actions .btn.btn-cart svg,
+.card-actions .btn.primary svg,
+.card-actions .btn.btn-cart svg {
+  color:#111111 !important;
+  stroke:currentColor;
+}
+
 </style>
 <style id="westronix-shared-logo-style">
 /* WESTRONIX shared header logo: match homepage size and hover motion */
