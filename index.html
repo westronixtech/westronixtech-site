@@ -1604,6 +1604,104 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .westronix-shared-logo{display:block!important;width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transition:transform .25s ease,filter .25s ease;animation:none!important;}
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
+
+/* Agreed product-card design standard: homepage featured and inventory cards */
+.feature-product{
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:var(--shadow);
+}
+.feature-product-image{
+  border-bottom:1px solid var(--line);
+}
+.feature-product-body{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.feature-product-body .product-name,
+.feature-product-body .product-price{
+  margin-top:0;
+  margin-bottom:0;
+}
+.feature-product-actions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:8px;
+}
+.feature-product-actions .btn,
+.card-actions .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 14px;
+  border-radius:9px;
+  text-align:center;
+  line-height:1.2;
+  font-weight:800;
+}
+.feature-product-actions .btn-view,
+.card-actions .btn.dark{
+  background:#1677ff;
+  border:1px solid #1677ff;
+  color:#fff;
+}
+.feature-product-actions .btn-view:hover,
+.card-actions .btn.dark:hover{
+  background:#0b5fd1;
+  border-color:#0b5fd1;
+}
+.feature-product-actions .btn-cart,
+.card-actions .btn.primary{
+  background:#ffd814;
+  border:1px solid #fcd200;
+  color:#111;
+  font-weight:900;
+}
+.feature-product-actions .btn-cart:hover,
+.card-actions .btn.primary:hover{
+  background:#f7ca00;
+  border-color:#f2c200;
+  color:#111;
+}
+.product-card-cart-icon{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  margin-right:7px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.card{
+  display:flex;
+  flex-direction:column;
+}
+.card-body{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+}
+.card-actions{
+  margin-top:auto;
+  padding-top:12px;
+}
+@media(max-width:480px){
+  .feature-product-actions{
+    grid-template-columns:1fr;
+  }
+  .feature-product-actions .btn,
+  .card-actions .btn{
+    width:100%;
+    min-height:48px;
+    font-size:14px;
+  }
+}
+
 </style>
 </head>
 
@@ -3565,19 +3663,26 @@ function renderFeatured(){
           ${money(featured.price)}
         </div>
 
-        <a
-          href="product.html?sku=${encodeURIComponent(featured.sku)}"
-          class="btn primary"
-          style="width:100%"
-        >
-
-          ${
-            currentLanguage === "fr"
-              ? "Voir le produit"
-              : "View Product"
-          }
-
-        </a>
+        <div class="feature-product-actions">
+          <a
+            href="product.html?sku=${encodeURIComponent(featured.sku)}"
+            class="btn btn-view"
+          >
+            ${currentLanguage === "fr" ? "Voir" : "View"}
+          </a>
+          <button
+            type="button"
+            class="btn btn-cart"
+            onclick="addToCart('${escapeHTML(featured.sku)}')"
+          >
+            <svg class="product-card-cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+            </svg>
+            ${currentLanguage === "fr" ? "Ajouter au panier" : "Add to Cart"}
+          </button>
+        </div>
 
       </div>
 
