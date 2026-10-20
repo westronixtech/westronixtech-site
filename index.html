@@ -1239,6 +1239,79 @@ html[lang="fr"] .lang-fr{
   color:#fff;
 }
 
+.footer-quick-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-quick-links li{
+  margin:0 0 11px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.footer-quick-links a{
+  color:#b9c8d9;
+  transition:color .18s ease;
+}
+
+.footer-quick-links a:hover{
+  color:#fff;
+}
+
+.footer-socials{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+}
+
+.footer-social-link,
+.footer-social-pending{
+  width:40px;
+  height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #ffffff2b;
+  border-radius:9px;
+  background:#ffffff0b;
+  color:#fff;
+}
+
+.footer-social-link:hover{
+  background:var(--blue);
+  border-color:var(--blue);
+  color:#fff;
+}
+
+.footer-social-pending{
+  color:#b9c8d9;
+  cursor:default;
+}
+
+.footer-social-link svg,
+.footer-social-pending svg{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+  display:block;
+}
+
+.footer-social-link:focus-visible{
+  outline:2px solid #69adff;
+  outline-offset:3px;
+}
+
+.footer-social-note{
+  margin-top:12px;
+  color:#91a3b9;
+  font-size:11px;
+  line-height:1.5;
+}
+
 .footer-bottom{
   margin-top:30px;
   padding-top:20px;
@@ -3023,150 +3096,83 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     <div class="footer-grid">
 
       <div>
-
-        <h3>
-          WESTRONIX TECH
-        </h3>
-
+        <h3>WESTRONIX TECH</h3>
         <p>
-
           <span class="lang-en">
             Technology from USA → Togo and Africa.
             Recover • Refurbish • Resell • Reuse • Impact.
           </span>
-
           <span class="lang-fr">
             Technologie des USA → Togo et Afrique.
             Recover • Refurbish • Resell • Reuse • Impact.
           </span>
-
         </p>
-
         <p>
-          westronix.tech@gmail.com<br>
-          +228 92 95 33 33
-        </p>
-
-      </div>
-
-      <div>
-
-        <h3>
-          <span class="lang-en">
-            Marketplace
-          </span>
-
-          <span class="lang-fr">
-            Marketplace
-          </span>
-        </h3>
-
-        <p>
-          <a href="inventory.html">
-            <span class="lang-en">Inventory</span>
-            <span class="lang-fr">Inventaire</span>
-          </a>
-        </p>
-<p>
-          <a href="cart.html">
-            <span class="lang-en">Cart</span>
-            <span class="lang-fr">Panier</span>
-          </a>
-        </p>
-
-        <p>
-          <a href="sell-equipment.html">
-            <span class="lang-en">Sell Equipment</span>
-            <span class="lang-fr">Vendre du matériel</span>
-          </a>
-        </p>
-
-      </div>
-
-      <div>
-
-        <h3>
-
-          <span class="lang-en">
-            Mission
-          </span>
-
-          <span class="lang-fr">
-            Mission
-          </span>
-
-        </h3>
-
-        <p>
-          <a href="africa-education.html">
-            <span class="lang-en">
-              Africa Education
-            </span>
-
-            <span class="lang-fr">
-              Éducation Afrique
-            </span>
-          </a>
-        </p>
-
-        <p>
-          <a href="recycle-donate.html">
-            <span class="lang-en">
-              Donation
-            </span>
-
-            <span class="lang-fr">
-              Don
-            </span>
-          </a>
-        </p>
-
-      </div>
-
-      <div>
-
-        <h3>
-
-          <span class="lang-en">
-            Contact
-          </span>
-
-          <span class="lang-fr">
-            Contact
-          </span>
-
-        </h3>
-
-        <p>
-
-          <a
-            href="https://wa.me/22892953333?text=Hello%20WESTRONIX%20TECH%2C%20I%20would%20like%20more%20information."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            📱 WhatsApp
-          </a>
-
-        </p>
-
-        <p>
-          westronix.tech@gmail.com
-        </p>
-
-        <p>
+          <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a><br>
+          <a href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">+228 92 95 33 33 · WhatsApp</a><br>
           Lomé, Togo
         </p>
+      </div>
 
+      <div>
+        <h3>
+          <span class="lang-en">Quick Links</span>
+          <span class="lang-fr">Liens rapides</span>
+        </h3>
+        <ul class="footer-quick-links">
+          <li><a href="support.html"><span class="lang-en">Support &amp; Services</span><span class="lang-fr">Assistance et services</span></a></li>
+          <li><a href="support.html"><span class="lang-en">Request Service</span><span class="lang-fr">Demander un service</span></a></li>
+          <li><a href="index.html"><span class="lang-en">About WESTRONIX TECH</span><span class="lang-fr">À propos de WESTRONIX TECH</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>
+          <span class="lang-en">IT &amp; Sustainability</span>
+          <span class="lang-fr">Informatique et durabilité</span>
+        </h3>
+        <ul class="footer-quick-links">
+          <li><a href="recycle-donate.html"><span class="lang-en">Electronics Recycling</span><span class="lang-fr">Recyclage électronique</span></a></li>
+          <li><a href="sell-equipment.html"><span class="lang-en">IT Asset Recovery</span><span class="lang-fr">Récupération d’équipements informatiques</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>
+          <span class="lang-en">Follow WESTRONIX</span>
+          <span class="lang-fr">Suivez WESTRONIX</span>
+        </h3>
+        <div class="footer-socials" aria-label="WESTRONIX social media">
+          <a class="footer-social-link" href="https://www.linkedin.com/company/westronix-tech/" target="_blank" rel="noopener noreferrer" aria-label="WESTRONIX TECH on LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3.4v11.5H3.5V9Zm5.5 0h3.2v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.4v6.4h-3.4v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H9V9Z"/></svg>
+          </a>
+          <span class="footer-social-pending" aria-label="Facebook profile link not yet configured" title="Facebook — profile link coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.9H7V13h2.8v8h3.7Z"/></svg>
+          </span>
+          <span class="footer-social-pending" aria-label="Instagram profile link not yet configured" title="Instagram — profile link coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.7" r="1.2"/></svg>
+          </span>
+          <span class="footer-social-pending" aria-label="X profile link not yet configured" title="X — profile link coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H22l-6.8 7.8L23.2 21h-6.3L12 14.7 6.5 21H3.3l7.3-8.4L2.8 3h6.5l4.5 5.9L18.9 3Zm-1.1 16h1.7L8.2 4.9H6.4L17.8 19Z"/></svg>
+          </span>
+          <span class="footer-social-pending" aria-label="YouTube profile link not yet configured" title="YouTube — profile link coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+          </span>
+        </div>
+        <p class="footer-social-note">
+          <span class="lang-en">More social profile links will be added when confirmed.</span>
+          <span class="lang-fr">Les autres liens sociaux seront ajoutés après confirmation.</span>
+        </p>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-<p><a href="signin.html"><span class="lang-en">Account</span><span class="lang-fr">Compte</span></a> · <a href="my-orders.html"><span class="lang-en">My Orders</span><span class="lang-fr">Mes commandes</span></a> · <a href="order-status.html"><span class="lang-en">Order Status</span><span class="lang-fr">Suivi de commande</span></a> · <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Assistance</span></a></p>
-<p><a href="privacy.html"><span class="lang-en">Privacy Notice</span><span class="lang-fr">Confidentialité</span></a> · <a href="terms.html"><span class="lang-en">Sales & Service Terms</span><span class="lang-fr">Conditions de vente et service</span></a></p>
-<span class="lang-en">© 2026 WESTRONIX TECH. All rights reserved.</span>
-<span class="lang-fr">© 2026 WESTRONIX TECH. Tous droits réservés.</span>
-</div>
+      <p><a href="signin.html"><span class="lang-en">Account</span><span class="lang-fr">Compte</span></a> · <a href="my-orders.html"><span class="lang-en">My Orders</span><span class="lang-fr">Mes commandes</span></a> · <a href="order-status.html"><span class="lang-en">Order Status</span><span class="lang-fr">Suivi de commande</span></a> · <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Assistance</span></a></p>
+      <p><a href="privacy.html"><span class="lang-en">Privacy Notice</span><span class="lang-fr">Confidentialité</span></a> · <a href="terms.html"><span class="lang-en">Sales &amp; Service Terms</span><span class="lang-fr">Conditions de vente et service</span></a></p>
+      <span class="lang-en">© 2026 WESTRONIX TECH. All rights reserved.</span>
+      <span class="lang-fr">© 2026 WESTRONIX TECH. Tous droits réservés.</span>
+    </div>
 
   </div>
 
