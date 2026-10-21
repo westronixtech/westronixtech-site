@@ -43,13 +43,17 @@ if (signUpForm) {
   signUpForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const password = $("password").value;
+    const displayName = $("display-name")?.value.trim().slice(0, 60) || "";
     if (password.length < 8) return showMessage("Use a password with at least 8 characters.", "error");
     if (password !== $("confirm-password").value) return showMessage("The passwords do not match.", "error");
     setBusy(signUpForm, true);
     const { data, error } = await supabase.auth.signUp({
       email: $("email").value.trim(),
       password,
-      options: { emailRedirectTo: new URL("signin.html", location.href).href }
+      options: {
+        data: { display_name: displayName },
+        emailRedirectTo: new URL("signin.html", location.href).href
+      }
     });
     setBusy(signUpForm, false);
     if (error) return showMessage(friendlyError(error), "error");
@@ -104,7 +108,11 @@ if ($("account-email")) {
   if (error || !data.user) {
     location.replace("signin.html");
   } else {
-    $("account-email").textContent = data.user.email || "Signed-in customer";
+    const email = data.user.email || "Signed-in customer";
+    const displayName = String(data.user.user_metadata?.display_name || "").trim();
+    const accountName = $("account-name");
+    if (accountName) accountName.textContent = displayName || email;
+    $("account-email").textContent = email;
   }
   $("signout-button")?.addEventListener("click", async () => {
     const { error: signOutError } = await supabase.auth.signOut();
