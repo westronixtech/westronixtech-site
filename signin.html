@@ -3,37 +3,124 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Customer sign-in | WESTRONIX TECH</title>
-<meta name="description" content="Customer sign-in for WESTRONIX TECH. Secure account access is being prepared.">
+<title>Account & Registration | WESTRONIX TECH</title>
+<meta name="description" content="Use WESTRONIX TECH without an account. Shop, request products, sell equipment, recycle or donate technology, and learn about our education mission.">
 <meta name="theme-color" content="#071526">
 <style>
-:root{--navy:#071526;--blue:#1677ff;--green:#10b981;--bg:#f5f7fb;--text:#172033;--muted:#607086}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}a{color:var(--blue)}header{background:var(--navy);color:#fff;padding:14px 20px}.head,main,footer .inner{max-width:1100px;margin:auto}.head{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{font-size:22px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:.2px}.brand span{color:#70adff}.nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.nav a{color:#eaf2ff;text-decoration:none;font-size:14px;font-weight:700}.nav a:hover{color:#fff;text-decoration:underline}.lang{background:#fff;color:#071526;border:0;border-radius:7px;padding:8px}.wrap{max-width:900px;margin:34px auto;padding:0 18px}.panel{background:#fff;border:1px solid #e1e7f0;border-radius:16px;padding:clamp(22px,4vw,40px);box-shadow:0 8px 26px rgba(7,21,38,.05)}h1{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 14px;color:var(--navy)}h2{margin-top:28px;color:var(--navy)}p,li{line-height:1.7}.muted{color:var(--muted)}.notice{background:#eef5ff;border-left:4px solid var(--blue);padding:14px 16px;border-radius:8px;margin:18px 0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-block;padding:11px 16px;border-radius:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:800}.btn.green{background:var(--green)}.btn.outline{background:#fff;border:1px solid #cdd7e5;color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:18px}.card{background:#fff;border:1px solid #e1e7f0;border-radius:12px;padding:18px}.card h2,.card h3{margin-top:0}.pill{display:inline-block;background:#fff3d6;color:#704900;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}footer{background:var(--navy);color:#c7d3e2;margin-top:42px;padding:25px 20px}footer a{color:#fff}footer p{margin:6px 0}.lang-en,.lang-fr{display:none}body.lang-en .lang-en{display:inline}body.lang-fr .lang-fr{display:inline}body.lang-en div.lang-en,body.lang-fr div.lang-fr{display:block}body.lang-en li.lang-en,body.lang-fr li.lang-fr{display:list-item}body.lang-en h1.lang-en,body.lang-fr h1.lang-fr,body.lang-en h2.lang-en,body.lang-fr h2.lang-fr{display:block}@media(max-width:700px){.head{align-items:flex-start}.nav{gap:10px}.nav a{font-size:13px}.wrap{margin:20px auto}}
-
-/* WESTRONIX universal animated header logo — matched to index.html */
-.market-logo.westronix-logo-header{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;color:#fff;text-decoration:none;perspective:600px;}
-.market-logo.westronix-logo-header img{width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain;background:transparent;border-radius:0;padding:0;display:block;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transform-origin:center;animation:logoFloat 3.6s ease-in-out infinite;transition:transform .3s ease,filter .3s ease;}
-.market-logo.westronix-logo-header:hover img{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
-@keyframes logoFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-3px) scale(1.025);}}
-.market-logo.westronix-logo-header .market-logo-text{line-height:1.05;}
-.market-logo.westronix-logo-header .market-logo-name{margin:0;color:#fff;font-size:20px;font-weight:900;letter-spacing:.2px;}
-.market-logo.westronix-logo-header .market-logo-tagline{margin:5px 0 0;color:#aebdce;font-size:12px;line-height:1.35;font-weight:700;white-space:normal;}
-@media(max-width:650px){.market-logo.westronix-logo-header{gap:8px;min-width:0;}.market-logo.westronix-logo-header img{width:56px!important;height:56px!important;}.market-logo.westronix-logo-header .market-logo-text{display:none;}}
-@media(prefers-reduced-motion:reduce){.market-logo.westronix-logo-header img{animation:none;}}
-
-</style>
-<style id="westronix-shared-logo-style">
-/* WESTRONIX shared header logo: match homepage size and hover motion */
-.westronix-shared-brand{display:flex!important;align-items:center!important;gap:12px!important;flex-shrink:0!important;text-decoration:none!important;}
-.westronix-shared-logo{display:block!important;width:82px!important;height:82px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));transition:transform .25s ease,filter .25s ease;}
-.westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
-@media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
+:root{--navy:#071526;--blue:#1677ff;--green:#10b981;--bg:#f5f7fb;--text:#172033;--muted:#607086;--line:#e1e7f0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--blue)}
+header{background:var(--navy);color:#fff;padding:12px 20px}
+.head,main,.footer-inner{max-width:1120px;margin:0 auto}
+.head{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:900}
+.brand img{width:66px;height:66px;object-fit:contain}
+.brand-name{font-size:20px;line-height:1.15}
+.brand-tagline{color:#b8c8da;font-size:12px;margin-top:4px}
+nav{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+nav a{color:#edf4ff;text-decoration:none;font-size:13px;font-weight:700}
+nav a:hover{text-decoration:underline}
+.lang{padding:8px;border-radius:7px;border:0;background:#fff;color:var(--navy)}
+main{padding:32px 18px 10px}
+.hero{background:var(--navy);color:#fff;border-radius:18px;padding:clamp(25px,5vw,48px);position:relative;overflow:hidden}
+.eyebrow{display:inline-block;color:#b9d5ff;background:#163454;border:1px solid #315477;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;letter-spacing:.04em}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.12;margin:16px 0 12px;max-width:760px}
+.hero p{color:#d3deeb;max-width:760px;margin:0;font-size:17px}
+.hero strong{color:#fff}
+.section-title{color:var(--navy);font-size:25px;margin:30px 0 8px}
+.section-intro{color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 5px 18px rgba(7,21,38,.035)}
+.card-icon{width:44px;height:44px;display:grid;place-items:center;background:#eaf2ff;border-radius:12px;color:#145bc0;font-size:22px;margin-bottom:12px}
+.card h2{font-size:19px;color:var(--navy);margin:0 0 7px}
+.card p{font-size:14px;color:var(--muted);margin:0 0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 15px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;background:var(--blue);color:#fff;border:1px solid transparent}
+.btn:hover{filter:brightness(.95)}
+.btn.green{background:var(--green);color:#052b1d}
+.btn.yellow{background:#ffd43b;color:#171717}
+.btn.outline{background:#fff;border-color:#cbd6e4;color:var(--navy)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.account-note{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.note{padding:22px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.note h2{font-size:19px;margin:0 0 8px;color:var(--navy)}
+.note p{margin:0;color:var(--muted);font-size:14px}
+.notice{background:#fff7e3;border:1px solid #f0d99a;border-left:4px solid #e4a900;border-radius:10px;padding:15px 17px;margin-top:20px}
+.notice strong{color:#624600}
+footer{background:var(--navy);color:#c7d3e2;margin-top:38px;padding:25px 20px}
+footer p{margin:5px 0;font-size:14px}
+footer a{color:#fff}
+.lang-fr{display:none}
+body.fr .lang-en{display:none!important}
+body.fr .lang-fr{display:initial}
+body.fr div.lang-fr,body.fr section.lang-fr{display:block}
+body.fr h1.lang-fr,body.fr h2.lang-fr,body.fr p.lang-fr{display:block}
+body.fr a.lang-fr{display:inline-flex}
+body.fr span.lang-fr{display:inline}
+body.fr .lang-en{display:none!important}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.head{align-items:flex-start}}
+@media(max-width:600px){.grid,.account-note{grid-template-columns:1fr}header{padding:10px 14px}.brand img{width:54px;height:54px}.brand-tagline{display:none}nav{gap:9px}nav a{font-size:12px}main{padding:20px 13px 8px}.hero{border-radius:14px}}
 </style>
 </head>
-<body class="lang-en">
-<header><div class="head"><a href="index.html" class="market-logo westronix-logo-header westronix-shared-brand" aria-label="WESTRONIX TECH Home"><img class="westronix-shared-logo" src="westronix-logo.jpg" alt="WESTRONIX TECH logo"  ><div class="market-logo-text"><div class="market-logo-name">WESTRONIX TECH</div><div class="market-logo-tagline">Recover • Refurbish • Resell • Reuse • Impact.</div></div></a><nav class="nav" aria-label="Main navigation"><a href="inventory.html">Shop Inventory</a><a href="request-product.html">Request a Product</a><a href="bulk-orders.html">Bulk Orders</a><a href="sell-equipment.html">Sell Equipment</a><a href="africa-education.html">Education</a><a href="support.html">Support</a><a href="cart.html">Cart</a><a href="signin.html">Account</a><select class="lang" aria-label="Language" id="lang"><option value="en">EN</option><option value="fr">FR</option></select></nav></div></header>
-<main class="wrap"><section class="panel"><span class="pill">ACCOUNT ACCESS NOT YET ACTIVE</span><h1><span class="lang-en">Sign in</span><span class="lang-fr">Connexion</span></h1><p class="lang-en">Customer accounts are part of the planned WESTRONIX journey, but secure authentication is not connected yet.</p><p class="lang-fr">Les comptes clients font partie du parcours prévu de WESTRONIX, mais l’authentification sécurisée n’est pas encore connectée.</p><div class="notice"><strong class="lang-en">Please do not enter or send a password on this page.</strong><strong class="lang-fr">Veuillez ne pas saisir ni envoyer de mot de passe sur cette page.</strong><p class="lang-en">No login details are collected here. You can shop and submit requests without creating an account.</p><p class="lang-fr">Aucun identifiant n’est collecté ici. Vous pouvez acheter et envoyer des demandes sans créer de compte.</p></div><div class="actions"><a class="btn outline" href="forgot-password.html">Forgot password / Mot de passe oublié</a><a class="btn outline" href="signup.html">Sign up / Inscription</a><a class="btn" href="inventory.html">Shop inventory<a class="btn outline" href="request-product.html">Request a product</a><a class="btn outline" href="signup.html">Registration information</a></div></section></main>
-<footer><div class="inner"><strong>WESTRONIX TECH</strong><p>Recover • Refurbish • Resell • Reuse • Impact.</p><p>Technology USA → 🌍 Africa</p><p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p><p>Contact: <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a> · <a href="https://wa.me/22892953333" rel="noopener noreferrer">WhatsApp +228 92 95 33 33</a></p></div></footer>
+<body>
+<header>
+  <div class="head">
+    <a class="brand" href="index.html" aria-label="WESTRONIX TECH home">
+      <img src="images/westronix-logo.jpg" alt="WESTRONIX TECH logo" onerror="this.onerror=null;this.src='westronix-logo.jpg'">
+      <span><span class="brand-name">WESTRONIX TECH</span><span class="brand-tagline" style="display:block">Recover • Refurbish • Resell • Reuse • Impact.</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="inventory.html">Shop</a><a href="request-product.html">Request Product</a><a href="sell-equipment.html">Sell Equipment</a><a href="recycle-donate.html">Recycle & Donate</a><a href="cart.html">Cart</a>
+      <select class="lang" id="language" aria-label="Language"><option value="en">EN</option><option value="fr">FR</option></select>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <span class="eyebrow lang-en">WELCOME TO WESTRONIX</span><span class="eyebrow lang-fr">BIENVENUE CHEZ WESTRONIX</span>
+    <h1 class="lang-en">Your technology journey. No account required.</h1>
+    <h1 class="lang-fr">Votre parcours technologique. Aucun compte obligatoire.</h1>
+    <p class="lang-en">Shop technology, request a product, sell or recycle equipment, or support education initiatives. <strong>You can get started without registering.</strong></p>
+    <p class="lang-fr">Achetez du matériel, demandez un produit, vendez ou recyclez des équipements, ou soutenez l’éducation. <strong>Vous pouvez commencer sans vous inscrire.</strong></p>
+    <div class="actions">
+      <a class="btn yellow lang-en" href="inventory.html">Shop Inventory</a><a class="btn yellow lang-fr" href="inventory.html">Voir les produits</a>
+      <a class="btn green lang-en" href="cart.html">Continue to Cart</a><a class="btn green lang-fr" href="cart.html">Accéder au panier</a>
+    </div>
+  </section>
+
+  <h2 class="section-title lang-en">What would you like to do?</h2><h2 class="section-title lang-fr">Que souhaitez-vous faire ?</h2>
+  <p class="section-intro lang-en">Choose a service and continue as a guest. Registration is not required.</p><p class="section-intro lang-fr">Choisissez un service et continuez en tant qu’invité. L’inscription n’est pas obligatoire.</p>
+  <section class="grid" aria-label="WESTRONIX services">
+    <article class="card"><div class="card-icon" aria-hidden="true">▣</div><h2 class="lang-en">Shop technology</h2><h2 class="lang-fr">Acheter du matériel</h2><p class="lang-en">Explore available laptops, computers, phones, and electronics.</p><p class="lang-fr">Découvrez les ordinateurs portables, ordinateurs, téléphones et appareils disponibles.</p><a class="btn lang-en" href="inventory.html">Browse inventory</a><a class="btn lang-fr" href="inventory.html">Voir le catalogue</a></article>
+    <article class="card"><div class="card-icon" aria-hidden="true">⌕</div><h2 class="lang-en">Request a product</h2><h2 class="lang-fr">Demander un produit</h2><p class="lang-en">Tell us what you need, your budget, and your preferred quantity.</p><p class="lang-fr">Indiquez le produit recherché, votre budget et la quantité souhaitée.</p><a class="btn outline lang-en" href="request-product.html">Make a request</a><a class="btn outline lang-fr" href="request-product.html">Faire une demande</a></article>
+    <article class="card"><div class="card-icon" aria-hidden="true">↗</div><h2 class="lang-en">Sell equipment</h2><h2 class="lang-fr">Vendre du matériel</h2><p class="lang-en">Offer used business computers, laptops, phones, and IT equipment.</p><p class="lang-fr">Proposez des ordinateurs, téléphones et équipements informatiques d’occasion.</p><a class="btn outline lang-en" href="sell-equipment.html">Submit equipment</a><a class="btn outline lang-fr" href="sell-equipment.html">Proposer du matériel</a></article>
+    <article class="card"><div class="card-icon" aria-hidden="true">♡</div><h2 class="lang-en">Recycle or donate</h2><h2 class="lang-fr">Recycler ou donner</h2><p class="lang-en">Help extend the life of technology and support responsible reuse.</p><p class="lang-fr">Prolongez la durée de vie des équipements et favorisez leur réutilisation responsable.</p><a class="btn green lang-en" href="recycle-donate.html">Recycle & Donate</a><a class="btn green lang-fr" href="recycle-donate.html">Recycler et donner</a></article>
+    <article class="card"><div class="card-icon" aria-hidden="true">▤</div><h2 class="lang-en">Bulk orders</h2><h2 class="lang-fr">Commandes en gros</h2><p class="lang-en">For businesses, resellers, schools, and organizations.</p><p class="lang-fr">Pour les entreprises, revendeurs, écoles et organisations.</p><a class="btn outline lang-en" href="bulk-orders.html">Explore bulk orders</a><a class="btn outline lang-fr" href="bulk-orders.html">Commandes en gros</a></article>
+    <article class="card"><div class="card-icon" aria-hidden="true">♡</div><h2 class="lang-en">Support education</h2><h2 class="lang-fr">Soutenir l’éducation</h2><p class="lang-en">Learn about our efforts to improve access to technology and digital learning.</p><p class="lang-fr">Découvrez nos initiatives pour faciliter l’accès à la technologie et à l’apprentissage numérique.</p><a class="btn outline lang-en" href="africa-education.html">Explore the mission</a><a class="btn outline lang-fr" href="africa-education.html">Découvrir la mission</a></article>
+  </section>
+
+  <h2 class="section-title lang-en">Do I need an account?</h2><h2 class="section-title lang-fr">Ai-je besoin d’un compte ?</h2>
+  <section class="account-note">
+    <article class="note"><h2 class="lang-en">No account needed</h2><h2 class="lang-fr">Aucun compte nécessaire</h2><p class="lang-en">You can browse products, contact us, submit product requests, offer equipment, and access donation information without registering. Guest checkout should remain available for purchases.</p><p class="lang-fr">Vous pouvez consulter les produits, nous contacter, demander un produit, proposer du matériel et consulter les informations sur les dons sans vous inscrire. Le paiement en tant qu’invité doit rester disponible.</p></article>
+    <article class="note"><h2 class="lang-en">Optional accounts — coming later</h2><h2 class="lang-fr">Comptes facultatifs — bientôt</h2><p class="lang-en">Secure sign-in and registration are not active yet. We will introduce them only when authentication is properly implemented. Never send a password through a general contact form or WhatsApp.</p><p class="lang-fr">La connexion sécurisée et l’inscription ne sont pas encore actives. Elles seront proposées lorsque l’authentification sera correctement mise en place. N’envoyez jamais de mot de passe via un formulaire de contact général ou WhatsApp.</p></article>
+  </section>
+  <div class="notice"><strong class="lang-en">Account access is not active yet.</strong><strong class="lang-fr">L’accès au compte n’est pas encore actif.</strong> <span class="lang-en">No login or password is collected on this page. Need help? Visit </span><span class="lang-fr">Aucun identifiant ni mot de passe n’est collecté sur cette page. Besoin d’aide ? Consultez </span><a href="support.html">Support</a>.</div>
+</main>
+<footer><div class="footer-inner"><strong>WESTRONIX TECH</strong><p>Recover • Refurbish • Resell • Reuse • Impact.</p><p>Technology USA → 🌍 Africa</p><p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p><p>Contact: <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a> · <a href="https://wa.me/22892953333" rel="noopener noreferrer">WhatsApp +228 92 95 33 33</a></p></div></footer>
 <script>
-(function(){var s=document.getElementById('lang');function setLang(v){document.body.classList.remove('lang-en','lang-fr');document.body.classList.add('lang-'+v);s.value=v;try{localStorage.setItem('wt_language',v)}catch(e){}}var saved='en';try{saved=localStorage.getItem('wt_language')||'en'}catch(e){}setLang(saved==='fr'?'fr':'en');s.addEventListener('change',function(){setLang(this.value)})})();
+(function(){
+  var select=document.getElementById('language');
+  function setLanguage(lang){
+    document.body.classList.toggle('fr',lang==='fr');
+    document.documentElement.lang=lang;
+    select.value=lang;
+    try{localStorage.setItem('wt_language',lang)}catch(e){}
+  }
+  var initial='en';
+  try{initial=localStorage.getItem('wt_language')||'en'}catch(e){}
+  setLanguage(initial==='fr'?'fr':'en');
+  select.addEventListener('change',function(){setLanguage(this.value)});
+})();
 </script>
-</body></html>
+</body>
+</html>
