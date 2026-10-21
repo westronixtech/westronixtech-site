@@ -3296,16 +3296,8 @@ if(categoryFilter){
   });
 }
 
-if(accountLink){
-  accountLink.addEventListener("click", function(event){
-    event.preventDefault();
-    showMessage(
-      currentLanguage === "fr"
-        ? "Les comptes clients seront bientôt disponibles."
-        : "Customer accounts will be available soon."
-    );
-  });
-}
+/* Account link uses its real href (signin.html).
+   Do not intercept it with the retired coming-soon placeholder. */
 
 document.addEventListener("click", function(event){
   const searchArea = document.querySelector(".market-search");
