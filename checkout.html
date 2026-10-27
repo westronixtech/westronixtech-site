@@ -1192,178 +1192,37 @@ footer p{
 <div class="card">
 
   <h2>
-
     💳
-
-    <span class="lang-en">
-      Payment
-    </span>
-
-    <span class="lang-fr">
-      Paiement
-    </span>
-
+    <span class="lang-en">Payment Preference</span>
+    <span class="lang-fr">Préférence de paiement</span>
   </h2>
 
-  <label>
-
-    <span class="lang-en">
-      Preferred Payment Method
-    </span>
-
-    <span class="lang-fr">
-      Mode de paiement préféré
-    </span>
-
+  <label for="paymentMethod">
+    <span class="lang-en">Choose how you prefer to complete your order</span>
+    <span class="lang-fr">Choisissez comment vous souhaitez finaliser votre commande</span>
   </label>
 
-  <select id="paymentMethod">
-
-    <option value="">
-      Sélectionner / Select
-    </option>
-
-    <option value="Mobile Money">
-      Mobile Money
-    </option>
-
-    <option value="Bank Transfer">
-      Bank Transfer / Virement bancaire
-    </option>
-
+  <select id="paymentMethod" required>
     <option value="Cash">
-      Cash / Espèces
+      Cash — pay in person after confirmation / Espèces — paiement en personne après confirmation
     </option>
-
-    <option value="Other">
-      Other / Autre
+    <option value="WhatsApp Checkout">
+      WhatsApp Checkout — confirm details in WhatsApp / Commande WhatsApp — confirmer les détails sur WhatsApp
     </option>
-
-  </select>
-
-  <label>
-
-    <span class="lang-en">
-      Preferred Advance Payment
-    </span>
-
-    <span class="lang-fr">
-      Avance souhaitée
-    </span>
-
-  </label>
-
-  <select id="advanceOption">
-
-    <option value="0">
-      No advance specified / Aucune avance
-    </option>
-
-    <option value="30">
-      30% advance / 30% d'avance
-    </option>
-
-    <option value="50">
-      50% advance / 50% d'avance
-    </option>
-
-    <option value="100">
-      100% payment / Paiement intégral
-    </option>
-
   </select>
 
   <div class="payment-box">
-
     <div class="payment-row">
-
       <span>
-
-        <span class="lang-en">
-          Order Total
-        </span>
-
-        <span class="lang-fr">
-          Total commande
-        </span>
-
+        <span class="lang-en">Estimated order subtotal</span>
+        <span class="lang-fr">Sous-total estimé</span>
       </span>
-
-      <strong id="paymentTotal">
-        0 FCFA
-      </strong>
-
+      <strong id="paymentTotal">0 FCFA</strong>
     </div>
-
-    <div class="payment-row">
-
-      <span>
-
-        <span class="lang-en">
-          Suggested Advance
-        </span>
-
-        <span class="lang-fr">
-          Avance suggérée
-        </span>
-
-      </span>
-
-      <strong id="advanceAmount">
-        0 FCFA
-      </strong>
-
-    </div>
-
-    <div class="payment-row">
-
-      <span>
-
-        <span class="lang-en">
-          Estimated Balance
-        </span>
-
-        <span class="lang-fr">
-          Solde estimé
-        </span>
-
-      </span>
-
-      <strong id="balanceAmount">
-        0 FCFA
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="notice">
-
-    <strong>
-
-      <span class="lang-en">
-        Important:
-      </span>
-
-      <span class="lang-fr">
-        Important :
-      </span>
-
-    </strong>
-
-    <span class="lang-en">
-      Do not send payment yet. WESTRONIX will first confirm
-      product availability, delivery or pickup arrangements,
-      final delivery charges and the exact amount to pay.
-    </span>
-
-    <span class="lang-fr">
-      N'effectuez pas encore de paiement. WESTRONIX confirmera
-      d'abord la disponibilité des produits, les modalités de
-      livraison ou de retrait, les frais de livraison et le
-      montant exact à payer.
-    </span>
-
+    <p style="margin:10px 0 0;line-height:1.6">
+      <span class="lang-en">No advance payment is requested here. For Cash, pay in person only after WESTRONIX confirms the order and arrangements. For WhatsApp Checkout, review the order details with our team in WhatsApp. Delivery charges and the final total must be confirmed by WESTRONIX.</span>
+      <span class="lang-fr">Aucun acompte n’est demandé ici. Pour le paiement en espèces, payez en personne uniquement après confirmation de la commande et des modalités par WESTRONIX. Pour la commande WhatsApp, vérifiez les détails avec notre équipe sur WhatsApp. Les frais de livraison et le total final doivent être confirmés par WESTRONIX.</span>
+    </p>
   </div>
 
 </div>
@@ -2015,9 +1874,6 @@ function loadOrderSummary(){
   ).textContent =
     formatPrice(subtotal);
 
-
-  updateAdvance();
-
 }
 
 
@@ -2056,57 +1912,6 @@ function updateFulfillment(){
   );
 
 }
-
-
-/* =====================================================
-   ADVANCE PAYMENT
-===================================================== */
-
-function updateAdvance(){
-
-  const total =
-    calculateSubtotal();
-
-
-  const percentage =
-    Number(
-      document.getElementById(
-        "advanceOption"
-      ).value
-    );
-
-
-  const advance =
-    total *
-    percentage /
-    100;
-
-
-  const balance =
-    total -
-    advance;
-
-
-  document.getElementById(
-    "advanceAmount"
-  ).textContent =
-    formatPrice(advance);
-
-
-  document.getElementById(
-    "balanceAmount"
-  ).textContent =
-    formatPrice(balance);
-
-}
-
-
-document
-  .getElementById("advanceOption")
-  .addEventListener(
-    "change",
-    updateAdvance
-  );
 
 
 /* =====================================================
@@ -2253,27 +2058,7 @@ function submitOrder(){
     ).value;
 
 
-  const advancePercentage =
-    Number(
-      document.getElementById(
-        "advanceOption"
-      ).value
-    );
-
-
-  const subtotal =
-    calculateSubtotal();
-
-
-  const advance =
-    subtotal *
-    advancePercentage /
-    100;
-
-
-  const balance =
-    subtotal -
-    advance;
+  const subtotal = calculateSubtotal();
 
 
   const orderNumber =
@@ -2484,21 +2269,8 @@ function submitOrder(){
     )
   );
 
-  lines.push(
-    "Advance Preference: " +
-    advancePercentage +
-    "%"
-  );
-
-  lines.push(
-    "Suggested Advance: " +
-    formatPrice(advance)
-  );
-
-  lines.push(
-    "Estimated Balance: " +
-    formatPrice(balance)
-  );
+  lines.push("Payment preference: " + (paymentMethod || "Cash"));
+  lines.push("No payment has been collected. Await WESTRONIX confirmation of final total and instructions.");
 
 
   lines.push(
@@ -2559,9 +2331,6 @@ function submitOrder(){
 
     paymentMethod:
       paymentMethod,
-
-    advancePercentage:
-      advancePercentage,
 
     subtotal:
       subtotal,
