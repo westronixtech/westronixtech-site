@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19",
+  "lastUpdated": "2026-10-29",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -29,6 +29,33 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Right-enhanced-review.jpg",
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
       ]
+    },
+    {
+      "sku": "LENOVO-P15S-16-512",
+      "brand": "Lenovo",
+      "name": "Lenovo ThinkPad P15s | Core i7 11th Gen | 16GB RAM | 512GB SSD | 15.6\" 4K UHD",
+      "name_fr": "Lenovo ThinkPad P15s | Core i7 11e génération | 16 Go RAM | SSD 512 Go | Écran 15,6\" 4K UHD",
+      "category": "Laptop",
+      "processor": "Intel Core i7 - 11th Gen",
+      "ram": "16GB",
+      "storage": "512GB SSD",
+      "screen": "15.6-inch 4K UHD (3840 x 2160) IPS anti-glare, 600 nits, 100% Adobe RGB, HDR 400, Dolby Vision, X-Rite Factory Color Calibration",
+      "gpu": "Integrated graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "battery": "Excellent",
+      "condition": "Used",
+      "grade": "A",
+      "price": 300000,
+      "currency": "FCFA",
+      "quantity": 5,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "accessories": "Charger not included",
+      "warranty": "No warranty",
+      "testing": "Verified",
+      "dataWipe": "Verified",
+      "biosPassword": "No password",
+      "photos": []
     }
   ],
   "categories": [
