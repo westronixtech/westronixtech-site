@@ -584,6 +584,24 @@ body.language-fr h3.lang-fr{
   font-size:12px;
   font-weight:900;
 }
+.dell-spec-list{
+  display:grid;
+  gap:10px;
+  margin:16px 0 18px;
+  padding:15px 0;
+  border-top:1px solid #edf0f4;
+  border-bottom:1px solid #edf0f4;
+}
+.dell-spec-list > div{
+  display:grid;
+  grid-template-columns:minmax(105px, 1fr) minmax(0, 1.35fr);
+  gap:12px;
+  align-items:start;
+  font-size:13px;
+  line-height:1.45;
+}
+.dell-spec-list span{color:#64748b;font-weight:600;}
+.dell-spec-list strong{color:#172033;font-weight:800;text-align:right;}
 .dell-card-spec-summary{
   margin-top:15px;
   padding:13px 0 14px;
@@ -2022,7 +2040,7 @@ function renderProducts(products){
 
 
         ${isDell3551
-          ? '<div class="processor-badge">Intel Core i7 10th Gen</div><div class="tested-badge">✓ TESTED • Graded B</div>'
+          ? '<div class="processor-badge">' + escapeHTML(product.processor || '10th Gen Intel Core i5') + '</div><div class="tested-badge">✓ TESTED • Graded B</div>'
           : '<div class="grade-badge">GRADE ' + escapeHTML(product.grade || 'N/A') + '</div><div class="status-badge">' + escapeHTML(statusText) + '</div>'}
 
       </div>
@@ -2045,7 +2063,18 @@ function renderProducts(products){
         </div>
 
 
-        ${isDell3551 ? '<div class="dell-card-spec-summary">Intel Core i7 • 16GB • 512GB SSD</div><div class="dell-stock-note">Stock: ' + (quantity === null ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée') : escapeHTML(quantity)) + ' • To be confirmed / À confirmer</div>' : ''}
+        ${isDell3551 ? `
+          <div class="dell-spec-list">
+            <div><span>${currentLanguage === 'en' ? 'Processor' : 'Processeur'}</span><strong>${escapeHTML(product.processor || '10th Gen Intel Core i5')}</strong></div>
+            <div><span>RAM</span><strong>${escapeHTML(product.ram || '16GB DDR4')}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Storage' : 'Stockage'}</span><strong>${escapeHTML(product.storage || '512GB')}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Screen' : 'Écran'}</span><strong>${escapeHTML(product.screen || '15.6-inch')}</strong></div>
+            <div><span>GPU</span><strong>${escapeHTML(product.gpu || 'NVIDIA Quadro P620')}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Condition' : 'État'}</span><strong>${escapeHTML(condition)}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Quantity' : 'Quantité'}</span><strong>${quantity === null ? '—' : escapeHTML(quantity)}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Location' : 'Emplacement'}</span><strong>${escapeHTML(location)}</strong></div>
+          </div>
+        ` : ''}
         <div class="specs" ${isDell3551 ? 'hidden' : ''}>
 
           <div class="spec">
