@@ -1260,7 +1260,8 @@ async function loadProduct(){
 
     const response =
       await fetch(
-        'inventory.json'
+        'inventory.json',
+        { cache: 'no-store' }
       );
 
 
