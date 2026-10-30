@@ -65,6 +65,17 @@ Copy this section for each product.
 - [ ] Product page and cart action tested
 - [ ] Owner reviewed and approved
 
+## Official product photo standard
+
+**Approved standard:** 1200 × 1200 pixels (1:1 square), pure white background.
+
+- Applies to every standard product photo, including the main/front image and detail images.
+- Preferred formats: JPG or WebP; use sRGB color profile.
+- Keep the entire product visible, centered, and in natural proportions. Never stretch the image.
+- Recommended file size: 150–300 KB; maximum target: 500 KB per image where practical.
+- On the website, display images in consistent square frames using `object-fit: contain` so the full product remains visible.
+- If an original photo has a different aspect ratio, crop or pad it to the square canvas without cutting off important product details.
+
 ## Standard photo folder and filenames
 
 Use one folder per SKU:
