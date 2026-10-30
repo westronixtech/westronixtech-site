@@ -7,17 +7,17 @@
       "sku": "DELL-D3551-16-512",
       "legacySku": "WT-D3551-0001",
       "brand": "Dell",
-      "name": "Dell Precision 3551 Mobile Workstation | Core i7 10th Gen | 16GB RAM | 512GB SSD",
+      "name": "Dell Precision 3551 Mobile Workstation | Core i5 10th Gen | 16GB DDR4 | 512GB | 15.6-inch | NVIDIA Quadro P620",
       "category": "Laptop",
-      "processor": "Intel Core i7 - 10th Gen",
-      "ram": "16GB",
-      "storage": "512GB SSD",
-      "condition": "Used",
+      "processor": "10th Gen Intel Core i5",
+      "ram": "16GB DDR4",
+      "storage": "512GB",
+      "condition": "Used / Refurbished",
       "grade": "B",
       "price": 160000,
       "currency": "FCFA",
       "quantity": 150,
-      "location": "Confirmed / Confirmé",
+      "location": "Lomé, Togo",
       "status": "available",
       "photos": [
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Front-enhanced-review.jpg",
@@ -30,10 +30,12 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
       ],
       "description": {
-        "en": "Dell Precision 3551 mobile workstation with a 10th Gen Intel Core i7 processor, 16GB RAM and 512GB SSD. Used, Grade B. Tested by WESTRONIX. Available in Lomé, Togo.",
-        "fr": "Station de travail mobile Dell Precision 3551 équipée d’un processeur Intel Core i7 de 10e génération, de 16 Go de RAM et d’un SSD de 512 Go. Occasion, Grade B. Testée par WESTRONIX. Disponible à Lomé, au Togo."
+        "en": "Dell Precision 3551 mobile workstation with a 10th Gen Intel Core i5 processor, 16GB DDR4 RAM, 512GB storage, a 15.6-inch display and NVIDIA Quadro P620 graphics. Used / Refurbished. Verified by WESTRONIX. Available in Lomé, Togo.",
+        "fr": "Station de travail mobile Dell Precision 3551 équipée d’un processeur Intel Core i5 de 10e génération, de 16 Go de RAM DDR4, d’un stockage de 512 Go, d’un écran de 15,6 pouces et d’une carte graphique NVIDIA Quadro P620. Occasion / reconditionné. Vérifiée par WESTRONIX. Disponible à Lomé, au Togo."
       },
-      "testingStatus": "Verified"
+      "testingStatus": "Verified",
+      "screen": "15.6-inch",
+      "gpu": "NVIDIA Quadro P620"
     },
     {
       "sku": "LENOVO-P15S-16-512",
