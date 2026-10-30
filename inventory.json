@@ -7,12 +7,12 @@
       "sku": "DELL-D3551-16-512",
       "legacySku": "WT-D3551-0001",
       "brand": "Dell",
-      "name": "Dell Precision 3551 Mobile Workstation",
+      "name": "Dell Precision 3551 Mobile Workstation | Core i7 10th Gen | 16GB RAM | 512GB SSD",
       "category": "Laptop",
       "processor": "Intel Core i7 - 10th Gen",
       "ram": "16GB",
       "storage": "512GB SSD",
-      "condition": "Tested",
+      "condition": "Used",
       "grade": "B",
       "price": 160000,
       "currency": "FCFA",
@@ -28,7 +28,12 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Left-enhanced-review.jpg",
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Right-enhanced-review.jpg",
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
-      ]
+      ],
+      "description": {
+        "en": "Dell Precision 3551 mobile workstation with a 10th Gen Intel Core i7 processor, 16GB RAM and 512GB SSD. Used, Grade B. Tested by WESTRONIX. Available in Lomé, Togo.",
+        "fr": "Station de travail mobile Dell Precision 3551 équipée d’un processeur Intel Core i7 de 10e génération, de 16 Go de RAM et d’un SSD de 512 Go. Occasion, Grade B. Testée par WESTRONIX. Disponible à Lomé, au Togo."
+      },
+      "testingStatus": "Verified"
     },
     {
       "sku": "LENOVO-P15S-16-512",
@@ -56,7 +61,7 @@
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/rightside.jpg",
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/bottom.jpg",
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/system-info.jpg"
-],
+      ],
       "description": {
         "en": "Lenovo ThinkPad P15s mobile workstation with an 11th Gen Intel Core i7 processor, 16GB RAM, 512GB SSD and a 15.6-inch 4K UHD display. Used, Grade A. Tested and ready for use. Charger not included. No warranty.",
         "fr": "Station de travail mobile Lenovo ThinkPad P15s avec processeur Intel Core i7 de 11e génération, 16 Go de RAM, SSD de 512 Go et écran 15,6 pouces 4K UHD. Occasion, Grade A. Testé et prêt à l’emploi. Chargeur non inclus. Sans garantie."
