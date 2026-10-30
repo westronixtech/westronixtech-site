@@ -47,7 +47,16 @@
       "quantity": 5,
       "location": "Lomé, Togo",
       "status": "available",
-      "photos": [],
+      "photos": [
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/lid-close.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/open-360.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/screen-keyboard.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/keyboard.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/leftside.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/rightside.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/bottom.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/system-info.jpg"
+],
       "description": {
         "en": "Lenovo ThinkPad P15s mobile workstation with an 11th Gen Intel Core i7 processor, 16GB RAM, 512GB SSD and a 15.6-inch 4K UHD display. Used, Grade A. Tested and ready for use. Charger not included. No warranty.",
         "fr": "Station de travail mobile Lenovo ThinkPad P15s avec processeur Intel Core i7 de 11e génération, 16 Go de RAM, SSD de 512 Go et écran 15,6 pouces 4K UHD. Occasion, Grade A. Testé et prêt à l’emploi. Chargeur non inclus. Sans garantie."
