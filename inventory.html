@@ -2040,7 +2040,7 @@ function renderProducts(products){
 
 
         ${isDell3551
-          ? '<div class="processor-badge">' + escapeHTML(product.processor || '10th Gen Intel Core i5') + '</div><div class="tested-badge">✓ TESTED • Graded B</div>'
+          ? '<div class="processor-badge">' + escapeHTML(product.processor || '10th Gen Intel Core i7') + '</div><div class="tested-badge">✓ TESTED • Graded B</div>'
           : '<div class="grade-badge">GRADE ' + escapeHTML(product.grade || 'N/A') + '</div><div class="status-badge">' + escapeHTML(statusText) + '</div>'}
 
       </div>
@@ -2065,7 +2065,7 @@ function renderProducts(products){
 
         ${isDell3551 ? `
           <div class="dell-spec-list">
-            <div><span>${currentLanguage === 'en' ? 'Processor' : 'Processeur'}</span><strong>${escapeHTML(product.processor || '10th Gen Intel Core i5')}</strong></div>
+            <div><span>${currentLanguage === 'en' ? 'Processor' : 'Processeur'}</span><strong>${escapeHTML(product.processor || '10th Gen Intel Core i7')}</strong></div>
             <div><span>RAM</span><strong>${escapeHTML(product.ram || '16GB DDR4')}</strong></div>
             <div><span>${currentLanguage === 'en' ? 'Storage' : 'Stockage'}</span><strong>${escapeHTML(product.storage || '512GB')}</strong></div>
             <div><span>${currentLanguage === 'en' ? 'Screen' : 'Écran'}</span><strong>${escapeHTML(product.screen || '15.6-inch')}</strong></div>
