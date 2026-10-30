@@ -1369,7 +1369,7 @@ function updateBreadcrumb(){
     <span>
       ${
         currentProduct
-          ? escapeHTML(currentProduct.name)
+          ? escapeHTML(currentLanguage === 'fr' && currentProduct.name_fr ? currentProduct.name_fr : currentProduct.name)
           : (
               currentLanguage === 'en'
                 ? 'Product'
@@ -1600,7 +1600,7 @@ function renderProduct(product){
         <h1 class="product-title">
 
           ${escapeHTML(
-            product.name
+            currentLanguage === 'fr' && product.name_fr ? product.name_fr : product.name
           )}
 
         </h1>
@@ -1703,6 +1703,37 @@ function renderProduct(product){
           ${createSpecRow(
             'GPU',
             product.gpu
+          )}
+
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Operating System' : 'Système d’exploitation',
+            product.operatingSystem
+          )}
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Battery' : 'Batterie',
+            product.battery
+          )}
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Accessories' : 'Accessoires',
+            product.accessories
+          )}
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Warranty' : 'Garantie',
+            product.warranty
+          )}
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Testing' : 'Tests',
+            product.testing === 'Verified' ? (currentLanguage === 'en' ? 'Verified' : 'Vérifié') : product.testing
+          )}
+
+          ${createSpecRow(
+            currentLanguage === 'en' ? 'Data wipe' : 'Effacement des données',
+            product.dataWipe === 'Verified' ? (currentLanguage === 'en' ? 'Verified' : 'Vérifié') : product.dataWipe
           )}
 
 
