@@ -55,7 +55,16 @@
       "testing": "Verified",
       "dataWipe": "Verified",
       "biosPassword": "No password",
-      "photos": []
+      "photos": [
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/lid-close.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/open-360.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/screen-keyboard.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/keyboard.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/leftside.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/rightside.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/bottom.jpg",
+        "https://westronixtech.com/product-photos/lenovo-p15s-16-512/system-info.jpg"
+      ]
     }
   ],
   "categories": [
