@@ -7,28 +7,35 @@
       "sku": "DELL-D3551-16-512",
       "legacySku": "WT-D3551-0001",
       "brand": "Dell",
-      "name": "Dell Precision 3551 Mobile Workstation",
+      "name": "Dell Precision 3551 Mobile Workstation | Core i5 10th Gen | 16GB DDR4 | 512GB | 15.6-inch | NVIDIA Quadro P620",
       "category": "Laptop",
-      "processor": "Intel Core i7 - 10th Gen",
-      "ram": "16GB",
-      "storage": "512GB SSD",
-      "condition": "Tested",
+      "processor": "10th Gen Intel Core i5",
+      "ram": "16GB DDR4",
+      "storage": "512GB",
+      "condition": "Used / Refurbished",
       "grade": "B",
       "price": 160000,
       "currency": "FCFA",
       "quantity": 150,
-      "location": "Confirmed / Confirmé",
+      "location": "Lomé, Togo",
       "status": "available",
       "photos": [
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Front-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontScreen-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/FrontSide-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/KeyBorad-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/LefiSide-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Left-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/Right-enhanced-review.jpg",
-        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/staging/dell-precision-3551-draft/RightSide-enhanced-review.jpg"
-      ]
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/Front-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/FrontScreen-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/FrontSite-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/KeyBorad-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/Left-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/LeftSite-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/Right-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/draft/dell-precision-3551-polish/product-photos/dell-precision-3551-16-512/RightSide-review.png"
+      ],
+      "description": {
+        "en": "Dell Precision 3551 mobile workstation with a 10th Gen Intel Core i5 processor, 16GB DDR4 RAM, 512GB storage, a 15.6-inch display and NVIDIA Quadro P620 graphics. Used / Refurbished. Verified by WESTRONIX. Available in Lomé, Togo.",
+        "fr": "Station de travail mobile Dell Precision 3551 équipée d’un processeur Intel Core i5 de 10e génération, de 16 Go de RAM DDR4, d’un stockage de 512 Go, d’un écran de 15,6 pouces et d’une carte graphique NVIDIA Quadro P620. Occasion / reconditionné. Vérifiée par WESTRONIX. Disponible à Lomé, au Togo."
+      },
+      "testingStatus": "Verified",
+      "screen": "15.6-inch",
+      "gpu": "NVIDIA Quadro P620"
     },
     {
       "sku": "LENOVO-P15S-16-512",
@@ -56,7 +63,7 @@
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/rightside.jpg",
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/bottom.jpg",
         "https://westronixtech.com/product-photos/lenovo-p15s-16-512/system-info.jpg"
-],
+      ],
       "description": {
         "en": "Lenovo ThinkPad P15s mobile workstation with an 11th Gen Intel Core i7 processor, 16GB RAM, 512GB SSD and a 15.6-inch 4K UHD display. Used, Grade A. Tested and ready for use. Charger not included. No warranty.",
         "fr": "Station de travail mobile Lenovo ThinkPad P15s avec processeur Intel Core i7 de 11e génération, 16 Go de RAM, SSD de 512 Go et écran 15,6 pouces 4K UHD. Occasion, Grade A. Testé et prêt à l’emploi. Chargeur non inclus. Sans garantie."
