@@ -697,6 +697,39 @@ body.language-fr h3.lang-fr{
   display:flex;
   flex-direction:column;
   flex:1;
+  min-width:0;
+}
+
+/* Keep product information and pricing aligned across every inventory card. */
+.card .brand{
+  min-height:15px;
+}
+
+.card h2{
+  min-height:52px;
+}
+
+.card .sku{
+  min-height:18px;
+}
+
+.card .specs,
+.card .dell-spec-list{
+  flex-shrink:0;
+}
+
+.card .price{
+  margin-top:auto;
+  padding-top:18px;
+  min-height:62px;
+  display:flex;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:5px;
+}
+
+.card .card-actions{
+  flex-shrink:0;
 }
 
 .brand{
