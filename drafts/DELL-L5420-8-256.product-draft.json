@@ -1,0 +1,52 @@
+{
+  "sku": "DELL-L5420-8-256",
+  "brand": "Dell",
+  "model": "Latitude 5420",
+  "name": "Dell Latitude 5420 | Intel Core i5-1135G7 | 8GB RAM | 256GB SSD | 14-inch FHD Touchscreen",
+  "category": "Laptop",
+  "processor": "11th Gen Intel Core i5-1135G7",
+  "ram": "8GB DDR4",
+  "storage": "256GB SSD",
+  "screen": "14-inch FHD anti-glare IPS touchscreen",
+  "graphics": "Intel Iris Xe Graphics",
+  "operatingSystem": "Windows 10 Pro",
+  "keyboard": "Backlit",
+  "condition": "Used / Refurbished",
+  "grade": "B",
+  "battery": "Good",
+  "testingStatus": "Basic functional testing confirmed",
+  "dataWipeStatus": "Confirmed before resale",
+  "biosPasswordStatus": "Verified: BIOS accessible; no BIOS password lock preventing use",
+  "chargerIncluded": false,
+  "warranty": false,
+  "price": 120000,
+  "currency": "FCFA",
+  "quantity": 150,
+  "location": "Lomé, Togo",
+  "status": "draft",
+  "photosSource": "SharePoint: WESTRONIX/Product-Photos/DELL-L5420-8-256/01-Originals",
+  "selectedPhotos": [
+    "FrontSide-review1.png",
+    "FrontSide-review.png",
+    "keyboard-review1.png",
+    "LeftSide-review.png",
+    "RightSide-review.png",
+    "Bottom-review.jpg",
+    "FrontCloselid-review.png"
+  ],
+  "excludedPhotos": [
+    "FrontSide.png"
+  ],
+  "photoPreparationStatus": "Proceed with the seven existing original photos as-is; white-background resizing package deferred. Original files remain unchanged. Photos still need to be copied into the website draft assets and visually reviewed before publication.",
+  "customerDisclosure": {
+    "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
+    "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
+  },
+  "accessories": "Charger/accessories not included",
+  "notes": [
+    "Draft only; do not include in public inventory until the selected photos are added to website assets and final checks are complete.",
+    "Use the seven selected original photos as-is for this review; do not alter the source files.",
+    "BIOS accessibility and absence of a BIOS password lock have been verified.",
+    "Do not claim Windows 11 compatibility or upgrade eligibility until verified."
+  ]
+}
