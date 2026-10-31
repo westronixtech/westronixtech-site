@@ -16,7 +16,7 @@
   "battery": "Good",
   "testingStatus": "Basic functional testing confirmed",
   "dataWipeStatus": "Confirmed before resale",
-  "biosPasswordStatus": "Needs final verification",
+  "biosPasswordStatus": "Verified: BIOS accessible; no BIOS password lock preventing use",
   "chargerIncluded": false,
   "warranty": false,
   "price": 120000,
@@ -33,7 +33,7 @@
   "accessories": "Charger/accessories not included",
   "notes": [
     "Draft only; do not include in public inventory until photos and final checks are complete.",
-    "Confirm BIOS/password status before publication.",
+    "BIOS accessibility and absence of a BIOS password lock have been verified.",
     "Do not claim Windows 11 compatibility or upgrade eligibility until verified."
   ]
 }
