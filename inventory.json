@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03",
+  "lastUpdated": "2026-11-04",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -105,6 +105,48 @@
       "description": {
         "en": "Dell Latitude 5420 with an 11th Gen Intel Core i5-1135G7, 8GB DDR4 RAM, 256GB SSD, 14-inch FHD anti-glare IPS touchscreen and Intel Iris Xe Graphics. Used/refurbished, Grade B. Backlit keyboard. Battery condition: Good. Basic functional testing and data wipe confirmed. BIOS accessible with no BIOS password lock. Charger and accessories are not included. No warranty. Windows 10 Pro standard support ended October 14, 2025; Windows 11 upgrade eligibility has not been verified.",
         "fr": "Dell Latitude 5420 avec processeur Intel Core i5-1135G7 de 11e génération, 8 Go de RAM DDR4, SSD de 256 Go, écran tactile IPS antireflet FHD de 14 pouces et carte graphique Intel Iris Xe. Occasion/reconditionné, Grade B. Clavier rétroéclairé. État de la batterie : bon. Test fonctionnel de base et effacement des données confirmés. BIOS accessible sans verrouillage par mot de passe. Chargeur et accessoires non inclus. Sans garantie. Le support standard de Windows 10 Pro a pris fin le 14 octobre 2025 ; l’éligibilité à Windows 11 n’a pas été vérifiée."
+      },
+      "testingStatus": "Basic functional testing confirmed",
+      "dataWipeStatus": "Confirmed before resale",
+      "biosPassword": "No BIOS password lock; BIOS accessible",
+      "chargerIncluded": false,
+      "warranty": false,
+      "customerDisclosure": {
+        "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
+        "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
+      }
+    },
+    {
+      "sku": "DELL-L5420-256-NORAM",
+      "brand": "Dell",
+      "name": "Dell Latitude 5420 | Intel Core i5-1135G7 | No RAM | 256GB SSD | 14-inch FHD Touchscreen",
+      "category": "Laptop",
+      "processor": "11th Gen Intel Core i5-1135G7",
+      "ram": "No RAM",
+      "storage": "256GB SSD",
+      "screen": "14-inch FHD anti-glare IPS touchscreen",
+      "gpu": "Intel Iris Xe Graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "keyboard": "Backlit",
+      "condition": "Used / Refurbished",
+      "grade": "B",
+      "battery": "Good",
+      "price": 100000,
+      "currency": "FCFA",
+      "quantity": 100,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/FrontSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/keyboard-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/LeftSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/RightSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/Bottom-review.jpg",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/FrontCloselid-review.png"
+      ],
+      "description": {
+        "en": "Dell Latitude 5420 with an 11th Gen Intel Core i5-1135G7, No RAM installed, 256GB SSD, 14-inch FHD anti-glare IPS touchscreen and Intel Iris Xe Graphics. Used/refurbished, Grade B. Backlit keyboard. Battery condition: Good. Basic functional testing and data wipe confirmed. BIOS accessible with no BIOS password lock. Charger and accessories are not included. No warranty. Windows 10 Pro standard support ended October 14, 2025; Windows 11 upgrade eligibility has not been verified.",
+        "fr": "Dell Latitude 5420 avec processeur Intel Core i5-1135G7 de 11e génération, Sans RAM installée, SSD de 256 Go, écran tactile IPS antireflet FHD de 14 pouces et carte graphique Intel Iris Xe. Occasion/reconditionné, Grade B. Clavier rétroéclairé. État de la batterie : bon. Test fonctionnel de base et effacement des données confirmés. BIOS accessible sans verrouillage par mot de passe. Chargeur et accessoires non inclus. Sans garantie. Le support standard de Windows 10 Pro a pris fin le 14 octobre 2025 ; l’éligibilité à Windows 11 n’a pas été vérifiée."
       },
       "testingStatus": "Basic functional testing confirmed",
       "dataWipeStatus": "Confirmed before resale",
