@@ -157,6 +157,49 @@
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
       }
+    },
+    {
+      "sku": "DELL-WD19S-180W",
+      "brand": "Dell",
+      "name": "Dell WD19S 180W Docking Station | USB-C | 130W Power Delivery | Dual DisplayPort | HDMI",
+      "category": "Docking Stations",
+      "descriptionShort": "Dell WD19S 180W USB-C docking station with up to 130W power delivery for compatible Dell laptops. Includes 180W power adapter.",
+      "condition": "Used",
+      "color": "Black",
+      "hardwareInterface": "USB Type-C",
+      "compatibleDevices": "USB-C-enabled devices, particularly compatible Dell laptops",
+      "powerAdapterIncluded": true,
+      "powerAdapter": "180W",
+      "powerDelivery": "Up to 130W for compatible Dell laptops",
+      "totalUsbPorts": 6,
+      "ports": [
+        "2 × DisplayPort (20-pin)",
+        "1 × HDMI (19-pin Type A)",
+        "1 × USB-C",
+        "3 × USB 3.1 Gen 1 USB-A",
+        "2 × USB-C 3.1 Gen 2",
+        "3.5mm speaker output",
+        "3.5mm headset output",
+        "Gigabit Ethernet RJ-45"
+      ],
+      "dimensions": "8.07 × 8.1 × 1.1 inches",
+      "price": 45000,
+      "currency": "FCFA",
+      "quantity": 100,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/images/products/DELL-WD19S-180W/FrontBack-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/images/products/DELL-WD19S-180W/FrontSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/images/products/DELL-WD19S-180W/FrontLeft-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/images/products/DELL-WD19S-180W/FrontRight-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/images/products/DELL-WD19S-180W/BackSide-review.png"
+      ],
+      "description": {
+        "en": "Dell WD19S 180W USB-C docking station in black. Supports up to 130W Power Delivery for compatible Dell laptops and includes its 180W power adapter. Connections include two DisplayPort outputs, one HDMI output, USB-A and USB-C ports, 3.5mm audio outputs and Gigabit Ethernet. Compatibility and supported charging wattage depend on the connected device.",
+        "fr": "Station d’accueil USB-C Dell WD19S 180 W de couleur noire. Fournit jusqu’à 130 W via Power Delivery pour les ordinateurs portables Dell compatibles et comprend son adaptateur secteur de 180 W. Connectique : deux sorties DisplayPort, une sortie HDMI, ports USB-A et USB-C, sorties audio 3,5 mm et Ethernet Gigabit. La compatibilité et la puissance de charge dépendent de l’appareil connecté."
+      },
+      "chargerIncluded": true
     }
   ],
   "categories": [
@@ -165,7 +208,8 @@
     "Workstation",
     "Server",
     "Networking",
-    "Accessories"
+    "Accessories",
+    "Docking Stations"
   ],
   "notice": "Only equipment physically received and verified by WESTRONIX should be added to the public catalog."
 }
