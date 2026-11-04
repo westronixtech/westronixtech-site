@@ -200,6 +200,48 @@
         "fr": "Station d’accueil USB-C Dell WD19S 180 W de couleur noire. Fournit jusqu’à 130 W via Power Delivery pour les ordinateurs portables Dell compatibles et comprend son adaptateur secteur de 180 W. Connectique : deux sorties DisplayPort, une sortie HDMI, ports USB-A et USB-C, sorties audio 3,5 mm et Ethernet Gigabit. La compatibilité et la puissance de charge dépendent de l’appareil connecté."
       },
       "chargerIncluded": true
+    },
+    {
+      "sku": "LENOVO-NEO50QG4-16-256",
+      "brand": "Lenovo",
+      "name": "Lenovo ThinkCentre Neo 50q Gen 4 | Intel Core i5-13420H | 16GB RAM | 256GB SSD",
+      "category": "Workstation",
+      "processor": "Intel Core i5-13420H",
+      "cpuCores": 8,
+      "cpuThreads": 12,
+      "processorBoost": "Up to 4.6 GHz",
+      "ram": "16GB DDR4 SO-DIMM",
+      "storage": "256GB PCIe SSD",
+      "gpu": "Integrated Intel UHD Graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "color": "Black",
+      "releaseYear": 2023,
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth",
+        "Gigabit Ethernet"
+      ],
+      "videoOutputs": [
+        "1 × HDMI 2.1",
+        "1 × DisplayPort 1.4"
+      ],
+      "usbPorts": [
+        "1 × USB-C 3.2",
+        "3 × USB-A 3.2",
+        "2 × USB-A 2.0"
+      ],
+      "audio": "Microphone input",
+      "powerSupply": "90W",
+      "condition": "Used / Refurbished",
+      "price": 200000,
+      "currency": "FCFA",
+      "quantity": 15,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "description": {
+        "en": "Lenovo ThinkCentre Neo 50q Gen 4 compact desktop with an Intel Core i5-13420H processor (8 cores / 12 threads, up to 4.6 GHz), 16GB DDR4 memory and a 256GB PCIe SSD. Integrated Intel UHD Graphics, Windows 10 Pro, Wi-Fi 6, Bluetooth and Gigabit Ethernet. Black. Used / refurbished. Available in Lomé, Togo.",
+        "fr": "Ordinateur de bureau compact Lenovo ThinkCentre Neo 50q Gen 4 équipé d’un processeur Intel Core i5-13420H (8 cœurs / 12 threads, jusqu’à 4,6 GHz), de 16 Go de mémoire DDR4 et d’un SSD PCIe de 256 Go. Graphiques Intel UHD intégrés, Windows 10 Pro, Wi-Fi 6, Bluetooth et Ethernet Gigabit. Noir. Occasion / reconditionné. Disponible à Lomé, au Togo."
+      }
     }
   ],
   "categories": [
