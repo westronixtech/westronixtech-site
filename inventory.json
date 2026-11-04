@@ -199,7 +199,8 @@
         "en": "Dell WD19S 180W USB-C docking station in black. Supports up to 130W Power Delivery for compatible Dell laptops and includes its 180W power adapter. Connections include two DisplayPort outputs, one HDMI output, USB-A and USB-C ports, 3.5mm audio outputs and Gigabit Ethernet. Compatibility and supported charging wattage depend on the connected device.",
         "fr": "Station d’accueil USB-C Dell WD19S 180 W de couleur noire. Fournit jusqu’à 130 W via Power Delivery pour les ordinateurs portables Dell compatibles et comprend son adaptateur secteur de 180 W. Connectique : deux sorties DisplayPort, une sortie HDMI, ports USB-A et USB-C, sorties audio 3,5 mm et Ethernet Gigabit. La compatibilité et la puissance de charge dépendent de l’appareil connecté."
       },
-      "chargerIncluded": true
+      "chargerIncluded": true,
+      "grade": "B"
     },
     {
       "sku": "LENOVO-NEO50QG4-16-256",
