@@ -107,6 +107,13 @@ const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;
 function renderFeatured(products){
  const available=products.filter(p=>String(p.status||"").toLowerCase()==="available"&&Number(p.quantity)>0&&Number(p.price)>0).slice(0,4);
  const target=document.getElementById("featuredProducts");
+ const hero=document.getElementById("heroProduct");
+ if(available.length&&hero){
+  const lead=available[0],leadPhoto=Array.isArray(lead.photos)?lead.photos[0]:"";
+  const leadSpecs=[lead.processor,lead.ram,lead.storage].filter(Boolean).join(" • ");
+  hero.innerHTML=(leadPhoto?'<img src="'+esc(leadPhoto)+'" alt="'+esc(lead.name)+'" loading="lazy">':'')+
+   '<div><small>FEATURED WESTRONIX LISTING</small><b>'+esc(lead.name)+'</b><p>'+esc(leadSpecs)+' · '+money(lead.price)+'</p></div>';
+ }
  if(!available.length){target.innerHTML='<div class="notice">No verified, priced inventory is currently available to feature. Browse the catalog or request a product.</div>';return}
  target.innerHTML=available.map(p=>{
   const photo=Array.isArray(p.photos)?p.photos[0]:"";
