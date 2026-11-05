@@ -1264,6 +1264,65 @@ body .card-dell-3551 .btn.btn-cart svg {
 }
 
 </style>
+
+<style id="westronix-premium-inventory-hero">
+.hero{padding:64px 24px 66px;overflow:hidden}
+.hero-inner{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);align-items:center;gap:clamp(32px,5vw,68px);text-align:left}
+.hero-copy{min-width:0}
+.hero-copy .usa-africa-route{margin-bottom:22px;background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.16);border-radius:999px;padding:8px 15px}
+.hero-copy .usa-flag,.hero-copy .route-arrow,.hero-copy .africa-globe{animation:none}
+.hero-copy .usa-africa-route .lang-en,.hero-copy .usa-africa-route .lang-fr{font-size:13px;letter-spacing:1.1px}
+.hero h1{max-width:620px;margin:0 0 17px;font-size:clamp(38px,4.2vw,58px);font-weight:800;letter-spacing:-1.7px;line-height:1.04}
+.hero p{max-width:590px;margin:0;color:#d6e4f4;font-size:17px;line-height:1.75}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:27px;padding:13px 20px;border:1px solid #398bff;border-radius:9px;background:#1677ff;color:#fff;text-decoration:none;font-weight:800;box-shadow:0 8px 22px rgba(0,85,210,.22);transition:background .2s ease,transform .2s ease}
+.hero-cta:hover{background:#0866e8;transform:translateY(-2px)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:27px;color:#c4d5e8;font-size:12px;font-weight:700}
+.hero-trust>span{display:inline-flex;align-items:center;gap:7px}
+.hero-trust i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:rgba(16,185,129,.16);color:#5ee0ae;font-size:11px;font-style:normal}
+.hero-showcase{position:relative;min-width:0;padding:13px;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));box-shadow:0 24px 65px rgba(0,0,0,.28);backdrop-filter:blur(8px)}
+.hero-slides{position:relative;overflow:hidden;border-radius:13px;background:#fff;aspect-ratio:1.22/1}
+.hero-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 22px 12px;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s ease}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide img{display:block;width:100%;height:calc(100% - 42px);object-fit:contain}
+.hero-slide-caption{width:100%;padding:8px 4px 0;color:#10243c;text-align:center;font-size:15px;font-weight:800;line-height:1.3}
+.hero-slideshow-controls{display:flex;align-items:center;justify-content:center;gap:18px;padding:13px 0 7px}
+.hero-slide-arrow{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:23px;line-height:1;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.hero-slide-arrow:hover{background:#1677ff;border-color:#1677ff}
+.hero-slide-dots{display:flex;align-items:center;gap:9px}
+.hero-slide-dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#7890aa;cursor:pointer;transition:width .2s ease,background .2s ease}
+.hero-slide-dot.is-active{width:23px;border-radius:8px;background:#65aaff}
+.hero-showcase-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 5px 1px;color:#d4e2f1;font-size:11px;font-weight:700;letter-spacing:.2px}
+.hero-slide-count{color:#9eb8d5;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:900px){
+ .hero-inner{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:28px}
+ .hero{padding:50px 22px}
+ .hero h1{font-size:clamp(34px,5vw,48px)}
+ .hero p{font-size:15px}
+ .hero-trust{gap:9px 12px}
+}
+@media(max-width:700px){
+ .hero{padding:42px 18px 45px}
+ .hero-inner{grid-template-columns:1fr;gap:28px;max-width:560px}
+ .hero-copy .usa-africa-route{margin-bottom:17px}
+ .hero h1{font-size:clamp(35px,8vw,46px)}
+ .hero p{font-size:15px;line-height:1.7}
+ .hero-cta{margin-top:22px}
+ .hero-trust{margin-top:20px;font-size:11px}
+ .hero-showcase{max-width:520px;width:100%;margin:0 auto}
+ .hero-slides{aspect-ratio:1.25/1}
+}
+@media(max-width:420px){
+ .hero-trust{display:grid;grid-template-columns:1fr 1fr}
+ .hero-showcase{padding:9px}
+ .hero-slide{padding:14px 12px 9px}
+ .hero-slide-caption{font-size:13px}
+ .hero-showcase-foot{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-slide,.hero-cta,.hero-slide-arrow,.hero-slide-dot{transition:none}
+}
+</style>
+
 </head>
 
 <body>
@@ -1336,44 +1395,81 @@ body .card-dell-3551 .btn.btn-cart svg {
      HERO
 ======================================================= -->
 
-<section class="hero">
-
+<section class="hero" aria-labelledby="inventoryHeroTitle">
   <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="usa-africa-route">
+        <span class="usa-flag" aria-hidden="true">🇺🇸</span>
+        <span class="route-arrow" aria-hidden="true">→</span>
+        <span class="africa-globe" aria-hidden="true">🌍</span>
+        <span class="lang-en">USA → AFRICA</span>
+        <span class="lang-fr">USA → AFRIQUE</span>
+      </div>
 
-    <div class="usa-africa-route">
+      <h1 id="inventoryHeroTitle">
+        <span class="lang-en">Available Inventory</span>
+        <span class="lang-fr">Inventaire disponible</span>
+      </h1>
 
-      <span class="usa-flag">🇺🇸</span>
-      <span class="route-arrow">→</span>
-      <span class="africa-globe">🌍</span>
+      <p>
+        <span class="lang-en">Business-grade technology sourced from the United States, tested and prepared for customers, businesses and organizations across Africa.</span>
+        <span class="lang-fr">Technologies professionnelles provenant des États-Unis, testées et préparées pour les particuliers, entreprises et organisations à travers l'Afrique.</span>
+      </p>
 
-      <span class="lang-en">USA → AFRICA</span>
-      <span class="lang-fr">USA → AFRIQUE</span>
+      <a class="hero-cta" href="#inventoryGrid">
+        <span class="lang-en">Explore Products</span>
+        <span class="lang-fr">Voir les produits</span>
+        <span aria-hidden="true">→</span>
+      </a>
 
+      <div class="hero-trust" aria-label="WESTRONIX quality commitments">
+        <span><i aria-hidden="true">✓</i><span class="lang-en">Tested &amp; Graded</span><span class="lang-fr">Testé et classé</span></span>
+        <span><i aria-hidden="true">✓</i><span class="lang-en">Quality Checked</span><span class="lang-fr">Qualité vérifiée</span></span>
+        <span><i aria-hidden="true">✓</i><span class="lang-en">USA Sourced</span><span class="lang-fr">Sourcé aux États-Unis</span></span>
+      </div>
     </div>
 
-    <h1>
-      <span class="lang-en">Available Inventory</span>
-      <span class="lang-fr">Inventaire disponible</span>
-    </h1>
+    <div class="hero-showcase" aria-label="Featured WESTRONIX products">
+      <div class="hero-slides" aria-live="off">
+        <article class="hero-slide is-active" aria-hidden="false">
+          <img src="product-photos/lenovo-p15s-16-512/open-360.jpg" alt="Lenovo ThinkPad P15s business laptop" fetchpriority="high">
+          <div class="hero-slide-caption">
+            <span class="lang-en">Lenovo ThinkPad P15s</span>
+            <span class="lang-fr">Lenovo ThinkPad P15s</span>
+          </div>
+        </article>
+        <article class="hero-slide" aria-hidden="true">
+          <img src="product-photos/dell-precision-3551-16-512/Front-review.png" alt="Dell Precision 3551 mobile workstation" loading="lazy">
+          <div class="hero-slide-caption">
+            <span class="lang-en">Dell Precision 3551</span>
+            <span class="lang-fr">Dell Precision 3551</span>
+          </div>
+        </article>
+        <article class="hero-slide" aria-hidden="true">
+          <img src="product-photos/LENOVO-NEO50QG4-16-256/FrontLeft-review.png" alt="Lenovo ThinkCentre Neo 50q Gen 4 desktop" loading="lazy">
+          <div class="hero-slide-caption">
+            <span class="lang-en">Lenovo ThinkCentre Neo 50q Gen 4</span>
+            <span class="lang-fr">Lenovo ThinkCentre Neo 50q Gen 4</span>
+          </div>
+        </article>
+      </div>
 
-    <p>
-
-      <span class="lang-en">
-        Business-grade technology sourced from the United States,
-        tested and prepared for customers, businesses and organizations
-        across Africa.
-      </span>
-
-      <span class="lang-fr">
-        Technologies professionnelles provenant des États-Unis,
-        testées et préparées pour les particuliers, entreprises
-        et organisations à travers l'Afrique.
-      </span>
-
-    </p>
-
+      <div class="hero-slideshow-controls">
+        <button class="hero-slide-arrow" type="button" data-slide-direction="-1" aria-label="Previous product">‹</button>
+        <div class="hero-slide-dots" aria-label="Choose featured product">
+          <button class="hero-slide-dot is-active" type="button" data-slide-to="0" aria-label="Show Lenovo ThinkPad P15s" aria-pressed="true"></button>
+          <button class="hero-slide-dot" type="button" data-slide-to="1" aria-label="Show Dell Precision 3551" aria-pressed="false"></button>
+          <button class="hero-slide-dot" type="button" data-slide-to="2" aria-label="Show Lenovo ThinkCentre Neo 50q Gen 4" aria-pressed="false"></button>
+        </div>
+        <button class="hero-slide-arrow" type="button" data-slide-direction="1" aria-label="Next product">›</button>
+      </div>
+      <div class="hero-showcase-foot">
+        <span class="lang-en">Business-ready technology</span>
+        <span class="lang-fr">Technologie prête pour les professionnels</span>
+        <span class="hero-slide-count">01 / 03</span>
+      </div>
+    </div>
   </div>
-
 </section>
 
 <!-- =======================================================
@@ -2588,6 +2684,64 @@ if(menuToggle && navigation){
 
 }
 
+
+/* =========================================================
+   PREMIUM INVENTORY HERO SLIDESHOW
+========================================================= */
+(function initInventoryHeroSlideshow(){
+  const showcase = document.querySelector('.hero-showcase');
+  if (!showcase) return;
+  const slides = Array.from(showcase.querySelectorAll('.hero-slide'));
+  const dots = Array.from(showcase.querySelectorAll('.hero-slide-dot'));
+  const count = showcase.querySelector('.hero-slide-count');
+  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (slides.length < 2) return;
+
+  let activeIndex = 0;
+  let timer = null;
+  let paused = reducedMotion;
+
+  function showSlide(index){
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide,i)=>{
+      const active = i === activeIndex;
+      slide.classList.toggle('is-active',active);
+      slide.setAttribute('aria-hidden',active ? 'false' : 'true');
+    });
+    dots.forEach((dot,i)=>{
+      const active = i === activeIndex;
+      dot.classList.toggle('is-active',active);
+      dot.setAttribute('aria-pressed',active ? 'true' : 'false');
+    });
+    if (count) count.textContent = String(activeIndex+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  }
+
+  function stop(){ if (timer){ window.clearInterval(timer); timer=null; } }
+  function start(){
+    stop();
+    if (!paused && !document.hidden) timer = window.setInterval(()=>showSlide(activeIndex+1),5000);
+  }
+
+  showcase.querySelectorAll('[data-slide-direction]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      showSlide(activeIndex+Number(button.dataset.slideDirection));
+      start();
+    });
+  });
+  dots.forEach(dot=>dot.addEventListener('click',()=>{
+    showSlide(Number(dot.dataset.slideTo));
+    start();
+  }));
+  showcase.addEventListener('mouseenter',()=>{paused=true;stop();});
+  showcase.addEventListener('mouseleave',()=>{paused=false;start();});
+  showcase.addEventListener('focusin',()=>{paused=true;stop();});
+  showcase.addEventListener('focusout',event=>{
+    if (!showcase.contains(event.relatedTarget)){paused=false;start();}
+  });
+  document.addEventListener('visibilitychange',start);
+  showSlide(0);
+  start();
+})();
 
 /* =========================================================
    INITIALIZE
