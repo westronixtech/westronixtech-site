@@ -23,6 +23,15 @@
 .media-placeholder.video .play-mark{width:48px;height:48px;border:1px solid #ffffffa6;border-radius:50%;display:grid;place-items:center;font-size:19px;padding-left:3px}
 .media-card figcaption{padding:12px 14px;font-weight:700;font-size:14px;color:var(--ink)}
 .media-note{font-size:12px;color:var(--muted);text-align:center;margin:15px 0 0}
+
+/* Accessible category filters for the Our Work in Action gallery */
+.gallery-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:0 auto 20px}
+.gallery-filter{appearance:none;border:1px solid #cbd6e2;border-radius:999px;background:#f5f7fb;color:#19324d;padding:9px 15px;font:700 13px Arial,Helvetica,sans-serif;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.gallery-filter:hover{border-color:var(--blue);color:#0b58bd}
+.gallery-filter[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.gallery-filter:focus-visible{outline:3px solid #1677ff55;outline-offset:2px}
+.media-card[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.gallery-filter{transition:none}}
 @media(max-width:850px){.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.grid,.steps-grid,.choice-grid,.media-grid{grid-template-columns:1fr}.top{align-items:flex-start}.form-card,.steps,.work-gallery{padding:18px}.hero{border-radius:12px}}{.grid,.steps-grid,.choice-grid{grid-template-columns:1fr}.top{align-items:flex-start}.form-card,.steps{padding:18px}.hero{border-radius:12px}}
 
@@ -56,35 +65,43 @@
     <h2 id="work-gallery-title">Our Work in Action</h2>
     <p>See how technology gets recovered, reused, refurbished, and recycled.</p>
   </div>
+  <div class="gallery-filters" role="group" aria-label="Filter projects by category">
+    <button class="gallery-filter" type="button" data-filter="all" aria-pressed="true">All Projects</button>
+    <button class="gallery-filter" type="button" data-filter="recovery" aria-pressed="false">Equipment Recovery</button>
+    <button class="gallery-filter" type="button" data-filter="testing" aria-pressed="false">Testing &amp; Refurbishment</button>
+    <button class="gallery-filter" type="button" data-filter="reuse" aria-pressed="false">Reuse &amp; Resale</button>
+    <button class="gallery-filter" type="button" data-filter="recycling" aria-pressed="false">Recycling</button>
+    <button class="gallery-filter" type="button" data-filter="education" aria-pressed="false">Education &amp; Impact</button>
+  </div>
   <div class="media-grid">
-    <figure class="media-card">
+    <figure class="media-card" data-category="recovery">
       <img src="pallet3.jpeg" alt="Recovered technology equipment prepared for sorting" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
       <figcaption>Equipment Recovery</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="testing">
       <video controls preload="metadata" playsinline style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#071526">
         <source src="PALLET1.mp4" type="video/mp4">
         Your browser does not support video playback.
       </video>
       <figcaption>Testing &amp; Refurbishment</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="reuse">
       <img src="pallet4.jpeg" alt="Technology equipment organized and ready for its next use" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
       <figcaption>Ready for Reuse</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="testing">
       <img src="Workingtable.png" alt="Work table used for technology inspection and preparation" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
       <figcaption>Testing &amp; Preparation</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="testing">
       <img src="storageSSD.png" alt="Solid-state drives and computer storage components" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
       <figcaption>Evaluation &amp; Sorting</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="recycling">
       <img src="RecylcerBin1.png" alt="Electronics recycling and responsible material handling" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
       <figcaption>Responsible Recycling</figcaption>
     </figure>
-    <figure class="media-card">
+    <figure class="media-card" data-category="education">
       <video controls preload="metadata" playsinline style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#071526">
         <source src="ComputerLAB.mp4" type="video/mp4">
         Your browser does not support video playback.
@@ -120,6 +137,19 @@
 <div class="notice"><strong>Donation and cost note:</strong> A donation offer is not automatically accepted and does not guarantee free collection, shipping, tax deductibility, funding or equipment placement. WESTRONIX TECH is not representing this page as a tax-deductible charitable donation program. Any costs, transfer terms and intended use must be agreed before transfer.</div>
 </main>
 <footer>WESTRONIX TECH · Recover • Refurbish • Resell • Reuse • Impact · <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a> · <a href="https://wa.me/22892953333">WhatsApp</a><p class="westronix-policy-links" style="margin:14px 0 0;font-size:13px"><a href="privacy.html">Privacy / Confidentialité</a> · <a href="terms.html">Terms / Conditions</a> · <a href="support.html">Support</a> · <a href="signin.html">Account / Compte</a></p></footer>
+<script>
+(function(){
+ const filters=document.querySelectorAll('.gallery-filter');
+ const cards=document.querySelectorAll('.media-card[data-category]');
+ filters.forEach(function(button){
+  button.addEventListener('click',function(){
+   const selected=button.dataset.filter;
+   filters.forEach(function(item){item.setAttribute('aria-pressed',String(item===button));});
+   cards.forEach(function(card){card.hidden=selected!=='all'&&card.dataset.category!==selected;});
+  });
+ });
+})();
+</script>
 <script>
 (function(){
  const form=document.getElementById('equipmentForm');
