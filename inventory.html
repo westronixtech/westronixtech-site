@@ -1270,7 +1270,10 @@ body .card-dell-3551 .btn.btn-cart svg {
 }
 
 /* Compact inventory cards: full specifications remain on the product detail page. */
-.product-card-specs,
+.product-card-specs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:8px 0 2px}
+.product-card-specs .spec{display:block;min-width:0;padding:5px 6px;border-radius:6px;background:#f5f7fb;line-height:1.2}
+.product-card-specs .spec span{display:block;margin-bottom:2px;color:#64748b;font-size:10px;font-weight:700}
+.product-card-specs .spec strong{display:block;overflow-wrap:anywhere;text-align:left;color:#172033;font-size:11px;font-weight:800}
 .card .specs,
 .card .dell-spec-list{display:none!important}
 .grid{align-items:stretch}
@@ -2270,10 +2273,6 @@ function renderProducts(products){
           <div class="spec"><span>RAM</span><strong>${escapeHTML(product.ram || '—')}</strong></div>
           <div class="spec"><span>${currentLanguage === 'en' ? 'Storage' : 'Stockage'}</span><strong>${escapeHTML(product.storage || '—')}</strong></div>
           <div class="spec"><span>${currentLanguage === 'en' ? 'Screen' : 'Écran'}</span><strong>${escapeHTML(product.screen || '—')}</strong></div>
-          <div class="spec"><span>GPU</span><strong>${escapeHTML(product.gpu || '—')}</strong></div>
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Condition' : 'État'}</span><strong>${escapeHTML(condition)}${product.grade ? ' • Grade ' + escapeHTML(product.grade) : ''}</strong></div>
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Quantity' : 'Quantité'}</span><strong>${quantity === null ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée') : quantity === 0 ? (currentLanguage === 'en' ? 'Out of stock' : 'Épuisé') : escapeHTML(quantity)}</strong></div>
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Location' : 'Emplacement'}</span><strong>${escapeHTML(location)}</strong></div>
         </div>
 
 
