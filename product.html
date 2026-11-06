@@ -1709,18 +1709,6 @@ function renderProduct(product){
 
           ${createSpecRow(
             currentLanguage === 'en'
-              ? 'Quantity Available'
-              : 'Quantité disponible',
-            quantity === null
-              ? (currentLanguage === 'en' ? 'Not confirmed' : 'Non confirmée')
-              : quantity === 0
-                ? (currentLanguage === 'en' ? 'Out of stock' : 'Épuisé')
-                : quantity
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
               ? 'Location'
               : 'Emplacement',
             location
