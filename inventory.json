@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05",
+  "lastUpdated": "2026-11-06",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -348,6 +348,41 @@
       "chargerIncluded": false,
       "warranty": false,
       "reviewNotes": "Verify processor generation against the exact EliteBook 840 G5 model before public release; the G5 model designation and stated 7th Gen processor may not match. Testing status has not been provided."
+    },
+    {
+      "sku": "MS-SURFACEPRO5-8-256",
+      "brand": "Microsoft",
+      "name": "Microsoft Surface Pro 5 (Model 1796) | Intel Core i7-7660U | 8GB RAM | 256GB SSD | 12.3-inch Touchscreen",
+      "category": "Laptop",
+      "processor": "Intel Core i7-7660U (7th Gen)",
+      "ram": "8GB",
+      "storage": "256GB SSD",
+      "screen": "12.3-inch PixelSense touchscreen (2736 × 1824)",
+      "gpu": "Intel Iris Plus Graphics 640",
+      "operatingSystem": "Windows 10 Pro",
+      "condition": "Excellent - Refurbished",
+      "grade": "B",
+      "price": 80000,
+      "currency": "FCFA",
+      "quantity": 1,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/FrontSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/FrontRight-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/FrontRight2-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/KeyBoard-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/BackClose-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/BackLogo-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/MS-SURFACEPRO5-8-256/BackSide-review.png"
+      ],
+      "description": {
+        "en": "Microsoft Surface Pro 5 (Model 1796) with Intel Core i7-7660U 7th Gen processor, 8GB RAM, 256GB SSD and 12.3-inch PixelSense touchscreen (2736 × 1824). Intel Iris Plus Graphics 640. Excellent - Refurbished, Grade B. Keyboard included in the price. Charger not included. No warranty. Available in Lomé, Togo.",
+        "fr": "Microsoft Surface Pro 5 (modèle 1796) avec processeur Intel Core i7-7660U de 7e génération, 8 Go de RAM, SSD de 256 Go et écran tactile PixelSense de 12,3 pouces (2736 × 1824). Carte graphique Intel Iris Plus Graphics 640. Excellent état – reconditionné, Grade B. Clavier inclus dans le prix. Chargeur non inclus. Sans garantie. Disponible à Lomé, au Togo."
+      },
+      "chargerIncluded": false,
+      "keyboardIncluded": true,
+      "warranty": false
     }
   ],
   "categories": [
