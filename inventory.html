@@ -1256,10 +1256,13 @@ body .card-dell-3551 .btn.btn-cart svg {
 .product-card-specs .spec{display:grid;grid-template-columns:minmax(100px,1fr) minmax(0,1.35fr);gap:12px;align-items:start;font-size:13px;line-height:1.45}
 .product-card-specs .spec span{color:#64748b;font-weight:600}
 .product-card-specs .spec strong{color:#172033;font-weight:800;text-align:right;overflow-wrap:anywhere}
-.card .price{margin-top:auto;padding-top:18px;min-height:62px;display:flex;align-items:flex-end;flex-wrap:wrap;gap:5px;border-top:1px solid #edf0f4;font-size:32px}
-.card .card-actions{margin-top:0;padding-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.card .card-actions .btn-primary{grid-column:1/-1;width:100%;min-height:46px}
-.card .card-actions .btn-whatsapp,.card .card-actions .btn-quote{grid-column:1/-1}
+.card .price{margin-top:auto;padding-top:8px;min-height:38px;display:flex;align-items:flex-end;flex-wrap:wrap;gap:3px;border-top:1px solid #edf0f4;font-size:20px!important}
+.card .price small{font-size:9px}
+.card .card-actions{margin-top:0;padding-top:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.card .card-actions .btn-primary{grid-column:auto;width:100%;min-height:34px}
+.card .card-actions .btn-cart{min-height:34px;padding:7px 5px;font-size:11px}
+.card .card-actions{gap:6px;padding-top:8px}
+.card .card-actions .btn-primary{font-size:11px;padding:7px 5px}
 @media(max-width:640px){
  .grid{grid-template-columns:1fr}
  .card .brand{min-height:0}
@@ -1269,11 +1272,15 @@ body .card-dell-3551 .btn.btn-cart svg {
  .product-card-specs .spec{grid-template-columns:minmax(92px,.85fr) minmax(0,1.15fr)}
 }
 
-/* Compact inventory cards: full specifications remain on the product detail page. */
-.product-card-specs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:8px 0 2px}
-.product-card-specs .spec{display:block;min-width:0;padding:5px 6px;border-radius:6px;background:#f5f7fb;line-height:1.2}
-.product-card-specs .spec span{display:block;margin-bottom:2px;color:#64748b;font-size:10px;font-weight:700}
-.product-card-specs .spec strong{display:block;overflow-wrap:anywhere;text-align:left;color:#172033;font-size:11px;font-weight:800}
+/* Extra-compact inventory cards: full specifications and contact actions remain on the product detail page. */
+.card-content{padding:10px!important}
+.card .brand{min-height:0;margin:0 0 3px;font-size:10px}
+.card h2{min-height:0!important;margin:0;font-size:14px!important;line-height:1.2}
+.card .sku{min-height:0;margin-top:3px;font-size:10px}
+.product-card-specs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin:7px 0 2px}
+.product-card-specs .spec{display:block;min-width:0;padding:4px 5px;border-radius:5px;background:#f5f7fb;line-height:1.15}
+.product-card-specs .spec span{display:block;margin-bottom:1px;color:#64748b;font-size:9px;font-weight:700}
+.product-card-specs .spec strong{display:block;overflow-wrap:anywhere;text-align:left;color:#172033;font-size:10px;font-weight:800}
 .card .specs,
 .card .dell-spec-list{display:none!important}
 .grid{align-items:stretch}
@@ -2185,22 +2192,6 @@ function renderProducts(products){
       hasPrice;
 
 
-    const whatsappText =
-      currentLanguage === 'en'
-
-        ? `Hello WESTRONIX TECH, I am interested in ${product.name} (SKU: ${product.sku}).`
-
-        : `Bonjour WESTRONIX TECH, je suis intéressé(e) par ${product.name} (SKU : ${product.sku}).`;
-
-
-    const quoteText =
-      currentLanguage === 'en'
-
-        ? `Hello WESTRONIX TECH, I would like to request a quote for ${product.name} (SKU: ${product.sku}). Quantity: ${quantity}.`
-
-        : `Bonjour WESTRONIX TECH, je souhaite demander un devis pour ${product.name} (SKU : ${product.sku}). Quantité : ${quantity}.`;
-
-
     card.innerHTML = `
 
       <div class="product-image">
@@ -2313,30 +2304,7 @@ function renderProducts(products){
           </button>
 
 
-          <a
-            href="https://wa.me/22892953333?text=${encodeURIComponent(whatsappText)}"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-whatsapp">
 
-            💬 WhatsApp
-
-          </a>
-
-
-          <a
-            href="https://wa.me/22892953333?text=${encodeURIComponent(quoteText)}"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-quote">
-
-            ${
-              currentLanguage === 'en'
-                ? 'Request a Quote'
-                : 'Demander un devis'
-            }
-
-          </a>
 
 
         </div>
