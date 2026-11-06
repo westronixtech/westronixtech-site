@@ -467,9 +467,11 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-L7480-16-256/RightSide-Review.png"
       ],
       "description": {
-        "en": "Dell Latitude 7480 with an Intel Core i7-7600U 7th Gen processor (2.80 GHz base, up to 3.90 GHz turbo; 2 cores / 4 threads), 16GB expandable DDR4 RAM, 256GB M.2 SSD and a 14-inch QHD touchscreen (2560 × 1440). Intel HD Graphics 620. Windows 11 Pro. Ports include USB 3.0, HDMI, Mini DisplayPort, Ethernet and a combo audio jack. Approximate weight: 1.4 kg.",
-        "fr": "Dell Latitude 7480 équipé d’un processeur Intel Core i7-7600U de 7e génération (2,80 GHz de base, jusqu’à 3,90 GHz en mode Turbo ; 2 cœurs / 4 threads), de 16 Go de RAM DDR4 extensible, d’un SSD M.2 de 256 Go et d’un écran tactile QHD de 14 pouces (2560 × 1440). Graphiques Intel HD 620. Windows 11 Pro. Connectique : USB 3.0, HDMI, Mini DisplayPort, Ethernet et prise audio combinée. Poids approximatif : 1,4 kg."
-      }
+        "en": "Dell Latitude 7480 with an Intel Core i7-7600U 7th Gen processor (2.80 GHz base, up to 3.90 GHz turbo; 2 cores / 4 threads), 16GB expandable DDR4 RAM, 256GB M.2 SSD and a 14-inch QHD touchscreen (2560 × 1440). Intel HD Graphics 620. Windows 11 Pro. Ports include USB 3.0, HDMI, Mini DisplayPort, Ethernet and a combo audio jack. Approximate weight: 1.4 kg. Used, Grade B.",
+        "fr": "Dell Latitude 7480 équipé d’un processeur Intel Core i7-7600U de 7e génération (2,80 GHz de base, jusqu’à 3,90 GHz en mode Turbo ; 2 cœurs / 4 threads), de 16 Go de RAM DDR4 extensible, d’un SSD M.2 de 256 Go et d’un écran tactile QHD de 14 pouces (2560 × 1440). Graphiques Intel HD 620. Windows 11 Pro. Connectique : USB 3.0, HDMI, Mini DisplayPort, Ethernet et prise audio combinée. Poids approximatif : 1,4 kg. Occasion, Grade B."
+      },
+      "grade": "B",
+      "condition": "Used"
     }
   ],
   "categories": [
