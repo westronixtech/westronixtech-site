@@ -424,11 +424,15 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-3400/product-photos/DELL-L3400-8-256/s-l1600.webp"
       ],
       "description": {
-        "en": "Dell Latitude 3400 laptop with an 8th Gen Intel Core i7 processor (1.80 GHz), 8GB RAM, 256GB SSD, 14-inch Full HD display (1920 × 1080) and dedicated NVIDIA GeForce MX130 graphics. Black, used, Grade B. Windows 10 Pro. Charger and accessories are not included. No warranty. Available in Lomé, Togo.",
-        "fr": "Ordinateur portable Dell Latitude 3400 équipé d’un processeur Intel Core i7 de 8e génération (1,80 GHz), de 8 Go de RAM, d’un SSD de 256 Go, d’un écran Full HD de 14 pouces (1920 × 1080) et d’une carte graphique dédiée NVIDIA GeForce MX130. Noir, occasion, Grade B. Windows 10 Pro. Chargeur et accessoires non inclus. Sans garantie. Disponible à Lomé, au Togo."
+        "en": "Dell Latitude 3400 laptop with an 8th Gen Intel Core i7 processor (1.80 GHz), 8GB RAM, 256GB SSD, 14-inch Full HD display (1920 × 1080) and dedicated NVIDIA GeForce MX130 graphics. Black, used, Grade B. Windows 10 Pro. Charger and accessories are not included. No warranty. Available in Lomé, Togo. Standard Microsoft support for Windows 10 ended on October 14, 2025; Windows 11 upgrade eligibility has not been verified.",
+        "fr": "Ordinateur portable Dell Latitude 3400 équipé d’un processeur Intel Core i7 de 8e génération (1,80 GHz), de 8 Go de RAM, d’un SSD de 256 Go, d’un écran Full HD de 14 pouces (1920 × 1080) et d’une carte graphique dédiée NVIDIA GeForce MX130. Noir, occasion, Grade B. Windows 10 Pro. Chargeur et accessoires non inclus. Sans garantie. Disponible à Lomé, au Togo. Le support standard de Microsoft pour Windows 10 a pris fin le 14 octobre 2025 ; l’éligibilité à une mise à niveau vers Windows 11 n’a pas été vérifiée."
       },
       "chargerIncluded": false,
-      "warranty": false
+      "warranty": false,
+      "customerDisclosure": {
+        "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not been verified.",
+        "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas été vérifiée."
+      }
     }
   ],
   "categories": [
