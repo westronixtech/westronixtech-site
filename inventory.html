@@ -1269,6 +1269,36 @@ body .card-dell-3551 .btn.btn-cart svg {
  .product-card-specs .spec{grid-template-columns:minmax(92px,.85fr) minmax(0,1.15fr)}
 }
 
+/* Compact inventory cards: full specifications remain on the product detail page. */
+.product-card-specs,
+.card .specs,
+.card .dell-spec-list{display:none!important}
+.grid{align-items:stretch}
+.grid>.card{height:100%;min-width:0}
+.card{height:100%;display:flex;flex-direction:column}
+.product-image{aspect-ratio:3/2;height:auto;min-height:0}
+.card-dell-3551 .product-image{aspect-ratio:3/2;height:auto}
+.card-content{padding:12px;display:flex;flex:1;flex-direction:column;min-width:0}
+.card .brand{min-height:14px;margin:0 0 4px;font-size:11px}
+.card h2{min-height:40px;margin:0;font-size:16px;line-height:1.25}
+.card .sku{min-height:14px;margin-top:4px;font-size:11px}
+.card .price{margin-top:auto;padding-top:10px;min-height:46px;display:flex;align-items:flex-end;flex-wrap:wrap;gap:4px;font-size:23px}
+.card .price small{font-size:10px}
+.card .card-actions{margin-top:0;padding-top:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-items:stretch}
+.card .card-actions .btn,
+.card .card-actions .btn-primary,
+.card .card-actions .btn-whatsapp,
+.card .card-actions .btn-quote{grid-column:auto;width:100%;min-height:36px;padding:7px 6px;font-size:11px;line-height:1.15;border-radius:7px}
+.card .card-actions .btn-cart{font-size:11px}
+.card .card-actions .dell-cart-icon{width:14px;height:14px;flex-basis:14px;margin-right:4px}
+@media(max-width:640px){
+ .card-content{padding:14px}
+ .card h2{min-height:0;font-size:18px}
+ .card .price{font-size:25px}
+ .card .card-actions .btn{min-height:40px;font-size:12px}
+}
+
+
 </style>
 
 <style id="westronix-premium-inventory-hero">
