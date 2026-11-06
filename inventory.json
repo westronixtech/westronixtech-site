@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04",
+  "lastUpdated": "2026-11-05",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -252,6 +252,55 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-NEO50QG4-16-256/BackSide-review.png"
       ],
       "grade": "B"
+    },
+    {
+      "sku": "DELL-L5430-16-256",
+      "brand": "Dell",
+      "name": "Dell Latitude 5430 | 12th Gen Intel Core i5-1245U vPro | 16GB RAM | 256GB SSD | 14-inch",
+      "category": "Laptop",
+      "processor": "12th Gen Intel Core i5-1245U with Intel vPro Enterprise",
+      "ram": "16GB",
+      "storage": "256GB SSD",
+      "screen": "14-inch",
+      "gpu": "Intel Iris Xe Graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "ports": [
+        "USB 2.0",
+        "USB 3.2",
+        "HDMI",
+        "USB-C",
+        "3.5mm audio jack"
+      ],
+      "color": "Silver",
+      "condition": "Excellent - Refurbished",
+      "grade": "B",
+      "price": 260000,
+      "currency": "FCFA",
+      "quantity": 1,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/FrontSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/FrontCloseLid-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/Keyboard-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/BackSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/LeffSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/add-dell-latitude-5430/product-photos/DELL-L5430-16-256/RightSide-review1.png"
+      ],
+      "description": {
+        "en": "Dell Latitude 5430 with a 12th Gen Intel Core i5-1245U processor and Intel vPro Enterprise, 16GB RAM, 256GB SSD, 14-inch display and Intel Iris Xe Graphics. Silver, Excellent - Refurbished, Grade B. Windows 10 Pro. Wi-Fi and Bluetooth. Includes Dell power adapter. No warranty. Windows 10 standard support ended October 14, 2025; Windows 11 upgrade eligibility has not been verified. Available in Lomé, Togo.",
+        "fr": "Dell Latitude 5430 équipé d’un processeur Intel Core i5-1245U de 12e génération avec Intel vPro Enterprise, de 16 Go de RAM, d’un SSD de 256 Go, d’un écran de 14 pouces et de graphiques Intel Iris Xe. Couleur argent, excellent état – reconditionné, Grade B. Windows 10 Pro. Wi-Fi et Bluetooth. Adaptateur secteur Dell inclus. Sans garantie. Le support standard de Windows 10 a pris fin le 14 octobre 2025 ; l’éligibilité à Windows 11 n’a pas été vérifiée. Disponible à Lomé, au Togo."
+      },
+      "chargerIncluded": true,
+      "warranty": false,
+      "customerDisclosure": {
+        "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
+        "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
+      }
     }
   ],
   "categories": [
