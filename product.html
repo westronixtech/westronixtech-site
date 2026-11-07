@@ -1653,68 +1653,28 @@ function renderProduct(product){
         ================================== -->
 
         <div class="specs">
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Brand'
-              : 'Marque',
-            product.brand
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Category'
-              : 'Catégorie',
-            product.category
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Processor'
-              : 'Processeur',
-            product.processor
-          )}
-
-
-          ${createSpecRow(
-            'RAM',
-            product.ram
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Storage'
-              : 'Stockage',
-            product.storage
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Screen'
-              : 'Écran',
-            product.screen
-          )}
-
-
-          ${createSpecRow(
-            'GPU',
-            product.gpu
-          )}
-
-
-          ${createSpecRow(
-            currentLanguage === 'en'
-              ? 'Location'
-              : 'Emplacement',
-            location
-          )}
-
-
+          ${createSpecRow(currentLanguage === 'en' ? 'Brand' : 'Marque', product.brand)}
+          ${createSpecRow(currentLanguage === 'en' ? 'Category' : 'Catégorie', product.category)}
+          ${product.category === 'Memory & RAM' ? `
+            ${createSpecRow(currentLanguage === 'en' ? 'Model' : 'Modèle', product.model)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Capacity' : 'Capacité', product.capacity)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Memory type' : 'Type de mémoire', product.memoryType)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Speed' : 'Vitesse', product.speed)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Data rate' : 'Débit', product.dataRate)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Form factor' : 'Format', product.formFactor)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Voltage' : 'Tension', product.voltage)}
+            ${createSpecRow(currentLanguage === 'en' ? 'CAS latency' : 'Latence CAS', product.casLatency)}
+            ${createSpecRow('ECC', product.ecc)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Buffering' : 'Mise en mémoire tampon', product.buffering)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Compatible devices' : 'Appareils compatibles', product.compatibleDevices)}
+          ` : `
+            ${createSpecRow(currentLanguage === 'en' ? 'Processor' : 'Processeur', product.processor)}
+            ${createSpecRow('RAM', product.ram)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Storage' : 'Stockage', product.storage)}
+            ${createSpecRow(currentLanguage === 'en' ? 'Screen' : 'Écran', product.screen)}
+            ${createSpecRow('GPU', product.gpu)}
+          `}
+          ${createSpecRow(currentLanguage === 'en' ? 'Location' : 'Emplacement', location)}
         </div>
 
 

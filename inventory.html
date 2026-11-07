@@ -1944,7 +1944,8 @@ function localizeCategory(category){
     Phone: { en: 'Phones', fr: 'Téléphones' },
     Tablet: { en: 'Tablets', fr: 'Tablettes' },
     Monitor: { en: 'Monitors', fr: 'Écrans' },
-    Components: { en: 'Components', fr: 'Composants' }
+    Components: { en: 'Components', fr: 'Composants' },
+    'Memory & RAM': { en: 'Memory & RAM', fr: 'Mémoire et RAM' }
   };
   return labels[category]?.[currentLanguage] || category;
 }
@@ -2260,10 +2261,17 @@ function renderProducts(products){
 
 
         <div class="product-card-specs">
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Processor' : 'Processeur'}</span><strong>${escapeHTML(product.processor || '—')}</strong></div>
-          <div class="spec"><span>RAM</span><strong>${escapeHTML(product.ram || '—')}</strong></div>
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Storage' : 'Stockage'}</span><strong>${escapeHTML(product.storage || '—')}</strong></div>
-          <div class="spec"><span>${currentLanguage === 'en' ? 'Screen' : 'Écran'}</span><strong>${escapeHTML(product.screen || '—')}</strong></div>
+          ${product.category === 'Memory & RAM' ? `
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Capacity' : 'Capacité'}</span><strong>${escapeHTML(product.capacity || '—')}</strong></div>
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Memory type' : 'Type de mémoire'}</span><strong>${escapeHTML(product.memoryType || '—')}</strong></div>
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Speed' : 'Vitesse'}</span><strong>${escapeHTML(product.speed || '—')}</strong></div>
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Form factor' : 'Format'}</span><strong>${escapeHTML(product.formFactor || '—')}</strong></div>
+          ` : `
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Processor' : 'Processeur'}</span><strong>${escapeHTML(product.processor || '—')}</strong></div>
+            <div class="spec"><span>RAM</span><strong>${escapeHTML(product.ram || '—')}</strong></div>
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Storage' : 'Stockage'}</span><strong>${escapeHTML(product.storage || '—')}</strong></div>
+            <div class="spec"><span>${currentLanguage === 'en' ? 'Screen' : 'Écran'}</span><strong>${escapeHTML(product.screen || '—')}</strong></div>
+          `}
         </div>
 
 
