@@ -505,7 +505,8 @@
       "description": {
         "en": "Samsung 8GB DDR5 laptop memory module, model M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), 262-pin SO-DIMM, 1.1V, CL46, non-ECC and unbuffered. Compatible with laptops that support DDR5 5600 SO-DIMM memory. Check device compatibility before purchase.",
         "fr": "Module mémoire Samsung DDR5 de 8 Go pour ordinateur portable, modèle M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), SO-DIMM 262 broches, 1,1 V, CL46, non-ECC et non enregistré. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5 5600 SO-DIMM. Vérifiez la compatibilité de votre appareil avant l’achat."
-      }
+      },
+      "grade": "A New"
     }
   ],
   "categories": [
