@@ -541,6 +541,33 @@
         "en": "A-TECH 8GB DDR5 laptop memory module running at 5600 MHz (PC5-44800). 262-pin SO-DIMM, 1.1V, CL46, non-ECC and unbuffered. Compatible with laptops that support DDR5 5600 SO-DIMM memory. Check device compatibility before purchase.",
         "fr": "Module mémoire A-TECH DDR5 de 8 Go pour ordinateur portable, fonctionnant à 5600 MHz (PC5-44800). SO-DIMM 262 broches, 1,1 V, CL46, non-ECC et non tamponné. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5 5600 SO-DIMM. Vérifiez la compatibilité de votre appareil avant l’achat."
       }
+    },
+    {
+      "sku": "SKHYNIX-DDR4-16-3200",
+      "brand": "SK Hynix",
+      "name": "SK Hynix 16GB DDR4 3200MHz Laptop RAM | PC4-3200AA",
+      "category": "Memory & RAM",
+      "capacity": "16GB",
+      "memoryType": "DDR4",
+      "speed": "3200 MHz",
+      "dataRate": "PC4-25600 / PC4-3200AA",
+      "compatibleDevices": "Laptop",
+      "condition": "Used",
+      "grade": "B USED",
+      "price": 50000,
+      "currency": "FCFA",
+      "quantity": 15,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SkyHynix-DDR4-16-3200/SkyHynix-16GB-RAM1-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SkyHynix-DDR4-16-3200/SkyHynix-16GB-RAM2-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SkyHynix-DDR4-16-3200/SkyHynix-16GB-RAM3-review.png"
+      ],
+      "description": {
+        "en": "SK Hynix 16GB DDR4 laptop memory module operating at 3200 MHz (PC4-25600 / PC4-3200AA). Compatible with laptops that support 16GB DDR4-3200 memory. Used, Grade B. Please confirm your laptop's memory type, speed and module compatibility before purchase.",
+        "fr": "Module mémoire SK Hynix DDR4 de 16 Go pour ordinateur portable, fonctionnant à 3200 MHz (PC4-25600 / PC4-3200AA). Compatible avec les ordinateurs portables prenant en charge la mémoire DDR4-3200 de 16 Go. Occasion, Grade B. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
+      }
     }
   ],
   "categories": [
