@@ -568,6 +568,40 @@
         "en": "SK Hynix 16GB DDR4 laptop memory module operating at 3200 MHz (PC4-25600 / PC4-3200AA). Compatible with laptops that support 16GB DDR4-3200 memory. Used, Grade B. Please confirm your laptop's memory type, speed and module compatibility before purchase.",
         "fr": "Module mémoire SK Hynix DDR4 de 16 Go pour ordinateur portable, fonctionnant à 3200 MHz (PC4-25600 / PC4-3200AA). Compatible avec les ordinateurs portables prenant en charge la mémoire DDR4-3200 de 16 Go. Occasion, Grade B. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
       }
+    },
+    {
+      "sku": "CRUCIAL-DDR5-32-4800",
+      "brand": "Crucial",
+      "name": "Crucial 32GB DDR5 4800MHz Laptop RAM | SO-DIMM",
+      "category": "Memory & RAM",
+      "capacity": "32GB",
+      "memoryType": "DDR5",
+      "memoryGeneration": "DDR5",
+      "speed": "4800 MHz",
+      "formFactor": "260-pin SO-DIMM",
+      "numberOfPins": 260,
+      "voltage": "1.1V",
+      "casLatency": "CL40",
+      "compatibleDevices": "Laptop",
+      "additionalFeatures": [
+        "Lightweight"
+      ],
+      "condition": "Used",
+      "grade": "B USED",
+      "price": 120000,
+      "currency": "FCFA",
+      "quantity": 10,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/Crucial-DDR5-32-4800/Crucial-32GB-RAM1-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/Crucial-DDR5-32-4800/Crucial-32GB-RAM2-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/Crucial-DDR5-32-4800/Crucial-32GB-RAM3-review.png"
+      ],
+      "description": {
+        "en": "Crucial 32GB DDR5 laptop memory module operating at 4800 MHz. 260-pin SO-DIMM, 1.1V, CL40, and lightweight. Used, Grade B. Compatible with laptops that support DDR5-4800 SO-DIMM memory. Please verify your laptop's memory type, speed, and module compatibility before purchase.",
+        "fr": "Module mémoire Crucial DDR5 de 32 Go pour ordinateur portable, fonctionnant à 4800 MHz. SO-DIMM 260 broches, 1,1 V, CL40 et léger. Occasion, Grade B. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5-4800 SO-DIMM. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
+      }
     }
   ],
   "categories": [
