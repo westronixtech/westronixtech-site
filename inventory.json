@@ -472,6 +472,40 @@
       },
       "grade": "B",
       "condition": "Used"
+    },
+    {
+      "sku": "SAMSUNG-DDR5-8-5600",
+      "brand": "Samsung",
+      "model": "M425R1GB4BB0-CWM",
+      "name": "Samsung 8GB DDR5 5600MHz Laptop RAM | SO-DIMM",
+      "category": "Memory & RAM",
+      "capacity": "8GB",
+      "memoryType": "DDR5",
+      "speed": "5600 MHz",
+      "dataRate": "44800 MB/s",
+      "formFactor": "262-pin SO-DIMM",
+      "voltage": "1.1V",
+      "casLatency": "CL46",
+      "ecc": "Non-ECC",
+      "buffering": "Unbuffered",
+      "compatibleDevices": "Laptop",
+      "condition": "Not specified",
+      "price": 45000,
+      "currency": "FCFA",
+      "quantity": 50,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SAMSUNG-DDR5-8-5600/Front-8GBRAM3-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SAMSUNG-DDR5-8-5600/8GBRAM2-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SAMSUNG-DDR5-8-5600/8GBRAM3-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SAMSUNG-DDR5-8-5600/8GBRAM4-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/SAMSUNG-DDR5-8-5600/Frontback-8GBRAM3-review.png"
+      ],
+      "description": {
+        "en": "Samsung 8GB DDR5 laptop memory module, model M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), 262-pin SO-DIMM, 1.1V, CL46, non-ECC and unbuffered. Compatible with laptops that support DDR5 5600 SO-DIMM memory. Check device compatibility before purchase.",
+        "fr": "Module mémoire Samsung DDR5 de 8 Go pour ordinateur portable, modèle M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), SO-DIMM 262 broches, 1,1 V, CL46, non-ECC et non enregistré. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5 5600 SO-DIMM. Vérifiez la compatibilité de votre appareil avant l’achat."
+      }
     }
   ],
   "categories": [
@@ -481,7 +515,8 @@
     "Server",
     "Networking",
     "Accessories",
-    "Docking Stations"
+    "Docking Stations",
+    "Memory & RAM"
   ],
   "notice": "Only equipment physically received and verified by WESTRONIX should be added to the public catalog."
 }
