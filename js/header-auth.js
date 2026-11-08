@@ -2,36 +2,86 @@ import { supabase } from "./supabase-client.js";
 
 const ACCOUNT_LABEL = "Account";
 const ACCOUNT_PATH = "signin.html";
+const CART_KEY = "wt_cart";
 let activeUserId = null;
 let authGeneration = 0;
 
-const accountLinks = () => {
-  const headers = [...document.querySelectorAll("header")];
-  const matches = headers.flatMap((header) =>
-    [...header.querySelectorAll("a[href]")].filter((link) => {
-      try {
-        return link.classList.contains("wt-account-trigger") || new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
-      } catch {
-        return false;
-      }
-    })
+function headerElements(header) {
+  const language = header.querySelector(
+    'select#language, select#languageSelect, select.language-select, select.lang, select[aria-label*="Language"], select[aria-label*="Langue"]'
   );
+  const account = [...header.querySelectorAll("a[href]")].find((link) => {
+    try {
+      return new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
+    } catch { return false; }
+  });
+  const cart = [...header.querySelectorAll("a[href]")].find((link) => {
+    try {
+      return new URL(link.getAttribute("href"), location.href).pathname.endsWith("/cart.html");
+    } catch { return false; }
+  });
+  return { language, account, cart };
+}
 
-  if (matches.length) return matches;
+function accountWrapper(link) {
+  return link.closest(".wt-account-menu") || link;
+}
 
-  // A few older pages have a compact header without an Account link.
-  const header = headers[0];
-  const nav = header?.querySelector("nav, .tools, .header-tools, .nav-right");
-  if (!nav) return [];
-
+function createLink(href, className, text) {
   const link = document.createElement("a");
-  link.href = ACCOUNT_PATH;
-  link.className = "wt-account-trigger";
-  link.textContent = ACCOUNT_LABEL;
-  link.setAttribute("aria-label", ACCOUNT_LABEL);
-  nav.append(link);
-  return [link];
-};
+  link.href = href;
+  link.className = className;
+  link.textContent = text;
+  return link;
+}
+
+function setupRightNavigation(header) {
+  if (header.querySelector(".wt-market-nav")) return header.querySelector(".wt-market-nav");
+  const { language, account, cart } = headerElements(header);
+  const host = language?.parentElement ||
+    account?.parentElement ||
+    cart?.parentElement ||
+    header.querySelector(".tools, .header-tools, .header-actions, .toprow, .header-inner, .inner");
+  if (!host) return null;
+
+  const nav = document.createElement("div");
+  nav.className = "wt-market-nav";
+  nav.setAttribute("aria-label", "Customer navigation");
+
+  if (language) {
+    const languageWrap = document.createElement("label");
+    languageWrap.className = "wt-language-item";
+    languageWrap.setAttribute("aria-label", "Select website language");
+    languageWrap.append(language);
+    language.classList.add("wt-language-select");
+    [...language.options].forEach((option) => {
+      const code = option.value.toLowerCase();
+      option.textContent = code === "fr" ? "🇫🇷 FR ▾" : "🇺🇸 EN ▾";
+    });
+    nav.append(languageWrap);
+  }
+
+  let accountItem = account ? accountWrapper(account) : null;
+  if (!accountItem) {
+    const newAccount = createLink(ACCOUNT_PATH, "wt-account-trigger", ACCOUNT_LABEL);
+    accountItem = newAccount;
+  }
+  nav.append(accountItem);
+
+  const orders = createLink("account.html#orders", "wt-orders-link", "");
+  orders.innerHTML = '<span>Orders</span><span>&amp; Returns</span>';
+  orders.setAttribute("aria-label", "Orders and Returns");
+  nav.append(orders);
+
+  let cartItem = cart;
+  if (!cartItem) cartItem = createLink("cart.html", "wt-cart-link", "");
+  cartItem.classList.add("wt-cart-link");
+  cartItem.setAttribute("aria-label", "Shopping cart");
+  nav.append(cartItem);
+
+  host.append(nav);
+  return nav;
+}
 
 function ensureMenu(link) {
   if (link.closest(".wt-account-menu")) return link.closest(".wt-account-menu");
@@ -56,9 +106,7 @@ function ensureMenu(link) {
     ["Profile", "account.html#profile"]
   ];
   for (const [label, href] of entries) {
-    const item = document.createElement("a");
-    item.href = href;
-    item.textContent = label;
+    const item = createLink(href, "", label);
     item.setAttribute("role", "menuitem");
     menu.append(item);
   }
@@ -101,28 +149,36 @@ function ensureMenu(link) {
 }
 
 function closeMenus() {
-  document.querySelectorAll(".wt-account-dropdown").forEach((menu) => {
-    menu.hidden = true;
-  });
+  document.querySelectorAll(".wt-account-dropdown").forEach((menu) => { menu.hidden = true; });
   document.querySelectorAll(".wt-account-trigger[aria-expanded]").forEach((link) => {
     link.setAttribute("aria-expanded", "false");
   });
 }
 
 function installStyles() {
-  if (document.getElementById("wt-account-menu-styles")) return;
+  if (document.getElementById("wt-market-nav-styles")) return;
   const style = document.createElement("style");
-  style.id = "wt-account-menu-styles";
+  style.id = "wt-market-nav-styles";
   style.textContent = `
+    .wt-market-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,24px);min-height:48px;color:#fff;white-space:nowrap;font-family:inherit;font-size:12px;font-weight:700}
+    .wt-language-item{display:inline-flex;align-items:center}
+    .wt-language-select{appearance:none;-webkit-appearance:none;max-width:104px;border:1px solid #ffffff38!important;border-radius:6px!important;background:#ffffff10!important;color:#fff!important;padding:8px 7px!important;font:inherit!important;font-size:12px!important;font-weight:800!important;cursor:pointer}
+    .wt-language-select option{background:#fff;color:#142033}
     .wt-account-menu{position:relative;display:inline-flex;align-items:center;z-index:1000}
-    .wt-account-trigger{white-space:nowrap;cursor:pointer}
+    .wt-account-trigger{display:flex!important;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-height:42px;color:#fff!important;text-decoration:none!important;line-height:1.15;white-space:nowrap;cursor:pointer}
+    .wt-account-greeting{font-size:11px;font-weight:500;color:#d5dfeb}
+    .wt-account-greeting strong{font-size:12px;font-weight:900;color:#fff;letter-spacing:.35px}
+    .wt-account-label{font-size:12px;font-weight:800;color:#fff}
+    .wt-orders-link{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:42px;color:#fff!important;text-decoration:none!important;line-height:1.15;font-size:12px;font-weight:800}
+    .wt-cart-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:7px 10px;border-radius:7px;background:#1677ff;color:#fff!important;text-decoration:none!important;font-size:12px;font-weight:900}
+    .wt-market-nav a:hover{color:#9bc8ff!important}
     .wt-account-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:174px;padding:7px;background:#fff;color:#142033;border:1px solid #dce4ee;border-radius:9px;box-shadow:0 12px 30px rgba(7,21,38,.2);z-index:10000;text-align:left}
     .wt-account-dropdown[hidden]{display:none}
     .wt-account-dropdown a,.wt-account-dropdown button{display:block;width:100%;padding:10px 12px;border:0;border-radius:6px;background:transparent;color:#142033;text-align:left;text-decoration:none;font:inherit;font-size:13px;font-weight:600;line-height:1.35;cursor:pointer;white-space:nowrap}
     .wt-account-dropdown a:hover,.wt-account-dropdown button:hover{background:#eef5ff;color:#075fc9}
     .wt-account-dropdown button:disabled{opacity:.6;cursor:wait}
     .wt-account-divider{height:1px;background:#e5eaf1;margin:5px 4px}
-    @media(max-width:760px){.wt-account-menu{z-index:10001}.wt-account-dropdown{right:0;left:auto;max-width:min(82vw,230px)}}
+    @media(max-width:760px){.wt-market-nav{gap:8px;flex-wrap:nowrap;font-size:11px}.wt-account-greeting{font-size:10px}.wt-account-label,.wt-orders-link{font-size:11px}.wt-cart-link{padding:6px 7px;font-size:11px}.wt-language-select{max-width:86px;padding:7px 4px!important;font-size:11px!important}.wt-account-dropdown{right:0;left:auto;max-width:min(82vw,230px)}}
   `;
   document.head.append(style);
 }
@@ -131,58 +187,131 @@ function customerName(user) {
   const metadata = user?.user_metadata || {};
   const firstName = String(metadata.first_name || "").trim();
   const fullName = String(metadata.full_name || "").trim();
-  // display_name is retained as a compatibility fallback for existing WESTRONIX signups.
   const legacyDisplayName = String(metadata.display_name || "").trim();
-  return firstName || fullName || legacyDisplayName;
+  const chosen = firstName || fullName || legacyDisplayName;
+  return chosen ? chosen.split(/\s+/)[0].toUpperCase() : "";
 }
 
 function renderAccountState(user, name = "") {
   const signedIn = Boolean(user);
-  for (const link of accountLinks()) {
-    ensureMenu(link);
-    link.dataset.wtAuthenticated = signedIn ? "true" : "";
-    link.href = signedIn ? "account.html" : (link.dataset.wtOriginalHref || ACCOUNT_PATH);
-    if (signedIn && name) {
-      link.textContent = `Hello, ${name} ▾`;
-      link.setAttribute("aria-label", `Hello, ${name}. Open account menu`);
-    } else if (signedIn) {
-      link.textContent = ACCOUNT_LABEL;
-      link.setAttribute("aria-label", ACCOUNT_LABEL);
-    } else {
-      link.innerHTML = link.dataset.wtOriginalHtml || ACCOUNT_LABEL;
-      link.setAttribute("aria-label", ACCOUNT_LABEL);
+  for (const header of document.querySelectorAll("header")) {
+    const nav = setupRightNavigation(header);
+    if (!nav) continue;
+    const accountLink = nav.querySelector(".wt-account-trigger") ||
+      [...nav.querySelectorAll("a")].find((a) => a.href.includes("signin.html"));
+    if (accountLink) {
+      const wrapper = ensureMenu(accountLink);
+      const trigger = wrapper.querySelector(".wt-account-trigger");
+      trigger.dataset.wtAuthenticated = signedIn ? "true" : "";
+      trigger.href = signedIn ? "account.html" : (trigger.dataset.wtOriginalHref || ACCOUNT_PATH);
+      if (signedIn && name) {
+        trigger.replaceChildren();
+        const greeting = document.createElement("span");
+        greeting.className = "wt-account-greeting";
+        greeting.append(document.createTextNode("Hello, "));
+        const strong = document.createElement("strong");
+        strong.textContent = name;
+        greeting.append(strong);
+        const label = document.createElement("span");
+        label.className = "wt-account-label";
+        label.textContent = "My Account ▾";
+        trigger.append(greeting, label);
+        trigger.setAttribute("aria-label", `Hello, ${name}. Open My Account menu`);
+      } else if (signedIn) {
+        trigger.textContent = ACCOUNT_LABEL;
+        trigger.setAttribute("aria-label", ACCOUNT_LABEL);
+      } else {
+        trigger.innerHTML = trigger.dataset.wtOriginalHtml || ACCOUNT_LABEL;
+        trigger.setAttribute("aria-label", ACCOUNT_LABEL);
+      }
     }
+    const orders = nav.querySelector(".wt-orders-link");
+    if (orders) orders.href = signedIn ? "account.html#orders" : ACCOUNT_PATH;
+    updateCartCount(nav);
   }
   if (!signedIn) closeMenus();
 }
+
+function readCartCount() {
+  try {
+    const cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    if (!Array.isArray(cart)) return 0;
+    return cart.reduce((sum, item) => {
+      const quantity = Number(item?.quantity);
+      return sum + (Number.isFinite(quantity) && quantity > 0 ? Math.floor(quantity) : 1);
+    }, 0);
+  } catch (error) {
+    console.error("WESTRONIX header: could not read the shopping cart count.", error);
+    return 0;
+  }
+}
+
+function updateCartCount(nav) {
+  const link = nav.querySelector(".wt-cart-link");
+  if (!link) return;
+  const count = readCartCount();
+  link.textContent = `🛒 ${count} Cart`;
+  link.setAttribute("aria-label", `Shopping cart, ${count} items`);
+}
+
+function refreshAllCartCounts() {
+  document.querySelectorAll(".wt-market-nav").forEach(updateCartCount);
+}
+
+function installCartCountSync() {
+  if (window.__wtHeaderCartSyncInstalled) return;
+  window.__wtHeaderCartSyncInstalled = true;
+  const originalSetItem = Storage.prototype.setItem;
+  const originalRemoveItem = Storage.prototype.removeItem;
+  Storage.prototype.setItem = function(key, value) {
+    const result = originalSetItem.call(this, key, value);
+    if (key === CART_KEY) window.dispatchEvent(new Event("wt:cart-updated"));
+    return result;
+  };
+  Storage.prototype.removeItem = function(key) {
+    const result = originalRemoveItem.call(this, key);
+    if (key === CART_KEY) window.dispatchEvent(new Event("wt:cart-updated"));
+    return result;
+  };
+  window.addEventListener("wt:cart-updated", refreshAllCartCounts);
+  window.addEventListener("storage", (event) => {
+    if (event.key === CART_KEY || event.key === null) refreshAllCartCounts();
+  });
+}
+
+installStyles();
+installCartCountSync();
+for (const header of document.querySelectorAll("header")) setupRightNavigation(header);
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".wt-account-menu")) closeMenus();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenus();
+});
+
+const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+  Promise.resolve().then(() => updateFromSession(session));
+});
 
 async function updateFromSession(session) {
   const generation = ++authGeneration;
   const user = session?.user || null;
   activeUserId = user?.id || null;
-
   if (!user) {
     renderAccountState(null);
     return;
   }
-
-  // Show available session metadata immediately; refresh it from the authenticated user.
   renderAccountState(user, customerName(user));
-
   try {
     const { data, error } = await supabase.auth.getUser(session.access_token);
     if (generation !== authGeneration || activeUserId !== user.id) return;
     if (error) throw error;
-
     const authenticatedUser = data?.user;
     if (!authenticatedUser) throw new Error("Supabase returned no authenticated user profile.");
-
     const name = customerName(authenticatedUser);
     if (!name) {
-      console.error(
-        "WESTRONIX header: signed-in customer profile has no first_name or full_name (or legacy display_name); showing Account.",
-        { userId: authenticatedUser.id }
-      );
+      console.error("WESTRONIX header: signed-in customer profile has no first_name or full_name (or legacy display_name); showing Account.", { userId: authenticatedUser.id });
       renderAccountState(authenticatedUser);
       return;
     }
@@ -193,22 +322,6 @@ async function updateFromSession(session) {
     renderAccountState(user);
   }
 }
-
-installStyles();
-const initialLinks = accountLinks();
-initialLinks.forEach(ensureMenu);
-
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".wt-account-menu")) closeMenus();
-});
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenus();
-});
-
-const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
-  // Defer Supabase calls until after its auth callback has released its internal lock.
-  Promise.resolve().then(() => updateFromSession(session));
-});
 
 const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
 if (sessionError) {
