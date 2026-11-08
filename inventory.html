@@ -1402,7 +1402,7 @@ body .card-dell-3551 .btn.btn-cart svg {
     <nav class="nav" aria-label="Main navigation">
 <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
 <a href="inventory.html" class="active"><span class="lang-en">Shop Inventory</span><span class="lang-fr">Inventaire</span></a>
-<a href="request-product.html"><span class="lang-en">Request a Product</span><span class="lang-fr">Demander un produit</span></a>
+<a href="request-product.html"><span class="lang-en">Request Product</span><span class="lang-fr">Demander un produit</span></a>
 <a href="bulk-orders.html"><span class="lang-en">Bulk Orders</span><span class="lang-fr">Achats en gros</span></a>
 <a href="sell-equipment.html"><span class="lang-en">Sell Equipment</span><span class="lang-fr">Vendre du matériel</span></a>
 <a href="africa-education.html"><span class="lang-en">Education</span><span class="lang-fr">Éducation</span></a>
@@ -1933,7 +1933,7 @@ async function loadInventory(){
           : 'Veuillez réessayer. Si le problème persiste, contactez WESTRONIX ou demandez le produit recherché.'}</p>
         <div class="empty-actions">
           <button type="button" class="btn btn-primary" onclick="loadInventory()">${currentLanguage === 'en' ? 'Try again' : 'Réessayer'}</button>
-          <a class="btn btn-cart" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+          <a class="btn btn-cart" href="request-product.html">${currentLanguage === 'en' ? 'Request Product' : 'Demander un produit'}</a>
           <a class="btn btn-outline" href="bulk-orders.html">${currentLanguage === 'en' ? 'Bulk Orders' : 'Achats en gros'}</a>
         </div>
       </div>
@@ -2128,7 +2128,7 @@ function renderProducts(products){
             ? 'Our public catalog currently has no verified listings. You can request a specific item or ask about a bulk requirement; availability and pricing will be confirmed separately.'
             : 'Notre catalogue public ne contient actuellement aucune annonce vérifiée. Vous pouvez demander un article précis ou un devis en gros ; la disponibilité et le prix seront confirmés séparément.'}</p>
           <div class="empty-actions">
-            <a class="btn btn-primary" href="request-product.html">${currentLanguage === 'en' ? 'Request a Product' : 'Demander un produit'}</a>
+            <a class="btn btn-primary" href="request-product.html">${currentLanguage === 'en' ? 'Request Product' : 'Demander un produit'}</a>
             <a class="btn btn-cart" href="bulk-orders.html">${currentLanguage === 'en' ? 'Request a Bulk Quote' : 'Demander un devis en gros'}</a>
           </div>
         </div>
