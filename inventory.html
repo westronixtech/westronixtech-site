@@ -2429,6 +2429,8 @@ function addToCart(sku){
       name:product.name,
 
       price:product.price,
+      regularPrice:product.price,
+      salePrice:product.salePrice || null,
       priceCurrency:'USD',
 
       quantity:1,
