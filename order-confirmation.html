@@ -585,6 +585,7 @@ footer p{
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -734,6 +735,8 @@ WhatsApp: +228 92 95 33 33
    LANGUAGE
 ========================================== */
 
+let orderCurrency = "USD";
+
 function applyLanguage(language){
 
     const selected =
@@ -760,6 +763,8 @@ function applyLanguage(language){
     if(selector){
         selector.value = selected;
     }
+
+    loadOrder();
 
 }
 
@@ -844,8 +849,8 @@ window.addEventListener(
 
 function formatCurrency(amount){
 
-    return Number(amount || 0)
-        .toLocaleString("fr-FR") + " FCFA";
+    const usdAmount = orderCurrency === "USD" ? Number(amount || 0) : Number(amount || 0) / 600;
+    return formatPrice(usdAmount, document.documentElement.lang || "fr");
 
 }
 
@@ -885,6 +890,8 @@ function loadOrder(){
 
     }
 
+
+    orderCurrency = order && order.currency === "USD" ? "USD" : "FCFA";
 
     const orderNumber =
         document.getElementById("orderNumber");
