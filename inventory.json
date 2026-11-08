@@ -644,9 +644,10 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/RightSide-review.png"
       ],
       "description": {
-        "en": "Dell XPS 15 9570 laptop with an 8th Gen Intel Core i7-8750H processor (2.20 GHz), 16GB DDR4 RAM, 256GB SSD, 15.6-inch display and NVIDIA GeForce GTX 1050 Ti graphics. Black, used, Grade B. Windows 10 Home. Features include a backlit keyboard, built-in webcam and microphone, Wi-Fi, Bluetooth, HDMI and USB 3.0. Contact WESTRONIX for pricing and availability.",
-        "fr": "Ordinateur portable Dell XPS 15 9570 avec processeur Intel Core i7-8750H de 8e génération (2,20 GHz), 16 Go de RAM DDR4, SSD de 256 Go, écran de 15,6 pouces et carte graphique NVIDIA GeForce GTX 1050 Ti. Noir, occasion, Grade B. Windows 10 Home. Comprend un clavier rétroéclairé, une webcam et un microphone intégrés, le Wi-Fi, le Bluetooth, HDMI et USB 3.0. Contactez WESTRONIX pour connaître le prix et la disponibilité."
-      }
+        "en": "Dell XPS 15 9570 laptop with an 8th Gen Intel Core i7-8750H processor (2.20 GHz), 16GB DDR4 RAM, 256GB SSD, 15.6-inch display and NVIDIA GeForce GTX 1050 Ti graphics. Black, used, Grade B. Windows 10 Home. Features include a backlit keyboard, built-in webcam and microphone, Wi-Fi, Bluetooth, HDMI and USB 3.0. Price: $350.00. Contact WESTRONIX to confirm availability.",
+        "fr": "Ordinateur portable Dell XPS 15 9570 avec processeur Intel Core i7-8750H de 8e génération (2,20 GHz), 16 Go de RAM DDR4, SSD de 256 Go, écran de 15,6 pouces et carte graphique NVIDIA GeForce GTX 1050 Ti. Noir, occasion, Grade B. Windows 10 Home. Comprend un clavier rétroéclairé, une webcam et un microphone intégrés, le Wi-Fi, le Bluetooth, HDMI et USB 3.0. Prix : 210 000 FCFA. Contactez WESTRONIX pour confirmer la disponibilité."
+      },
+      "price": 350
     },
     {
       "sku": "LENOVO-14SYOGA-16-512",
@@ -673,8 +674,8 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-14SYOGA-16-512/Right1-review.png"
       ],
       "description": {
-        "en": "Lenovo ThinkBook 14s Yoga ITL convertible 2-in-1 laptop with an 11th Gen Intel Core i7-1165G7 processor, 16GB RAM, 512GB SSD and a 14-inch Full HD (1920 × 1080) multi-touch IPS display. Intel Iris Xe integrated graphics. Includes touchscreen, stylus, backlit keyboard, webcam, microphone, Bluetooth and Wi-Fi. Windows 10 Pro. Used, Grade B. Ask for Price.",
-        "fr": "Ordinateur portable convertible 2-en-1 Lenovo ThinkBook 14s Yoga ITL avec processeur Intel Core i7-1165G7 de 11e génération, 16 Go de RAM, SSD de 512 Go et écran IPS tactile multipoint Full HD de 14 pouces (1920 × 1080). Graphiques intégrés Intel Iris Xe. Équipé d’un écran tactile, d’un stylet, d’un clavier rétroéclairé, d’une webcam, d’un microphone, du Bluetooth et du Wi-Fi. Windows 10 Pro. Occasion, Grade B. Prix sur demande."
+        "en": "Lenovo ThinkBook 14s Yoga ITL convertible 2-in-1 laptop with an 11th Gen Intel Core i7-1165G7 processor, 16GB RAM, 512GB SSD and a 14-inch Full HD (1920 × 1080) multi-touch IPS display. Intel Iris Xe integrated graphics. Includes touchscreen, stylus, backlit keyboard, webcam, microphone, Bluetooth and Wi-Fi. Windows 10 Pro. Used, Grade B. Price: $350.00.",
+        "fr": "Ordinateur portable convertible 2-en-1 Lenovo ThinkBook 14s Yoga ITL avec processeur Intel Core i7-1165G7 de 11e génération, 16 Go de RAM, SSD de 512 Go et écran IPS tactile multipoint Full HD de 14 pouces (1920 × 1080). Graphiques intégrés Intel Iris Xe. Équipé d’un écran tactile, d’un stylet, d’un clavier rétroéclairé, d’une webcam, d’un microphone, du Bluetooth et du Wi-Fi. Windows 10 Pro. Occasion, Grade B. Prix : 210 000 FCFA."
       },
       "testingStatus": "Not specified",
       "screen": "14-inch Full HD (1920 × 1080) IPS touchscreen",
@@ -700,7 +701,8 @@
         "USB-A",
         "USB-C",
         "microSD card slot"
-      ]
+      ],
+      "price": 350
     },
     {
       "sku": "HP-ELITEBOOK-645-G10-16-512",
