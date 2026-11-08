@@ -2035,6 +2035,8 @@ function addToCart(){
         Number(
           currentProduct.price || 0
         ),
+      regularPrice: Number(currentProduct.price || 0),
+      salePrice: currentProduct.salePrice || null,
       priceCurrency: 'USD',
 
       quantity:
