@@ -12,12 +12,12 @@ function headerElements(header) {
   );
   const account = [...header.querySelectorAll("a[href]")].find((link) => {
     try {
-      return new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
+      return !link.closest("nav") && new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
     } catch { return false; }
   });
   const cart = [...header.querySelectorAll("a[href]")].find((link) => {
     try {
-      return new URL(link.getAttribute("href"), location.href).pathname.endsWith("/cart.html");
+      return !link.closest("nav") && new URL(link.getAttribute("href"), location.href).pathname.endsWith("/cart.html");
     } catch { return false; }
   });
   return { language, account, cart };
