@@ -1452,9 +1452,9 @@ function renderProduct(product){
     product.price !== '' &&
     Number.isFinite(Number(product.price)) &&
     Number(product.price) > 0;
-  const price = hasPrice ? formatPrice(Number(product.price),currentLanguage) : null;
+  const price = hasPrice ? formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage) : null;
   const hasSalePrice = hasPrice && Number(product.salePrice) > 0 && Number(product.salePrice) < Number(product.price);
-  const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(Number(product.price),currentLanguage)}</s>` : price;
+  const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage)}</s>` : price;
 
   const status =
     String(product.status || '').toLowerCase();
@@ -2121,7 +2121,7 @@ I would like to request a quote for:
 
 Product: ${currentProduct.name}
 SKU: ${currentProduct.sku}
-Price: ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.price),currentLanguage) : 'Price not confirmed'}
+Price: ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.salePrice)>0 && Number(currentProduct.salePrice)<Number(currentProduct.price)?Number(currentProduct.salePrice):Number(currentProduct.price),currentLanguage) : 'Price not confirmed'}
 
 Please provide more information.`
 
@@ -2133,7 +2133,7 @@ Je souhaite demander un devis pour :
 
 Produit : ${currentProduct.name}
 SKU : ${currentProduct.sku}
-Prix : ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.price),currentLanguage) : 'Prix non confirmé'}
+Prix : ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.salePrice)>0 && Number(currentProduct.salePrice)<Number(currentProduct.price)?Number(currentProduct.salePrice):Number(currentProduct.price),currentLanguage) : 'Prix non confirmé'}
 
 Merci de me fournir plus d'informations.`;
 
@@ -2167,7 +2167,7 @@ I am interested in:
 
 Product: ${product.name}
 SKU: ${product.sku}
-Price: ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.price),currentLanguage) : 'Price not confirmed'}
+Price: ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage) : 'Price not confirmed'}
 
 Is this product still available?`
 
@@ -2179,7 +2179,7 @@ Je suis intéressé(e) par :
 
 Produit : ${product.name}
 SKU : ${product.sku}
-Prix : ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.price),currentLanguage) : 'Prix non confirmé'}
+Prix : ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage) : 'Prix non confirmé'}
 
 Ce produit est-il toujours disponible ?`;
 
