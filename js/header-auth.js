@@ -23,7 +23,7 @@ function headerElements(header) {
         if (new URL(href, location.href).pathname.endsWith("/cart.html")) return true;
       } catch { /* Check the existing button handler below. */ }
     }
-    return item.tagName === "BUTTON" && /cart\\.html/i.test(item.getAttribute("onclick") || "");
+    return item.tagName === "BUTTON" && /cart\.html/i.test(item.getAttribute("onclick") || "");
   });
   return { language, account, cart };
 }
