@@ -2631,7 +2631,7 @@
           quantity: Number(item.quantity || 1),
           startingBid: Number(item.startingBid || 0),
           currentBid: Number(item.currentBid || item.startingBid || 0),
-          minimumIncrement: Number(item.minimumIncrement || 1000),
+          minimumIncrement: Number(item.minimumIncrement || (1000 / 600)),
           reservePrice: item.reservePrice,
           buyNow: Number(item.buyNowPrice || item.buyNow || 0),
           startTime: item.startTime || "",
