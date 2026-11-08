@@ -654,6 +654,7 @@ footer p{
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -1443,6 +1444,8 @@ let cart = [];
 
 function applyLanguage(language){
 
+  document.documentElement.lang = language === "en" ? "en" : "fr";
+
   if(language === "en"){
 
     document.body.classList.add("en");
@@ -1505,6 +1508,9 @@ function loadCart(){
 
     if(!Array.isArray(cart)){
       cart = [];
+    }else{
+      cart = cart.map(item => WT_CURRENCY.normalizeCartItem(item));
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
     }
 
   }catch(error){
@@ -1588,9 +1594,7 @@ function getPhoto(item){
 
 function formatPrice(value){
 
-  return Number(value || 0)
-    .toLocaleString("fr-FR")
-    + " FCFA";
+  return WT_CURRENCY.formatPrice(value, document.documentElement.lang || "fr");
 
 }
 
