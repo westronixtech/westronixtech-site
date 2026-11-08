@@ -788,6 +788,59 @@
         "en": "HP EliteBook x360 1040 G5 convertible business laptop with an 8th Gen Intel Core i5 processor running at 1.70 GHz, 16GB RAM and a 256GB SSD. Features a 14-inch Full HD (1920 × 1080) display, Intel UHD Graphics 620 and Windows 10 Pro. Silver finish with x360 convertible design and Gigabit Ethernet, HDMI, USB-C, USB 3.2 and USB 3.1 connectivity. Used, Grade B. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel convertible HP EliteBook x360 1040 G5 équipé d’un processeur Intel Core i5 de 8e génération à 1,70 GHz, de 16 Go de RAM et d’un SSD de 256 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques Intel UHD 620 et Windows 10 Pro. Finition argentée avec conception convertible x360 et connectivité Ethernet Gigabit, HDMI, USB-C, USB 3.2 et USB 3.1. Occasion, Grade B. Disponible à Lomé, au Togo."
       }
+    },
+    {
+      "sku": "LENOVO-X13-YOGA-G4-I7-16-512",
+      "brand": "Lenovo",
+      "name": "Lenovo ThinkPad X13 Yoga Gen 4 | Intel Core i7-1365U 13th Gen | 16GB RAM | 512GB SSD | 13.3-inch FHD Touchscreen",
+      "category": "Laptop",
+      "processor": "13th Gen Intel Core i7-1365U (1.80 GHz)",
+      "ram": "16GB",
+      "storage": "512GB SSD",
+      "screen": "13.3-inch Full HD touchscreen (1920 × 1080)",
+      "gpu": "Intel Iris Xe Graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "color": "Black",
+      "connectivity": [
+        "HDMI",
+        "USB-C",
+        "USB 3.2",
+        "LTE",
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "features": [
+        "Convertible 2-in-1 Yoga design",
+        "Touchscreen",
+        "Backlit keyboard",
+        "Built-in microphone",
+        "Built-in webcam"
+      ],
+      "condition": "Excellent - Refurbished",
+      "grade": "A",
+      "price": 560000,
+      "currency": "FCFA",
+      "quantity": 1,
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/FrontSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/FrontSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/BACKOPEN360-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/BACKSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/BACKSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/LeftSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/RightSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-X13-YOGA-G4-I7-16-512/RightSide-review1.png"
+      ],
+      "description": {
+        "en": "Lenovo ThinkPad X13 Yoga Gen 4 convertible laptop with a 13th Gen Intel Core i7-1365U processor, 16GB RAM, 512GB SSD, 13.3-inch Full HD touchscreen and Intel Iris Xe integrated graphics. Black, excellent refurbished condition, Grade A. Includes Windows 10 Pro, backlit keyboard, webcam, microphone, Wi-Fi, Bluetooth, LTE, HDMI, USB-C and USB 3.2. Windows 10 standard support ended October 14, 2025; Windows 11 upgrade eligibility has not been verified.",
+        "fr": "Ordinateur portable convertible Lenovo ThinkPad X13 Yoga Gen 4 équipé d’un processeur Intel Core i7-1365U de 13e génération, de 16 Go de RAM, d’un SSD de 512 Go, d’un écran tactile Full HD de 13,3 pouces et de graphiques intégrés Intel Iris Xe. Noir, excellent état reconditionné, Grade A. Comprend Windows 10 Pro, clavier rétroéclairé, webcam, microphone, Wi-Fi, Bluetooth, LTE, HDMI, USB-C et USB 3.2. Le support standard de Windows 10 a pris fin le 14 octobre 2025 ; l’éligibilité à Windows 11 n’a pas été vérifiée."
+      },
+      "customerDisclosure": {
+        "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
+        "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
+      }
     }
   ],
   "categories": [
