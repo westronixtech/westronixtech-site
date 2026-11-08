@@ -1519,7 +1519,7 @@ function loadCart(){
       cart = [];
     }else{
       cart = cart.map(item => WT_CURRENCY.normalizeCartItem(item));
-      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      try{localStorage.setItem(CART_KEY, JSON.stringify(cart));}catch(storageError){console.warn("Unable to save normalized cart prices:",storageError);}
     }
 
   }catch(error){
