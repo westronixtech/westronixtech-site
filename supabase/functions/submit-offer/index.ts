@@ -54,7 +54,7 @@ Deno.serve(async req=>{
     "Language: "+lang.toUpperCase(),
     "Submitted at (UTC): "+submittedAt,
     "Offer ID: "+String(s.offer_id)
-   ].join("\\n");
+   ].join("\n");
    try{
     const mail=await fetch("https://api.resend.com/emails",{method:"POST",headers:{"Authorization":`Bearer ${resendKey}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:["westronix.tech@gmail.com"],subject:"New WESTRONIX offer: "+sku,text:emailText})});
     notificationSent=mail.ok;
