@@ -35,7 +35,9 @@
       },
       "testingStatus": "Verified",
       "screen": "15.6-inch",
-      "gpu": "NVIDIA Quadro P620"
+      "gpu": "NVIDIA Quadro P620",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "LENOVO-P15S-16-512",
@@ -72,7 +74,9 @@
       "dataWipeStatus": "Verified",
       "biosPassword": "No password",
       "chargerIncluded": false,
-      "warranty": false
+      "warranty": false,
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-L5420-8-256",
@@ -114,7 +118,9 @@
       "customerDisclosure": {
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-L5420-256-NORAM",
@@ -156,7 +162,9 @@
       "customerDisclosure": {
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-WD19S-180W",
@@ -200,7 +208,9 @@
         "fr": "Station d’accueil USB-C Dell WD19S 180 W de couleur noire. Fournit jusqu’à 130 W via Power Delivery pour les ordinateurs portables Dell compatibles et comprend son adaptateur secteur de 180 W. Connectique : deux sorties DisplayPort, une sortie HDMI, ports USB-A et USB-C, sorties audio 3,5 mm et Ethernet Gigabit. La compatibilité et la puissance de charge dépendent de l’appareil connecté."
       },
       "chargerIncluded": true,
-      "grade": "B"
+      "grade": "B",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "LENOVO-NEO50QG4-16-256",
@@ -251,7 +261,9 @@
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-NEO50QG4-16-256/FrontTop-review.png",
         "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/LENOVO-NEO50QG4-16-256/BackSide-review.png"
       ],
-      "grade": "B"
+      "grade": "B",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-L5430-16-256",
@@ -300,7 +312,9 @@
       "customerDisclosure": {
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "HP-840G5-8-256",
@@ -347,7 +361,9 @@
       },
       "chargerIncluded": false,
       "warranty": false,
-      "reviewNotes": "Verify processor generation against the exact EliteBook 840 G5 model before public release; the G5 model designation and stated 7th Gen processor may not match. Testing status has not been provided."
+      "reviewNotes": "Verify processor generation against the exact EliteBook 840 G5 model before public release; the G5 model designation and stated 7th Gen processor may not match. Testing status has not been provided.",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "MS-SURFACEPRO5-8-256",
@@ -382,7 +398,9 @@
       },
       "chargerIncluded": false,
       "keyboardIncluded": true,
-      "warranty": false
+      "warranty": false,
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-L3400-8-256",
@@ -431,7 +449,9 @@
       "customerDisclosure": {
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas été vérifiée."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-L7480-16-256",
@@ -471,7 +491,9 @@
         "fr": "Dell Latitude 7480 équipé d’un processeur Intel Core i7-7600U de 7e génération (2,80 GHz de base, jusqu’à 3,90 GHz en mode Turbo ; 2 cœurs / 4 threads), de 16 Go de RAM DDR4 extensible, d’un SSD M.2 de 256 Go et d’un écran tactile QHD de 14 pouces (2560 × 1440). Graphiques Intel HD 620. Windows 11 Pro. Connectique : USB 3.0, HDMI, Mini DisplayPort, Ethernet et prise audio combinée. Poids approximatif : 1,4 kg. Occasion, Grade B."
       },
       "grade": "B",
-      "condition": "Used"
+      "condition": "Used",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "SAMSUNG-DDR5-8-5600",
@@ -506,7 +528,9 @@
         "en": "Samsung 8GB DDR5 laptop memory module, model M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), 262-pin SO-DIMM, 1.1V, CL46, non-ECC and unbuffered. Compatible with laptops that support DDR5 5600 SO-DIMM memory. Check device compatibility before purchase.",
         "fr": "Module mémoire Samsung DDR5 de 8 Go pour ordinateur portable, modèle M425R1GB4BB0-CWM. 5600 MHz (PC5-44800), SO-DIMM 262 broches, 1,1 V, CL46, non-ECC et non enregistré. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5 5600 SO-DIMM. Vérifiez la compatibilité de votre appareil avant l’achat."
       },
-      "grade": "A New"
+      "grade": "A New",
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "ATECH-DDR5-8-5600",
@@ -540,7 +564,9 @@
       "description": {
         "en": "A-TECH 8GB DDR5 laptop memory module running at 5600 MHz (PC5-44800). 262-pin SO-DIMM, 1.1V, CL46, non-ECC and unbuffered. Compatible with laptops that support DDR5 5600 SO-DIMM memory. Check device compatibility before purchase.",
         "fr": "Module mémoire A-TECH DDR5 de 8 Go pour ordinateur portable, fonctionnant à 5600 MHz (PC5-44800). SO-DIMM 262 broches, 1,1 V, CL46, non-ECC et non tamponné. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5 5600 SO-DIMM. Vérifiez la compatibilité de votre appareil avant l’achat."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "SKHYNIX-DDR4-16-3200",
@@ -567,7 +593,9 @@
       "description": {
         "en": "SK Hynix 16GB DDR4 laptop memory module operating at 3200 MHz (PC4-25600 / PC4-3200AA). Compatible with laptops that support 16GB DDR4-3200 memory. Used, Grade B. Please confirm your laptop's memory type, speed and module compatibility before purchase.",
         "fr": "Module mémoire SK Hynix DDR4 de 16 Go pour ordinateur portable, fonctionnant à 3200 MHz (PC4-25600 / PC4-3200AA). Compatible avec les ordinateurs portables prenant en charge la mémoire DDR4-3200 de 16 Go. Occasion, Grade B. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "CRUCIAL-DDR5-32-4800",
@@ -601,7 +629,9 @@
       "description": {
         "en": "Crucial 32GB DDR5 laptop memory module operating at 4800 MHz. 260-pin SO-DIMM, 1.1V, CL40, and lightweight. Used, Grade B. Compatible with laptops that support DDR5-4800 SO-DIMM memory. Please verify your laptop's memory type, speed, and module compatibility before purchase.",
         "fr": "Module mémoire Crucial DDR5 de 32 Go pour ordinateur portable, fonctionnant à 4800 MHz. SO-DIMM 260 broches, 1,1 V, CL40 et léger. Occasion, Grade B. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5-4800 SO-DIMM. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "DELL-XPS15-9570-16-256",
@@ -647,7 +677,9 @@
         "en": "Dell XPS 15 9570 laptop with an 8th Gen Intel Core i7-8750H processor (2.20 GHz), 16GB DDR4 RAM, 256GB SSD, 15.6-inch display and NVIDIA GeForce GTX 1050 Ti graphics. Black, used, Grade B. Windows 10 Home. Features include a backlit keyboard, built-in webcam and microphone, Wi-Fi, Bluetooth, HDMI and USB 3.0. Price: $350.00. Contact WESTRONIX to confirm availability.",
         "fr": "Ordinateur portable Dell XPS 15 9570 avec processeur Intel Core i7-8750H de 8e génération (2,20 GHz), 16 Go de RAM DDR4, SSD de 256 Go, écran de 15,6 pouces et carte graphique NVIDIA GeForce GTX 1050 Ti. Noir, occasion, Grade B. Windows 10 Home. Comprend un clavier rétroéclairé, une webcam et un microphone intégrés, le Wi-Fi, le Bluetooth, HDMI et USB 3.0. Prix : 210 000 FCFA. Contactez WESTRONIX pour confirmer la disponibilité."
       },
-      "price": 350
+      "price": 350,
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "LENOVO-14SYOGA-16-512",
@@ -702,7 +734,9 @@
         "USB-C",
         "microSD card slot"
       ],
-      "price": 350
+      "price": 350,
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "HP-ELITEBOOK-645-G10-16-512",
@@ -749,7 +783,9 @@
       "description": {
         "en": "HP EliteBook 645 G10 business laptop with an AMD Ryzen 7 Pro processor, 16GB RAM and a 512GB SSD. Features a 14-inch Full HD (1920 × 1080) display, AMD Radeon integrated graphics and Windows 10 Pro. Silver finish with a backlit keyboard, webcam, microphone, multi-touch trackpad, Wi-Fi, Bluetooth, Gigabit Ethernet, HDMI, USB-C and USB 3.2 connectivity. Used, Grade A. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel HP EliteBook 645 G10 équipé d’un processeur AMD Ryzen 7 Pro, de 16 Go de RAM et d’un SSD de 512 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques AMD Radeon intégrés et Windows 10 Pro. Finition argentée, clavier rétroéclairé, webcam, microphone, pavé tactile multipoint, Wi-Fi, Bluetooth, Ethernet Gigabit, HDMI, USB-C et USB 3.2. Occasion, Grade A. Disponible à Lomé, au Togo."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "HP-ELITEBOOK-X360-1040-G5-16-256",
@@ -789,7 +825,9 @@
       "description": {
         "en": "HP EliteBook x360 1040 G5 convertible business laptop with an 8th Gen Intel Core i5 processor running at 1.70 GHz, 16GB RAM and a 256GB SSD. Features a 14-inch Full HD (1920 × 1080) display, Intel UHD Graphics 620 and Windows 10 Pro. Silver finish with x360 convertible design and Gigabit Ethernet, HDMI, USB-C, USB 3.2 and USB 3.1 connectivity. Used, Grade B. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel convertible HP EliteBook x360 1040 G5 équipé d’un processeur Intel Core i5 de 8e génération à 1,70 GHz, de 16 Go de RAM et d’un SSD de 256 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques Intel UHD 620 et Windows 10 Pro. Finition argentée avec conception convertible x360 et connectivité Ethernet Gigabit, HDMI, USB-C, USB 3.2 et USB 3.1. Occasion, Grade B. Disponible à Lomé, au Togo."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     },
     {
       "sku": "LENOVO-X13-YOGA-G4-I7-16-512",
@@ -842,7 +880,9 @@
       "customerDisclosure": {
         "en": "Windows 10 Pro. Standard Microsoft support ended October 14, 2025. Windows 11 upgrade eligibility has not yet been verified.",
         "fr": "Windows 10 Pro. Le support standard de Microsoft a pris fin le 14 octobre 2025. L’éligibilité à une mise à niveau vers Windows 11 n’a pas encore été vérifiée."
-      }
+      },
+      "allowOffers": true,
+      "maxOffers": 5
     }
   ],
   "categories": [
