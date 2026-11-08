@@ -154,5 +154,6 @@ function renderFeatured(products){
 fetch("../inventory.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("Inventory request failed");return r.json()}).then(data=>{featuredProducts=Array.isArray(data.products)?data.products:[];renderFeatured(featuredProducts)}).catch(()=>{document.getElementById("featuredProducts").innerHTML='<div class="notice">Inventory is temporarily unavailable. Please visit the full inventory page.</div>'});
 document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();const q=document.getElementById("searchInput").value.trim();location.href="../inventory.html"+(q?"?q="+encodeURIComponent(q):"")});
 </script>
+<script type="module" src="js/header-auth.js"></script>
 </body>
 </html>
