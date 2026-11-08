@@ -46,7 +46,17 @@ async function submit(v){
  if(busy)return;busy=true;const b=$("wtOfferSubmit");b.disabled=true;b.textContent=tr("Submitting...","Envoi en cours...");
  const {data,error}=await supabase.functions.invoke("submit-offer",{body:{action:"submit",sku:product.sku,offerAmount:v.raw,currency:lang()==="fr"?"FCFA":"USD",customerName:v.name,customerPhone:v.phone,message,language:lang(),idempotencyKey:crypto.randomUUID()}});
  busy=false;
- if(error||!data?.success){b.disabled=false;b.textContent=tr("Submit Offer","Envoyer l’offre");$("wtOfferSubmitError").textContent=data?.message||tr("We could not submit your offer. Please try again.","Nous n’avons pas pu envoyer votre offre. Veuillez réessayer.");return}
+ if(error||!data?.success){
+  let failure=data;
+  if(error?.context&&typeof error.context.json==="function"){try{failure=await error.context.json()}catch{}}
+  const serverMessage=String(failure?.message||data?.message||"");
+  const lowOffer=/OFFER_TOO_LOW|offer is too low|offre est trop basse/i.test(serverMessage);
+  b.disabled=false;b.textContent=tr("Submit Offer","Envoyer l’offre");
+  $("wtOfferSubmitError").textContent=lowOffer
+   ?tr("Your offer is below the seller’s minimum accepted amount. Please submit a higher offer.","Votre offre est inférieure au montant minimum accepté par le vendeur. Veuillez proposer un montant plus élevé.")
+   :tr("We could not submit your offer. Please try again.","Nous n’avons pas pu envoyer votre offre. Veuillez réessayer.");
+  return
+ }
  show(tr("Offer submitted!","Offre envoyée !"),`<div class="wt-offer-success"><h3>${tr("Offer submitted!","Offre envoyée !")}</h3><p>${tr("We received your offer of ","Nous avons reçu votre offre de ")}<b>${fmt(data.offerAmountUSD)}</b>.</p><p>${tr("WESTRONIX will review your offer.","WESTRONIX examinera votre offre.")}</p><p>${lang()==="en"?data.remaining+" offers left":data.remaining===0?"Aucune offre restante":data.remaining+" offre"+(data.remaining===1?" restante":"s restantes")}</p></div><div class="wt-offer-actions"><button class="btn btn-primary" id="wtOfferDone">${tr("Close","Fermer")}</button></div>`);$("wtOfferDone").onclick=close;
 }
 async function start(sku,el){
