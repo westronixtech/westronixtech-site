@@ -34,16 +34,40 @@ supabase functions deploy submit-offer
 
 The function uses Supabase's managed `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` environment variables and reads the public asking price from `https://westronixtech.com/inventory.json`. Never place the service-role key in website JavaScript.
 
-## 4. Authentication
+## 4. Email notifications to WESTRONIX
+
+Every successfully saved offer triggers an email notification to **westronix.tech@gmail.com** through Resend. The notification includes the customer name, verified account email, phone/WhatsApp number when supplied, product name, SKU, listed price, offer amount, optional message, language, submission timestamp, and offer ID.
+
+Before deploying the Edge Function:
+
+1. Create a Resend account and verify a sending domain you control.
+2. Choose a sender address on that verified domain (for example, `offers@westronixtech.com`; this address must be authorized by the verified domain).
+3. Add these secrets to the WESTRONIX Supabase project:
+
+```sh
+supabase secrets set RESEND_API_KEY=re_your_secret_key
+supabase secrets set OFFER_NOTIFICATION_FROM="WESTRONIX Offers <offers@westronixtech.com>"
+```
+
+4. Redeploy the function after setting the secrets:
+
+```sh
+supabase functions deploy submit-offer
+```
+
+The Resend API key is server-side only and must never be added to website JavaScript or GitHub. The offer is stored before the email is sent. If email delivery fails or the secrets are missing, the offer remains saved, the function logs the notification failure, and the response reports `notificationSent: false`; verify email delivery before launch.
+
+## 5. Authentication
 
 Offer submission currently requires a signed-in customer with a verified email. The existing WESTRONIX account flow is reused. Guest offer submissions with a separate email-verification flow are not included.
 
-## 5. Before production
+## 6. Before production
 
 - Apply the database migration and verify the seeded percentages and product rules.
 - Deploy the Edge Function and verify its environment.
 - Test signed-in and unverified accounts, minimum-price validation, expired offers, repeated requests, concurrent submissions, and the per-product five-attempt cap.
-- Build the seller-facing offer review/notification workflow and operational rate limiting.
+- Verify a test offer arrives at westronix.tech@gmail.com and check Resend delivery logs; no seller dashboard is required for this email-only workflow.
+- Add operational rate limiting.
 - Complete privacy, sales terms, and consumer-protection review.
 - Test cart, checkout, keyboard focus, mobile modal behavior, and browser console.
 - Only merge this PR after review and explicit approval.
