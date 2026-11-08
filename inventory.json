@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06",
+  "lastUpdated": "2026-11-07",
   "currency": "FCFA",
   "location": "Lomé, Togo",
   "products": [
@@ -601,6 +601,51 @@
       "description": {
         "en": "Crucial 32GB DDR5 laptop memory module operating at 4800 MHz. 260-pin SO-DIMM, 1.1V, CL40, and lightweight. Used, Grade B. Compatible with laptops that support DDR5-4800 SO-DIMM memory. Please verify your laptop's memory type, speed, and module compatibility before purchase.",
         "fr": "Module mémoire Crucial DDR5 de 32 Go pour ordinateur portable, fonctionnant à 4800 MHz. SO-DIMM 260 broches, 1,1 V, CL40 et léger. Occasion, Grade B. Compatible avec les ordinateurs portables prenant en charge la mémoire DDR5-4800 SO-DIMM. Veuillez vérifier le type de mémoire, la vitesse et la compatibilité du module avec votre ordinateur avant l’achat."
+      }
+    },
+    {
+      "sku": "DELL-XPS15-9570-16-256",
+      "brand": "Dell",
+      "model": "Dell XPS 15 9570",
+      "series": "XPS",
+      "name": "Dell XPS 15 9570 15.6-inch | Intel Core i7-8750H | 16GB DDR4 | 256GB SSD",
+      "category": "Laptop",
+      "processor": "Intel Core i7-8750H (8th Gen, 2.20 GHz)",
+      "ram": "16GB DDR4",
+      "storage": "256GB SSD",
+      "screen": "15.6-inch",
+      "gpu": "NVIDIA GeForce GTX 1050 Ti",
+      "operatingSystem": "Windows 10 Home",
+      "color": "Black",
+      "type": "Notebook/Laptop",
+      "connectivity": [
+        "HDMI",
+        "USB 3.0",
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "features": [
+        "Backlit keyboard",
+        "Built-in microphone",
+        "Built-in webcam"
+      ],
+      "condition": "Used",
+      "grade": "B",
+      "currency": "FCFA",
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/Back-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/BackLid-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/Left-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/Leftside-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/LidClose-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/Right-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/DELL-XPS15-9570-16-256/RightSide-review.png"
+      ],
+      "description": {
+        "en": "Dell XPS 15 9570 laptop with an 8th Gen Intel Core i7-8750H processor (2.20 GHz), 16GB DDR4 RAM, 256GB SSD, 15.6-inch display and NVIDIA GeForce GTX 1050 Ti graphics. Black, used, Grade B. Windows 10 Home. Features include a backlit keyboard, built-in webcam and microphone, Wi-Fi, Bluetooth, HDMI and USB 3.0. Contact WESTRONIX for pricing and availability.",
+        "fr": "Ordinateur portable Dell XPS 15 9570 avec processeur Intel Core i7-8750H de 8e génération (2,20 GHz), 16 Go de RAM DDR4, SSD de 256 Go, écran de 15,6 pouces et carte graphique NVIDIA GeForce GTX 1050 Ti. Noir, occasion, Grade B. Windows 10 Home. Comprend un clavier rétroéclairé, une webcam et un microphone intégrés, le Wi-Fi, le Bluetooth, HDMI et USB 3.0. Contactez WESTRONIX pour connaître le prix et la disponibilité."
       }
     }
   ],
