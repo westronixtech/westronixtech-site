@@ -16,7 +16,6 @@ function headerElements(header) {
     } catch { return false; }
   });
   const cart = [...header.querySelectorAll("a[href], button[onclick]")].find((item) => {
-    if (item.closest("nav")) return false;
     const href = item.getAttribute("href");
     if (href) {
       try {
@@ -80,6 +79,7 @@ function setupRightNavigation(header) {
 
   let cartItem = cart;
   if (!cartItem) cartItem = createLink("cart.html", "wt-cart-link", "");
+  cartItem.classList.remove("cart-button", "cart-link");
   cartItem.classList.add("wt-cart-link");
   cartItem.setAttribute("aria-label", "Shopping cart");
   nav.append(cartItem);
