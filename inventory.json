@@ -471,7 +471,8 @@
         "fr": "Dell Latitude 7480 équipé d’un processeur Intel Core i7-7600U de 7e génération (2,80 GHz de base, jusqu’à 3,90 GHz en mode Turbo ; 2 cœurs / 4 threads), de 16 Go de RAM DDR4 extensible, d’un SSD M.2 de 256 Go et d’un écran tactile QHD de 14 pouces (2560 × 1440). Graphiques Intel HD 620. Windows 11 Pro. Connectique : USB 3.0, HDMI, Mini DisplayPort, Ethernet et prise audio combinée. Poids approximatif : 1,4 kg. Occasion, Grade B."
       },
       "grade": "B",
-      "condition": "Used"
+      "condition": "Used",
+      "quantity": 1
     },
     {
       "sku": "SAMSUNG-DDR5-8-5600",
@@ -647,7 +648,8 @@
         "en": "Dell XPS 15 9570 laptop with an 8th Gen Intel Core i7-8750H processor (2.20 GHz), 16GB DDR4 RAM, 256GB SSD, 15.6-inch display and NVIDIA GeForce GTX 1050 Ti graphics. Black, used, Grade B. Windows 10 Home. Features include a backlit keyboard, built-in webcam and microphone, Wi-Fi, Bluetooth, HDMI and USB 3.0. Price: $350.00. Contact WESTRONIX to confirm availability.",
         "fr": "Ordinateur portable Dell XPS 15 9570 avec processeur Intel Core i7-8750H de 8e génération (2,20 GHz), 16 Go de RAM DDR4, SSD de 256 Go, écran de 15,6 pouces et carte graphique NVIDIA GeForce GTX 1050 Ti. Noir, occasion, Grade B. Windows 10 Home. Comprend un clavier rétroéclairé, une webcam et un microphone intégrés, le Wi-Fi, le Bluetooth, HDMI et USB 3.0. Prix : 210 000 FCFA. Contactez WESTRONIX pour confirmer la disponibilité."
       },
-      "price": 350
+      "price": 350,
+      "quantity": 1
     },
     {
       "sku": "LENOVO-14SYOGA-16-512",
@@ -702,7 +704,8 @@
         "USB-C",
         "microSD card slot"
       ],
-      "price": 350
+      "price": 350,
+      "quantity": 1
     },
     {
       "sku": "HP-ELITEBOOK-645-G10-16-512",
@@ -749,7 +752,8 @@
       "description": {
         "en": "HP EliteBook 645 G10 business laptop with an AMD Ryzen 7 Pro processor, 16GB RAM and a 512GB SSD. Features a 14-inch Full HD (1920 × 1080) display, AMD Radeon integrated graphics and Windows 10 Pro. Silver finish with a backlit keyboard, webcam, microphone, multi-touch trackpad, Wi-Fi, Bluetooth, Gigabit Ethernet, HDMI, USB-C and USB 3.2 connectivity. Used, Grade A. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel HP EliteBook 645 G10 équipé d’un processeur AMD Ryzen 7 Pro, de 16 Go de RAM et d’un SSD de 512 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques AMD Radeon intégrés et Windows 10 Pro. Finition argentée, clavier rétroéclairé, webcam, microphone, pavé tactile multipoint, Wi-Fi, Bluetooth, Ethernet Gigabit, HDMI, USB-C et USB 3.2. Occasion, Grade A. Disponible à Lomé, au Togo."
-      }
+      },
+      "quantity": 1
     },
     {
       "sku": "HP-ELITEBOOK-X360-1040-G5-16-256",
@@ -789,7 +793,8 @@
       "description": {
         "en": "HP EliteBook x360 1040 G5 convertible business laptop with an 8th Gen Intel Core i5 processor running at 1.70 GHz, 16GB RAM and a 256GB SSD. Features a 14-inch Full HD (1920 × 1080) display, Intel UHD Graphics 620 and Windows 10 Pro. Silver finish with x360 convertible design and Gigabit Ethernet, HDMI, USB-C, USB 3.2 and USB 3.1 connectivity. Used, Grade B. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel convertible HP EliteBook x360 1040 G5 équipé d’un processeur Intel Core i5 de 8e génération à 1,70 GHz, de 16 Go de RAM et d’un SSD de 256 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques Intel UHD 620 et Windows 10 Pro. Finition argentée avec conception convertible x360 et connectivité Ethernet Gigabit, HDMI, USB-C, USB 3.2 et USB 3.1. Occasion, Grade B. Disponible à Lomé, au Togo."
-      }
+      },
+      "quantity": 1
     },
     {
       "sku": "LENOVO-X13-YOGA-G4-I7-16-512",
