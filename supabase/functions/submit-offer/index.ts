@@ -8,7 +8,7 @@ Deno.serve(async req=>{
   const token=(req.headers.get("Authorization")||"").replace(/^Bearer\s+/i,"");if(!token)return reply({success:false,message:"Sign in required"},401);
   const url=Deno.env.get("SUPABASE_URL")!,anon=Deno.env.get("SUPABASE_ANON_KEY")!,secret=Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
   const authClient=createClient(url,anon,{global:{headers:{Authorization:`Bearer ${token}`}}});
-  const {data:u,error:ue}=await authClient.auth.getUser();if(ue||!u.user)return reply({success:false,message:"Sign in required"},401);
+  const {data:u,error:ue}=await authClient.auth.getUser();if(ue||!u.user)return reply({success:false,message:"Sign in required"},401);\n  if(!u.user.email_confirmed_at)return reply({success:false,message:"Please verify your account email before making an offer."},403);
   const admin=createClient(url,secret),body=await req.json(),sku=String(body.sku||"").trim();
   if(!/^[A-Z0-9-]{3,80}$/.test(sku))return reply({success:false},400);
   const ir=await fetch(Deno.env.get("SITE_INVENTORY_URL")||"https://westronixtech.com/inventory.json",{cache:"no-store"});
@@ -16,8 +16,8 @@ Deno.serve(async req=>{
   if(!p||p.allowOffers!==true)return reply({success:false,message:"Offers disabled"},404);
   const price=Number(p.salePrice)>0&&Number(p.salePrice)<Number(p.price)?Number(p.salePrice):Number(p.price);
   if(!Number.isFinite(price)||price<=0)return reply({success:false},409);
-  const {data:r,error:re}=await admin.from("offer_product_rules").select("enabled,max_offers").eq("sku",sku).maybeSingle();if(re)throw re;
-  if(!r?.enabled)return reply({success:false,message:"Offers disabled"},404);
+  const {data:r,error:re}=await admin.from("offer_product_rules").select("enabled,max_offers,minimum_offer_usd,minimum_offer_percentage").eq("sku",sku).maybeSingle();if(re)throw re;
+  if(!r?.enabled)return reply({success:false,message:"Offers disabled"},404);\n  if(r.minimum_offer_usd==null&&r.minimum_offer_percentage==null)return reply({success:false,message:"Offer minimum has not been configured by the seller yet."},409);
   const {count,error:ce}=await admin.from("offers").select("id",{count:"exact",head:true}).eq("customer_id",u.user.id).eq("sku",sku);if(ce)throw ce;
   const remaining=Math.max(Number(r.max_offers)-(count||0),0);
   if(body.action==="status")return reply({success:true,offersEnabled:true,remaining,maxOffers:r.max_offers,currentPriceUSD:price});
