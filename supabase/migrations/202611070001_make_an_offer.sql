@@ -37,7 +37,7 @@ create or replace function public.submit_offer_atomic(
 declare r offer_product_rules%rowtype; used integer; floor_amount numeric; saved offers%rowtype;
 begin
  select * into r from offer_product_rules where sku=p_sku and enabled for update;
- if not found then raise exception 'OFFERS_DISABLED'; end if;
+ if not found then raise exception 'OFFERS_DISABLED'; end if;\n if r.minimum_offer_usd is null and r.minimum_offer_percentage is null then raise exception 'MINIMUM_NOT_CONFIGURED'; end if;
  if p_offer_amount_usd<=0 or p_offer_amount_usd>=p_asking_price_usd then raise exception 'INVALID_AMOUNT'; end if;
  if length(coalesce(p_message,''))>250 then raise exception 'MESSAGE_TOO_LONG'; end if;
  if r.minimum_offer_usd is not null then floor_amount:=r.minimum_offer_usd;
@@ -53,7 +53,7 @@ begin
 end $$;
 revoke all on function public.submit_offer_atomic(uuid,text,text,numeric,numeric,numeric,text,text,text,text,text,text,uuid) from public,anon,authenticated;
 grant execute on function public.submit_offer_atomic(uuid,text,text,numeric,numeric,numeric,text,text,text,text,text,text,uuid) to service_role;
-insert into public.offer_product_rules(sku,enabled,max_offers) values
+\ncreate table if not exists public.offer_status_events(\n id uuid primary key default gen_random_uuid(), offer_id uuid not null references public.offers(id) on delete cascade,\n changed_by uuid references auth.users(id), old_status text, new_status text not null, note text, created_at timestamptz not null default now()\n);\nalter table public.offer_status_events enable row level security;\nrevoke all on public.offer_status_events from anon,authenticated;\ngrant all on public.offer_status_events to service_role;\n\ninsert into public.offer_product_rules(sku,enabled,max_offers) values
 ('DELL-D3551-16-512',true,5),
 ('LENOVO-P15S-16-512',true,5),
 ('DELL-L5420-8-256',true,5),
