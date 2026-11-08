@@ -764,8 +764,6 @@ function applyLanguage(language){
         selector.value = selected;
     }
 
-    loadOrder();
-
 }
 
 
@@ -789,6 +787,7 @@ if(languageSelector){
         function(){
 
             applyLanguage(this.value);
+            loadOrder();
 
         }
     );
