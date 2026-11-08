@@ -585,6 +585,7 @@ footer p{
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -734,6 +735,8 @@ WhatsApp: +228 92 95 33 33
    LANGUAGE
 ========================================== */
 
+let orderCurrency = "USD";
+
 function applyLanguage(language){
 
     const selected =
@@ -784,6 +787,7 @@ if(languageSelector){
         function(){
 
             applyLanguage(this.value);
+            loadOrder();
 
         }
     );
@@ -844,8 +848,8 @@ window.addEventListener(
 
 function formatCurrency(amount){
 
-    return Number(amount || 0)
-        .toLocaleString("fr-FR") + " FCFA";
+    const usdAmount = orderCurrency === "USD" ? Number(amount || 0) : Number(amount || 0) / 600;
+    return formatPrice(usdAmount, document.documentElement.lang || "fr");
 
 }
 
@@ -885,6 +889,8 @@ function loadOrder(){
 
     }
 
+
+    orderCurrency = order && order.currency === "USD" ? "USD" : "FCFA";
 
     const orderNumber =
         document.getElementById("orderNumber");
@@ -1211,13 +1217,10 @@ function loadOrder(){
         const quantity =
             Number(item.quantity || 0);
 
-        const price =
-            Number(
-                item.price ??
-                item.buyNow ??
-                item.buyNowPrice ??
-                0
-            );
+        const regularPrice = Number(item.regularPrice ?? item.price ?? item.buyNow ?? item.buyNowPrice ?? 0);
+        const salePrice = Number(item.salePrice);
+        const hasSale = Number.isFinite(salePrice) && salePrice > 0 && salePrice < regularPrice;
+        const price = hasSale ? salePrice : regularPrice;
 
         const itemSubtotal =
             price * quantity;
@@ -1383,7 +1386,7 @@ function loadOrder(){
 
                         </strong>
 
-                        ${formatCurrency(price)}
+                        ${formatCurrency(price)} ${hasSale ? `<s>${formatCurrency(regularPrice)}</s>` : ""}
 
                     </p>
 

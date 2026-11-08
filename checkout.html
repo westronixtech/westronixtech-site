@@ -654,6 +654,7 @@ footer p{
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -1443,6 +1444,8 @@ let cart = [];
 
 function applyLanguage(language){
 
+  document.documentElement.lang = language === "en" ? "en" : "fr";
+
   if(language === "en"){
 
     document.body.classList.add("en");
@@ -1463,6 +1466,15 @@ function applyLanguage(language){
 
   if(selector){
     selector.value = language;
+  }
+
+  if(cart.length){
+    loadOrderSummary();
+  }else{
+    ["subtotal","grandTotal","paymentTotal"].forEach(id=>{
+      const node=document.getElementById(id);
+      if(node) node.textContent=WT_CURRENCY.formatPrice(0,document.documentElement.lang);
+    });
   }
 
 }
@@ -1505,6 +1517,9 @@ function loadCart(){
 
     if(!Array.isArray(cart)){
       cart = [];
+    }else{
+      cart = cart.map(item => WT_CURRENCY.normalizeCartItem(item));
+      try{localStorage.setItem(CART_KEY, JSON.stringify(cart));}catch(storageError){console.warn("Unable to save normalized cart prices:",storageError);}
     }
 
   }catch(error){
@@ -1525,15 +1540,14 @@ function loadCart(){
    HELPERS
 ===================================================== */
 
+function getRegularPrice(item){
+  return Number(item.regularPrice ?? item.price ?? item.buyNow ?? item.buyNowPrice ?? 0);
+}
+
 function getPrice(item){
-
-  return Number(
-    item.price ??
-    item.buyNow ??
-    item.buyNowPrice ??
-    0
-  );
-
+  const regular = getRegularPrice(item);
+  const sale = Number(item.salePrice);
+  return Number.isFinite(sale) && sale > 0 && sale < regular ? sale : regular;
 }
 
 
@@ -1588,9 +1602,7 @@ function getPhoto(item){
 
 function formatPrice(value){
 
-  return Number(value || 0)
-    .toLocaleString("fr-FR")
-    + " FCFA";
+  return WT_CURRENCY.formatPrice(value, document.documentElement.lang || "fr");
 
 }
 
@@ -1714,6 +1726,9 @@ function loadOrderSummary(){
 
     const price =
       getPrice(item);
+    const regularPrice = getRegularPrice(item);
+    const salePrice = Number(item.salePrice);
+    const hasSale = Number.isFinite(salePrice) && salePrice > 0 && salePrice < regularPrice;
 
     const quantity =
       Math.max(
@@ -1821,7 +1836,7 @@ function loadOrderSummary(){
 
           <p class="price">
 
-            ${formatPrice(price)}
+            ${hasSale ? `${formatPrice(price)} <s>${formatPrice(regularPrice)}</s>` : formatPrice(price)}
 
             ${
               auction
@@ -2304,6 +2319,8 @@ function submitOrder(){
   ================================================== */
 
   const orderData = {
+
+    currency: "USD",
 
     orderNumber:
       orderNumber,
