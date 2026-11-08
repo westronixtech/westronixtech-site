@@ -105,6 +105,7 @@
 </div></footer>
 <script>
 const languageSelect=document.getElementById("language");
+let featuredProducts=[];
 function setLanguage(lang){const safe=lang==="fr"?"fr":"en";document.documentElement.lang=safe;languageSelect.value=safe;try{localStorage.setItem("wt_language",safe)}catch(e){}if(featuredProducts.length)renderFeatured(featuredProducts)}
 languageSelect.addEventListener("change",e=>setLanguage(e.target.value));
 try{setLanguage(localStorage.getItem("wt_language")||"en")}catch(e){setLanguage("en")}
@@ -138,7 +139,6 @@ if(heroCarousel){
 }
 
 const money=value=>formatPrice(value,languageSelect.value);
-let featuredProducts=[];
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function renderFeatured(products){
  const available=products.filter(p=>String(p.status||"").toLowerCase()==="available"&&Number(p.quantity)>0&&Number(p.price)>0).slice(0,4);
