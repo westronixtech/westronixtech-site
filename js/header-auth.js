@@ -6,6 +6,46 @@ const CART_KEY = "wt_cart";
 let activeUserId = null;
 let authGeneration = 0;
 
+
+function normalizeLanguage(value) {
+  return String(value || "").toLowerCase() === "en" ? "en" : "fr";
+}
+
+function applyHeaderLanguage(value) {
+  const language = normalizeLanguage(value);
+  document.documentElement.lang = language;
+  document.body.classList.remove("language-en", "language-fr", "lang-en", "lang-fr");
+  document.body.classList.add(`language-${language}`, `lang-${language}`);
+  try {
+    localStorage.setItem("wt_language", language);
+  } catch (error) {
+    console.warn("WESTRONIX header: language preference could not be saved.", error);
+  }
+  document.querySelectorAll('header select#language, header select#languageSelect, header select.language-select, header select.lang').forEach((select) => {
+    if (select.value !== language) select.value = language;
+  });
+}
+
+function installHeaderLanguage(header) {
+  const selector = header.querySelector(
+    'select#language, select#languageSelect, select.language-select, select.lang, select[aria-label*="Language"], select[aria-label*="Langue"]'
+  );
+  let initialLanguage = "fr";
+  try {
+    const saved = localStorage.getItem("wt_language");
+    initialLanguage = saved === "en" || saved === "fr"
+      ? saved
+      : normalizeLanguage(document.documentElement.lang);
+  } catch (error) {
+    initialLanguage = normalizeLanguage(document.documentElement.lang);
+  }
+  applyHeaderLanguage(initialLanguage);
+  if (selector && !selector.dataset.wtLanguageBound) {
+    selector.dataset.wtLanguageBound = "true";
+    selector.addEventListener("change", () => applyHeaderLanguage(selector.value));
+  }
+}
+
 function headerElements(header) {
   const language = header.querySelector(
     'select#language, select#languageSelect, select.language-select, select.lang, select[aria-label*="Language"], select[aria-label*="Langue"]'
@@ -165,6 +205,9 @@ function installStyles() {
   const style = document.createElement("style");
   style.id = "wt-market-nav-styles";
   style.textContent = `
+    header .lang-en,header .lang-fr,header .en,header .fr{display:none!important}
+    html[lang="en"] header .lang-en,html[lang="en"] header .en{display:revert!important}
+    html[lang="fr"] header .lang-fr,html[lang="fr"] header .fr{display:revert!important}
     .wt-market-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,24px);min-height:48px;color:#fff;white-space:nowrap;font-family:inherit;font-size:12px;font-weight:700}
     .wt-language-item{display:inline-flex;align-items:center}
     .wt-language-select{appearance:none;-webkit-appearance:none;max-width:104px;border:1px solid #ffffff38!important;border-radius:6px!important;background:#ffffff10!important;color:#fff!important;padding:8px 7px!important;font:inherit!important;font-size:12px!important;font-weight:800!important;cursor:pointer}
@@ -291,7 +334,10 @@ function installCartCountSync() {
 
 installStyles();
 installCartCountSync();
-for (const header of document.querySelectorAll("header")) setupRightNavigation(header);
+for (const header of document.querySelectorAll("header")) {
+  installHeaderLanguage(header);
+  setupRightNavigation(header);
+}
 
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".wt-account-menu")) closeMenus();
