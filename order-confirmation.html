@@ -1217,13 +1217,10 @@ function loadOrder(){
         const quantity =
             Number(item.quantity || 0);
 
-        const price =
-            Number(
-                item.price ??
-                item.buyNow ??
-                item.buyNowPrice ??
-                0
-            );
+        const regularPrice = Number(item.regularPrice ?? item.price ?? item.buyNow ?? item.buyNowPrice ?? 0);
+        const salePrice = Number(item.salePrice);
+        const hasSale = Number.isFinite(salePrice) && salePrice > 0 && salePrice < regularPrice;
+        const price = hasSale ? salePrice : regularPrice;
 
         const itemSubtotal =
             price * quantity;
@@ -1389,7 +1386,7 @@ function loadOrder(){
 
                         </strong>
 
-                        ${formatCurrency(price)}
+                        ${formatCurrency(price)} ${hasSale ? `<s>${formatCurrency(regularPrice)}</s>` : ""}
 
                     </p>
 
