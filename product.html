@@ -1454,7 +1454,7 @@ function renderProduct(product){
     Number(product.price) > 0;
   const price = hasPrice ? formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage) : null;
   const hasSalePrice = hasPrice && Number(product.salePrice) > 0 && Number(product.salePrice) < Number(product.price);
-  const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(Number(product.salePrice)>0 && Number(product.salePrice)<Number(product.price)?Number(product.salePrice):Number(product.price),currentLanguage)}</s>` : price;
+  const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(Number(product.price),currentLanguage)}</s>` : price;
 
   const status =
     String(product.status || '').toLowerCase();
