@@ -15,10 +15,15 @@ function headerElements(header) {
       return !link.closest("nav") && new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
     } catch { return false; }
   });
-  const cart = [...header.querySelectorAll("a[href]")].find((link) => {
-    try {
-      return !link.closest("nav") && new URL(link.getAttribute("href"), location.href).pathname.endsWith("/cart.html");
-    } catch { return false; }
+  const cart = [...header.querySelectorAll("a[href], button[onclick]")].find((item) => {
+    if (item.closest("nav")) return false;
+    const href = item.getAttribute("href");
+    if (href) {
+      try {
+        if (new URL(href, location.href).pathname.endsWith("/cart.html")) return true;
+      } catch { /* Check the existing button handler below. */ }
+    }
+    return item.tagName === "BUTTON" && /cart\\.html/i.test(item.getAttribute("onclick") || "");
   });
   return { language, account, cart };
 }
