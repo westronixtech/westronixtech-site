@@ -1386,7 +1386,7 @@ body .card-dell-3551 .btn.btn-cart svg {
 <script type="module" src="js/offers.js"></script>
 </head>
 
-<body>
+<body class="language-fr">
 
 <!-- =======================================================
      HEADER
@@ -1734,18 +1734,21 @@ body .card-dell-3551 .btn.btn-cart svg {
    LANGUAGE
 ========================================================= */
 
-let currentLanguage =
-  localStorage.getItem('wt_language') || 'fr';
+let currentLanguage = 'fr';
+
+try {
+  const savedLanguage = window.localStorage.getItem('wt_language');
+  if (savedLanguage === 'en') {
+    currentLanguage = 'en';
+  }
+} catch (storageError) {
+  console.warn('Language preference storage is unavailable; using French.', storageError);
+}
 
 function applyLanguage(language){
 
   currentLanguage =
     language === 'en' ? 'en' : 'fr';
-
-  localStorage.setItem(
-    'wt_language',
-    currentLanguage
-  );
 
   document.body.classList.remove(
     'language-en',
@@ -1760,6 +1763,12 @@ function applyLanguage(language){
 
   document.documentElement.lang =
     currentLanguage;
+
+  try {
+    window.localStorage.setItem('wt_language', currentLanguage);
+  } catch (storageError) {
+    console.warn('Could not save language preference; current page language is still active.', storageError);
+  }
 
   const selector =
     document.getElementById('languageSelect');
