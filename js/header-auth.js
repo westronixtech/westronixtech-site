@@ -170,7 +170,11 @@ function installStyles() {
     .wt-account-greeting strong{font-size:12px;font-weight:900;color:#fff;letter-spacing:.35px}
     .wt-account-label{font-size:12px;font-weight:800;color:#fff}
     .wt-orders-link{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:42px;color:#fff!important;text-decoration:none!important;line-height:1.15;font-size:12px;font-weight:800}
-    .wt-cart-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:7px 10px;border-radius:7px;background:#1677ff;color:#fff!important;text-decoration:none!important;font-size:12px;font-weight:900}
+    .wt-cart-link{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px;padding:5px 0;border-radius:0;background:transparent;color:#fff!important;text-decoration:none!important;font-size:13px;font-weight:900}
+    .wt-cart-icon{display:block;width:31px;height:27px;overflow:visible;flex:none}
+    .wt-cart-icon path,.wt-cart-icon circle{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .wt-cart-count{position:absolute;top:-1px;left:10px;min-width:13px;color:#ff8a00;font-size:14px;font-weight:900;line-height:1;text-align:center;text-shadow:0 1px 2px #071526}
+    .wt-cart-label{color:#fff;font-size:13px;font-weight:900}
     .wt-market-nav a:hover{color:#9bc8ff!important}
     .wt-account-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:174px;padding:7px;background:#fff;color:#142033;border:1px solid #dce4ee;border-radius:9px;box-shadow:0 12px 30px rgba(7,21,38,.2);z-index:10000;text-align:left}
     .wt-account-dropdown[hidden]{display:none}
@@ -250,7 +254,8 @@ function updateCartCount(nav) {
   const link = nav.querySelector(".wt-cart-link");
   if (!link) return;
   const count = readCartCount();
-  link.textContent = `🛒 ${count} Cart`;
+  link.innerHTML = '<svg class="wt-cart-icon" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M2 3h4l3.1 15.1a2.2 2.2 0 0 0 2.2 1.8h13.1a2.2 2.2 0 0 0 2.1-1.6L29 8H7"/><circle cx="12.5" cy="24.5" r="1.6"/><circle cx="24" cy="24.5" r="1.6"/></svg><span class="wt-cart-count"></span><span class="wt-cart-label">Cart</span>';
+  link.querySelector(".wt-cart-count").textContent = String(count);
   link.setAttribute("aria-label", `Shopping cart, ${count} items`);
 }
 
