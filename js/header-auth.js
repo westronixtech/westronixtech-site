@@ -10,7 +10,7 @@ const accountLinks = () => {
   const matches = headers.flatMap((header) =>
     [...header.querySelectorAll("a[href]")].filter((link) => {
       try {
-        return new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
+        return link.classList.contains("wt-account-trigger") || new URL(link.getAttribute("href"), location.href).pathname.endsWith("/signin.html");
       } catch {
         return false;
       }
@@ -118,7 +118,7 @@ function installStyles() {
     .wt-account-trigger{white-space:nowrap;cursor:pointer}
     .wt-account-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:174px;padding:7px;background:#fff;color:#142033;border:1px solid #dce4ee;border-radius:9px;box-shadow:0 12px 30px rgba(7,21,38,.2);z-index:10000;text-align:left}
     .wt-account-dropdown[hidden]{display:none}
-    .wt-account-dropdown a,.wt-account-dropdown button{display:block;width:100%;padding:10px 12px;border:0;border-radius:6px;background:transparent;color:#142033;text-align:left;text-decoration:none;font:600 13px/1.35 inherit;cursor:pointer;white-space:nowrap}
+    .wt-account-dropdown a,.wt-account-dropdown button{display:block;width:100%;padding:10px 12px;border:0;border-radius:6px;background:transparent;color:#142033;text-align:left;text-decoration:none;font:inherit;font-size:13px;font-weight:600;line-height:1.35;cursor:pointer;white-space:nowrap}
     .wt-account-dropdown a:hover,.wt-account-dropdown button:hover{background:#eef5ff;color:#075fc9}
     .wt-account-dropdown button:disabled{opacity:.6;cursor:wait}
     .wt-account-divider{height:1px;background:#e5eaf1;margin:5px 4px}
