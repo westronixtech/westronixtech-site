@@ -701,6 +701,53 @@
         "USB-C",
         "microSD card slot"
       ]
+    },
+    {
+      "sku": "HP-ELITEBOOK-645-G10-16-512",
+      "brand": "HP",
+      "name": "HP EliteBook 645 G10 | AMD Ryzen 7 Pro | 16GB RAM | 512GB SSD | 14-inch FHD",
+      "category": "Laptop",
+      "processor": "AMD Ryzen 7 Pro (2.00 GHz)",
+      "ram": "16GB",
+      "storage": "512GB SSD",
+      "screen": "14-inch Full HD (1920 × 1080)",
+      "gpu": "AMD Radeon integrated graphics",
+      "operatingSystem": "Windows 10 Pro",
+      "color": "Silver",
+      "connectivity": [
+        "Gigabit Ethernet",
+        "HDMI",
+        "USB-C",
+        "USB 3.2",
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "features": [
+        "Backlit keyboard",
+        "Built-in microphone",
+        "Built-in webcam",
+        "Multi-touch trackpad",
+        "Touch ID"
+      ],
+      "condition": "Used",
+      "grade": "A",
+      "price": 220000,
+      "currency": "FCFA",
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/FrontRight-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/Front-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/FrontLid-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/Keyboard-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/Left-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/Right-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-645-G10-16-512/Back-review.png"
+      ],
+      "description": {
+        "en": "HP EliteBook 645 G10 business laptop with an AMD Ryzen 7 Pro processor, 16GB RAM and a 512GB SSD. Features a 14-inch Full HD (1920 × 1080) display, AMD Radeon integrated graphics and Windows 10 Pro. Silver finish with a backlit keyboard, webcam, microphone, multi-touch trackpad, Wi-Fi, Bluetooth, Gigabit Ethernet, HDMI, USB-C and USB 3.2 connectivity. Used, Grade A. Available in Lomé, Togo.",
+        "fr": "Ordinateur portable professionnel HP EliteBook 645 G10 équipé d’un processeur AMD Ryzen 7 Pro, de 16 Go de RAM et d’un SSD de 512 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques AMD Radeon intégrés et Windows 10 Pro. Finition argentée, clavier rétroéclairé, webcam, microphone, pavé tactile multipoint, Wi-Fi, Bluetooth, Ethernet Gigabit, HDMI, USB-C et USB 3.2. Occasion, Grade A. Disponible à Lomé, au Togo."
+      }
     }
   ],
   "categories": [
