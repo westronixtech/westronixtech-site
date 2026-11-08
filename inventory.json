@@ -748,6 +748,46 @@
         "en": "HP EliteBook 645 G10 business laptop with an AMD Ryzen 7 Pro processor, 16GB RAM and a 512GB SSD. Features a 14-inch Full HD (1920 × 1080) display, AMD Radeon integrated graphics and Windows 10 Pro. Silver finish with a backlit keyboard, webcam, microphone, multi-touch trackpad, Wi-Fi, Bluetooth, Gigabit Ethernet, HDMI, USB-C and USB 3.2 connectivity. Used, Grade A. Available in Lomé, Togo.",
         "fr": "Ordinateur portable professionnel HP EliteBook 645 G10 équipé d’un processeur AMD Ryzen 7 Pro, de 16 Go de RAM et d’un SSD de 512 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques AMD Radeon intégrés et Windows 10 Pro. Finition argentée, clavier rétroéclairé, webcam, microphone, pavé tactile multipoint, Wi-Fi, Bluetooth, Ethernet Gigabit, HDMI, USB-C et USB 3.2. Occasion, Grade A. Disponible à Lomé, au Togo."
       }
+    },
+    {
+      "sku": "HP-ELITEBOOK-X360-1040-G5-16-256",
+      "brand": "HP",
+      "name": "HP EliteBook x360 1040 G5 | Intel Core i5 8th Gen | 16GB RAM | 256GB SSD | 14-inch FHD Convertible",
+      "category": "Laptop",
+      "processor": "Intel Core i5 - 8th Gen (1.70 GHz)",
+      "ram": "16GB",
+      "storage": "256GB SSD",
+      "screen": "14-inch Full HD (1920 × 1080) touchscreen",
+      "gpu": "Intel UHD Graphics 620",
+      "operatingSystem": "Windows 10 Pro",
+      "color": "Silver",
+      "connectivity": [
+        "Gigabit Ethernet",
+        "HDMI",
+        "USB-C",
+        "USB 3.2",
+        "USB 3.1"
+      ],
+      "condition": "Used",
+      "grade": "B",
+      "price": 120000,
+      "currency": "FCFA",
+      "location": "Lomé, Togo",
+      "status": "available",
+      "photos": [
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/FrontSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/Elitebook-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/Keyboard-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/LeftSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/LeftSide-review1.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/LidSide-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/Open360-review.png",
+        "https://raw.githubusercontent.com/westronixtech/westronixtech-site/main/product-photos/HP-ELITEBOOK-X360-1040-G5-16-256/RightSide-review.png"
+      ],
+      "description": {
+        "en": "HP EliteBook x360 1040 G5 convertible business laptop with an 8th Gen Intel Core i5 processor running at 1.70 GHz, 16GB RAM and a 256GB SSD. Features a 14-inch Full HD (1920 × 1080) display, Intel UHD Graphics 620 and Windows 10 Pro. Silver finish with x360 convertible design and Gigabit Ethernet, HDMI, USB-C, USB 3.2 and USB 3.1 connectivity. Used, Grade B. Available in Lomé, Togo.",
+        "fr": "Ordinateur portable professionnel convertible HP EliteBook x360 1040 G5 équipé d’un processeur Intel Core i5 de 8e génération à 1,70 GHz, de 16 Go de RAM et d’un SSD de 256 Go. Écran Full HD de 14 pouces (1920 × 1080), graphiques Intel UHD 620 et Windows 10 Pro. Finition argentée avec conception convertible x360 et connectivité Ethernet Gigabit, HDMI, USB-C, USB 3.2 et USB 3.1. Occasion, Grade B. Disponible à Lomé, au Togo."
+      }
     }
   ],
   "categories": [
