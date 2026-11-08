@@ -1369,6 +1369,7 @@ body .card-dell-3551 .btn.btn-cart svg {
 }
 </style>
 
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -2185,6 +2186,8 @@ function renderProducts(products){
       Number.isFinite(Number(product.price)) &&
       Number(product.price) > 0;
     const price = hasPrice ? Number(product.price) : null;
+    const hasSalePrice = hasPrice && Number(product.salePrice) > 0 && Number(product.salePrice) < price;
+    const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(price,currentLanguage)}</s>` : (hasPrice ? formatPrice(price,currentLanguage) : null);
 
     const canAddToCart =
       status === 'available' &&
@@ -2277,7 +2280,7 @@ function renderProducts(products){
 
         <div class="price">
           ${hasPrice
-            ? `${price.toLocaleString()} FCFA`
+            ? `${priceMarkup}`
             : (currentLanguage === 'en' ? 'Price on request' : 'Prix sur demande')}
           ${hasPrice ? `<small>/ ${currentLanguage === 'en' ? 'unit' : 'unité'}</small>` : ''}
         </div>
@@ -2426,6 +2429,7 @@ function addToCart(sku){
       name:product.name,
 
       price:product.price,
+      priceCurrency:'USD',
 
       quantity:1,
 
