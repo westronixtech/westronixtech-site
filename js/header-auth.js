@@ -205,7 +205,10 @@ function installStyles() {
   const style = document.createElement("style");
   style.id = "wt-market-nav-styles";
   style.textContent = `
-    header .lang-en,header .lang-fr,header .en,header .fr{display:none!important}\n    html[lang="en"] header .lang-en,html[lang="en"] header .en{display:revert!important}\n    html[lang="fr"] header .lang-fr,html[lang="fr"] header .fr{display:revert!important}\n    .wt-market-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,24px);min-height:48px;color:#fff;white-space:nowrap;font-family:inherit;font-size:12px;font-weight:700}
+    header .lang-en,header .lang-fr,header .en,header .fr{display:none!important}
+    html[lang="en"] header .lang-en,html[lang="en"] header .en{display:revert!important}
+    html[lang="fr"] header .lang-fr,html[lang="fr"] header .fr{display:revert!important}
+    .wt-market-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,24px);min-height:48px;color:#fff;white-space:nowrap;font-family:inherit;font-size:12px;font-weight:700}
     .wt-language-item{display:inline-flex;align-items:center}
     .wt-language-select{appearance:none;-webkit-appearance:none;max-width:104px;border:1px solid #ffffff38!important;border-radius:6px!important;background:#ffffff10!important;color:#fff!important;padding:8px 7px!important;font:inherit!important;font-size:12px!important;font-weight:800!important;cursor:pointer}
     .wt-language-select option{background:#fff;color:#142033}
@@ -331,7 +334,10 @@ function installCartCountSync() {
 
 installStyles();
 installCartCountSync();
-for (const header of document.querySelectorAll("header")) {\n  installHeaderLanguage(header);\n  setupRightNavigation(header);\n}
+for (const header of document.querySelectorAll("header")) {
+  installHeaderLanguage(header);
+  setupRightNavigation(header);
+}
 
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".wt-account-menu")) closeMenus();
