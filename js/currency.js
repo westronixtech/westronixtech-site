@@ -16,7 +16,7 @@
   function normalizeCartItem(item){
     const copy = {...item};
     if(copy.priceCurrency !== "USD" && copy.currency !== "USD"){
-      ["price","buyNow","buyNowPrice","salePrice"].forEach(key=>{
+      ["price","regularPrice","originalPrice","buyNow","buyNowPrice","salePrice"].forEach(key=>{
         if(copy[key] !== undefined && copy[key] !== null && copy[key] !== ""){
           const value = Number(copy[key]);
           if(Number.isFinite(value)) copy[key] = value / CFA_RATE;
