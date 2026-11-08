@@ -873,6 +873,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .westronix-shared-brand:hover .westronix-shared-logo{transform:scale(1.08) rotate(-2deg);filter:drop-shadow(0 7px 14px rgba(22,119,255,.35));}
 @media(max-width:700px){.westronix-shared-logo{width:58px!important;height:58px!important;}}
 </style>
+<script src="js/currency.js"></script>
 </head>
 
 <body>
@@ -1451,7 +1452,9 @@ function renderProduct(product){
     product.price !== '' &&
     Number.isFinite(Number(product.price)) &&
     Number(product.price) > 0;
-  const price = hasPrice ? Number(product.price).toLocaleString() : null;
+  const price = hasPrice ? formatPrice(Number(product.price),currentLanguage) : null;
+  const hasSalePrice = hasPrice && Number(product.salePrice) > 0 && Number(product.salePrice) < Number(product.price);
+  const priceMarkup = hasSalePrice ? `${formatPrice(Number(product.salePrice),currentLanguage)} <s>${formatPrice(Number(product.price),currentLanguage)}</s>` : price;
 
   const status =
     String(product.status || '').toLowerCase();
@@ -1618,7 +1621,7 @@ function renderProduct(product){
 
 
         <div class="price">
-          ${hasPrice ? `${price} FCFA` : (currentLanguage === 'en' ? 'Price on request' : 'Prix sur demande')}
+          ${hasPrice ? priceMarkup : (currentLanguage === 'en' ? 'Price on request' : 'Prix sur demande')}
           ${hasPrice ? `<small>/ ${currentLanguage === 'en' ? 'unit' : 'unité'}</small>` : ''}
         </div>
 
@@ -2032,6 +2035,7 @@ function addToCart(){
         Number(
           currentProduct.price || 0
         ),
+      priceCurrency: 'USD',
 
       quantity:
         1,
@@ -2115,7 +2119,7 @@ I would like to request a quote for:
 
 Product: ${currentProduct.name}
 SKU: ${currentProduct.sku}
-Price: ${currentProduct.price && Number(currentProduct.price) > 0 ? Number(currentProduct.price).toLocaleString() + ' FCFA' : 'Price not confirmed'}
+Price: ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.price),currentLanguage) : 'Price not confirmed'}
 
 Please provide more information.`
 
@@ -2127,7 +2131,7 @@ Je souhaite demander un devis pour :
 
 Produit : ${currentProduct.name}
 SKU : ${currentProduct.sku}
-Prix : ${currentProduct.price && Number(currentProduct.price) > 0 ? Number(currentProduct.price).toLocaleString() + ' FCFA' : 'Prix non confirmé'}
+Prix : ${currentProduct.price && Number(currentProduct.price) > 0 ? formatPrice(Number(currentProduct.price),currentLanguage) : 'Prix non confirmé'}
 
 Merci de me fournir plus d'informations.`;
 
@@ -2161,7 +2165,7 @@ I am interested in:
 
 Product: ${product.name}
 SKU: ${product.sku}
-Price: ${product.price && Number(product.price) > 0 ? Number(product.price).toLocaleString() + ' FCFA' : 'Price not confirmed'}
+Price: ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.price),currentLanguage) : 'Price not confirmed'}
 
 Is this product still available?`
 
@@ -2173,7 +2177,7 @@ Je suis intéressé(e) par :
 
 Produit : ${product.name}
 SKU : ${product.sku}
-Prix : ${product.price && Number(product.price) > 0 ? Number(product.price).toLocaleString() + ' FCFA' : 'Prix non confirmé'}
+Prix : ${product.price && Number(product.price) > 0 ? formatPrice(Number(product.price),currentLanguage) : 'Prix non confirmé'}
 
 Ce produit est-il toujours disponible ?`;
 
