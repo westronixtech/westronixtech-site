@@ -1468,7 +1468,14 @@ function applyLanguage(language){
     selector.value = language;
   }
 
-  if(cart.length) loadOrderSummary();
+  if(cart.length){
+    loadOrderSummary();
+  }else{
+    ["subtotal","grandTotal","paymentTotal"].forEach(id=>{
+      const node=document.getElementById(id);
+      if(node) node.textContent=WT_CURRENCY.formatPrice(0,document.documentElement.lang);
+    });
+  }
 
 }
 
