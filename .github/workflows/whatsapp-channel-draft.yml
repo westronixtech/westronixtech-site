@@ -1,0 +1,62 @@
+name: Prepare WhatsApp Channel Draft
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - inventory.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: whatsapp-channel-draft
+  cancel-in-progress: false
+
+jobs:
+  prepare-draft:
+    name: Detect inventory changes and prepare bilingual post
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate WhatsApp Channel draft
+        id: draft
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+          USD_TO_XOF: "600"
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            BEFORE_SHA="$(git rev-parse HEAD^ 2>/dev/null || true)"
+          fi
+          python scripts/generate-whatsapp-draft.py --before "$BEFORE_SHA"
+
+      - name: Add draft to workflow summary
+        if: always()
+        run: |
+          if [ -f whatsapp-drafts/latest.md ]; then
+            cat whatsapp-drafts/latest.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## WESTRONIX WhatsApp Channel" >> "$GITHUB_STEP_SUMMARY"
+            echo "No new products, price changes, or promotion changes were detected." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Save draft as downloadable artifact
+        if: success() && steps.draft.outcome == 'success' && hashFiles('whatsapp-drafts/latest.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: WESTRONIX-WhatsApp-Channel-Draft
+          path: whatsapp-drafts/latest.md
+          if-no-files-found: ignore
+          retention-days: 30
