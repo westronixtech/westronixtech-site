@@ -68,6 +68,26 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media(max-width:650px){.market-logo.westronix-logo-header{gap:8px;min-width:0;}.market-logo.westronix-logo-header img{width:56px!important;height:56px!important;}.market-logo.westronix-logo-header .market-logo-text{display:none;}}
 @media(prefers-reduced-motion:reduce){.market-logo.westronix-logo-header img{animation:none;}}
 
+
+/* Consistent WESTRONIX footer */
+footer.site-footer{background:#071526;color:#c1cede;margin-top:20px;padding:42px 0 20px}
+.site-footer .footer-inner{width:min(1240px,calc(100% - 44px));margin:auto;display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:32px;padding:0 0 24px}
+.site-footer .footer-logo{font-size:23px;font-weight:900;color:#fff}
+.site-footer .footer-logo span{color:#69adff}
+.site-footer .footer-text,.site-footer p{color:#aebed1;font-size:13px;line-height:1.8;margin:12px 0}
+.site-footer .footer-column h3{color:#fff;font-size:14px;margin:0 0 12px}
+.site-footer .footer-column a{display:block;color:#c1cede;font-size:13px;margin:9px 0}
+.site-footer .footer-column a:hover{color:#fff}
+.site-footer .contact-line{overflow-wrap:anywhere}
+.site-footer .social-links{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+.site-footer .social-links a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid #ffffff35;border-radius:50%;color:#e5edf7;transition:background .2s,border-color .2s,color .2s}
+.site-footer .social-links a svg{width:17px;height:17px;display:block;fill:currentColor}
+.site-footer .social-links a:hover{background:#ffffff18;border-color:#ffffff80;color:#fff}
+.site-footer .footer-bottom{border-top:1px solid #ffffff20;padding:17px 22px 0;text-align:center;color:#91a4ba;font-size:12px}
+.site-footer .footer-bottom a{color:#b9c8d9;margin:0 5px}
+.site-footer .footer-bottom a:hover{color:#fff}
+@media(max-width:760px){.site-footer .footer-inner{grid-template-columns:1fr 1fr;gap:24px}.site-footer .footer-inner>div:first-child{grid-column:1/-1}}
+@media(max-width:480px){.site-footer .footer-inner{grid-template-columns:1fr}.site-footer .footer-inner>div:first-child{grid-column:auto}}
 </style>
 <style id="westronix-shared-logo-style">
 /* WESTRONIX shared header logo: match homepage size and hover motion */
@@ -111,7 +131,31 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 <div class="field"><label for="oQty">Quantity / Quantité *</label><input id="oQty" name="quantity" type="number" min="1" max="10000" value="1" required></div>
 <div class="field full"><label for="oNotes">Notes / Conditions proposées</label><textarea id="oNotes" name="notes" placeholder="Delivery needs, bulk quantity, timing, questions…"></textarea></div>
 </div><button class="submit" type="submit">Send offer on WhatsApp / Envoyer l'offre par WhatsApp</button><p class="smallprint">All offers are subject to review. Do not send payment before receiving confirmed order details.</p></form></section>
-</main><footer>WESTRONIX TECH · Technology from USA → West Africa · <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a><p class="westronix-policy-links" style="margin:14px 0 0;font-size:13px"><a href="privacy.html">Privacy / Confidentialité</a> · <a href="terms.html">Terms / Conditions</a> · <a href="support.html">Support</a> · <a href="signin.html">Account / Compte</a></p></footer>
+</main>
+<footer class="site-footer">
+ <div class="footer-inner">
+  <div>
+   <div class="footer-logo">WESTRONIX <span>TECH</span></div>
+   <p class="footer-text">Technology from USA → Togo → West Africa.<br>Recover • Refurbish • Resell • Reuse • Impact.</p>
+   <nav class="social-links" aria-label="WESTRONIX social media"><a href="https://www.linkedin.com/company/westronix-tech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.5H7v11H3.4v-11Zm5.8 0h3.4V11h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.4v6h-3.6v-5.3c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.4H9.2v-11Z"/></svg></a><a href="https://www.facebook.com/Westronix.tech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></a><a href="https://www.instagram.com/westronixtech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9a4.7 4.7 0 0 1-4.7-4.7v-9a4.7 4.7 0 0 1 4.7-4.7Zm0 1.8a2.9 2.9 0 0 0-2.9 2.9v9a2.9 2.9 0 0 0 2.9 2.9h9a2.9 2.9 0 0 0 2.9-2.9v-9a2.9 2.9 0 0 0-2.9-2.9h-9Zm4.5 2.5a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a><a href="https://www.tiktok.com/@westronixtecko" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.3 2.1 1.5 3.4 3.4 3.6v3.2a8.4 8.4 0 0 1-3.4-.9v6.3a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.3a3 3 0 1 0 1.7 2.8V3h3.3Z"/></svg></a></nav>
+  </div>
+  <div class="footer-column">
+   <h3>Marketplace</h3>
+   <a href="inventory.html">Inventory / Inventaire</a>
+   <a href="request-product.html">Request Product / Demander un produit</a>
+   <a href="auctions.html">Auctions / Enchères</a>
+   <a href="bulk-orders.html">Bulk Orders / Commandes en gros</a>
+  </div>
+  <div class="footer-column">
+   <h3>Contact / Nous joindre</h3>
+   <a class="contact-line" href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a>
+   <a href="tel:+14028854995">USA: 402 885 4995</a>
+   <a href="https://wa.me/22892953333" target="_blank" rel="noopener noreferrer">Togo: +228 92 95 33 33 · WhatsApp</a>
+   <p>Lomé, Togo</p>
+  </div>
+ </div>
+ <div class="footer-bottom">© 2026 WESTRONIX TECH. Tous droits réservés. · <a href="privacy.html">Privacy / Confidentialité</a> · <a href="terms.html">Terms / Conditions</a> · <a href="support.html">Support</a></div>
+</footer></footer>
 <script>
 (function(){
  const params=new URLSearchParams(location.search);
