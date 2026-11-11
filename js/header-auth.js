@@ -394,33 +394,35 @@ window.addEventListener("pagehide", () => {
 });
 
 
-// WESTRONIX site-wide footer contact information.
+// WESTRONIX site-wide contact information.
 (function installWestronixContactDetails() {
   if (document.getElementById("wt-site-contact-styles")) return;
   const style = document.createElement("style");
   style.id = "wt-site-contact-styles";
   style.textContent = `
-    .wt-site-contact-footer{margin-top:10px;padding-top:10px;border-top:1px solid #ffffff2b;display:flex;gap:8px 20px;align-items:center;flex-wrap:wrap;font-size:13px;line-height:1.6}
-    .wt-site-contact-footer a{color:#fff;font-weight:800;text-decoration:none}
-    .wt-site-contact-footer a:hover{text-decoration:underline}
-    @media(max-width:560px){.wt-site-contact-footer{gap:7px 14px}}
+    .wt-site-contact-bar{background:#eef4fb;border-bottom:1px solid #dce5f0;color:#142033;font:600 12px/1.5 Arial,sans-serif}
+    .wt-site-contact-inner{max-width:1240px;margin:0 auto;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:12px 24px;flex-wrap:wrap}
+    .wt-site-contact-bar a,.wt-site-contact-footer a{color:#075fc9;font-weight:800;text-decoration:none}
+    .wt-site-contact-bar a:hover,.wt-site-contact-footer a:hover{text-decoration:underline}
+    .wt-site-contact-footer{margin-top:14px;padding-top:13px;border-top:1px solid #ffffff2b;display:flex;gap:8px 20px;align-items:center;flex-wrap:wrap;font-size:13px;line-height:1.6}
+    .wt-site-contact-footer a{color:#fff}
+    @media(max-width:560px){.wt-site-contact-inner{gap:5px 12px;padding:9px 12px;font-size:11px}.wt-site-contact-footer{gap:7px 14px}}
   `;
   document.head.append(style);
-  const footer = document.querySelector("footer");
-  if (!footer || footer.querySelector(".wt-site-contact-footer")) return;
-  const email = [...footer.querySelectorAll('a[href^="mailto:"]')].find(link => /westronix\\.tech@gmail\\.com/i.test(link.href));
-  let emailRow = email?.closest("p, div") || null;
-  if (!emailRow) {
-    const inner = footer.querySelector(".inner, .foot, .container") || footer;
-    emailRow = document.createElement("p");
-    inner.append(emailRow);
+
+  const header = document.querySelector("header");
+  if (header && !document.querySelector(".wt-site-contact-bar")) {
+    const bar = document.createElement("div");
+    bar.className = "wt-site-contact-bar";
+    bar.innerHTML = '<div class="wt-site-contact-inner"><span>USA: <a href="tel:+14028854995">402 885 4995</a></span><span>Togo: <a href="tel:+22892953333">+228 92 95 33 33</a></span><a href="https://wa.me/message/HFDGJCOEFS46I1" target="_blank" rel="noopener noreferrer">Message Westronix Tech on WhatsApp</a></div>';
+    header.insertAdjacentElement("afterend", bar);
   }
-  emailRow.innerHTML = 'Email: <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a>';
-  [...footer.querySelectorAll("p")].forEach(row => {
-    if (row !== emailRow && (/402\\s*885\\s*4995|\\+228\\s*92\\s*95\\s*33\\s*33|Message Westronix Tech on WhatsApp/i.test(row.textContent))) row.remove();
-  });
-  const contact = document.createElement("div");
-  contact.className = "wt-site-contact-footer";
-  contact.innerHTML = '<span>USA: <a href="tel:+14028854995">402 885 4995</a></span><span>Togo: <a href="tel:+22892953333">+228 92 95 33 33</a></span><a href="https://wa.me/message/HFDGJCOEFS46I1" target="_blank" rel="noopener noreferrer">Message Westronix Tech on WhatsApp</a>';
-  emailRow.insertAdjacentElement("afterend", contact);
+
+  const footer = document.querySelector("footer");
+  if (footer && !footer.querySelector(".wt-site-contact-footer")) {
+    const contact = document.createElement("div");
+    contact.className = "wt-site-contact-footer";
+    contact.innerHTML = '<span>USA: <a href="tel:+14028854995">402 885 4995</a></span><span>Togo: <a href="tel:+22892953333">+228 92 95 33 33</a></span><a href="https://wa.me/message/HFDGJCOEFS46I1" target="_blank" rel="noopener noreferrer">Message Westronix Tech on WhatsApp</a>';
+    footer.querySelector(".inner")?.append(contact);
+  }
 })();
