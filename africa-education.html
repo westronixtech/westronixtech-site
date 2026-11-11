@@ -1176,18 +1176,28 @@ img, svg, video, iframe {
 @media (max-width: 768px) {
   .impact-grid,
   .process-grid,
-  .form-grid,
-  .site-footer .footer-inner {
-    grid-template-columns: minmax(0, 1fr) !important;
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
   .request-layout {
     grid-template-columns: minmax(0, 1fr);
   }
+  .site-footer .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
   .site-footer .footer-inner > .footer-brand-block {
-    grid-column: auto !important;
+    grid-column: 1 / -1 !important;
   }
   .header-inner {
     flex-wrap: nowrap;
+  }
+}
+@media (max-width: 560px) {
+  .site-footer .footer-inner {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .site-footer .footer-inner > .footer-brand-block {
+    grid-column: auto !important;
   }
 }
 </style>
