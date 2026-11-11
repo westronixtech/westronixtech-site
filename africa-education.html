@@ -915,6 +915,171 @@ footer.site-footer{background:#071526!important;color:#dce6f3!important;margin-t
 .footer .footer-contact-item:hover{color:#fff!important}
 .site-footer .footer-brand-block,.footer .wrap,.site-footer .footer-inner{min-width:0!important}
 </style>
+
+<style id="africa-education-overflow-fix">
+/* Keep every layout item shrinkable so intrinsic content cannot widen the page. */
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+body {
+  min-width: 0;
+}
+img, svg, video, iframe {
+  max-width: 100%;
+}
+.header-inner,
+.header-inner > *,
+.container,
+.hero-content,
+.impact-grid > *,
+.process-grid > *,
+.request-layout > *,
+.request-form,
+.form-grid > *,
+.footer-inner,
+.footer-inner > *,
+.footer-bottom {
+  min-width: 0;
+  max-width: 100%;
+}
+.impact-grid,
+.process-grid,
+.request-layout,
+.form-grid,
+.footer-inner {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.request-form input,
+.request-form select,
+.request-form textarea,
+.request-form button,
+.request-form .btn {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+}
+.btn,
+.hero-badge,
+.info-item,
+.footer-column a,
+.footer-contact-item,
+.footer-contact-location {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.form-note,
+.form-description,
+.info-item span,
+.footer-text,
+.footer-bottom {
+  overflow-wrap: anywhere;
+}
+
+/* Collapse the wide nine-link navigation before it can compete with the logo. */
+@media (max-width: 1300px) {
+  .header-inner {
+    position: relative;
+  }
+  .menu-toggle {
+    display: block;
+    flex: 0 0 auto;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+    padding: 10px;
+    background: #07111f;
+    box-sizing: border-box;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav a {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    margin-left: 0;
+  }
+}
+@media (max-width: 1050px) {
+  .impact-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .request-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .impact-grid,
+  .process-grid,
+  .form-grid,
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .request-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-buttons .btn,
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .request-form {
+    width: 100%;
+    padding: 25px 20px;
+  }
+  .form-submit,
+  .form-submit .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer-inner > .footer-brand-block {
+    grid-column: auto;
+  }
+}
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+  .mission-box {
+    padding: 28px 18px;
+  }
+  .request-form {
+    padding: 22px 16px;
+  }
+  .language-inner {
+    width: calc(100% - 32px);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .site-footer .footer-inner,
+  .site-footer .footer-bottom {
+    width: calc(100% - 32px) !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
