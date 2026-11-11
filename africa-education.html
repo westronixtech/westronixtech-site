@@ -1079,6 +1079,129 @@ img, svg, video, iframe {
 }
 </style>
 
+
+<style id="africa-education-overflow-followup">
+/* Follow-up: allow the desktop header to wrap instead of forcing the logo
+   and the full navigation into one unshrinkable horizontal row. */
+.header-inner {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.header-inner > .westronix-shared-brand {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.header-inner .westronix-shared-brand .market-logo-text,
+.header-inner .westronix-shared-brand .market-logo-tagline {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.header-inner > .nav {
+  flex: 1 1 600px;
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header-inner > .nav a {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Use shrinkable grid tracks so cards and form fields cannot set the
+   minimum width of their parent grid. */
+.impact-grid,
+.process-grid,
+.form-grid,
+.request-layout,
+.site-footer .footer-inner {
+  min-width: 0;
+}
+.impact-grid,
+.process-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.request-layout {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+}
+.site-footer .footer-inner {
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+}
+.impact-grid > *,
+.process-grid > *,
+.form-grid > *,
+.request-layout > *,
+.site-footer .footer-inner > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.request-form,
+.request-form * {
+  min-width: 0;
+  max-width: 100%;
+}
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+}
+.hero-badge {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1050px) {
+  .impact-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .request-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .site-footer .footer-inner > .footer-brand-block {
+    grid-column: 1 / -1 !important;
+  }
+}
+@media (max-width: 768px) {
+  .impact-grid,
+  .process-grid,
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .request-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .site-footer .footer-inner > .footer-brand-block {
+    grid-column: 1 / -1 !important;
+  }
+  .header-inner {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 560px) {
+  .site-footer .footer-inner {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .site-footer .footer-inner > .footer-brand-block {
+    grid-column: auto !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
