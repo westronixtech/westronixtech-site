@@ -408,16 +408,19 @@ window.addEventListener("pagehide", () => {
   document.head.append(style);
   const footer = document.querySelector("footer");
   if (!footer || footer.querySelector(".wt-site-contact-footer")) return;
-  const email = [...footer.querySelectorAll('a[href^="mailto:"]')].find(link => /westronix\.tech@gmail\.com/i.test(link.href));
-  const emailRow = email?.closest("p, div") || null;
+  const email = [...footer.querySelectorAll('a[href^="mailto:"]')].find(link => /westronix\\.tech@gmail\\.com/i.test(link.href));
+  let emailRow = email?.closest("p, div") || null;
+  if (!emailRow) {
+    const inner = footer.querySelector(".inner, .foot, .container") || footer;
+    emailRow = document.createElement("p");
+    inner.append(emailRow);
+  }
+  emailRow.innerHTML = 'Email: <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a>';
+  [...footer.querySelectorAll("p")].forEach(row => {
+    if (row !== emailRow && (/402\\s*885\\s*4995|\\+228\\s*92\\s*95\\s*33\\s*33|Message Westronix Tech on WhatsApp/i.test(row.textContent))) row.remove();
+  });
   const contact = document.createElement("div");
   contact.className = "wt-site-contact-footer";
   contact.innerHTML = '<span>USA: <a href="tel:+14028854995">402 885 4995</a></span><span>Togo: <a href="tel:+22892953333">+228 92 95 33 33</a></span><a href="https://wa.me/message/HFDGJCOEFS46I1" target="_blank" rel="noopener noreferrer">Message Westronix Tech on WhatsApp</a>';
-  if (emailRow?.parentNode) emailRow.insertAdjacentElement("afterend", contact);
-  else {
-    const inner = footer.querySelector(".inner, .foot, .container") || footer;
-    const emailLine = document.createElement("p");
-    emailLine.innerHTML = 'Email: <a href="mailto:westronix.tech@gmail.com">westronix.tech@gmail.com</a>';
-    inner.append(emailLine, contact);
-  }
+  emailRow.insertAdjacentElement("afterend", contact);
 })();
