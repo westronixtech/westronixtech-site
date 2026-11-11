@@ -943,13 +943,6 @@ img, svg, video, iframe {
   min-width: 0;
   max-width: 100%;
 }
-.impact-grid,
-.process-grid,
-.request-layout,
-.form-grid,
-.footer-inner {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .request-form input,
 .request-form select,
 .request-form textarea,
@@ -1024,6 +1017,12 @@ img, svg, video, iframe {
   }
   .request-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .site-footer .footer-inner > .footer-brand-block {
+    grid-column: 1 / -1 !important;
   }
 }
 @media (max-width: 768px) {
